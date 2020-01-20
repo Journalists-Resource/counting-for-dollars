@@ -6,6 +6,7 @@ import stateborderdata from '../components/usstates'
 import { range } from 'd3-array'
 import { scaleThreshold } from 'd3-scale'
 import { geoCentroid } from 'd3-geo'
+import { csv, json } from 'd3-fetch'
 
 
 const appdata = stateborderdata.features
@@ -44,6 +45,14 @@ class Post1 extends Component {
   }
 
   render() {
+    csv("/data/fy2017expendituresbyprogram.csv", function(d){
+      d.FY2017Expenditures = parseFloat(d.FY2017Expenditures.replace(/\$|,/g, ''));
+      d.CFDA = +d.CFDA;
+      return d;
+    }).then(function(data) {
+      console.log(data); // [{"Hello": "world"}, …]
+    });
+
     const filteredAppdata = appdata
       .filter((d,i) => d.launchday)
 
