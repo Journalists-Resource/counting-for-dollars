@@ -6,21 +6,21 @@ import { select } from 'd3-selection'
 import { legendColor } from 'd3-svg-legend'
 import { transition } from 'd3-transition'
 
-class  Treemap extends Component {
+class TreeMap extends Component {
   constructor(props){
     super(props)
-    this.create Treemap = this.create Treemap.bind(this)
+    this.createBarChart = this.createBarChart.bind(this)
   }
 
   componentDidMount() {
-    this.create Treemap()
+    this.createBarChart()
   }
 
   componentDidUpdate() {
-    this.create Treemap()
+    this.createBarChart()
   }
 
-  create Treemap() {
+  createBarChart() {
     const node = this.node
     const dataMax = max(this.props.data.map(d => sum(d.data)))
     const barWidth = this.props.size[0] / this.props.data.length
@@ -78,4 +78,4 @@ class  Treemap extends Component {
   }
 }
 
-export default  Treemap
+export default TreeMap

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import '../App.css'
-import BarChart from '../components/BarChart'
+import TreeMap from '../components/Treemap'
 import stateborderdata from '../components/usstates'
 import { range } from 'd3-array'
 import { scaleThreshold } from 'd3-scale'
@@ -53,7 +53,7 @@ class Post1 extends Component {
           <h2>d3ia dashboard</h2>
         </div>
         <div>
-        <BarChart colorScale={colorScale} data={filteredAppdata} size={[this.state.screenWidth / 2, this.state.screenHeight / 2]} />
+        <TreeMap colorScale={colorScale} data={filteredAppdata} size={[this.state.screenWidth / 2, this.state.screenHeight / 2]} />
         </div>
       </div>
     )
