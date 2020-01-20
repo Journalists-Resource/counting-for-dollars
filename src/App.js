@@ -11,14 +11,14 @@ import { geoCentroid } from 'd3-geo'
 
 
 class App extends Component {
-  
+
 
   render() {
 
     return (
       <main>
             <Switch>
-              <Route path="/" component={Post1} exact />
+              <Route path="/treemap" component={Post1} exact />
             </Switch>
         </main>
     )
