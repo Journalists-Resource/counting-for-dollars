@@ -8,6 +8,10 @@ import { scaleThreshold } from 'd3-scale'
 import { geoCentroid } from 'd3-geo'
 import { csv, json } from 'd3-fetch'
 
+let csvdata;
+
+
+
 
 class Post1 extends Component {
   constructor(props){
@@ -15,7 +19,7 @@ class Post1 extends Component {
     this.onResize = this.onResize.bind(this)
     // this.onHover = this.onHover.bind(this)
     // this.onBrush = this.onBrush.bind(this)
-    this.state = { screenWidth: 1000, screenHeight: 500, hover: "none" }
+    this.state = { screenWidth: 1000, screenHeight: 500, hover: "none", data: null }
 
   }
 
@@ -27,27 +31,28 @@ class Post1 extends Component {
   //   this.setState({ hover: d.id })
   // }
 
+  componentWillMount() {
+    csv("/data/fy2017expendituresbyprogram.csv", function(d){
+      d.FY2017Expenditures = parseFloat(d.FY2017Expenditures.replace(/\$|,/g, ''));
+      d.CFDA = +d.CFDA;
+      return d;
+    }).then(data => {this.setState({data: data}) });
+  }
+
   componentDidMount() {
     window.addEventListener('resize', this.onResize, false)
     this.onResize()
   }
 
   render() {
-    csv("/data/fy2017expendituresbyprogram.csv", function(d){
-      d.FY2017Expenditures = parseFloat(d.FY2017Expenditures.replace(/\$|,/g, ''));
-      d.CFDA = +d.CFDA;
-      return d;
-    }).then(function(data) {
-      console.log(data); // [{"Hello": "world"}, …]
-    });
-
+    console.log(this.state.data);
     return (
       <div className="App">
         <div className="App-header">
           <h2>d3ia dashboard</h2>
         </div>
         <div>
-        <TreeMap  />
+          <TreeMap data={this.state.data} size={[this.state.screenWidth / 2, this.state.screenHeight / 2]}  />
         </div>
       </div>
     )

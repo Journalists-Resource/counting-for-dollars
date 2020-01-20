@@ -22,55 +22,63 @@ class TreeMap extends Component {
   }
 
   createTreeMap() {
-    const node = this.node
-    const dataMax = max(this.props.data.map(d => sum(d.data)))
-    const barWidth = this.props.size[0] / this.props.data.length
+  // set the dimensions and margins of the graph
+        var margin = {top: 10, right: 10, bottom: 10, left: 10},
+          width = this.props.size[0],
+          height = this.props.size[1];
 
-    const legend = legendColor()
-      .scale(this.props.colorScale)
-      .labels(["Wave 1", "Wave 2", "Wave 3", "Wave 4"])
+        // append the svg object to the body of the page
+        var svg = d3.select("#my_dataviz")
+        .append("svg")
+          .attr("width", width + margin.left + margin.right)
+          .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+          .attr("transform",
+                "translate(" + margin.left + "," + margin.top + ")");
 
-    select(node)
-      .selectAll("g.legend")
-      .data([0])
-      .enter()
-      .append("g")
-        .attr("class", "legend")
-        .call(legend)
+        // Read data
+        d3.csv('https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_hierarchy_1level.csv', function(data) {
 
-    select(node)
-      .select("g.legend")
-        .attr("transform", "translate(" + (this.props.size[0] - 100) + ", 20)")
+          // stratify the data: reformatting for d3.js
+          var root = d3.stratify()
+            .id(function(d) { return d.name; })   // Name of the entity (column name is name in csv)
+            .parentId(function(d) { return d.parent; })   // Name of the parent (column name is parent in csv)
+            (data);
+          root.sum(function(d) { return +d.value })   // Compute the numeric value for each entity
 
-    const yScale = scaleLinear()
-      .domain([0, dataMax])
-      .range([0, this.props.size[1]])
+          // Then d3.treemap computes the position of each element of the hierarchy
+          // The coordinates are added to the root object above
+          d3.treemap()
+            .size([width, height])
+            .padding(4)
+            (root)
 
-    select(node)
-      .selectAll("rect.bar")
-      .data(this.props.data)
-      .enter()
-      .append("rect")
-        .attr("class", "bar")
-        .on("mouseover", this.props.onHover)
+        console.log(root.leaves())
+          // use this information to add rectangles:
+          svg
+            .selectAll("rect")
+            .data(root.leaves())
+            .enter()
+            .append("rect")
+              .attr('x', function (d) { return d.x0; })
+              .attr('y', function (d) { return d.y0; })
+              .attr('width', function (d) { return d.x1 - d.x0; })
+              .attr('height', function (d) { return d.y1 - d.y0; })
+              .style("stroke", "black")
+              .style("fill", "#69b3a2");
 
-    select(node)
-      .selectAll("rect.bar")
-      .data(this.props.data)
-      .exit()
-        .remove()
-
-    select(node)
-      .selectAll("rect.bar")
-      .data(this.props.data)
-        .attr("x", (d,i) => i * barWidth)
-        .attr("y", d => this.props.size[1] - yScale(sum(d.data)))
-        .attr("height", d => yScale(sum(d.data)))
-        .attr("width", barWidth)
-        .style("fill", (d,i) => this.props.colorScale(d.launchday))
-        .style("stroke", "black")
-        .style("stroke-opacity", 0.25)
-
+          // and to add the text labels
+          svg
+            .selectAll("text")
+            .data(root.leaves())
+            .enter()
+            .append("text")
+              .attr("x", function(d){ return d.x0+10})    // +10 to adjust position (more right)
+              .attr("y", function(d){ return d.y0+20})    // +20 to adjust position (lower)
+              .text(function(d){ return d.data.name})
+              .attr("font-size", "15px")
+              .attr("fill", "white")
+        })
   }
 
   render() {
