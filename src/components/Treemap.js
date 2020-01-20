@@ -74,8 +74,7 @@ class TreeMap extends Component {
   }
 
   render() {
-    return <svg ref={node => this.node = node} width={this.props.size[0]} height={this.props.size[1]}>
-    </svg>
+    return <h1>placeholder</h1>
   }
 }
 

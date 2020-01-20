@@ -9,18 +9,6 @@ import { geoCentroid } from 'd3-geo'
 import { csv, json } from 'd3-fetch'
 
 
-const appdata = stateborderdata.features
-  .filter(d => geoCentroid(d)[0] < -20)
-
-appdata
-  .forEach((d,i) => {
-    const offset = Math.random()
-    d.launchday = i
-    d.data = range(30).map((p,q) => q < i ? 0 : Math.random() * 2 + offset)
-  })
-
-const colorScale = scaleThreshold().domain([5,10,20,30]).range(["#75739F", "#5EAFC6", "#41A368", "#93C464"])
-
 class Post1 extends Component {
   constructor(props){
     super(props)
@@ -53,16 +41,13 @@ class Post1 extends Component {
       console.log(data); // [{"Hello": "world"}, …]
     });
 
-    const filteredAppdata = appdata
-      .filter((d,i) => d.launchday)
-
     return (
       <div className="App">
         <div className="App-header">
           <h2>d3ia dashboard</h2>
         </div>
         <div>
-        <TreeMap colorScale={colorScale} data={filteredAppdata} size={[this.state.screenWidth / 2, this.state.screenHeight / 2]} />
+        <TreeMap  />
         </div>
       </div>
     )
