@@ -20,7 +20,7 @@ appdata
 
 const colorScale = scaleThreshold().domain([5,10,20,30]).range(["#75739F", "#5EAFC6", "#41A368", "#93C464"])
 
-class Post1 extends Component {
+class PostBarChart extends Component {
   constructor(props){
     super(props)
     this.onResize = this.onResize.bind(this)
@@ -60,4 +60,4 @@ class Post1 extends Component {
   }
 }
 
-export default Post1
+export default PostBarChart
