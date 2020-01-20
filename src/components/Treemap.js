@@ -5,22 +5,23 @@ import { max, sum } from 'd3-array'
 import { select } from 'd3-selection'
 import { legendColor } from 'd3-svg-legend'
 import { transition } from 'd3-transition'
+import * as d3 from 'd3-hierarchy'
 
 class TreeMap extends Component {
   constructor(props){
     super(props)
-    this.createBarChart = this.createBarChart.bind(this)
+    this.createTreeMap = this.createTreeMap.bind(this)
   }
 
   componentDidMount() {
-    this.createBarChart()
+    this.createTreeMap()
   }
 
   componentDidUpdate() {
-    this.createBarChart()
+    this.createTreeMap()
   }
 
-  createBarChart() {
+  createTreeMap() {
     const node = this.node
     const dataMax = max(this.props.data.map(d => sum(d.data)))
     const barWidth = this.props.size[0] / this.props.data.length
