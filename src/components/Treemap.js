@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import '../App.css'
-import { scaleLinear } from 'd3-scale'
-import { max, sum } from 'd3-array'
+import { scaleLinear, scaleOrdinal } from 'd3-scale'
+import { group } from 'd3-array'
+import { nest } from 'd3-collection'
 import { select } from 'd3-selection'
 import { legendColor } from 'd3-svg-legend'
 import { transition } from 'd3-transition'
@@ -25,6 +26,15 @@ class TreeMap extends Component {
     const node = this.node
     const width = this.props.size[0];
     const height = this.props.size[1];
+
+
+    const nestedData = nest()
+        .key(function(d) { return d.Agency; })
+        .entries(this.props.data)
+
+    console.log(d3.hierarchy(nestedData)
+      .sum(d => d.FY2017Expenditures)
+      .sort((a, b) => b.FY2017Expenditures - a.FY2017Expenditures));
 
     // https://www.d3-graph-gallery.com/graph/treemap_basic.html
 
