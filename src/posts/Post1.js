@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import '../App.css'
-import TreeMap from '../components/Treemap'
+import Treemap from '../components/Treemap'
 import stateborderdata from '../components/usstates'
 import { range } from 'd3-array'
 import { scaleThreshold } from 'd3-scale'
@@ -52,7 +52,7 @@ class Post1 extends Component {
           <h2>d3ia dashboard</h2>
         </div>
         <div>
-          <TreeMap data={this.state.data} size={[this.state.screenWidth / 2, this.state.screenHeight / 2]}  />
+          <Treemap data={this.state.data} size={[this.state.screenWidth, this.state.screenHeight]}  />
         </div>
       </div>
     )
