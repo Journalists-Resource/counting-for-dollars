@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css'
 import WorldMap from './components/WorldMap'
 import BarChart from './components/BarChart'
@@ -17,13 +17,15 @@ class App extends Component {
   render() {
 
     return (
-      <main>
+      <HashRouter basename="/">
+        <main>
             <Switch>
-              <Route path="/" component={Post1Tree}  />
+              <Route exact path="/" component={Post1Tree}  />
               <Route path="/Post1Tree" component={Post1Tree}  />
               <Route path="/PostBarChart" component={PostBarChart}  />
             </Switch>
         </main>
+      </HashRouter>
     )
   }
 }
