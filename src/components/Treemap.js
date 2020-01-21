@@ -46,7 +46,7 @@ class TreeMap extends Component {
       // Then d3.treemap computes the position of each element of the hierarchy
   d3.treemap()
     .size([width, height])
-    .padding(2)
+    .padding(1)
     (root)
 
   // use this information to add rectangles:
@@ -59,7 +59,6 @@ class TreeMap extends Component {
       .attr('y', function (d) { return d.y0; })
       .attr('width', function (d) { return d.x1 - d.x0; })
       .attr('height', function (d) { return d.y1 - d.y0; })
-      .style("stroke", "black")
       .style("fill", "slateblue")
 
   // and to add the text labels
@@ -69,9 +68,9 @@ class TreeMap extends Component {
     .enter()
     .append("text")
       .attr("x", function(d){ return d.x0 + 3 })
-      .attr("y", function(d){ return d.y0 + 3 })
+      .attr("y", function(d){ return d.y0 + 6 })
       .attr("text-anchor", "left")
-      .text(function(d){ return d.data.Agency })
+      .text(function(d){ return d.data.CFDA })
       .attr("font-size", "8px")
       .attr("fill", "white")
   }
