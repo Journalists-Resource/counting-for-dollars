@@ -31,7 +31,7 @@ class TreeMap extends Component {
 
     const nestedData = nest()
           .key(function(d) { return d.Agency; })
-          .entries(data.filter(function(d){ return d.Agency !== "HHS" }))
+          .entries(data)
 
     var newObj = new Object();
     newObj.values = nestedData;

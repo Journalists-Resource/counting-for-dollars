@@ -4,7 +4,7 @@ import './App.css'
 import WorldMap from './components/WorldMap'
 import BarChart from './components/BarChart'
 import stateborderdata from './components/usstates'
-import Post1 from './posts/Post1'
+import Post1Tree from './posts/Post1Tree'
 import PostBarChart from './posts/PostBarChart'
 import { range } from 'd3-array'
 import { scaleThreshold } from 'd3-scale'
@@ -19,8 +19,8 @@ class App extends Component {
     return (
       <main>
             <Switch>
-              <Route path="/treemap" component={Post1} exact />
-              <Route path="/barchartex" component={PostBarChart} exact />
+              <Route path="/Post1Tree" component={Post1Tree}  />
+              <Route path="/PostBarChart" component={PostBarChart}  />
             </Switch>
         </main>
     )
