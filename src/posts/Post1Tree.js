@@ -32,7 +32,7 @@ class Post1 extends Component {
   // }
 
   componentWillMount() {
-    csv("/data/fy2017expendituresbyprogram.csv", function(d){
+    csv("data/fy2017expendituresbyprogram.csv", function(d){
       d.FY2017Expenditures = parseFloat(d.FY2017Expenditures.replace(/\$|,/g, ''));
       d.CFDA = +d.CFDA;
       return d;
