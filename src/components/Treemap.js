@@ -26,52 +26,54 @@ class TreeMap extends Component {
     const node = this.node
     const width = this.props.size[0];
     const height = this.props.size[1];
-
+    const data = this.props.data;
+    const jsondata = this.props.jsondata;
 
     const nestedData = nest()
-        .key(function(d) { return d.Agency; })
-        .entries(this.props.data)
+          .key(function(d) { return d.Agency; })
+          .entries(data.filter(function(d){ return d.Agency !== "HHS" }))
 
-    console.log(d3.hierarchy(nestedData)
-      .sum(d => d.FY2017Expenditures)
-      .sort((a, b) => b.FY2017Expenditures - a.FY2017Expenditures));
+    var newObj = new Object();
+    newObj.values = nestedData;
+    newObj.name = "Programs";
 
     // https://www.d3-graph-gallery.com/graph/treemap_basic.html
 
-    const root = d3.stratify()
-      .id(function(d) { return d.Program; })   // Name of the entity (column name is name in csv)
-      .parentId(function(d) { return d.Agency; })   // Name of the parent (column name is parent in csv)
-      (this.props.data);
-    root.sum(function(d) { return +d.FY2017Expenditures })   // Compute the numeric value for each entity
+    const root = d3.hierarchy(newObj, d => d.values).sum(function(d){ return d.FY2017Expenditures})
 
-    d3.treemap()
-        .size([width, height])
-        .padding(1)
-        (root)
+    console.log(root);
 
+      // Then d3.treemap computes the position of each element of the hierarchy
+  d3.treemap()
+    .size([width, height])
+    .padding(2)
+    (root)
 
-    select(node)
-      .selectAll("rect")
-      .data(root.leaves())
-      .enter()
-      .append("rect")
-        .attr('x', function (d) { return d.x0; })
-        .attr('y', function (d) { return d.y0; })
-        .attr('width', function (d) { return d.x1 - d.x0; })
-        .attr('height', function (d) { return d.y1 - d.y0; })
-        .style("stroke", "black")
-        .style("fill", "#69b3a2");
+  // use this information to add rectangles:
+  select(node)
+    .selectAll("rect")
+    .data(root.leaves())
+    .enter()
+    .append("rect")
+      .attr('x', function (d) { return d.x0; })
+      .attr('y', function (d) { return d.y0; })
+      .attr('width', function (d) { return d.x1 - d.x0; })
+      .attr('height', function (d) { return d.y1 - d.y0; })
+      .style("stroke", "black")
+      .style("fill", "slateblue")
 
-    select(node)
-      .selectAll("text")
-      .data(root.leaves())
-      .enter()
-      .append("text")
-        .attr("x", function(d){ return d.x0+5})    // +10 to adjust position (more right)
-        .attr("y", function(d){ return d.y0+10})    // +20 to adjust position (lower)
-        .text(function(d){ return d.data.CFDA})
-        .attr("font-size", "8px")
-        .attr("fill", "white")
+  // and to add the text labels
+  select(node)
+    .selectAll("text")
+    .data(root.leaves())
+    .enter()
+    .append("text")
+      .attr("x", function(d){ return d.x0 + 3 })
+      .attr("y", function(d){ return d.y0 + 3 })
+      .attr("text-anchor", "left")
+      .text(function(d){ return d.data.Agency })
+      .attr("font-size", "8px")
+      .attr("fill", "white")
   }
 
   render() {

@@ -19,12 +19,12 @@ class Post1 extends Component {
     this.onResize = this.onResize.bind(this)
     // this.onHover = this.onHover.bind(this)
     // this.onBrush = this.onBrush.bind(this)
-    this.state = { screenWidth: 1000, screenHeight: 500, hover: "none", data: null }
+    this.state = { screenWidth: window.innerWidth, screenHeight: window.innerHeight, hover: "none", data: null, jsondata: null }
 
   }
 
   onResize() {
-    this.setState({ screenWidth: window.innerWidth, screenHeight: window.innerHeight - 120 })
+    this.setState({ screenWidth: window.innerWidth, screenHeight: window.innerHeight })
   }
 
   // onHover(d) {
@@ -37,6 +37,10 @@ class Post1 extends Component {
       d.CFDA = +d.CFDA;
       return d;
     }).then(data => {this.setState({data: data}) });
+
+    json("/data/dendro.json", function(d) {
+      console.log(d);
+    }).then(data => {this.setState({jsondata: data}) });
   }
 
   componentDidMount() {
@@ -45,14 +49,14 @@ class Post1 extends Component {
   }
 
   render() {
-    console.log(this.state.data);
+    // console.log(this.state.data);
     return (
       <div className="App">
         <div className="App-header">
           <h2>d3ia dashboard</h2>
         </div>
         <div>
-          <Treemap data={this.state.data} size={[this.state.screenWidth, this.state.screenHeight]}  />
+          <Treemap jsondata={this.state.jsondata} data={this.state.data} size={[this.state.screenWidth, this.state.screenHeight]}  />
         </div>
       </div>
     )
