@@ -19,6 +19,7 @@ class App extends Component {
     return (
       <main>
             <Switch>
+              <Route path="/" component={Post1Tree}  />
               <Route path="/Post1Tree" component={Post1Tree}  />
               <Route path="/PostBarChart" component={PostBarChart}  />
             </Switch>
