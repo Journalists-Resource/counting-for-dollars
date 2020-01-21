@@ -45,6 +45,7 @@ class TreeMap extends Component {
 
       // Then d3.treemap computes the position of each element of the hierarchy
   d3.treemap()
+    .tile(d3.treemapBinary)
     .size([width, height])
     .padding(1)
     (root)
@@ -70,7 +71,7 @@ class TreeMap extends Component {
       .attr("x", function(d){ return d.x0 + 3 })
       .attr("y", function(d){ return d.y0 + 6 })
       .attr("text-anchor", "left")
-      .text(function(d){ return d.data.CFDA })
+      .text(function(d){ return d.data.Agency })
       .attr("font-size", "8px")
       .attr("fill", "white")
   }

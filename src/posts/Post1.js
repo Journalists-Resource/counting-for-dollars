@@ -37,10 +37,6 @@ class Post1 extends Component {
       d.CFDA = +d.CFDA;
       return d;
     }).then(data => {this.setState({data: data}) });
-
-    json("/data/dendro.json", function(d) {
-      console.log(d);
-    }).then(data => {this.setState({jsondata: data}) });
   }
 
   componentDidMount() {
@@ -56,7 +52,7 @@ class Post1 extends Component {
           <h2>d3ia dashboard</h2>
         </div>
         <div>
-          <Treemap jsondata={this.state.jsondata} data={this.state.data} size={[this.state.screenWidth, this.state.screenHeight]}  />
+          <Treemap data={this.state.data} size={[this.state.screenWidth, this.state.screenHeight]}  />
         </div>
       </div>
     )
