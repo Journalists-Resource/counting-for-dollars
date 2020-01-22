@@ -6,11 +6,13 @@ import { feature } from "topojson-client"
 
 class StateMap extends Component {
   render() {
+    // const topojsonData = feature(this.props.geodata, this.props.geodata.objects.states).features
+    const topojsonData = feature(usstates, usstates.objects.states).features
     const projection = geoAlbersUsa()
       .scale(1000)
       .translate([430,250])
     const pathGenerator = geoPath().projection(projection)
-    const states = feature(usstates, usstates.objects.states).features
+    const states = topojsonData
       .map((d,i) => <path
         key={"path" + i}
         d={pathGenerator(d)}
