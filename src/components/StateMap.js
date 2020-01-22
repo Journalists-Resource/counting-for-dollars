@@ -15,7 +15,7 @@ class StateMap extends Component {
         key={"path" + i}
         d={pathGenerator(d)}
         style={{fill: "teal", stroke: "black", strokeOpacity: 0.5 }}
-        className="states"
+        className={"states " + d.properties.name}
       />)
     return <svg width={this.props.size[0]} height={this.props.size[1]}>
       {states}
