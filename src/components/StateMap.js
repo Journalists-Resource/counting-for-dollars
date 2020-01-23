@@ -9,8 +9,8 @@ class StateMap extends Component {
     // const topojsonData = feature(this.props.geodata, this.props.geodata.objects.states).features
     const topojsonData = feature(usstates, usstates.objects.states).features
     const projection = geoAlbersUsa()
-      .scale(1000)
-      .translate([430,250])
+      .scale(this.props.size[0] * 1)
+      .translate([this.props.size[0]/2, 150])
     const pathGenerator = geoPath().projection(projection)
     const states = topojsonData
       .map((d,i) => <path
