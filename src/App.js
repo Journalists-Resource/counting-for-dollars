@@ -4,9 +4,6 @@ import './App.css'
 import BarChart from './components/BarChart'
 import Post1Tree from './posts/Post1Tree'
 import Post1Map from './posts/Post1Map'
-import { range } from 'd3-array'
-import { scaleThreshold } from 'd3-scale'
-import { geoCentroid } from 'd3-geo'
 
 
 class App extends Component {

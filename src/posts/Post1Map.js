@@ -1,11 +1,7 @@
 import React, { Component } from 'react'
-// import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import '../App.css'
-import StateMap from '../components/StateMap'
-import { range } from 'd3-array'
-import { scaleThreshold } from 'd3-scale'
-import { geoCentroid } from 'd3-geo'
 import { csv, json } from 'd3-fetch'
+import StateMap from '../components/StateMap'
 
 
 
