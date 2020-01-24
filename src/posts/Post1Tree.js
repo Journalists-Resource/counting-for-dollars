@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 // import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import '../App.css'
 import Treemap from '../components/Treemap'
-import stateborderdata from '../components/usstates'
 import { range } from 'd3-array'
 import { scaleThreshold } from 'd3-scale'
 import { geoCentroid } from 'd3-geo'

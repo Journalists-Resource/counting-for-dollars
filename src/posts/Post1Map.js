@@ -17,7 +17,7 @@ class Post1Map extends Component {
     this.onResize = this.onResize.bind(this)
     // this.onHover = this.onHover.bind(this)
     // this.onBrush = this.onBrush.bind(this)
-    this.state = { screenWidth: window.innerWidth, screenHeight: window.innerHeight, hover: "none", geodata: [0,1,2], jsondata: null }
+    this.state = { screenWidth: window.innerWidth, screenHeight: window.innerHeight, hover: "none", data: [] }
 
   }
 
@@ -30,8 +30,7 @@ class Post1Map extends Component {
   // }
 
   componentWillMount() {
-    json("data/states-10m.json")
-    .then(data => {this.setState({geodata: data}) })
+    csv("data/fy2016statefunding.csv").then(data => {this.setState({data: data}) });
   }
 
   componentDidMount() {
@@ -46,7 +45,7 @@ class Post1Map extends Component {
           <h2>Chloropleth Map</h2>
         </div>
         <div>
-          <StateMap geodata={this.state.geodata} size={[this.state.screenWidth, this.state.screenHeight]}   />
+          <StateMap data={this.state.data} size={[this.state.screenWidth, this.state.screenHeight]}   />
         </div>
       </div>
     )
