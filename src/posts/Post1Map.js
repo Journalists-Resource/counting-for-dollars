@@ -38,7 +38,7 @@ class Post1Map extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Chloropleth Map</h2>
+          <h2>{this.state.program} Funding</h2>
         </div>
         <div>
           <StateMap data={this.state.data} program={this.state.program} size={[this.state.screenWidth, this.state.screenHeight]}   />
