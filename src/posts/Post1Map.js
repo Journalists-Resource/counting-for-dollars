@@ -17,7 +17,7 @@ class Post1Map extends Component {
     this.onResize = this.onResize.bind(this)
     // this.onHover = this.onHover.bind(this)
     // this.onBrush = this.onBrush.bind(this)
-    this.state = { screenWidth: window.innerWidth, screenHeight: window.innerHeight, hover: "none", data: [] }
+    this.state = { screenWidth: window.innerWidth, screenHeight: window.innerHeight, hover: "none", data: [], program: "Title I Grants to LEAs" }
 
   }
 
@@ -45,7 +45,7 @@ class Post1Map extends Component {
           <h2>Chloropleth Map</h2>
         </div>
         <div>
-          <StateMap data={this.state.data} size={[this.state.screenWidth, this.state.screenHeight]}   />
+          <StateMap data={this.state.data} program={this.state.program} size={[this.state.screenWidth, this.state.screenHeight]}   />
         </div>
       </div>
     )
