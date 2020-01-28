@@ -44,7 +44,7 @@ class Post1 extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>d3ia dashboard</h2>
+          <h2>Total Funding Buckets</h2>
         </div>
         <div>
           <Treemap data={this.state.data} size={[this.state.screenWidth, this.state.screenHeight]}  />
