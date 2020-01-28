@@ -19,6 +19,8 @@
     "d3-selection": "1.0.2",
     "d3-shape": "1.0.3",
     "d3-svg-legend": "2.15.0",
+    "d3-textwrap": "^2.0.2",
+    "d3-tip": "^0.9.1",
     "d3-transition": "1.0.3",
     "gh-pages": "^2.2.0",
     "react": "15.3.2",
