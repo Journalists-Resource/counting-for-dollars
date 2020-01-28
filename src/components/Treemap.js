@@ -43,7 +43,8 @@ class TreeMap extends Component {
 
     const root = d3.hierarchy(newObj, d => d.values).sum(function(d){ return d.FY2017Expenditures})
 
-    console.log(root);
+    console.log(root.value);
+    var totalSpend = root.value;
 
     colorScale.domain(data);
 
@@ -71,11 +72,14 @@ class TreeMap extends Component {
     .selectAll("text")
     .data(root.leaves())
     .enter()
+    .filter(function (d) {return !isNaN(d.data.FY2017Expenditures)})
     .append("text")
       .attr("x", function(d){ return d.x0 + 3 })
       .attr("y", function(d){ return d.y0 + 6 })
       .attr("text-anchor", "left")
-      .text(function(d){ return d.data.Program })
+      .text(function(d){
+        return ((d.data.FY2017Expenditures > (totalSpend*0.01)) ? d.data.Program : ""); // label only the programs that take up more than 1% of spending
+      })
       .attr("font-size", "8px")
       .attr("fill", "white")
   }
