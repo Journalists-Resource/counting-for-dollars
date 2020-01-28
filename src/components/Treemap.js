@@ -7,6 +7,7 @@ import { select } from 'd3-selection'
 import { legendColor } from 'd3-svg-legend'
 import { transition } from 'd3-transition'
 import * as d3 from 'd3-hierarchy'
+import { interpolateViridis, schemeCategory10 } from "d3-scale-chromatic"
 
 class TreeMap extends Component {
   constructor(props){
@@ -28,6 +29,7 @@ class TreeMap extends Component {
     const height = this.props.size[1];
     const data = this.props.data;
     const jsondata = this.props.jsondata;
+    const colorScale = scaleOrdinal(schemeCategory10); //todo: use viridis
 
     const nestedData = nest()
           .key(function(d) { return d.Agency; })
@@ -42,6 +44,8 @@ class TreeMap extends Component {
     const root = d3.hierarchy(newObj, d => d.values).sum(function(d){ return d.FY2017Expenditures})
 
     console.log(root);
+
+    colorScale.domain(data);
 
       // Then d3.treemap computes the position of each element of the hierarchy
   d3.treemap()
@@ -60,7 +64,7 @@ class TreeMap extends Component {
       .attr('y', function (d) { return d.y0; })
       .attr('width', function (d) { return d.x1 - d.x0; })
       .attr('height', function (d) { return d.y1 - d.y0; })
-      .style("fill", "slateblue")
+      .style("fill", function (d) { return colorScale(d.data.Agency); })
 
   // and to add the text labels
   select(node)
@@ -71,7 +75,7 @@ class TreeMap extends Component {
       .attr("x", function(d){ return d.x0 + 3 })
       .attr("y", function(d){ return d.y0 + 6 })
       .attr("text-anchor", "left")
-      .text(function(d){ return d.data.Agency })
+      .text(function(d){ return d.data.Program })
       .attr("font-size", "8px")
       .attr("fill", "white")
   }

@@ -6,6 +6,7 @@ import { geoMercator, geoPath, geoAlbersUsa } from 'd3-geo'
 import { feature } from "topojson-client"
 import { scaleSequential } from "d3-scale"
 import { interpolateViridis } from "d3-scale-chromatic"
+const colorScale = scaleSequential(interpolateViridis)
 
 const usStateNames = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
 
@@ -13,7 +14,6 @@ const usStateNames = ['Alabama','Alaska','Arizona','Arkansas','California','Colo
 class StateMap extends Component {
   render() {
     const dataset = this.props.data;
-    const colorScale = scaleSequential(interpolateViridis)
 
     const topojsonData = feature(usstates, usstates.objects.states).features
     const projection = geoAlbersUsa()
