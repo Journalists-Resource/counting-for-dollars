@@ -34,7 +34,11 @@ class Post1Map extends Component {
   // }
 
   componentWillMount() {
-    csv("datasets/fy2016statefunding.csv").then(data => {this.setState({data: data}) });
+    csv("datasets/fy2016statefunding.csv").then(data => {
+      this.setState({data: data});
+      data.map((d,i) => console.log(d.Program))
+    });
+
   }
 
   componentDidMount() {

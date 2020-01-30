@@ -20,7 +20,6 @@ csv("datasets/2017_income_and_pop.csv").then(function(data) {
     data[s].pop = +data[s].pop;
   }
   demographics = data;
-  // console.log(demographics);
 });
 
 
@@ -28,7 +27,6 @@ class StateMap extends Component {
   render() {
     const slice = this.props.slice;
     const dataset = this.props.data;
-    console.log(demographics)
 
     const topojsonData = feature(usstates, usstates.objects.states).features
     const projection = geoAlbersUsa()
