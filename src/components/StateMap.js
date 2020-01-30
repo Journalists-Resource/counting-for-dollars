@@ -43,7 +43,6 @@ class StateMap extends Component {
           topojsonData[s].properties.pop = demographics.find(e => e.state_name === topojsonData[s].properties.name)["pop"]
         }
       }
-      console.log(topojsonData)
 
       const datarange = [];
       topojsonData.forEach(function(d){datarange.push(d.properties.total / (slice === "total" ? 1 : d.properties[slice]))})
