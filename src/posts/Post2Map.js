@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import '../App.css'
 import { csv, json } from 'd3-fetch'
 import StateMap from '../components/StateMap'
-
+import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 
 
 
@@ -11,9 +12,15 @@ class Post1Map extends Component {
   constructor(props){
     super(props)
     this.onResize = this.onResize.bind(this)
-    // this.onHover = this.onHover.bind(this)
-    // this.onBrush = this.onBrush.bind(this)
-    this.state = { screenWidth: window.innerWidth, screenHeight: window.innerHeight, hover: "none", data: [], program: "Title I Grants to LEAs" }
+    this.handleClick = this.handleClick.bind(this);
+    this.state = {
+      screenWidth: window.innerWidth,
+      screenHeight: window.innerHeight,
+      hover: "none",
+      data: [],
+      slice: "total",
+      program: "Title I Grants to LEAs"
+    }
 
   }
 
@@ -34,14 +41,21 @@ class Post1Map extends Component {
     this.onResize()
   }
 
+  handleClick(e) {
+    this.setState({slice: e})
+  }
+
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <h2>{this.state.program} Funding</h2>
-        </div>
+        <h2>{this.state.program} Funding</h2>
+        <ButtonGroup aria-label="outlined button group">
+          <Button onClick={this.handleClick.bind(this, "total")}>Total Funding</Button>
+          <Button onClick={this.handleClick.bind(this, "pop")}>Per Capita</Button>
+          <Button onClick={this.handleClick.bind(this, "income")}>Per Income</Button>
+        </ButtonGroup>
         <div>
-          <StateMap data={this.state.data} program={this.state.program} size={[this.state.screenWidth, this.state.screenHeight]}   />
+          <StateMap data={this.state.data} program={this.state.program} size={[this.state.screenWidth, this.state.screenHeight]} slice={this.state.slice}  />
         </div>
       </div>
     )
