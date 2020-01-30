@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import '../App.css'
 import { csv, json } from 'd3-fetch'
 import StateMap from '../components/StateMap'
+import ReactTooltip from 'react-tooltip'
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 
@@ -41,6 +42,10 @@ class Post1Map extends Component {
     this.onResize()
   }
 
+  componentDidUpdate() {
+    ReactTooltip.rebuild()
+  }
+
   handleClick(e) {
     this.setState({slice: e})
   }
@@ -55,6 +60,7 @@ class Post1Map extends Component {
           <Button onClick={this.handleClick.bind(this, "income")}>Per Income</Button>
         </ButtonGroup>
         <div>
+          <ReactTooltip />
           <StateMap data={this.state.data} program={this.state.program} size={[this.state.screenWidth, this.state.screenHeight]} slice={this.state.slice}  />
         </div>
       </div>

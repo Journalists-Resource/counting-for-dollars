@@ -7,6 +7,7 @@ import { feature } from "topojson-client"
 import { scaleSequential } from "d3-scale"
 import { interpolateViridis } from "d3-scale-chromatic"
 import { csv } from 'd3-fetch'
+import ReactTooltip from 'react-tooltip'
 const colorScale = scaleSequential(interpolateViridis)
 
 const usStateNames = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
@@ -34,6 +35,15 @@ class StateMap extends Component {
       .scale(this.props.size[0] * 1)
       .translate([this.props.size[0]/2, 350])
     const pathGenerator = geoPath().projection(projection)
+    function tooltipGenerator(x,y,z) {
+      if (x === "total") {
+        return y.properties.name + " received " + y.properties.total + " in " + z + " funding in 2017."
+      } else if (x === "pop") {
+        return y.properties.name + " received " + (y.properties.total / y.properties.pop) + " in " + z + " funding per capita in 2017."
+      } else if (x === "income") {
+        return y.properties.name + " received " + (y.properties.total / y.properties.income) + " in " + z + " funding as a ratio of its personal income in 2017."
+      }
+    }
 
     if (dataset.length > 0) {
       for (let s=0; s < topojsonData.length; s++) {
@@ -50,16 +60,19 @@ class StateMap extends Component {
         min(datarange),max(datarange)
       ])
       const states = topojsonData
-        .map((d,i) => <path
-          key={"path" + i}
-          d={pathGenerator(d)}
-          style={{
-            fill: colorScale(d.properties.total / (slice === "total" ? 1 : d.properties[slice])),
-            stroke: "black",
-            strokeOpacity: 0.5
-          }}
-          className={"states " + d.properties.name}
-        />)
+        .map((d,i) =>
+          <path
+            key={"path" + i}
+            d={pathGenerator(d)}
+            data-tip={tooltipGenerator(slice, d, this.props.program)}
+            style={{
+              fill: colorScale(d.properties.total / (slice === "total" ? 1 : d.properties[slice])),
+              stroke: "black",
+              strokeOpacity: 0.5
+            }}
+            className={"states " + d.properties.name}
+          />
+        )
         return (
           <svg width={this.props.size[0]} height={this.props.size[1]}>
             {states}
@@ -67,16 +80,18 @@ class StateMap extends Component {
         )
     } else {
       const states = topojsonData
-        .map((d,i) => <path
-          key={"path" + i}
-          d={pathGenerator(d)}
-          style={{fill: "white", stroke: "black", strokeOpacity: 0.5 }}
-          className={"states " + d.properties.name}
-        />)
+        .map((d,i) =>
+          <path
+            key={"path" + i}
+            d={pathGenerator(d)}
+            style={{fill: "white", stroke: "black", strokeOpacity: 0.5 }}
+            className={"states " + d.properties.name}
+          />
+        )
       return (
-        <svg width={this.props.size[0]} height={this.props.size[1]}>
-          {states}
-        </svg>
+          <svg width={this.props.size[0]} height={this.props.size[1]}>
+            {states}
+          </svg>
       )
     }
   }
