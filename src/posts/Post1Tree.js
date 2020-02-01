@@ -3,18 +3,20 @@ import '../App.css'
 import { csv, json } from 'd3-fetch'
 import Treemap from '../components/Treemap'
 
-let csvdata;
 
 
-
-
-class Post1 extends Component {
+class Post1Tree extends Component {
   constructor(props){
     super(props)
     this.onResize = this.onResize.bind(this)
-    // this.onHover = this.onHover.bind(this)
-    // this.onBrush = this.onBrush.bind(this)
-    this.state = { screenWidth: window.innerWidth, screenHeight: window.innerHeight, hover: "none", data: null, jsondata: null }
+    this.state = {
+      screenWidth: window.innerWidth,
+      screenHeight: window.innerHeight,
+      hover: "none",
+      data: [],
+      slice: "total",
+      program: "Title I Grants to LEAs"
+    }
 
   }
 
@@ -27,11 +29,21 @@ class Post1 extends Component {
   // }
 
   componentWillMount() {
-    csv("datasets/fy2017expendituresbyprogram.csv", function(d){
-      d.FY2017Expenditures = parseFloat(d.FY2017Expenditures.replace(/\$|,/g, ''));
-      d.CFDA = +d.CFDA;
-      return d;
-    }).then(data => {this.setState({data: data}) });
+    // csv("datasets/fy2017expendituresbyprogram.csv", function(d){
+    //   d.FY2017Expenditures = parseFloat(d.FY2017Expenditures.replace(/\$|,/g, ''));
+    //   d.CFDA = +d.CFDA;
+    //   return d;
+    // }).then(data => this.setState({ data: ["test":90, "ax":35] }));
+
+  csv("datasets/fy2017expendituresbyprogram.csv", function(d){
+    d.FY2017Expenditures = parseFloat(d.FY2017Expenditures.replace(/\$|,/g, ''));
+    d.CFDA = +d.CFDA;
+    return d;
+  }).then(csvdata => {
+    this.setState({data: csvdata});
+  });
+
+
   }
 
   componentDidMount() {
@@ -54,4 +66,4 @@ class Post1 extends Component {
   }
 }
 
-export default Post1
+export default Post1Tree

@@ -29,6 +29,7 @@ class TreeMap extends Component {
   }
 
   createTreeMap() {
+    console.log(this.props.data)
     const node = this.node
     const width = this.props.size[0];
     const height = this.props.size[1];
@@ -53,7 +54,7 @@ class TreeMap extends Component {
 
     const root = d3.hierarchy(newObj, d => d.values).sum(function(d){ return d.FY2017Expenditures})
 
-    console.log(root.value);
+    // console.log(root.value);
     var totalSpend = root.value;
 
     colorScale.domain(data);
