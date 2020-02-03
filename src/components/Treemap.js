@@ -36,70 +36,67 @@ class TreeMap extends Component {
     const data = this.props.data;
     const jsondata = this.props.jsondata;
     const colorScale = scaleOrdinal(schemeCategory10); //todo: use viridis
+    if(data.length > 0) {
 
-        // Define the div for the tooltip
-    const tooltip =   select(node).append("div")
-        .attr("class", "tooltip")
-        .style("opacity", 0);
+      const nestedData = nest()
+            .key(function(d) { return d.Agency; })
+            .entries(data)
 
-    const nestedData = nest()
-          .key(function(d) { return d.Agency; })
-          .entries(data)
+      var newObj = new Object();
+      newObj.values = nestedData;
+      newObj.name = "Programs";
 
-    var newObj = new Object();
-    newObj.values = nestedData;
-    newObj.name = "Programs";
+      const root = d3.hierarchy(newObj, d => d.values).sum(function(d){ return d.FY2017Expenditures})
 
-    const root = d3.hierarchy(newObj, d => d.values).sum(function(d){ return d.FY2017Expenditures})
+      var totalSpend = root.value;
 
-    var totalSpend = root.value;
-
-    colorScale.domain(data);
+      colorScale.domain(data);
 
 
-      // Then d3.treemap computes the position of each element of the hierarchy
-  d3.treemap()
-    .tile(d3.treemapBinary)
-    .size([width, height])
-    .padding(1)
-    (root)
+        // Then d3.treemap computes the position of each element of the hierarchy
+    d3.treemap()
+      .tile(d3.treemapBinary)
+      .size([width, height])
+      .padding(1)
+      (root)
 
-  // use this information to add rectangles:
-  select(node)
-    .selectAll("rect")
-    .data(root.leaves())
-    .enter()
-    .append("rect")
-      .attr('x', function (d) { return d.x0; })
-      .attr('y', function (d) { return d.y0; })
-      .attr('width', function (d) { return d.x1 - d.x0; })
-      .attr('height', function (d) { return d.y1 - d.y0; })
-      .style("fill", function (d) { return colorScale(d.data.Agency); })
-      .attr("data-tip", function(d) {return d.data.Program + ", " +
-        d.data.Agency + ": " +
-        d.data.FY2017Expenditures
+    // use this information to add rectangles:
+    select(node)
+      .selectAll("rect")
+      .data(root.leaves())
+      .enter()
+      .append("rect")
+        .attr('x', function (d) { return d.x0; })
+        .attr('y', function (d) { return d.y0; })
+        .attr('width', function (d) { return d.x1 - d.x0; })
+        .attr('height', function (d) { return d.y1 - d.y0; })
+        .style("fill", function (d) { return colorScale(d.data.Agency); })
+        .attr("data-tip", function(d) {return d.data.Program + ", " +
+          d.data.Agency + ": " +
+          d.data.FY2017Expenditures.toLocaleString('en-US')
 
-      });
+        });
 
-  // and to add the text labels
-  select(node)
-    .selectAll("text")
-    .data(root.leaves())
-    .enter()
-    .filter(function (d) {return !isNaN(d.data.FY2017Expenditures)})
-    .append("text")
-      .attr("x", function(d){ return d.x0 + 3 })
-      .attr("y", function(d){ return d.y0 + 6 })
-      .attr("text-anchor", "left")
-      .text(function(d){
-        return ((d.data.FY2017Expenditures > (totalSpend*0.01)) ? d.data.Program : ""); // label only the programs that take up more than 1% of spending
-      })
-      // .call(wrap.bounds(
-      //   {height: 600,
-      //     width: function (d) { return 150; }}
-      //   ))
-      .attr("font-size", "8px")
-      .attr("fill", "white");
+    // and to add the text labels
+    select(node)
+      .selectAll("text")
+      .data(root.leaves())
+      .enter()
+      .filter(function (d) {return !isNaN(d.data.FY2017Expenditures)})
+      .append("text")
+        .attr("x", function(d){ return d.x0 + 3 })
+        .attr("y", function(d){ return d.y0 + 6 })
+        .attr("text-anchor", "left")
+        .text(function(d){
+          return ((d.data.FY2017Expenditures > (totalSpend*0.01)) ? d.data.Program : ""); // label only the programs that take up more than 1% of spending
+        })
+        // .call(wrap.bounds(
+        //   {height: 600,
+        //     width: function (d) { return 150; }}
+        //   ))
+        .attr("font-size", "8px")
+        .attr("fill", "white");
+      }
   }
 
   render() {
