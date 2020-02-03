@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import '../App.css'
 import { csv, json } from 'd3-fetch'
 import Treemap from '../components/Treemap'
+import ReactTooltip from 'react-tooltip'
 
 
 
@@ -51,6 +52,10 @@ class Post1Tree extends Component {
     this.onResize()
   }
 
+  componentDidUpdate() {
+    ReactTooltip.rebuild()
+  }
+
   render() {
     // console.log(this.state.data);
     return (
@@ -59,6 +64,7 @@ class Post1Tree extends Component {
           <h2>Total Funding Buckets</h2>
         </div>
         <div>
+          <ReactTooltip />
           <Treemap data={this.state.data} size={[this.state.screenWidth, this.state.screenHeight]}  />
         </div>
       </div>

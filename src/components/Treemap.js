@@ -75,19 +75,11 @@ class TreeMap extends Component {
       .attr('width', function (d) { return d.x1 - d.x0; })
       .attr('height', function (d) { return d.y1 - d.y0; })
       .style("fill", function (d) { return colorScale(d.data.Agency); })
-      .on("mouseover", function(d) {
-            tooltip.transition()
-                .duration(200)
-                .style("opacity", .9);
-            tooltip	.html((d.data.Agency) + "<br/>")
-                .style("left", (d3.event.pageX) + "px")
-                .style("top", (d3.event.pageY - 28) + "px");
-            })
-        .on("mouseout", function(d) {
-            tooltip.transition()
-                .duration(500)
-                .style("opacity", 0);
-        });
+      .attr("data-tip", function(d) {return d.data.Program + ", " +
+        d.data.Agency + ": " +
+        d.data.FY2017Expenditures
+
+      });
 
   // and to add the text labels
   select(node)
