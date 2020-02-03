@@ -50,11 +50,8 @@ class TreeMap extends Component {
     newObj.values = nestedData;
     newObj.name = "Programs";
 
-    // https://www.d3-graph-gallery.com/graph/treemap_basic.html
-
     const root = d3.hierarchy(newObj, d => d.values).sum(function(d){ return d.FY2017Expenditures})
 
-    // console.log(root.value);
     var totalSpend = root.value;
 
     colorScale.domain(data);
