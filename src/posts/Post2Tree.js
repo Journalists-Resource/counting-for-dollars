@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import '../App.css'
-import { csv, json } from 'd3-fetch'
+import { csv } from 'd3-fetch'
 import Treemap from '../components/Treemap'
 import { nest } from 'd3-collection'
 import ReactTooltip from 'react-tooltip'
+import { Select, MenuItem } from '@material-ui/core';
 
 
 
@@ -18,7 +19,7 @@ class Post2Tree extends Component {
       data: [],
       slice: "total",
       program: "Title I Grants to LEAs",
-      state: "California"
+      state: "Alabama"
     }
 
   }
@@ -32,18 +33,13 @@ class Post2Tree extends Component {
   // }
 
   componentWillMount() {
-    // csv("datasets/fy2017expendituresbyprogram.csv", function(d){
-    //   d.FY2017Expenditures = parseFloat(d.FY2017Expenditures.replace(/\$|,/g, ''));
-    //   d.CFDA = +d.CFDA;
-    //   return d;
-    // }).then(data => this.setState({ data: ["test":90, "ax":35] }));
 
-  csv("datasets/treemap-and-table-bystate-2017.csv").then(csvdata => {
-    const nestedData = nest()
-          .key(function(d) { return d.Department; })
-          .entries(csvdata)
-    this.setState({data: nestedData});
-  });
+     csv("datasets/treemap-and-table-bystate-2017.csv").then(csvdata => {
+       const nestedData = nest()
+             .key(function(d) { return d.Department; })
+             .entries(csvdata)
+       this.setState({data: nestedData});
+     });
 
 
   }
@@ -58,10 +54,24 @@ class Post2Tree extends Component {
   }
 
   render() {
+     const handleChange = event => {
+      this.setState({state: event.target.value});
+    };
+
     return (
       <div className="App">
         <div>
           <ReactTooltip />
+          <Select
+             labelId="state-select-label"
+             id="state-select"
+             value={this.state.state}
+             onChange={handleChange}
+           >
+             <MenuItem value={"California"}>California</MenuItem>
+             <MenuItem value={"Missouri"}>Missouri</MenuItem>
+             <MenuItem value={"Alabama"}>Alabama</MenuItem>
+           </Select>
           <h2>{this.state.state} Funding</h2>
           <Treemap
             data={this.state.data}

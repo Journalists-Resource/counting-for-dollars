@@ -37,6 +37,7 @@ class TreeMap extends Component {
     const value = this.props.value;
     const organizer = this.props.organizer;
 
+
     const colorScale = scaleOrdinal(["#a71930","#574241","#bfa5a4","#00689d","#009dd4"]); //todo: use viridis
     function percent(number) {
       return (Math.round(number*1000)/100) + "%";
@@ -74,6 +75,10 @@ class TreeMap extends Component {
       newObj.name = "Programs";
 
       const root = d3.hierarchy(newObj, d => d.values).sum(function(d){ return d[value]})
+
+      console.log(value);
+      console.log(root.leaves());
+
 
       var totalSpend = root.value;
 

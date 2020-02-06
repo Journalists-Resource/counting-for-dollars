@@ -31,22 +31,18 @@ class Post1Tree extends Component {
   // }
 
   componentWillMount() {
-    // csv("datasets/fy2017expendituresbyprogram.csv", function(d){
-    //   d.FY2017Expenditures = parseFloat(d.FY2017Expenditures.replace(/\$|,/g, ''));
-    //   d.CFDA = +d.CFDA;
-    //   return d;
-    // }).then(data => this.setState({ data: ["test":90, "ax":35] }));
 
-  csv("datasets/fy2017expendituresbyprogram.csv", function(d){
-    d.FY2017Expenditures = parseFloat(d.FY2017Expenditures.replace(/\$|,/g, ''));
-    d.CFDA = +d.CFDA;
-    return d;
-  }).then(csvdata => {
-    const nestedData = nest()
-          .key(function(d) { return d.Agency; })
-          .entries(csvdata)
-    this.setState({data: nestedData});
-  });
+
+     csv("datasets/fy2017expendituresbyprogram.csv", function(d){
+       d.FY2017Expenditures = parseFloat(d.FY2017Expenditures.replace(/\$|,/g, ''));
+       d.CFDA = +d.CFDA;
+       return d;
+     }).then(csvdata => {
+       const nestedData = nest()
+             .key(function(d) { return d.Agency; })
+             .entries(csvdata)
+       this.setState({data: nestedData});
+    });
 
 
   }
