@@ -13,7 +13,7 @@ class Post2Table extends Component {
     this.handleClick = this.handleClick.bind(this);
     this.state = {
       screenWidth: window.innerWidth,
-      screenHeight: window.innerHeight,
+      screenHeight: window.innerHeight - 100,
       hover: "none",
       data: [],
       slice: "total",
@@ -23,7 +23,7 @@ class Post2Table extends Component {
   }
 
   onResize() {
-    this.setState({ screenWidth: window.innerWidth, screenHeight: window.innerHeight })
+    this.setState({ screenWidth: window.innerWidth, screenHeight: window.innerHeight - 100 })
   }
 
   // onHover(d) {
