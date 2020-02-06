@@ -29,12 +29,14 @@ class TreeMap extends Component {
   }
 
   createTreeMap() {
-    console.log(this.props.data)
     const node = this.node
+
     const width = this.props.size[0];
     const height = this.props.size[1];
     const data = this.props.data;
-    const jsondata = this.props.jsondata;
+    const value = this.props.value;
+    const organizer = this.props.organizer;
+
     const colorScale = scaleOrdinal(["#a71930","#574241","#bfa5a4","#00689d","#009dd4"]); //todo: use viridis
     function percent(number) {
       return (Math.round(number*1000)/100) + "%";
@@ -71,7 +73,7 @@ class TreeMap extends Component {
       newObj.values = data;
       newObj.name = "Programs";
 
-      const root = d3.hierarchy(newObj, d => d.values).sum(function(d){ return d.FY2017Expenditures})
+      const root = d3.hierarchy(newObj, d => d.values).sum(function(d){ return d[value]})
 
       var totalSpend = root.value;
 
@@ -94,10 +96,10 @@ class TreeMap extends Component {
           .attr('y', function (d) { return d.y0; })
           .attr('width', function (d) { return d.x1 - d.x0; })
           .attr('height', function (d) { return d.y1 - d.y0; })
-          .style("fill", function (d) { return colorScale(d.data.Agency); })
+          .style("fill", function (d) { return colorScale(d.data[organizer]); })
           .attr("data-tip", function(d) {return d.data.Program + ", " +
-            d.data.Agency + ": " +
-            d.data.FY2017Expenditures.toLocaleString('en-US')
+            d.data[organizer] + ": " +
+            d.data[value].toLocaleString('en-US')
 
           });
 
@@ -106,20 +108,20 @@ class TreeMap extends Component {
         .selectAll("text")
         .data(root.leaves())
         .enter()
-        .filter(function (d) {return !isNaN(d.data.FY2017Expenditures)})
+        .filter(function (d) {return !isNaN(d.data[value])})
         .append("text")
           .attr("x", function(d){ return d.x0 + 6 })
           .attr("y", function(d){ return d.y0 + 12 })
           .attr("text-anchor", "left")
           .text(function(d){
-            return (((d.x1 - d.x0) > 95) ? d.data.Program + " " + percent(d.data.FY2017Expenditures/totalSpend) : ""); // label only the programs that take up more than 1% of spending
+            return (((d.x1 - d.x0) > 95) ? d.data.Program + " " + percent(d.data[value]/totalSpend) : ""); // label only the programs that take up more than 1% of spending
           })
           .call(wrap, 100)
           .attr("font-size", "12px")
           .attr("fill", "white")
           .attr("data-tip", function(d) {return d.data.Program + ", " +
-            d.data.Agency + ": " +
-            d.data.FY2017Expenditures.toLocaleString('en-US')
+            d.data[organizer] + ": " +
+            d.data[value].toLocaleString('en-US')
 
           });
     }

@@ -7,7 +7,7 @@ import ReactTooltip from 'react-tooltip'
 
 
 
-class Post1Tree extends Component {
+class Post2Tree extends Component {
   constructor(props){
     super(props)
     this.onResize = this.onResize.bind(this)
@@ -37,13 +37,9 @@ class Post1Tree extends Component {
     //   return d;
     // }).then(data => this.setState({ data: ["test":90, "ax":35] }));
 
-  csv("datasets/fy2017expendituresbyprogram.csv", function(d){
-    d.FY2017Expenditures = parseFloat(d.FY2017Expenditures.replace(/\$|,/g, ''));
-    d.CFDA = +d.CFDA;
-    return d;
-  }).then(csvdata => {
+  csv("datasets/treemap-and-table-bystate-2017.csv").then(csvdata => {
     const nestedData = nest()
-          .key(function(d) { return d.Agency; })
+          .key(function(d) { return d.Department; })
           .entries(csvdata)
     this.setState({data: nestedData});
   });
@@ -67,8 +63,8 @@ class Post1Tree extends Component {
           <ReactTooltip />
           <Treemap
             data={this.state.data}
-            value="FY2017Expenditures"
-            organizer="Agency"
+            value="Alabama"
+            organizer="Department"
             size={[this.state.screenWidth, this.state.screenHeight]}
           />
         </div>
@@ -77,4 +73,4 @@ class Post1Tree extends Component {
   }
 }
 
-export default Post1Tree
+export default Post2Tree
