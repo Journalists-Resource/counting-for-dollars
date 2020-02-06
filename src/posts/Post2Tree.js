@@ -6,6 +6,7 @@ import { nest } from 'd3-collection'
 import ReactTooltip from 'react-tooltip'
 import { Select, MenuItem } from '@material-ui/core';
 
+const usStateNames = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','District of Columbia','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming']
 
 
 class Post2Tree extends Component {
@@ -59,7 +60,14 @@ class Post2Tree extends Component {
   }
 
   render() {
-
+     const stateselectors = usStateNames
+     .map((d,i) =>
+       <MenuItem
+          value={d}
+       >
+         {d}
+      </MenuItem>
+     )
 
     return (
       <div className="App">
@@ -71,9 +79,7 @@ class Post2Tree extends Component {
              value={this.state.state}
              onChange={this.handleChange.bind(this)}
            >
-             <MenuItem value={"California"}>California</MenuItem>
-             <MenuItem value={"Missouri"}>Missouri</MenuItem>
-             <MenuItem value={"Alabama"}>Alabama</MenuItem>
+             {stateselectors}
            </Select>
           <h2>{this.state.state} Funding</h2>
           <Treemap
