@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import '../App.css'
 import { csv, json } from 'd3-fetch'
 import Treemap from '../components/Treemap'
+import { nest } from 'd3-collection'
 import ReactTooltip from 'react-tooltip'
 
 
@@ -41,7 +42,10 @@ class Post1Tree extends Component {
     d.CFDA = +d.CFDA;
     return d;
   }).then(csvdata => {
-    this.setState({data: csvdata});
+    const nestedData = nest()
+          .key(function(d) { return d.Agency; })
+          .entries(csvdata)
+    this.setState({data: nestedData});
   });
 
 
@@ -57,15 +61,14 @@ class Post1Tree extends Component {
   }
 
   render() {
-    // console.log(this.state.data);
     return (
       <div className="App">
-        <div className="App-header">
-          <h2>Total Funding Buckets</h2>
-        </div>
         <div>
           <ReactTooltip />
-          <Treemap data={this.state.data} size={[this.state.screenWidth, this.state.screenHeight]}  />
+          <Treemap
+            data={this.state.data}
+            size={[this.state.screenWidth, this.state.screenHeight]}
+          />
         </div>
       </div>
     )
