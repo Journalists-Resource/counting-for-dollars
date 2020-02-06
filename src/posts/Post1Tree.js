@@ -11,6 +11,7 @@ class Post1Tree extends Component {
   constructor(props){
     super(props)
     this.onResize = this.onResize.bind(this)
+    this.handleChange = this.handleChange.bind(this);
     this.state = {
       screenWidth: window.innerWidth,
       screenHeight: window.innerHeight,

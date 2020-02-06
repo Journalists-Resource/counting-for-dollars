@@ -53,10 +53,13 @@ class Post2Tree extends Component {
     ReactTooltip.rebuild()
   }
 
+  handleChange(e) {
+    this.setState({state: e.target.value});
+    console.log("change!")
+  }
+
   render() {
-     const handleChange = event => {
-      this.setState({state: event.target.value});
-    };
+
 
     return (
       <div className="App">
@@ -66,7 +69,7 @@ class Post2Tree extends Component {
              labelId="state-select-label"
              id="state-select"
              value={this.state.state}
-             onChange={handleChange}
+             onChange={this.handleChange.bind(this)}
            >
              <MenuItem value={"California"}>California</MenuItem>
              <MenuItem value={"Missouri"}>Missouri</MenuItem>

@@ -10,25 +10,7 @@ import * as d3 from 'd3-hierarchy'
 import { interpolateViridis, schemeCategory10 } from "d3-scale-chromatic"
 
 class TreeMap extends Component {
-  constructor(props){
-    super(props)
-    this.state = { x: 0, y: 0 };
-    this.createTreeMap = this.createTreeMap.bind(this)
-  }
-
-  _onMouseMove(e) {
-    this.setState({ x: e.screenX, y: e.screenY });
-  }
-
-  componentDidMount() {
-    this.createTreeMap()
-  }
-
-  componentDidUpdate() {
-    this.createTreeMap()
-  }
-
-  createTreeMap() {
+   render() {
     const node = this.node
 
     const width = this.props.size[0];
@@ -37,8 +19,8 @@ class TreeMap extends Component {
     const value = this.props.value;
     const organizer = this.props.organizer;
 
+    const colorScale = scaleOrdinal(["#a71930","#574241","#bfa5a4","#00689d","#009dd4"]);
 
-    const colorScale = scaleOrdinal(["#a71930","#574241","#bfa5a4","#00689d","#009dd4"]); //todo: use viridis
     function percent(number) {
       return (Math.round(number*1000)/100) + "%";
     }
@@ -68,6 +50,9 @@ class TreeMap extends Component {
       });
     }
 
+    let rects;
+    let textlabels;
+
     if(data.length > 0) {
 
       var newObj = new Object();
@@ -91,50 +76,62 @@ class TreeMap extends Component {
         .padding(1)
         (root)
 
-      // use this information to add rectangles:
-      select(node)
-        .selectAll("rect")
-        .data(root.leaves())
-        .enter()
-        .append("rect")
-          .attr('x', function (d) { return d.x0; })
-          .attr('y', function (d) { return d.y0; })
-          .attr('width', function (d) { return d.x1 - d.x0; })
-          .attr('height', function (d) { return d.y1 - d.y0; })
-          .style("fill", function (d) { return colorScale(d.data[organizer]); })
-          .attr("data-tip", function(d) {return d.data.Program + ", " +
-            d.data[organizer] + ": " +
-            d.data[value].toLocaleString('en-US')
+        rects = root.leaves()
+         .map((d,i) =>
+           <rect
+             x={d.x0}
+             y={d.y0}
+             width={d.x1 - d.x0}
+             height={d.y1 - d.y0}
+             data-tip={d.data.Program + ", " + d.data[organizer] + ": " + d.data[value].toLocaleString('en-US')}
+             style={{fill: colorScale(d.data[organizer]) }}
+           />
+         )
 
-          });
+         textlabels = root.leaves().filter(function (d) {return !isNaN(d.data[value])})
+          .map((d,i) =>
+            <text
+              x={d.x0 + 6}
+              y={d.y0 + 12}
+              text-anchor={"left"}
+              font-size={"12px"}
+              fill={"white"}
+              data-tip={d.data.Program + ", " + d.data[organizer] + ": " + d.data[value].toLocaleString('en-US')}
+            >
+               {(((d.x1 - d.x0) > 95) ? d.data.Program + " " + percent(d.data[value]/totalSpend) : "")}
+            </text>
+          )
 
       // and to add the text labels
-      select(node)
-        .selectAll("text")
-        .data(root.leaves())
-        .enter()
-        .filter(function (d) {return !isNaN(d.data[value])})
-        .append("text")
-          .attr("x", function(d){ return d.x0 + 6 })
-          .attr("y", function(d){ return d.y0 + 12 })
-          .attr("text-anchor", "left")
-          .text(function(d){
-            return (((d.x1 - d.x0) > 95) ? d.data.Program + " " + percent(d.data[value]/totalSpend) : ""); // label only the programs that take up more than 1% of spending
-          })
-          .call(wrap, 100)
-          .attr("font-size", "12px")
-          .attr("fill", "white")
-          .attr("data-tip", function(d) {return d.data.Program + ", " +
-            d.data[organizer] + ": " +
-            d.data[value].toLocaleString('en-US')
-
-          });
+      // select(node)
+      //   .selectAll("text")
+      //   .data(root.leaves())
+      //   .enter()
+      //   .filter(function (d) {return !isNaN(d.data[value])})
+      //   .append("text")
+      //     .attr("x", function(d){ return d.x0 + 6 })
+      //     .attr("y", function(d){ return d.y0 + 12 })
+      //     .attr("text-anchor", "left")
+      //     .text(function(d){
+      //       return (((d.x1 - d.x0) > 95) ? d.data.Program + " " + percent(d.data[value]/totalSpend) : ""); // label only the programs that take up more than 1% of spending
+      //     })
+      //     .call(wrap, 100)
+      //     .attr("font-size", "12px")
+      //     .attr("fill", "white")
+      //     .attr("data-tip", function(d) {return d.data.Program + ", " +
+      //       d.data[organizer] + ": " +
+      //       d.data[value].toLocaleString('en-US')
+      //
+      //     });
     }
-  }
-
-  render() {
-    return <svg ref={node => this.node = node} width={this.props.size[0]} height={this.props.size[1]}>
-    </svg>
+  return (
+     <div>
+        <svg ref={node => this.node = node} value={value} width={this.props.size[0]} height={this.props.size[1]}>
+         {rects}
+         {textlabels}
+        </svg>
+      </div>
+   )
   }
 }
 
