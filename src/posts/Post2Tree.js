@@ -17,7 +17,8 @@ class Post2Tree extends Component {
       hover: "none",
       data: [],
       slice: "total",
-      program: "Title I Grants to LEAs"
+      program: "Title I Grants to LEAs",
+      state: "California"
     }
 
   }
@@ -61,9 +62,10 @@ class Post2Tree extends Component {
       <div className="App">
         <div>
           <ReactTooltip />
+          <h2>{this.state.state} Funding</h2>
           <Treemap
             data={this.state.data}
-            value="Alabama"
+            value={this.state.state}
             organizer="Department"
             size={[this.state.screenWidth, this.state.screenHeight]}
           />
