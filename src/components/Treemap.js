@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../App.css'
+import AgencyColorScale from './AgencyColorScale'
 import { scaleLinear, scaleOrdinal } from 'd3-scale'
 import { group } from 'd3-array'
 import { nest } from 'd3-collection'
@@ -19,7 +20,7 @@ class TreeMap extends Component {
     const value = this.props.value;
     const organizer = this.props.organizer;
 
-    const colorScale = scaleOrdinal(["#a71930","#574241","#bfa5a4","#00689d","#009dd4"]);
+    const colorScale = AgencyColorScale; 
 
     function percent(number) {
       return (Math.round(number*1000)/100) + "%";
@@ -67,8 +68,6 @@ class TreeMap extends Component {
 
       var totalSpend = root.value;
 
-      colorScale.domain(data);
-
           // Then d3.treemap computes the position of each element of the hierarchy
       d3.treemap()
         .tile(d3.treemapBinary)
@@ -93,8 +92,8 @@ class TreeMap extends Component {
             <text
               x={d.x0 + 6}
               y={d.y0 + 12}
-              text-anchor={"left"}
-              font-size={"12px"}
+              textAnchor={"left"}
+              fontSize={"12px"}
               fill={"white"}
               data-tip={d.data.Program + ", " + d.data[organizer] + ": " + d.data[value].toLocaleString('en-US')}
             >
