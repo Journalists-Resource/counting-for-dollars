@@ -1,8 +1,5 @@
-import React, { Component } from 'react'
-import '../App.css'
 import { scaleOrdinal } from 'd3-scale'
 import { legendColor } from 'd3-svg-legend'
-
 
 const AgencyColorScale = scaleOrdinal(["#a71930","#574241","#bfa5a4","#00689d","#009dd4","#cf6576","#a18584","#e8cdcc","#67a8c9","#5cd1fa"]);
 

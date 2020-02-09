@@ -51,6 +51,7 @@ class Post2Table extends Component {
   }
 
   render() {
+    console.log(this.state.data)
     return (
       <div className="App">
         <div className="App-header">
