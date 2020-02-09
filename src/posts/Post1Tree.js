@@ -13,7 +13,7 @@ class Post1Tree extends Component {
     this.onResize = this.onResize.bind(this)
     this.state = {
       screenWidth: window.innerWidth,
-      screenHeight: window.innerHeight - 100,
+      screenHeight: 700,
       hover: "none",
       data: [],
       slice: "total",
@@ -23,7 +23,7 @@ class Post1Tree extends Component {
   }
 
   onResize() {
-    this.setState({ screenWidth: window.innerWidth, screenHeight: window.innerHeight  - 100})
+    this.setState({ screenWidth: window.innerWidth })
   }
 
   // onHover(d) {
@@ -66,7 +66,7 @@ class Post1Tree extends Component {
             data={this.state.data}
             value="FY2017Expenditures"
             organizer="Agency"
-            size={[this.state.screenWidth, this.state.screenHeight - 100]}
+            size={[this.state.screenWidth, this.state.screenHeight]}
           />
         </div>
       </div>

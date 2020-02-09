@@ -23,10 +23,8 @@ class DataTable extends Component {
   createDataTable() {
     const node = this.node
     const data = this.props.data
-    // console.log(data)
 
     if (data.length > 0) {
-      console.log(Object.keys(data))
       var table = select(node);
 
       table.append("thead")
@@ -41,7 +39,7 @@ class DataTable extends Component {
         .data(data)
         .enter()
         .append("tr")
-        .attr("class", function(d) {return d.Program})
+        // .attr("class", function(d) {console.log(d); return d["Program"]})
         .html(function(d) {
           let htmlstring = "";
           for (let key in d) {
@@ -52,13 +50,6 @@ class DataTable extends Component {
           return htmlstring;
 
         })
-
-      // tablerows
-      //   .selectAll("td")
-      //   .data(d)
-      //   .enter()
-      //   .append("td")
-      //   .text(function(d) {return d})
       }
 
 

@@ -16,7 +16,7 @@ class Post1Map extends Component {
     this.handleClick = this.handleClick.bind(this);
     this.state = {
       screenWidth: window.innerWidth,
-      screenHeight: window.innerHeight - 100,
+      screenHeight: 700,
       hover: "none",
       data: [],
       slice: "total",
@@ -26,7 +26,7 @@ class Post1Map extends Component {
   }
 
   onResize() {
-    this.setState({ screenWidth: window.innerWidth, screenHeight: window.innerHeight - 100 })
+    this.setState({ screenWidth: window.innerWidth  })
   }
 
   // onHover(d) {
@@ -65,7 +65,7 @@ class Post1Map extends Component {
         </ButtonGroup>
         <div>
           <ReactTooltip />
-          <StateMap data={this.state.data} program={this.state.program} size={[this.state.screenWidth, this.state.screenHeight - 100]} slice={this.state.slice}  />
+          <StateMap data={this.state.data} program={this.state.program} size={[this.state.screenWidth, this.state.screenHeight]} slice={this.state.slice}  />
         </div>
       </div>
     )
