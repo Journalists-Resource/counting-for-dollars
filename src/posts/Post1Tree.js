@@ -60,8 +60,8 @@ class Post1Tree extends Component {
     return (
       <div className="App">
         <div>
-          <ReactTooltip />
-          <h2>Funding by Department</h2>
+          <ReactTooltip
+          />
           <Treemap
             data={this.state.data}
             value="FY2017Expenditures"
