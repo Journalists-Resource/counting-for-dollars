@@ -19,7 +19,7 @@ class DataTable extends Component {
         if (data.length > 0) {
           return(
             <TableContainer component={Paper}>
-              <Table size="small" aria-label="a dense table">
+              <Table stickyHeader size="small" aria-label="a dense table">
                 <TableHead>
                   <TableRow>
                     {data.columns.filter(function(d){return d !== "url"}).map(column => (
@@ -35,7 +35,7 @@ class DataTable extends Component {
                       </TableCell>
                       <TableCell align="right">{row["Department"]}</TableCell>
                         {usStateNames.map(state => (
-                          <TableCell align="right">{row[state]}</TableCell>
+                          <TableCell align="right">{"$" + parseFloat(row[state]).toLocaleString('en-US')}</TableCell>
                         ))}
                     </TableRow>
                   ))}
