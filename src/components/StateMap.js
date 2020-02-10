@@ -4,12 +4,13 @@ import usstates from '../geo/states-10m'
 import { min, max } from 'd3-array'
 import { geoMercator, geoPath, geoAlbersUsa } from 'd3-geo'
 import { feature } from "topojson-client"
-import { scaleSequential } from "d3-scale"
+import { sequentialScale } from './ColorSchemes'
 import { interpolateViridis } from "d3-scale-chromatic"
 import { csv } from 'd3-fetch'
 import ReactTooltip from 'react-tooltip'
 import usStateNames from './USStateNames'
-const colorScale = scaleSequential(interpolateViridis)
+
+let colorScale = sequentialScale;
 
 let demographics = null;
 csv("datasets/2017_income_and_pop.csv").then(function(data) {

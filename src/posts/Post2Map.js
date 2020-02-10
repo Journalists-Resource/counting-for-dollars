@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../App.css'
 import { csv, json } from 'd3-fetch'
+import DataTable from '../components/Table'
 import StateMap from '../components/StateMap'
 import ReactTooltip from 'react-tooltip'
 import Button from '@material-ui/core/Button';
@@ -66,6 +67,9 @@ class Post1Map extends Component {
         <div>
           <ReactTooltip />
           <StateMap data={this.state.data} program={this.state.program} size={[this.state.screenWidth, this.state.screenHeight]} slice={this.state.slice}  />
+        </div>
+        <div>
+          <DataTable data={this.state.data}  />
         </div>
       </div>
     )

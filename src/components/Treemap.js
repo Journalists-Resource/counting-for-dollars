@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../App.css'
-import AgencyColorScale from './AgencyColorScale'
+import { AgencyColorScale } from './ColorSchemes'
 import { scaleLinear, scaleOrdinal } from 'd3-scale'
 import { group } from 'd3-array'
 import { nest } from 'd3-collection'
@@ -20,7 +20,7 @@ class TreeMap extends Component {
     const value = this.props.value;
     const organizer = this.props.organizer;
 
-    const colorScale = AgencyColorScale; 
+    const colorScale = AgencyColorScale;
 
     function percent(number) {
       return (Math.round(number*1000)/100) + "%";
