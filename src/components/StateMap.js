@@ -69,12 +69,55 @@ class StateMap extends Component {
             }}
             className={"states " + d.properties.name}
           />
-        )
-        return (
-          <svg width={this.props.size[0]} height={this.props.size[1]}>
-            {states}
-          </svg>
-        )
+      )
+
+      const legend = (
+        <g>
+          <defs>
+            <linearGradient
+              id={"gradient"}
+              x1="0%"
+              y1="100%"
+              x2="100%"
+              y2="100%"
+              spreadMethod="pad"
+            >
+              <stop offset="0%" stopColor={colorScale(((colorScale.domain()[1]-colorScale.domain()[0])*0.00)+colorScale.domain()[0])} stopOpacity="1"></stop>
+              <stop offset="33%" stopColor={colorScale(((colorScale.domain()[1]-colorScale.domain()[0])*0.33)+colorScale.domain()[0])} stopOpacity="1"></stop>
+              <stop offset="66%" stopColor={colorScale(((colorScale.domain()[1]-colorScale.domain()[0])*0.66)+colorScale.domain()[0])} stopOpacity="1"></stop>
+              <stop offset="100%" stopColor={colorScale(((colorScale.domain()[1]-colorScale.domain()[0])*1.00)+colorScale.domain()[0])} stopOpacity="1"></stop>
+            </linearGradient>
+          </defs>
+          <rect
+            width={this.props.size[0]/2}
+            height={20}
+            x={this.props.size[0]/4}
+            y={this.props.size[1]-50}
+            style={{fill: 'url("#gradient")'}}
+          ></rect>
+          <text
+            x={this.props.size[0] * 0.25}
+            y={this.props.size[1]-10}
+            textAnchor="start"
+          >
+            {"$" + colorScale.domain()[0].toLocaleString("en-US")}
+          </text>
+          <text
+            x={this.props.size[0] * 0.75}
+            y={this.props.size[1]-10}
+            textAnchor="end"
+          >
+            {"$" + colorScale.domain()[1].toLocaleString("en-US")}
+          </text>
+        </g>
+      )
+
+      return (
+        <svg width={this.props.size[0]} height={this.props.size[1]}>
+          {states}
+          {legend}
+        </svg>
+      )
     } else {
       const states = topojsonData
         .map((d,i) =>
