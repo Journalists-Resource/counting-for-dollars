@@ -22,7 +22,7 @@ class DataTable extends Component {
               <Table stickyHeader size="small" aria-label="a dense table">
                 <TableHead>
                   <TableRow>
-                    {data.columns.filter(function(d){return d !== "url"}).map(column => (
+                    {data.columns.filter(function(d){return d !== "URL"}).map(column => (
                       <TableCell>{column}</TableCell>
                     ))}
                   </TableRow>
@@ -31,7 +31,7 @@ class DataTable extends Component {
                   {data.map(row => (
                     <TableRow key={row.Program}>
                       <TableCell component="th" scope="row">
-                        <a href="{row.url}">{row.Program}</a>
+                        <a href="{row.URL}">{row.Program}</a>
                       </TableCell>
                       <TableCell align="right">{row["Department"]}</TableCell>
                         {usStateNames.map(state => (
