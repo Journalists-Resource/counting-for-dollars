@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../App.css'
-import { csv, json } from 'd3-fetch'
+import { csv } from 'd3-fetch'
 import DataTable from '../components/Table'
 import StateMap from '../components/StateMap'
 import ReactTooltip from 'react-tooltip'

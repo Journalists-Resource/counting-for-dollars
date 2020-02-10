@@ -1,20 +1,18 @@
 import React, { Component } from 'react'
 import '../App.css'
-import usstates from '../geo/states-10m'
-import { min, max } from 'd3-array'
-import { geoMercator, geoPath, geoAlbersUsa } from 'd3-geo'
-import { feature } from "topojson-client"
 import { divergingColors } from './ColorSchemes'
 import { csv } from 'd3-fetch'
-import ReactTooltip from 'react-tooltip'
-import usStateNames from './USStateNames'
+import usstates from '../geo/states-10m'
+import { min, max } from 'd3-array'
+import { geoPath, geoAlbersUsa } from 'd3-geo'
+import { feature } from "topojson-client"
+
 
 let colorScale = divergingColors;
 
 let demographics = null;
 csv("datasets/2017_income_and_pop.csv").then(function(data) {
   for (let s=0; s<data.length; s++) {
-    let stateObj = {}
     data[s].income = +data[s].income;
     data[s].pop = +data[s].pop;
   }

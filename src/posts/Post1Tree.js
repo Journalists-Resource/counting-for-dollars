@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../App.css'
-import { csv, json } from 'd3-fetch'
+import { csv } from 'd3-fetch'
 import Treemap from '../components/Treemap'
 import { nest } from 'd3-collection'
 import ReactTooltip from 'react-tooltip'

@@ -1,19 +1,11 @@
 import React, { Component } from 'react'
 import '../App.css'
 import { categoricalColors } from './ColorSchemes'
-import { scaleLinear, scaleOrdinal } from 'd3-scale'
-import { group } from 'd3-array'
-import { nest } from 'd3-collection'
 import { select } from 'd3-selection'
-import { legendColor } from 'd3-svg-legend'
-import { transition } from 'd3-transition'
 import * as d3 from 'd3-hierarchy'
-import { interpolateViridis, schemeCategory10 } from "d3-scale-chromatic"
 
 class TreeMap extends Component {
    render() {
-    const node = this.node
-
     const width = this.props.size[0];
     const height = this.props.size[1];
     const data = this.props.data;
@@ -100,7 +92,7 @@ class TreeMap extends Component {
             </text>
           )
 
-          
+
 
           legend = colorScale.domain()
             .map((d,i) =>
