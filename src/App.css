@@ -42,3 +42,11 @@ path.countries {
   stroke: #75739F;
   fill: #5EAFC6;
 }
+
+button.active {
+  background:#e8e8e8;
+}
+
+button.active span.MuiButton-label {
+  font-weight: bold;
+}

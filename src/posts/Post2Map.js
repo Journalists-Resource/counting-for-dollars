@@ -59,10 +59,10 @@ class Post1Map extends Component {
     return (
       <div className="App">
         <h2>{this.state.program} Funding</h2>
-        <ButtonGroup aria-label="outlined button group">
-          <Button onClick={this.handleClick.bind(this, "total")}>Total Funding</Button>
-          <Button onClick={this.handleClick.bind(this, "pop")}>Per Capita</Button>
-          <Button onClick={this.handleClick.bind(this, "income")}>Per Income</Button>
+        <ButtonGroup id="toggles" aria-label="outlined button group">
+          <Button className="active" onClick={this.handleClick.bind(this, "total")}>Total Funding</Button>
+          <Button className="inactive" onClick={this.handleClick.bind(this, "pop")}>Per Capita</Button>
+          <Button className="inactive" onClick={this.handleClick.bind(this, "income")}>Per Income</Button>
         </ButtonGroup>
         <div>
           <ReactTooltip />

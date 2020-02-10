@@ -53,6 +53,7 @@ class TreeMap extends Component {
 
     let rects;
     let textlabels;
+    let legend;
 
     if(data.length > 0) {
 
@@ -62,8 +63,6 @@ class TreeMap extends Component {
 
       const root = d3.hierarchy(newObj, d => d.values).sum(function(d){ return d[value]})
 
-      console.log(value);
-      console.log(root.leaves());
 
 
       var totalSpend = root.value;
@@ -71,7 +70,7 @@ class TreeMap extends Component {
           // Then d3.treemap computes the position of each element of the hierarchy
       d3.treemap()
         .tile(d3.treemapBinary)
-        .size([width, height])
+        .size([width, (height-50)])
         .padding(1)
         (root)
 
@@ -101,6 +100,28 @@ class TreeMap extends Component {
             </text>
           )
 
+          
+
+          legend = colorScale.domain()
+            .map((d,i) =>
+              <g
+                transform={"translate(" + ((this.props.size[0]/25) * i) + "," + (this.props.size[1] - 45) + ")"}
+              >
+                <rect
+                  width={25}
+                  height={15}
+                  style={{fill: colorScale(d) }}
+                >
+                </rect>
+                <text
+                  transform={"translate(12,35)"}
+                  style={{textAnchor: "middle", fontSize: "10px"}}
+                >
+                  {d}
+                </text>
+              </g>
+            )
+
       // and to add the text labels
       // select(node)
       //   .selectAll("text")
@@ -123,11 +144,13 @@ class TreeMap extends Component {
       //
       //     });
     }
+    console.log(colorScale.range())
   return (
      <div>
         <svg ref={node => this.node = node} value={value} width={this.props.size[0]} height={this.props.size[1]}>
          {rects}
          {textlabels}
+         {legend}
         </svg>
       </div>
    )
