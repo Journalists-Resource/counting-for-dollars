@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../App.css'
 import { divergingColors } from './ColorSchemes'
+import formatMoney from './FormatMoney'
 import { csv } from 'd3-fetch'
 import usstates from '../geo/states-10m'
 import { min, max } from 'd3-array'
@@ -32,11 +33,11 @@ class StateMap extends Component {
     const pathGenerator = geoPath().projection(projection)
     function tooltipGenerator(x,y,z) {
       if (x === "total") {
-        return y.properties.name + " received " + y.properties.total + " in " + z + " funding in 2017."
+        return y.properties.name + " received " + formatMoney(y.properties.total) + " in " + z + " funding in 2017."
       } else if (x === "pop") {
-        return y.properties.name + " received " + (y.properties.total / y.properties.pop) + " in " + z + " funding per capita in 2017."
+        return y.properties.name + " received " + formatMoney(y.properties.total / y.properties.pop) + " in " + z + " funding per capita in 2017."
       } else if (x === "income") {
-        return y.properties.name + " received " + (y.properties.total / y.properties.income) + " in " + z + " funding as a ratio of its personal income in 2017."
+        return y.properties.name + " received " + formatMoney(y.properties.total / y.properties.income) + " in " + z + " funding as a ratio of its personal income in 2017."
       }
     }
 
@@ -98,14 +99,14 @@ class StateMap extends Component {
             y={this.props.size[1]-10}
             textAnchor="start"
           >
-            {"$" + colorScale.domain()[0].toLocaleString("en-US")}
+            {formatMoney(colorScale.domain()[0])}
           </text>
           <text
             x={this.props.size[0] * 0.75}
             y={this.props.size[1]-10}
             textAnchor="end"
           >
-            {"$" + colorScale.domain()[1].toLocaleString("en-US")}
+            {formatMoney(colorScale.domain()[1])}
           </text>
         </g>
       )

@@ -8,6 +8,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import usStateNames from './USStateNames'
+import formatMoney from './FormatMoney'
 
 
 class DataTable extends Component {
@@ -35,7 +36,7 @@ class DataTable extends Component {
                       </TableCell>
                       <TableCell align="right">{row["Department"]}</TableCell>
                         {usStateNames.map(state => (
-                          <TableCell align="right">{"$" + parseFloat(row[state]).toLocaleString('en-US')}</TableCell>
+                          <TableCell align="right">{formatMoney(parseFloat(row[state]))}</TableCell>
                         ))}
                     </TableRow>
                   ))}

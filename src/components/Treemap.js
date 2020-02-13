@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../App.css'
 import { categoricalColors } from './ColorSchemes'
+import formatMoney from './FormatMoney'
 import { select } from 'd3-selection'
 import * as d3 from 'd3-hierarchy'
 
@@ -73,7 +74,7 @@ class TreeMap extends Component {
              y={d.y0}
              width={d.x1 - d.x0}
              height={d.y1 - d.y0}
-             data-tip={d.data.Program + ", " + d.data[organizer] + ": " + d.data[value].toLocaleString('en-US')}
+             data-tip={d.data.Program + ", " + d.data[organizer] + ": " + formatMoney(d.data[value])}
              style={{fill: colorScale(d.data[organizer]) }}
            />
          )
@@ -86,7 +87,7 @@ class TreeMap extends Component {
               textAnchor={"left"}
               fontSize={"12px"}
               fill={"white"}
-              data-tip={d.data.Program + ", " + d.data[organizer] + ": " + d.data[value].toLocaleString('en-US')}
+              data-tip={d.data.Program + ", " + d.data[organizer] + ": " + formatMoney(d.data[value])}
             >
                {(((d.x1 - d.x0) > 95) ? d.data.Program + " " + percent(d.data[value]/totalSpend) : "")}
             </text>
