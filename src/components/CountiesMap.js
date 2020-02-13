@@ -33,6 +33,8 @@ class CountiesMap extends Component {
       // }
     }
 
+    console.log(topojsonData);
+
     if (dataset.length > 0) {
       // for (let s=0; s < topojsonData.length; s++) {
       //   let statedata = dataset.find(e => e.state === topojsonData[s].properties.name)
@@ -43,7 +45,7 @@ class CountiesMap extends Component {
       //   }
       // }
 
-      console.log(topojsonData);
+
 
       const datarange = [];
       topojsonData.forEach(function(d){datarange.push(d.properties[slice])})
