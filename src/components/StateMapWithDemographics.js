@@ -21,7 +21,7 @@ csv("datasets/2017_income_and_pop.csv").then(function(data) {
 });
 
 
-class StateMap extends Component {
+class StateMapWithDemographics extends Component {
   render() {
     const slice = this.props.slice;
     const dataset = this.props.data;
@@ -53,7 +53,7 @@ class StateMap extends Component {
       const datarange = [];
       topojsonData.forEach(function(d){datarange.push(d.properties.total / (slice === "total" ? 1 : d.properties[slice]))})
       colorScale.domain([
-        max(datarange),min(datarange) //note the inversion
+        max(datarange),min(datarange)
       ])
       const states = topojsonData
         .map((d,i) =>
@@ -136,4 +136,4 @@ class StateMap extends Component {
   }
 }
 
-export default StateMap
+export default StateMapWithDemographics

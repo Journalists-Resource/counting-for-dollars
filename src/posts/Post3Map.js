@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import '../App.css'
 import { csv } from 'd3-fetch'
 import DataTable from '../components/Table'
-import StateMap from '../components/StateMap'
+import StateMapWithDemographics from '../components/StateMapWithDemographics'
 import ReactTooltip from 'react-tooltip'
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
@@ -10,7 +10,7 @@ import ButtonGroup from '@material-ui/core/ButtonGroup';
 
 
 
-class Post1Map extends Component {
+class Post3Map extends Component {
   constructor(props){
     super(props)
     this.onResize = this.onResize.bind(this)
@@ -20,7 +20,7 @@ class Post1Map extends Component {
       screenHeight: 700,
       hover: "none",
       data: [],
-      slice: "total",
+      slice: "cost_low",
       program: "Title I Grants to LEAs"
     }
 
@@ -35,7 +35,7 @@ class Post1Map extends Component {
   // }
 
   componentWillMount() {
-    csv("datasets/fy2016statefunding.csv").then(data => {
+    csv("datasets/losses_undercount.csv").then(data => {
       this.setState({data: data});
     });
 
@@ -57,15 +57,15 @@ class Post1Map extends Component {
   render() {
     return (
       <div className="App">
-        <h2>{this.state.program} Funding</h2>
+        <h2>Medicaid Reimbursement Per Capita Lost In Undercount Case</h2>
         <ButtonGroup id="toggles" aria-label="outlined button group">
-          <Button className="active" onClick={this.handleClick.bind(this, "total")}>Total Funding</Button>
-          <Button className="inactive" onClick={this.handleClick.bind(this, "pop")}>Per Capita</Button>
-          <Button className="inactive" onClick={this.handleClick.bind(this, "income")}>Per Income</Button>
+          <Button className="active" onClick={this.handleClick.bind(this, "cost_low")}>Low Undercount</Button>
+          <Button className="inactive" onClick={this.handleClick.bind(this, "cost_med")}>Medium Undercount</Button>
+          <Button className="inactive" onClick={this.handleClick.bind(this, "cost_high")}>High Undercount</Button>
         </ButtonGroup>
         <div>
           <ReactTooltip />
-          <StateMap data={this.state.data} program={this.state.program} size={[this.state.screenWidth, this.state.screenHeight]} slice={this.state.slice}  />
+          <StateMapWithDemographics data={this.state.data} program={this.state.program} size={[this.state.screenWidth, this.state.screenHeight]} slice={this.state.slice}  />
         </div>
         <div>
           <DataTable data={this.state.data}  />
@@ -75,4 +75,4 @@ class Post1Map extends Component {
   }
 }
 
-export default Post1Map
+export default Post3Map
