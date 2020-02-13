@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
 import '../App.css'
-import { csv, json } from 'd3-fetch'
+import { csv } from 'd3-fetch'
 import DataTable from '../components/Table'
+import CountiesMap from '../components/CountiesMap'
+import ReactTooltip from 'react-tooltip'
+import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 
 
 
 
-class Post5Table extends Component {
+class Post5Map extends Component {
   constructor(props){
     super(props)
     this.onResize = this.onResize.bind(this)
@@ -16,7 +20,7 @@ class Post5Table extends Component {
       screenHeight: 700,
       hover: "none",
       data: [],
-      slice: "total",
+      slice: "funding_per_child",
       program: "Title I Grants to LEAs"
     }
 
@@ -31,9 +35,9 @@ class Post5Table extends Component {
   // }
 
   componentWillMount() {
-    csv("datasets/map-and-table-title-i-grants-per-state-per-child.csv").then(data => {
-      this.setState({data: data});
-    });
+    // csv("datasets/map-and-table-title-i-grants-per-state-per-child.csv").then(data => {
+    //   this.setState({data: data});
+    // });
 
   }
 
@@ -43,7 +47,7 @@ class Post5Table extends Component {
   }
 
   componentDidUpdate() {
-    // ReactTooltip.rebuild()
+    ReactTooltip.rebuild()
   }
 
   handleClick(e) {
@@ -51,11 +55,12 @@ class Post5Table extends Component {
   }
 
   render() {
-    console.log(this.state.data)
     return (
       <div className="App">
-        <div className="App-header">
-          <h2>How the census affects access to care in rural areas through programs like Medicare Advantage</h2>
+        <h2>County Map Demo</h2>
+        <div>
+          <ReactTooltip />
+          <CountiesMap data={this.state.data} program={this.state.program} size={[this.state.screenWidth, this.state.screenHeight]} slice={this.state.slice}  />
         </div>
         <div>
           <DataTable data={this.state.data}  />
@@ -65,4 +70,4 @@ class Post5Table extends Component {
   }
 }
 
-export default Post5Table
+export default Post5Map
