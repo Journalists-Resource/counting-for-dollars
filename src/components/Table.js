@@ -30,14 +30,12 @@ class DataTable extends Component {
                 </TableHead>
                 <TableBody>
                   {data.map(row => (
-                    <TableRow key={row.Program}>
-                      <TableCell component="th" scope="row">
-                        <a href="{row.URL}">{row.Program}</a>
-                      </TableCell>
-                      <TableCell align="right">{row["Department"]}</TableCell>
-                        {usStateNames.map(state => (
-                          <TableCell align="right">{formatMoney(parseFloat(row[state]))}</TableCell>
-                        ))}
+                    <TableRow key={row[data.columns[0]]}>
+                      {data.columns.map(column => (
+                        <TableCell>
+                          {row[column]}
+                        </TableCell>
+                      ))}
                     </TableRow>
                   ))}
                 </TableBody>
