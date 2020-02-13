@@ -7,6 +7,7 @@ import Post2Tree from './posts/Post2Tree'
 import Post2Map from './posts/Post2Map'
 import Post2Table from './posts/Post2Table'
 import Post3Map from './posts/Post3Map'
+import Post4Map from './posts/Post4Map'
 
 
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
               <Route path="/Post2Map" component={Post2Map}  />
               <Route path="/Post2Table" component={Post2Table}  />
               <Route path="/Post3Map" component={Post3Map}  />
+              <Route path="/Post4Map" component={Post4Map}  />
             </Switch>
         </main>
       </HashRouter>
