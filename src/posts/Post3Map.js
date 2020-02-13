@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import '../App.css'
 import { csv } from 'd3-fetch'
 import DataTable from '../components/Table'
-import StateMapWithDemographics from '../components/StateMapWithDemographics'
+import StateMap from '../components/StateMap'
 import ReactTooltip from 'react-tooltip'
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
@@ -65,10 +65,7 @@ class Post3Map extends Component {
         </ButtonGroup>
         <div>
           <ReactTooltip />
-          <StateMapWithDemographics data={this.state.data} program={this.state.program} size={[this.state.screenWidth, this.state.screenHeight]} slice={this.state.slice}  />
-        </div>
-        <div>
-          <DataTable data={this.state.data}  />
+          <StateMap data={this.state.data} program={this.state.program} size={[this.state.screenWidth, this.state.screenHeight]} slice={this.state.slice}  />
         </div>
       </div>
     )
