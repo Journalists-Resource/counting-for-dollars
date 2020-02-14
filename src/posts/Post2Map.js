@@ -6,6 +6,7 @@ import StateMapWithDemographics from '../components/StateMapWithDemographics'
 import ReactTooltip from 'react-tooltip'
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
+import { ChartHeader, ChartFooter } from '../components/ChartMeta'
 
 
 
@@ -21,7 +22,7 @@ class Post1Map extends Component {
       hover: "none",
       data: [],
       slice: "total",
-      program: "Title I Grants to LEAs"
+      program: "Supplemental Nutrition Assistance Program"
     }
 
   }
@@ -57,7 +58,7 @@ class Post1Map extends Component {
   render() {
     return (
       <div className="App">
-        <h2>{this.state.program} Funding</h2>
+        <ChartHeader title={this.state.program + " funding in FY2017"} />
         <ButtonGroup id="toggles" aria-label="outlined button group">
           <Button className="active" onClick={this.handleClick.bind(this, "total")}>Total Funding</Button>
           <Button className="inactive" onClick={this.handleClick.bind(this, "pop")}>Per Capita</Button>

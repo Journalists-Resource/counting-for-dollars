@@ -6,6 +6,7 @@ import StateMap from '../components/StateMap'
 import ReactTooltip from 'react-tooltip'
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
+import { ChartHeader, ChartFooter } from '../components/ChartMeta'
 
 
 
@@ -57,7 +58,7 @@ class Post4Map extends Component {
   render() {
     return (
       <div className="App">
-        <h2>How the census guides Title I grants to schools and how undercounting poor children could cost districts millions</h2>
+        <ChartHeader title="Title I funding per low-income child in 2016 by state" subhed="Wyoming, Vermont and North Dakota received substantially more Title I grant money per eligible child in FY2016 than other states. Each received more than $3,000 per low-income child compared with the national average of $1,489." />
         <div>
           <ReactTooltip />
           <StateMap data={this.state.data} program={this.state.program} size={[this.state.screenWidth, this.state.screenHeight]} slice={this.state.slice}  />
@@ -65,6 +66,7 @@ class Post4Map extends Component {
         <div>
           <DataTable data={this.state.data}  />
         </div>
+        <ChartFooter credit="U.S. Census Bureau’s SAIPE; Dept. of Education" />
       </div>
     )
   }
