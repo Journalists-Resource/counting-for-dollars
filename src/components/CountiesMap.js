@@ -1,16 +1,15 @@
 import React, { Component } from 'react'
 import '../App.css'
-import { divergingColors } from './ColorSchemes'
+import { bucketScale } from './ColorSchemes'
 import formatMoney from './FormatMoney'
 import { csv } from 'd3-fetch'
 import uscounties from '../geo/counties-10m'
-import { min, max } from 'd3-array'
+import { min, max, extent } from 'd3-array'
 import { geoPath, geoAlbersUsa } from 'd3-geo'
 import { feature } from "topojson-client"
 
 
-let colorScale = divergingColors;
-
+let colorScale = bucketScale;
 
 
 class CountiesMap extends Component {
@@ -36,22 +35,24 @@ class CountiesMap extends Component {
     console.log(topojsonData);
 
     if (dataset.length > 0) {
-      // for (let s=0; s < topojsonData.length; s++) {
-      //   let statedata = dataset.find(e => e.state === topojsonData[s].properties.name)
-      //   for (let key in statedata) {
-      //     if (key !== "state") {
-      //       topojsonData[s].properties[key] = statedata[key]
-      //     }
-      //   }
-      // }
+      for (let s=0; s < topojsonData.length; s++) {
+        let countydata = dataset.find(e => e.GEOID === topojsonData[s].id)
+        for (let key in countydata) {
+          if (key !== "" && key !== "GEOID") {
+            topojsonData[s].properties[key] = countydata[key]
+          }
+        }
+      }
 
 
 
       const datarange = [];
-      topojsonData.forEach(function(d){datarange.push(d.properties[slice])})
-      colorScale.domain([
-        max(datarange),min(datarange)
-      ])
+      topojsonData.forEach(function(d){
+        if (Number.isInteger(parseFloat(d.properties[slice]))) {
+          datarange.push(parseFloat(d.properties[slice]))
+        }
+      })
+      colorScale.domain((datarange))
       const counties = topojsonData
         .map((d,i) =>
           <path
@@ -61,7 +62,7 @@ class CountiesMap extends Component {
             style={{
               fill: colorScale(d.properties[slice]),
               stroke: "black",
-              strokeOpacity: 0.5
+              strokeOpacity: 0.25
             }}
             className={"counties " + d.properties.name}
           />

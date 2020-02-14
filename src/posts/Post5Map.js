@@ -20,7 +20,7 @@ class Post5Map extends Component {
       screenHeight: 700,
       hover: "none",
       data: [],
-      slice: "funding_per_child",
+      slice: "pop_2018",
       program: "Title I Grants to LEAs"
     }
 
@@ -35,10 +35,10 @@ class Post5Map extends Component {
   // }
 
   componentWillMount() {
-    // csv("datasets/map-and-table-title-i-grants-per-state-per-child.csv").then(data => {
-    //   this.setState({data: data});
-    // });
-
+    csv("datasets/pop2017_2018_and_change_bycounty.csv").then(data => {
+      console.log(data);
+      this.setState({data: data});
+    });
   }
 
   componentDidMount() {
