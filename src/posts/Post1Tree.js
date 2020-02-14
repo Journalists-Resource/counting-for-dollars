@@ -4,6 +4,7 @@ import { csv } from 'd3-fetch'
 import Treemap from '../components/Treemap'
 import { nest } from 'd3-collection'
 import ReactTooltip from 'react-tooltip'
+import { ChartHeader, ChartFooter } from '../components/ChartMeta'
 
 
 
@@ -60,6 +61,7 @@ class Post1Tree extends Component {
     return (
       <div className="App">
         <div>
+          <ChartHeader title="Where $1.5 trillion in census-guided federal assistance goes" subhed="Decennial census data is used by over 300 federal programs in two broad ways – to determine eligibility and to apportion funding. Here’s where that money went in 2017." />
           <ReactTooltip
           />
           <Treemap
@@ -68,6 +70,7 @@ class Post1Tree extends Component {
             organizer="Agency"
             size={[this.state.screenWidth, this.state.screenHeight]}
           />
+          <ChartFooter credit="Andrew Reamer" />
         </div>
       </div>
     )

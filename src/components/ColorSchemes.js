@@ -5,6 +5,6 @@ const categoricalColors = scaleOrdinal(["#a71930","#574241","#bfa5a4","#00689d",
 
 const divergingColors = scaleSequential(interpolateRdYlGn)
 
-const bucketScale = scaleQuantile().range(schemeRdYlGn[10]);
+const bucketScale = scaleQuantile().range(schemeRdYlGn[5]);
 
 export { categoricalColors, divergingColors, bucketScale }

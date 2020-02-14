@@ -50,3 +50,13 @@ button.active {
 button.active span.MuiButton-label {
   font-weight: bold;
 }
+
+.chart-header {
+  text-align:left;
+  margin-bottom:2rem;
+}
+
+.chart-footer {
+  text-align:right;
+  color: #999;
+}
