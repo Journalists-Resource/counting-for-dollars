@@ -9,7 +9,7 @@ function wrap(text, width) {
 
   text.each(function() {
     let text = select(this),
-      leafwidth = this.getAttribute("width"),
+      leafwidth = this.getAttribute("width") - 10,
       words = text.text().split(/\s+/).reverse(),
       word,
       line = [],
