@@ -2,10 +2,54 @@ import React, { Component } from 'react'
 import '../App.css'
 import { categoricalColors } from './ColorSchemes'
 import formatMoney from './FormatMoney'
-import { select } from 'd3-selection'
+import { select, selectAll } from 'd3-selection'
 import * as d3 from 'd3-hierarchy'
 
+function wrap(text, width) {
+
+  text.each(function() {
+    let text = select(this),
+      leafwidth = this.getAttribute("width"),
+      words = text.text().split(/\s+/).reverse(),
+      word,
+      line = [],
+      lineNumber = 0,
+      lineHeight = 1.1, // ems
+      x = text.attr("x"),
+      y = text.attr("y"),
+      dy = 1.1,
+      tspan = text.text(null).append("tspan").attr("x", x).attr("y", y).attr("dy", dy + "em");
+
+    while (word = words.pop()) {
+      line.push(word);
+      tspan.text(line.join(" "));
+      if (tspan.node().getComputedTextLength() > leafwidth) {
+        line.pop();
+        tspan.text(line.join(" "));
+        line = [word];
+        tspan = text.append("tspan").attr("x", x).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+      }
+    }
+  });
+}
+
 class TreeMap extends Component {
+  constructor(props) {
+    super(props);
+    this.labelRef = React.createRef();
+  }
+
+
+  onResize() {
+    selectAll("text.datalabel")
+      .call(wrap, 100)
+  }
+
+  componentDidUpdate() {
+    selectAll("text.datalabel")
+      .call(wrap, 100)
+  }
+
    render() {
     const width = this.props.size[0];
     const height = this.props.size[1];
@@ -15,34 +59,12 @@ class TreeMap extends Component {
 
     const colorScale = categoricalColors;
 
+
+
     function percent(number) {
       return (Math.round(number*1000)/100) + "%";
     }
-    function wrap(text, width) {
-      console.log(width);
-      text.each(function() {
-        let text = select(this),
-          words = text.text().split(/\s+/).reverse(),
-          word,
-          line = [],
-          lineNumber = 0,
-          lineHeight = 1.1, // ems
-          x = text.attr("x"),
-          y = text.attr("y"),
-          dy = 1.1,
-          tspan = text.text(null).append("tspan").attr("x", x).attr("y", y).attr("dy", dy + "em");
-        while (word = words.pop()) {
-          line.push(word);
-          tspan.text(line.join(" "));
-          if (tspan.node().getComputedTextLength() > width) {
-            line.pop();
-            tspan.text(line.join(" "));
-            line = [word];
-            tspan = text.append("tspan").attr("x", x).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
-          }
-        }
-      });
-    }
+
 
     let rects;
     let textlabels;
@@ -70,6 +92,7 @@ class TreeMap extends Component {
         rects = root.leaves()
          .map((d,i) =>
            <rect
+            key={i}
              x={d.x0}
              y={d.y0}
              width={d.x1 - d.x0}
@@ -79,18 +102,26 @@ class TreeMap extends Component {
            />
          )
 
-         textlabels = root.leaves().filter(function (d) {return !isNaN(d.data[value])})
+         textlabels = root.leaves().filter(function (d) {
+           return !isNaN(d.data[value]) && ((d.data[value]/totalSpend) > 0.005)
+         })
           .map((d,i) =>
-            <text
-              x={d.x0 + 6}
-              y={d.y0 + 12}
-              textAnchor={"left"}
-              fontSize={"12px"}
-              fill={"white"}
-              data-tip={d.data.Program + ", " + d.data[organizer] + ": " + formatMoney(d.data[value])}
-            >
-               {(((d.x1 - d.x0) > 95) ? d.data.Program + " " + percent(d.data[value]/totalSpend) : "")}
-            </text>
+
+              <text
+                key={i}
+                ref={this.labelRef}
+                className="datalabel"
+                x={d.x0 + 5}
+                y={d.y0}
+                textAnchor={"left"}
+                fontSize={(((d.x1 - d.x0)/width) * 72) + "px"}
+                fill={"white"}
+                width={d.x1 - d.x0}
+                data-tip={d.data.Program + ", " + d.data[organizer] + ": " + formatMoney(d.data[value])}
+              >
+                 {d.data.Program + " " + percent(d.data[value]/totalSpend)}
+              </text>
+
           )
 
 
@@ -98,6 +129,7 @@ class TreeMap extends Component {
           legend = colorScale.domain()
             .map((d,i) =>
               <g
+              key={i}
                 transform={"translate(" + ((this.props.size[0]/25) * i) + "," + (this.props.size[1] - 45) + ")"}
               >
                 <rect
@@ -114,30 +146,10 @@ class TreeMap extends Component {
                 </text>
               </g>
             )
-
-      // and to add the text labels
-      // select(node)
-      //   .selectAll("text")
-      //   .data(root.leaves())
-      //   .enter()
-      //   .filter(function (d) {return !isNaN(d.data[value])})
-      //   .append("text")
-      //     .attr("x", function(d){ return d.x0 + 6 })
-      //     .attr("y", function(d){ return d.y0 + 12 })
-      //     .attr("text-anchor", "left")
-      //     .text(function(d){
-      //       return (((d.x1 - d.x0) > 95) ? d.data.Program + " " + percent(d.data[value]/totalSpend) : ""); // label only the programs that take up more than 1% of spending
-      //     })
-      //     .call(wrap, 100)
-      //     .attr("font-size", "12px")
-      //     .attr("fill", "white")
-      //     .attr("data-tip", function(d) {return d.data.Program + ", " +
-      //       d.data[organizer] + ": " +
-      //       d.data[value].toLocaleString('en-US')
-      //
-      //     });
     }
-    console.log(colorScale.range())
+
+
+
   return (
      <div>
         <svg ref={node => this.node = node} value={value} width={this.props.size[0]} height={this.props.size[1]}>
