@@ -62,7 +62,7 @@ class TreeMap extends Component {
 
 
     function percent(number) {
-      return (Math.round(number*10000)/100) + "%";
+      return (Math.round(number*1000)/10) + "%";
     }
 
 
