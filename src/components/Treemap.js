@@ -20,12 +20,10 @@ function wrap(text, width) {
       dy = 1.1,
       tspan = text.text(null).append("tspan").attr("x", x).attr("y", y).attr("dy", dy + "em");
 
-      console.log(text); 
-
     while (word = words.pop()) {
       line.push(word);
       tspan.text(line.join(" "));
-      if (tspan.node().getComputedTextLength() > leafwidth) {
+      if (tspan.node().getComputedTextLength() > leafwidth - 10) {
         line.pop();
         tspan.text(line.join(" "));
         line = [word];
@@ -105,7 +103,7 @@ class TreeMap extends Component {
          )
 
          textlabels = root.leaves().filter(function (d) {
-           return !isNaN(d.data[value]) && ((d.data[value]/totalSpend) > 0.005)
+           return !isNaN(d.data[value]) && ((d.x1 - d.x0) > 60) && ((d.y1 - d.y0) > 60)
          })
           .map((d,i) =>
 
