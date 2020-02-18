@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import '../App.css'
-import { categoricalColors } from './ColorSchemes'
+import { categoricalColors, fullAgencyName } from './ColorSchemes'
 import formatMoney from './FormatMoney'
 import { select, selectAll } from 'd3-selection'
 import * as d3 from 'd3-hierarchy'
 
 function wrap(text, width) {
-
   text.each(function() {
     let text = select(this),
       leafwidth = this.getAttribute("width"),
@@ -19,11 +18,10 @@ function wrap(text, width) {
       y = text.attr("y"),
       dy = 1.1,
       tspan = text.text(null).append("tspan").attr("x", x).attr("y", y).attr("dy", dy + "em");
-
     while (word = words.pop()) {
-      line.push(word);
+      line.push(word + " ");
       tspan.text(line.join(" "));
-      if (tspan.node().getComputedTextLength() > leafwidth - 10) {
+      if (tspan.node().getComputedTextLength() > (leafwidth - 10)) {
         line.pop();
         tspan.text(line.join(" "));
         line = [word];
@@ -41,7 +39,7 @@ class TreeMap extends Component {
 
 
   onResize() {
-    
+
   }
 
   componentDidUpdate() {
@@ -96,7 +94,7 @@ class TreeMap extends Component {
              y={d.y0}
              width={d.x1 - d.x0}
              height={d.y1 - d.y0}
-             data-tip={d.data.Program + ", " + d.data[organizer] + ": " + formatMoney(d.data[value])}
+             data-tip={d.data.Program + ", " + fullAgencyName(d.data[organizer]) + ": " + formatMoney(d.data[value])}
              style={{fill: colorScale(d.data[organizer]) }}
            />
          )
@@ -113,10 +111,10 @@ class TreeMap extends Component {
                 x={d.x0 + 5}
                 y={d.y0}
                 textAnchor={"left"}
-                fontSize={(((d.data[value]/totalSpend) * 72) + 10) + "px"}
+                fontSize={(((d.data[value]/totalSpend) * 72) + (width/100)) + "px"}
                 fill={"white"}
                 width={d.x1 - d.x0}
-                data-tip={d.data.Program + ", " + d.data[organizer] + ": " + formatMoney(d.data[value])}
+                data-tip={d.data.Program + ", " + fullAgencyName(d.data[organizer]) + ": " + formatMoney(d.data[value])}
               >
                  {d.data.Program + " " + percent(d.data[value]/totalSpend)}
               </text>
@@ -138,8 +136,9 @@ class TreeMap extends Component {
                 >
                 </rect>
                 <text
+                  fontSize={(width/300) + 7 + "px"}
                   transform={"translate(12,35)"}
-                  style={{textAnchor: "middle", fontSize: "10px"}}
+                  style={{textAnchor: "middle"}}
                 >
                   {d}
                 </text>
