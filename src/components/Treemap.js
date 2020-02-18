@@ -41,8 +41,7 @@ class TreeMap extends Component {
 
 
   onResize() {
-    selectAll("text.datalabel")
-      .call(wrap, 100)
+    
   }
 
   componentDidUpdate() {
