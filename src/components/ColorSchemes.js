@@ -1,11 +1,12 @@
 import { scaleOrdinal, scaleSequential, scaleQuantile } from 'd3-scale'
 import { interpolateRdYlGn, schemeRdYlGn } from "d3-scale-chromatic"
 
-// const categoricalColors = scaleOrdinal(["#a71930","#574241","#bfa5a4","#00689d","#009dd4","#cf6576","#a18584","#e8cdcc","#67a8c9","#5cd1fa"])
-// .domain(["HHS","USDA","HUD","DOT","ED","SBA","other","DOL","EPA","DOJ","DHS","DOI","Treasury","CNCS","ARC","VA","DOC","DOE","IMLS","DOD","NEA","NEH","DRA"])
+const categoricalColors = scaleOrdinal(["#a71930","#574241","#bfa5a4","#00689d","#009dd4","#cf6576","#8b8680"])
+.domain(["HHS","USDA","HUD","DOT","ED","SBA", "other"])
+.unknown("#8b8680")
 
-const categoricalColors = scaleOrdinal(["#a71730", "#104b6d", "#4ad9e1", "#6c3640", "#4ed31b", "#7f42a9", "#abd28d", "#bce333", "#8c2efc", "#598322", "#dfa3f0", "#54b2fc", "#c5089e", "#1cf1a3", "#f55c71", "#1f9383", "#faa38c", "#9a5c0d", "#f3d426", "#fa79f5", "#f79302", "#848484", "#fd5917"])
-.domain(["HHS","USDA","HUD","DOT","ED","SBA","other","DOL","EPA","DOJ","DHS","DOI","Treasury","CNCS","ARC","VA","DOC","DOE","IMLS","DOD","NEA","NEH","DRA"])
+// const categoricalColors = scaleOrdinal(["#a71730", "#104b6d", "#4ad9e1", "#6c3640", "#4ed31b", "#7f42a9", "#abd28d", "#bce333", "#8c2efc", "#598322", "#dfa3f0", "#54b2fc", "#c5089e", "#1cf1a3", "#f55c71", "#1f9383", "#faa38c", "#9a5c0d", "#f3d426", "#fa79f5", "#f79302", "#848484", "#fd5917"])
+// .domain(["HHS","USDA","HUD","DOT","ED","SBA","other","DOL","EPA","DOJ","DHS","DOI","Treasury","CNCS","ARC","VA","DOC","DOE","IMLS","DOD","NEA","NEH","DRA"])
 
 const fullAgencyName = scaleOrdinal()
 .domain(["HHS","USDA","HUD","DOT","ED","SBA","other","DOL","EPA","DOJ","DHS","DOI","Treasury","CNCS","ARC","VA","DOC","DOE","IMLS","DOD","NEA","NEH","DRA"])

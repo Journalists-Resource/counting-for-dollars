@@ -95,7 +95,7 @@ class TreeMap extends Component {
              width={d.x1 - d.x0}
              height={d.y1 - d.y0}
              data-tip={d.data.Program + ", " + fullAgencyName(d.data[organizer]) + ": " + formatMoney(d.data[value])}
-             style={{fill: colorScale(d.data[organizer]) }}
+             fill={colorScale(d.data[organizer])}
            />
          )
 
@@ -103,7 +103,6 @@ class TreeMap extends Component {
            return !isNaN(d.data[value]) && ((d.x1 - d.x0) > 60) && ((d.y1 - d.y0) > 60)
          })
           .map((d,i) =>
-
               <text
                 key={i}
                 ref={this.labelRef}
@@ -116,7 +115,7 @@ class TreeMap extends Component {
                 width={d.x1 - d.x0}
                 data-tip={d.data.Program + ", " + fullAgencyName(d.data[organizer]) + ": " + formatMoney(d.data[value])}
               >
-                 {d.data.Program + " " + percent(d.data[value]/totalSpend)}
+                 {d.data.Program + ": " + percent(d.data[value]/totalSpend)}
               </text>
 
           )
