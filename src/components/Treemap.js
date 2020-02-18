@@ -20,6 +20,8 @@ function wrap(text, width) {
       dy = 1.1,
       tspan = text.text(null).append("tspan").attr("x", x).attr("y", y).attr("dy", dy + "em");
 
+      console.log(text); 
+
     while (word = words.pop()) {
       line.push(word);
       tspan.text(line.join(" "));
