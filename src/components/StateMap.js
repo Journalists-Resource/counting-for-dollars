@@ -43,13 +43,17 @@ class StateMap extends Component {
         }
       }
 
-      console.log(topojsonData);
-
       const datarange = [];
       topojsonData.forEach(function(d){datarange.push(parseFloat(d.properties[slice]))})
-      colorScale.domain([
-        min(datarange),max(datarange)
-      ])
+      if (this.props.reversescale == true) {
+        colorScale.domain([max(datarange),min(datarange)])
+      } else {
+        colorScale.domain([min(datarange),max(datarange)])
+      }
+      console.log(colorScale.domain())
+
+
+
       const states = topojsonData
         .map((d,i) =>
           <path
