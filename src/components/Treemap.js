@@ -100,11 +100,7 @@ class TreeMap extends Component {
          )
 
          textlabels = root.leaves().filter(function (d) {
-<<<<<<< HEAD
-           return !isNaN(d.data[value]) && ((d.data[value]/totalSpend) > 0.005) && ((d.x1 - d.x0) > 50)
-=======
            return !isNaN(d.data[value]) && ((d.x1 - d.x0) > 60) && ((d.y1 - d.y0) > 60)
->>>>>>> 7bb5c7e5b83d1a6737fdb23446af72cc1fb849cf
          })
           .map((d,i) =>
               <text
