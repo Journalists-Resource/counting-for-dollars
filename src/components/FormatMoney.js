@@ -1,6 +1,10 @@
 const formatMoney = (value) => {
-   value = parseFloat(value);
-   return "$" + value.toLocaleString('en-US');
+   if (!isNaN(value)) {
+     let newvalue = parseFloat(value);
+     return "$" + newvalue.toLocaleString('en-US');
+   } else {
+     return value;
+   }
 }
 
 export default formatMoney

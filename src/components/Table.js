@@ -16,14 +16,13 @@ class DataTable extends Component {
       const node = this.node
       const data = this.props.data
 
-
         if (data.length > 0) {
           return(
             <TableContainer component={Paper}>
               <Table stickyHeader size="small" aria-label="a dense table">
                 <TableHead>
                   <TableRow>
-                    {data.columns.filter(function(d){return d !== "URL"}).map(column => (
+                    {data.columns.map(column => (
                       <TableCell>{column}</TableCell>
                     ))}
                   </TableRow>
@@ -33,7 +32,7 @@ class DataTable extends Component {
                     <TableRow key={row[data.columns[0]]}>
                       {data.columns.map(column => (
                         <TableCell>
-                          {row[column]}
+                          {formatMoney(row[column])}
                         </TableCell>
                       ))}
                     </TableRow>
@@ -43,7 +42,7 @@ class DataTable extends Component {
             </TableContainer>
           )
         } else {
-          return null;
+          return <span></span>;
         }
 
     }
