@@ -5,7 +5,8 @@ import DataTable from '../components/Table'
 import StateMapWithDemographics from '../components/StateMapWithDemographics'
 import ReactTooltip from 'react-tooltip'
 import Button from '@material-ui/core/Button';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
+import ButtonGroup from '@material-ui/core/ButtonGroup'
+import { Select, MenuItem } from '@material-ui/core'
 import { ChartHeader, ChartFooter } from '../components/ChartMeta'
 
 
@@ -22,7 +23,8 @@ class Post1Map extends Component {
       hover: "none",
       data: [],
       slice: "total",
-      program: "Supplemental Nutrition Assistance Program"
+      program: "Supplemental Nutrition Assistance Program",
+      programlist: []
     }
 
   }
@@ -36,8 +38,10 @@ class Post1Map extends Component {
   // }
 
   componentWillMount() {
+    let programarray = []
     csv("datasets/fy2016statefunding.csv").then(data => {
-      this.setState({data: data});
+      data.map((d,i) => programarray.push(d.Program));
+      this.setState({data: data, programlist: programarray});
     });
 
   }
@@ -55,9 +59,30 @@ class Post1Map extends Component {
     this.setState({slice: e})
   }
 
+  handleChange(e) {
+    this.setState({program: e.target.value});
+  }
+
   render() {
+    const programselectors = this.state.programlist
+    .map((d,i) =>
+      <MenuItem
+         value={d}
+      >
+        {d}
+     </MenuItem>
+    )
+
     return (
       <div className="App">
+        <Select
+           labelId="state-select-label"
+           id="state-select"
+           value={this.state.program}
+           onChange={this.handleChange.bind(this)}
+         >
+           {programselectors}
+         </Select>
         <ChartHeader title={this.state.program + " funding in FY2017"} />
         <ButtonGroup id="toggles" aria-label="outlined button group">
           <Button className="active" onClick={this.handleClick.bind(this, "total")}>Total Funding</Button>
