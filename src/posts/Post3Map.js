@@ -74,7 +74,7 @@ class Post3Map extends Component {
           <ReactTooltip />
           <StateMap data={this.state.data} program={this.state.program} size={[this.state.screenWidth, this.state.screenHeight]} slice={this.state.slice}  />
         </div>
-        <ChartFooter  credit="Andrew Reamer, Urban Institute" />
+        <ChartFooter  credit="Andrew Reamer, research professor at the George Washington Institute of Public Policy; “Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds”, Urban Institute" />
       </div>
     )
   }
