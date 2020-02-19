@@ -110,7 +110,7 @@ class TreeMap extends Component {
                 x={d.x0 + 5}
                 y={d.y0}
                 textAnchor={"left"}
-                fontSize={(((d.data[value]/totalSpend) * 72) + (width/100)) + "px"}
+                fontSize={(((d.data[value]/totalSpend) * 80) + (width/150)) + "px"}
                 fill={"white"}
                 width={d.x1 - d.x0}
                 data-tip={d.data.Program + ", " + fullAgencyName(d.data[organizer]) + ": " + formatMoney(d.data[value])}
