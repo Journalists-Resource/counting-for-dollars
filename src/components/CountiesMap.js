@@ -32,8 +32,6 @@ class CountiesMap extends Component {
       // }
     }
 
-    console.log(topojsonData);
-
     if (dataset.length > 0) {
       for (let s=0; s < topojsonData.length; s++) {
         let countydata = dataset.find(e => e.GEOID === topojsonData[s].id)
@@ -48,21 +46,22 @@ class CountiesMap extends Component {
 
       const datarange = [];
       topojsonData.forEach(function(d){
-        if (Number.isInteger(parseFloat(d.properties[slice]))) {
+        if (!isNaN(d.properties[slice])) {
           datarange.push(parseFloat(d.properties[slice]))
         }
       })
-      colorScale.domain((datarange))
+      console.log(datarange)
+      colorScale.domain([-2, -1, 1, 2])
       const counties = topojsonData
         .map((d,i) =>
           <path
             key={"path" + i}
             d={pathGenerator(d)}
-            data-tip={d.name}
+            data-tip={d.properties["NAME.x"] + ": " + Math.round(d.properties.pop_change * 100)/100 + "%"}
             style={{
               fill: colorScale(d.properties[slice]),
               stroke: "black",
-              strokeOpacity: 0.25
+              strokeOpacity: 0.1
             }}
             className={"counties " + d.properties.name}
           />
@@ -97,14 +96,14 @@ class CountiesMap extends Component {
             y={this.props.size[1]-10}
             textAnchor="start"
           >
-            {formatMoney(colorScale.domain()[0])}
+            {min(colorScale.domain())}
           </text>
           <text
             x={this.props.size[0] * 0.75}
             y={this.props.size[1]-10}
             textAnchor="end"
           >
-            {formatMoney(colorScale.domain()[1])}
+            {max(colorScale.domain())}
           </text>
         </g>
       )

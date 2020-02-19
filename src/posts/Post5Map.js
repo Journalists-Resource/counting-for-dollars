@@ -20,7 +20,7 @@ class Post5Map extends Component {
       screenHeight: 700,
       hover: "none",
       data: [],
-      slice: "pop_2018",
+      slice: "pop_change",
       program: "Title I Grants to LEAs"
     }
 
@@ -59,8 +59,8 @@ class Post5Map extends Component {
       <div className="App">
         <h2>County Map Demo</h2>
         <div>
-          <ReactTooltip />
           <CountiesMap data={this.state.data} program={this.state.program} size={[this.state.screenWidth, this.state.screenHeight]} slice={this.state.slice}  />
+          <ReactTooltip />
         </div>
         <div>
           <DataTable data={this.state.data}  />

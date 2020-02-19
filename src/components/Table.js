@@ -32,7 +32,7 @@ class DataTable extends Component {
                     <TableRow key={row[data.columns[0]]}>
                       {data.columns.map(column => (
                         <TableCell>
-                          {formatMoney(row[column])}
+                          {(usStateNames.indexOf(column) > -1) ? formatMoney(row[column]) : row[column]}
                         </TableCell>
                       ))}
                     </TableRow>
