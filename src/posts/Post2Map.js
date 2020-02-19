@@ -56,7 +56,14 @@ class Post1Map extends Component {
   }
 
   handleClick(e) {
-    this.setState({slice: e})
+    this.setState({slice: e});
+    var actives = document.getElementsByClassName("active");
+    for(var i = 0; i < actives.length; i++)
+    {
+        actives[i].classList.add("inactive");
+        actives[i].classList.remove("active");
+    }
+    document.getElementById("button_" + e).classList.add("active");
   }
 
   handleChange(e) {
@@ -85,9 +92,9 @@ class Post1Map extends Component {
          </Select>
         <ChartHeader title={this.state.program + " funding in FY2017"} />
         <ButtonGroup id="toggles" aria-label="outlined button group">
-          <Button className="active" onClick={this.handleClick.bind(this, "total")}>Total Funding</Button>
-          <Button className="inactive" onClick={this.handleClick.bind(this, "pop")}>Per Capita</Button>
-          <Button className="inactive" onClick={this.handleClick.bind(this, "income")}>Per Income</Button>
+          <Button id={"button_" + "total"} className="active"   onClick={this.handleClick.bind(this, "total")}>Total Funding</Button>
+          <Button id={"button_" + "pop"} className="inactive" onClick={this.handleClick.bind(this, "pop")}>Per Capita</Button>
+          <Button id={"button_" + "income"} className="inactive" onClick={this.handleClick.bind(this, "income")}>Per Income</Button>
         </ButtonGroup>
         <div>
           <ReactTooltip />

@@ -56,7 +56,6 @@ class Post2Tree extends Component {
 
   handleChange(e) {
     this.setState({state: e.target.value});
-    console.log("change!")
   }
 
   render() {

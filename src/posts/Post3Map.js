@@ -52,6 +52,13 @@ class Post3Map extends Component {
 
   handleClick(e) {
     this.setState({slice: e})
+    var actives = document.getElementsByClassName("active");
+    for(var i = 0; i < actives.length; i++)
+    {
+        actives[i].classList.add("inactive");
+        actives[i].classList.remove("active");
+    }
+    document.getElementById("button_" + e).classList.add("active");
   }
 
   render() {
@@ -59,9 +66,9 @@ class Post3Map extends Component {
       <div className="App">
         <ChartHeader title="Impacts to Medicaid of 2020 census undercounts" subhed="Medicaid reimbursements states might gain or lose under 2020 low-, medium- and high-risk miscount scenarios projected by the Urban Institute" />
         <ButtonGroup id="toggles" aria-label="outlined button group">
-          <Button className="active" onClick={this.handleClick.bind(this, "cost_low")}>Low Undercount</Button>
-          <Button className="inactive" onClick={this.handleClick.bind(this, "cost_med")}>Medium Undercount</Button>
-          <Button className="inactive" onClick={this.handleClick.bind(this, "cost_high")}>High Undercount</Button>
+          <Button id={"button_" + "cost_low"} className="active" onClick={this.handleClick.bind(this, "cost_low")}>Low Undercount</Button>
+          <Button id={"button_" + "cost_med"} className="inactive" onClick={this.handleClick.bind(this, "cost_med")}>Medium Undercount</Button>
+          <Button id={"button_" + "cost_high"} className="inactive" onClick={this.handleClick.bind(this, "cost_high")}>High Undercount</Button>
         </ButtonGroup>
         <div>
           <ReactTooltip />
