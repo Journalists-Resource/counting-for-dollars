@@ -80,7 +80,7 @@ class Post2Tree extends Component {
            >
              {stateselectors}
            </Select>
-          <h2>{this.state.state} Funding</h2>
+          <h2>Federal funding received by {this.state.state}</h2>
           <Treemap
             data={this.state.data}
             value={this.state.state}
