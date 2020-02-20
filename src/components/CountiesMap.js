@@ -51,7 +51,7 @@ class CountiesMap extends Component {
         }
       })
       console.log(datarange)
-      colorScale.domain([-2, -1, 1, 2])
+      colorScale.domain(datarange)
       const counties = topojsonData
         .map((d,i) =>
           <path
