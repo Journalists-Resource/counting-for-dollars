@@ -10,7 +10,7 @@ const categoricalColors = scaleOrdinal(["#a71930","#574241","#bfa5a4","#00689d",
 
 const fullAgencyName = scaleOrdinal()
 .domain(["HHS","USDA","HUD","DOT","ED","SBA","other","DOL","EPA","DOJ","DHS","DOI","Treasury","CNCS","ARC","VA","DOC","DOE","IMLS","DOD","NEA","NEH","DRA"])
-.range(["Health and Human Services", "Department of Agriculture", "Housing and Urban Development", "Department of Transportation", "Education Department", "Small Business Administration", "other", "Department of Labor", "Environmental Protection Agency", "Department of Justice", "Department of Homeland Security", "Department of the Interior", "Treasury", "Corporation for National and Community Service", "Appalachian Regional Commission", "Veterans' Affairs", "Department of Commerce", "Department of Energy", "Institute of Museum and Library Services", "Department of Defense", "National Endowment for the Arts", "National Endowment for the Humanities", "Delta Regional Authority"])
+.range(["Health and Human Services", "Department of Agriculture", "Housing and Urban Development", "Department of Transportation", "Education Department", "Small Business Administration", "other", "Department of Labor", "Environmental Protection Agency", "Department of Justice", "Department of Homeland Security", "Department of the Interior", "Treasury", "Corporation for National and Community Service", "Appalachian Regional Commission", "Veterans' Affairs", "Department of Commerce", "Department of Energy", "Institute of Museum and Library Services", "Department of Defense", "National Endowment for the Arts", "National Endowment for the Humanities", "Delta Regional Authority"]).unknown("")
 
 const divergingColors = scaleSequential(interpolateRdYlGn)
 
