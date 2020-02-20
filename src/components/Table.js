@@ -10,11 +10,28 @@ import Paper from '@material-ui/core/Paper';
 import usStateNames from './USStateNames'
 import formatMoney from './FormatMoney'
 
+function cellFormatter(row, column) {
+   if ((usStateNames.indexOf(column) > -1) || column.indexOf("Funding") > -1) {
+      return formatMoney(row[column])
+   } else if ((column == "Program") && (row.URL !== "NA")) {
+      return (
+         <a href=
+            {row.URL}
+         >
+            {row[column]}
+         </a>
+      )
+   } else {
+      return row[column]
+   }
+}
+
 
 class DataTable extends Component {
     render() {
       const node = this.node
       const data = this.props.data
+      const sort = this.props.sort
 
         if (data.length > 0) {
           return(
@@ -32,7 +49,7 @@ class DataTable extends Component {
                     <TableRow key={row[data.columns[0]]}>
                       {data.columns.map(column => (
                         <TableCell>
-                          {((usStateNames.indexOf(column) > -1) || column.indexOf("Funding") > -1) ? formatMoney(row[column]) : row[column]}
+                          { cellFormatter(row, column) }
                         </TableCell>
                       ))}
                     </TableRow>

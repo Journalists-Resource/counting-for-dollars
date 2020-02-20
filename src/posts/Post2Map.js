@@ -26,7 +26,7 @@ class Post2Map extends Component {
       data: [],
       filtereddata: [],
       slice: "total",
-      program: "Supplemental Nutrition Assistance Program",
+      program: "",
       programlist: []
     }
   }
@@ -61,9 +61,11 @@ class Post2Map extends Component {
     let programarray = []
     csv("datasets/fy2016statefunding.csv").then(data => {
       data.map((d,i) => programarray.push(d.Program));
+      programarray = programarray.sort();
       this.setState({
         data: data,
-        programlist: programarray
+        programlist: programarray,
+        program: programarray[0]
       });
       this.filterData(this.state.program);
     });
@@ -100,6 +102,7 @@ class Post2Map extends Component {
 
   render() {
     const programselectors = this.state.programlist
+    .sort()
     .map((d,i) =>
       <MenuItem
         key={i}
@@ -127,7 +130,7 @@ class Post2Map extends Component {
         </ButtonGroup>
         <div>
           <ReactTooltip />
-          <StateMapWithDemographics data={this.state.data} program={this.state.program} size={[this.state.screenWidth, this.state.screenHeight]} slice={this.state.slice}  />
+          <StateMapWithDemographics data={this.state.data} program={this.state.program} size={[this.state.screenWidth, this.state.screenHeight-175]} slice={this.state.slice}  />
         </div>
         <div>
           <DataTable data={this.state.filtereddata}  />

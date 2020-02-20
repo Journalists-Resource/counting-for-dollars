@@ -13,7 +13,6 @@ class Post2Table extends Component {
     super(props)
     this.onResize = this.onResize.bind(this)
     this.filterData = this.filterData.bind(this)
-    this.handleClick = this.handleClick.bind(this);
     this.state = {
       screenWidth: window.innerWidth,
       screenHeight: 700,
@@ -28,7 +27,7 @@ class Post2Table extends Component {
   }
 
   filterData(state) {
-    const allowed = ['Program', 'Department', state];
+    const allowed = ['Program', 'Department', "URL", state];
     let newarray = [];
 
     for (let i=0; i<this.state.data.length; i++) {
@@ -38,15 +37,17 @@ class Post2Table extends Component {
           obj[key] = this.state.data[i][key];
           return obj;
         }, {});
-      newarray.push(filtered)
+      newarray.push(filtered);
     }
 
-    newarray.columns = allowed;
+    newarray.columns = allowed.filter(key => key !== "URL");
 
     this.setState({
       state: state,
       filtereddata: newarray
     })
+
+    console.log(this.state.filtereddata)
   }
 
   onResize() {
@@ -61,8 +62,9 @@ class Post2Table extends Component {
   componentWillMount() {
     csv("datasets/treemap-and-table-bystate-2017.csv").then(data => {
       this.setState({data: data});
+      this.filterData("Alabama");
     });
-    this.filterData("Alabama");
+
   }
 
   componentDidMount() {
@@ -72,10 +74,6 @@ class Post2Table extends Component {
 
   componentDidUpdate() {
     // ReactTooltip.rebuild()
-  }
-
-  handleClick(e) {
-    this.setState({slice: e})
   }
 
   render() {
@@ -100,7 +98,7 @@ class Post2Table extends Component {
          </Select>
         <ChartHeader title={this.state.state + " funding in FY2017"} />
         <div>
-          <DataTable data={this.state.filtereddata}  />
+          <DataTable data={this.state.filtereddata} sort={"alpha"} />
         </div>
       </div>
     )

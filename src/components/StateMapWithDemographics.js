@@ -29,7 +29,7 @@ class StateMapWithDemographics extends Component {
     const topojsonData = feature(usstates, usstates.objects.states).features
     const projection = geoAlbersUsa()
       .scale(this.props.size[0] * 1)
-      .translate([this.props.size[0]/2, 350])
+      .translate([this.props.size[0]/2, 250])
     const pathGenerator = geoPath().projection(projection)
     function tooltipGenerator(x,y,z) {
       if (x === "total") {
