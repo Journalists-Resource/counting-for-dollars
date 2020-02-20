@@ -39,8 +39,8 @@ class Post2Map extends Component {
       if (!isNaN(parseFloat(entries[o][1]))) {
         newobj["State"] = entries[o][0]
         newobj["Total " + target + " Funding"] = parseFloat(entries[o][1])
+        newarray.push(newobj)
       }
-      newarray.push(newobj)
     }
     newarray.columns = ["State", "Total " + target + " Funding"];
     this.setState({
