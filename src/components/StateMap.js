@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../App.css'
-import { divergingColors } from './ColorSchemes'
+import { divergingColors, bucketScale } from './ColorSchemes'
 import formatMoney from './FormatMoney'
 import { csv } from 'd3-fetch'
 import usstates from '../geo/states-10m'
@@ -9,7 +9,7 @@ import { geoPath, geoAlbersUsa } from 'd3-geo'
 import { feature } from "topojson-client"
 
 
-let colorScale = divergingColors;
+let colorScale = bucketScale;
 
 
 
@@ -17,6 +17,9 @@ class StateMap extends Component {
   render() {
     const slice = this.props.slice;
     const dataset = this.props.data;
+
+    console.log(slice)
+    console.log(dataset)
 
     const topojsonData = feature(usstates, usstates.objects.states).features
     const projection = geoAlbersUsa()
@@ -35,9 +38,9 @@ class StateMap extends Component {
 
     if (dataset.length > 0) {
       for (let s=0; s < topojsonData.length; s++) {
-        let statedata = dataset.find(e => e.state === topojsonData[s].properties.name)
+        let statedata = dataset.find(e => e.State === topojsonData[s].properties.name)
         for (let key in statedata) {
-          if (key !== "state") {
+          if (key !== "State") {
             topojsonData[s].properties[key] = statedata[key]
           }
         }
@@ -45,11 +48,7 @@ class StateMap extends Component {
 
       const datarange = [];
       topojsonData.forEach(function(d){datarange.push(parseFloat(d.properties[slice]))})
-      if (this.props.reversescale == true) {
-        colorScale.domain([max(datarange),min(datarange)])
-      } else {
-        colorScale.domain([min(datarange),max(datarange)])
-      }
+      colorScale.domain(datarange)
       console.log(colorScale.domain())
 
 

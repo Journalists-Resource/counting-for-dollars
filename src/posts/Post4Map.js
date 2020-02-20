@@ -21,7 +21,7 @@ class Post4Map extends Component {
       screenHeight: 700,
       hover: "none",
       data: [],
-      slice: "funding_per_child",
+      slice: "Funding Per Child",
       program: "Title I Grants to LEAs"
     }
 
