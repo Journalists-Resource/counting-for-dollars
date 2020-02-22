@@ -40,7 +40,7 @@ class DataTable extends Component {
                 <TableHead>
                   <TableRow>
                     {data.columns.map(column => (
-                      <TableCell>{column}</TableCell>
+                      <TableCell key={column}>{column}</TableCell>
                     ))}
                   </TableRow>
                 </TableHead>
@@ -48,7 +48,7 @@ class DataTable extends Component {
                   {data.map(row => (
                     <TableRow key={row[data.columns[0]]}>
                       {data.columns.map(column => (
-                        <TableCell>
+                        <TableCell key={column}>
                           { cellFormatter(row, column) }
                         </TableCell>
                       ))}

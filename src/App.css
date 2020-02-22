@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: "Droid Sans",sans-serif
 }
 
 .App-logo {
@@ -59,4 +60,8 @@ button.active span.MuiButton-label {
 .chart-footer {
   text-align:right;
   color: #999;
+}
+
+.MuiTableCell-root, .MuiMenuItem-root, .MuiButton-root {
+  font-family: "Droid Sans",sans-serif !important
 }

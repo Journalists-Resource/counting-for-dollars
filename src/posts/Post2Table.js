@@ -80,7 +80,8 @@ class Post2Table extends Component {
     const stateselectors = usStateNames
     .map((d,i) =>
       <MenuItem
-         value={d}
+        key={i}
+        value={d}
       >
         {d}
      </MenuItem>
