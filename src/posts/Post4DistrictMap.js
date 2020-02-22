@@ -10,8 +10,8 @@ class Post4Map extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lng: 5,
-      lat: 34,
+      lng: -109.3297,
+      lat: 54.8017,
       zoom: 2
     };
   }
@@ -28,6 +28,27 @@ class Post4Map extends Component {
       style: 'mapbox://styles/mapbox/light-v10',
       center: [this.state.lng, this.state.lat],
       zoom: this.state.zoom
+    });
+
+    map.on('load', function() {
+      map.addSource('districts', {
+        type: 'vector',
+        url: 'mapbox://tylermachado.1hv3eju0'
+      });
+      map.addLayer({
+        'id': 'district-data',
+        'type': 'line',
+        'source': 'districts',
+        'source-layer': 'schooldistrict_sy1819_tl19-1lm5et',
+        'layout': {
+          'line-join': 'round',
+          'line-cap': 'round'
+        },
+        'paint': {
+          'line-color': '#ff69b4',
+          'line-width': 1
+        }
+      });
     });
 
     map.on('move', () => {
