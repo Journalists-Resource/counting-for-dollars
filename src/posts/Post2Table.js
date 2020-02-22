@@ -93,15 +93,21 @@ class Post2Table extends Component {
 
     return (
       <div className="App">
-        <Select
-           labelId="state-select-label"
-           id="state-select"
-           value={this.state.state}
-           onChange={this.handleChange.bind(this)}
-         >
-           {stateselectors}
-         </Select>
-        <ChartHeader title={this.state.state + " funding in FY2017"} />
+        <div className="header-grid">
+          <div className="grid-3">
+            <ChartHeader title={this.state.state + " funding in FY2017"} />
+          </div>
+          <div className="grid-1">
+            <Select
+               labelId="state-select-label"
+               id="state-select"
+               value={this.state.state}
+               onChange={this.handleChange.bind(this)}
+            >
+               {stateselectors}
+            </Select>
+          </div>
+        </div>
         <div>
           <DataTable data={this.state.filtereddata} sort={"alpha"} />
         </div>

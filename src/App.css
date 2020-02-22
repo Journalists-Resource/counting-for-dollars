@@ -1,27 +1,24 @@
+h1, h2, h3, h4, h5, h6 {
+  margin:0;
+}
+
 .App {
   text-align: center;
   font-family: "Droid Sans",sans-serif
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 0px;
+.header-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  margin-bottom: 3rem;
 }
 
-.App-header {
-  background-color: #222;
-  height: 40px;
-  padding: 10px;
-  color: white;
+.header-grid .grid-3 {
+  grid-column: 1 / span 3;
 }
 
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.header-grid .grid-1 {
+  grid-column: 4 / span 1;
 }
 
 rect.overlay {
@@ -54,7 +51,6 @@ button.active span.MuiButton-label {
 
 .chart-header {
   text-align:left;
-  margin-bottom:2rem;
 }
 
 .chart-footer {
