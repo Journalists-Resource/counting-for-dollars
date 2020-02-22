@@ -27,20 +27,24 @@ class Post2Table extends Component {
   }
 
   filterData(state) {
-    const allowed = ['Program', 'Department', "URL", state];
+    const allowed = ['Program', 'Department', 'URL', 'FY2017 Funding', state];
     let newarray = [];
 
     for (let i=0; i<this.state.data.length; i++) {
       const filtered = Object.keys(this.state.data[i])
         .filter(key => allowed.includes(key))
         .reduce((obj, key) => {
-          obj[key] = this.state.data[i][key];
+          if (key === state) {
+            obj["FY2017 Funding"] = this.state.data[i][key];
+          } else {
+            obj[key] = this.state.data[i][key];
+          }
           return obj;
         }, {});
       newarray.push(filtered);
     }
 
-    newarray.columns = allowed.filter(key => key !== "URL");
+    newarray.columns = allowed.filter(key => (key !== "URL" && key !== state));
 
     this.setState({
       state: state,
