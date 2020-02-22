@@ -22,6 +22,24 @@ h1, h2, h3, h4, h5, h6 {
   grid-column: 4 / span 1;
 }
 
+.chart-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin-bottom: 1rem;
+}
+
+.chart-footer .col1 {
+  grid-column: 1 / span 3;
+}
+
+.chart-footer .col2 {
+  grid-column: 4 / span 1;
+}
+
+.chart-footer .col3 {
+  grid-column: 5 / span 1;
+}
+
 rect.overlay {
   opacity: 0;
 }
@@ -55,7 +73,7 @@ button.active span.MuiButton-label {
 }
 
 .chart-footer {
-  text-align:right;
+  text-align:left;
   color: #999;
 }
 
