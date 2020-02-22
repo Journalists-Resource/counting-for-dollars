@@ -1,72 +1,49 @@
 import React, { Component } from 'react'
 import '../App.css'
-import { csv } from 'd3-fetch'
-import DataTable from '../components/Table'
-import StateMap from '../components/StateMap'
-import ReactTooltip from 'react-tooltip'
-import Button from '@material-ui/core/Button';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
+import mapboxgl from 'mapbox-gl'
 import { ChartHeader, ChartFooter } from '../components/ChartMeta'
 
-
+mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
 
 
 class Post4Map extends Component {
-  constructor(props){
-    super(props)
-    this.onResize = this.onResize.bind(this)
-    this.handleClick = this.handleClick.bind(this);
+  constructor(props) {
+    super(props);
     this.state = {
-      screenWidth: window.innerWidth,
-      screenHeight: 700,
-      hover: "none",
-      data: [],
-      slice: "Funding Per Child",
-      program: "Title I Grants to LEAs"
-    }
-
+      lng: 5,
+      lat: 34,
+      zoom: 2
+    };
   }
-
-  onResize() {
-    this.setState({ screenWidth: window.innerWidth  })
-  }
-
-  // onHover(d) {
-  //   this.setState({ hover: d.id })
-  // }
 
   componentWillMount() {
-    csv("datasets/map-and-table-title-i-grants-per-state-per-child.csv").then(data => {
-      this.setState({data: data});
-    });
-
+    // csv("datasets/map-and-table-title-i-grants-per-state-per-child.csv").then(data => {
+    //   this.setState({data: data});
+    // });
   }
 
   componentDidMount() {
-    window.addEventListener('resize', this.onResize, false)
-    this.onResize()
-  }
+    const map = new mapboxgl.Map({
+      container: this.mapContainer,
+      style: 'mapbox://styles/mapbox/light-v10',
+      center: [this.state.lng, this.state.lat],
+      zoom: this.state.zoom
+    });
 
-  componentDidUpdate() {
-    ReactTooltip.rebuild()
-  }
-
-  handleClick(e) {
-    this.setState({slice: e})
+    map.on('move', () => {
+      this.setState({
+        lng: map.getCenter().lng.toFixed(4),
+        lat: map.getCenter().lat.toFixed(4),
+        zoom: map.getZoom().toFixed(2)
+      });
+    });
   }
 
   render() {
     return (
       <div className="App">
-        <ChartHeader title="Title I funding per low-income child in 2016 by state" subhed="Wyoming, Vermont and North Dakota received substantially more Title I grant money per eligible child in FY2016 than other states. Each received more than $3,000 per low-income child compared with the national average of $1,489." />
-        <div>
-          <ReactTooltip />
-          <StateMap data={this.state.data} program={this.state.program} size={[this.state.screenWidth, this.state.screenHeight]} slice={this.state.slice} reversescale={true} />
-        </div>
-        <div>
-          <DataTable data={this.state.data}  />
-        </div>
-        <ChartFooter credit="U.S. Census Bureau’s SAIPE; Dept. of Education" />
+        <ChartHeader title="Title I funding per low-income child in 2016 by state" />
+        <div ref={el => this.mapContainer = el}  className="mapContainer" />
       </div>
     )
   }

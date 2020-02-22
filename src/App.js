@@ -8,6 +8,7 @@ import Post2Map from './posts/Post2Map'
 import Post2Table from './posts/Post2Table'
 import Post3Table from './posts/Post3Table'
 import Post3Map from './posts/Post3Map'
+import Post4DistrictMap from './posts/Post4DistrictMap'
 import Post4Map from './posts/Post4Map'
 import Post4Table from './posts/Post4Table'
 import Post5Table from './posts/Post5Table'
@@ -31,6 +32,7 @@ class App extends Component {
               <Route path="/Post3Table" component={Post3Table}  />
               <Route path="/Post3Map" component={Post3Map}  />
               <Route path="/Post4Map" component={Post4Map}  />
+              <Route path="/Post4DistrictMap" component={Post4DistrictMap}  />
               <Route path="/Post4Table" component={Post4Table}  />
               <Route path="/Post5Table" component={Post5Table}  />
               <Route path="/Post5Map" component={Post5Map}  />
