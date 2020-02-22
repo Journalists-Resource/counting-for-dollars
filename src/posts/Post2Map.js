@@ -114,15 +114,22 @@ class Post2Map extends Component {
 
     return (
       <div className="App">
-        <Select
-           labelId="state-select-label"
-           id="state-select"
-           value={this.state.program}
-           onChange={this.handleChange.bind(this)}
-         >
-           {programselectors}
-         </Select>
-        <ChartHeader title={this.state.program + " funding in FY2017"} />
+        <div className="header-grid">
+          <div className="grid-3">
+            <ChartHeader title={this.state.program + " funding in FY2017"} />
+          </div>
+          <div className="grid-1">
+            <Select
+               labelId="state-select-label"
+               id="state-select"
+               value={this.state.program}
+               onChange={this.handleChange.bind(this)}
+             >
+               {programselectors}
+             </Select>
+          </div>
+        </div>
+
         <ButtonGroup id="toggles" aria-label="outlined button group">
           <Button id={"button_" + "total"} className="active"   onClick={this.handleClick.bind(this, "total")}>Total Funding</Button>
           <Button id={"button_" + "pop"} className="inactive" onClick={this.handleClick.bind(this, "pop")}>Per Capita</Button>

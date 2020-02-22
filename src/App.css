@@ -4,7 +4,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .App {
   text-align: center;
-  font-family: "Droid Sans",sans-serif
+  font-family: "Droid Sans",sans-serif;
+  padding-top:2rem;
 }
 
 .header-grid {
