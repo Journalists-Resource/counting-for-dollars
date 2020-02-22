@@ -63,7 +63,7 @@ class StateMapWithDemographics extends Component {
             data-tip={tooltipGenerator(slice, d, this.props.program)}
             style={{
               fill: colorScale(d.properties.total / (slice === "total" ? 1 : d.properties[slice])),
-              stroke: "black",
+              stroke: "white",
               strokeOpacity: 0.5
             }}
             className={"states " + d.properties.name}
@@ -123,7 +123,7 @@ class StateMapWithDemographics extends Component {
           <path
             key={"path" + i}
             d={pathGenerator(d)}
-            style={{fill: "white", stroke: "black", strokeOpacity: 0.5 }}
+            style={{fill: "#ccc", stroke: "white", strokeOpacity: 0.5 }}
             className={"states " + d.properties.name}
           />
         )

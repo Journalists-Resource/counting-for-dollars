@@ -61,7 +61,7 @@ class StateMap extends Component {
             data-tip={d.name}
             style={{
               fill: colorScale(d.properties[slice]),
-              stroke: "black",
+              stroke: "white",
               strokeOpacity: 0.5
             }}
             className={"states " + d.properties.name}
@@ -121,7 +121,7 @@ class StateMap extends Component {
           <path
             key={"path" + i}
             d={pathGenerator(d)}
-            style={{fill: "white", stroke: "black", strokeOpacity: 0.5 }}
+            style={{fill: "#ccc", stroke: "white", strokeOpacity: 0.5 }}
             className={"states " + d.properties.name}
           />
         )
