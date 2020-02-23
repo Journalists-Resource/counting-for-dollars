@@ -8,7 +8,6 @@ import { bucketScale } from '../components/ColorSchemes'
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
 
 const colorScale = bucketScale
-  .domain([-4962283.7956, 514151.928])
 
 
 class Post4Map extends Component {
@@ -46,11 +45,15 @@ class Post4Map extends Component {
         ['get', 'GEOID']
       ];
 
-      csv("datasets/joined_school_dist_scores_final.csv").then(dataset => {
+      csv("datasets/joined_school_dist_scores_final.csv")
+      .then(dataset => {
+        colorScale.domain(dataset.map(function(row,i) {
+          return parseFloat(row['fiscal_cost_low_risk'])
+        }))
         dataset.map(function(row,i) {
           let number = parseFloat(row['fiscal_cost_low_risk'])
           expression.push(row["LEA_id"], (isNaN(number) ? 'gainsboro' : colorScale(number)))
-        })
+      })
 
         expression.push('gainsboro')
 
