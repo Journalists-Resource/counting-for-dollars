@@ -1,18 +1,23 @@
 import React, { Component } from 'react'
 import '../App.css'
 import mapboxgl from 'mapbox-gl'
+import { csv, json } from 'd3-fetch'
 import { ChartHeader, ChartFooter } from '../components/ChartMeta'
+import { bucketScale } from '../components/ColorSchemes'
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
+
+const colorScale = bucketScale
+  .domain([-4962283.7956, 514151.928])
 
 
 class Post4Map extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lng: -109.3297,
-      lat: 54.8017,
-      zoom: 2
+      lng: -71.22,
+      lat: 42.37,
+      zoom: 6
     };
   }
 
@@ -35,20 +40,37 @@ class Post4Map extends Component {
         type: 'vector',
         url: 'mapbox://tylermachado.1hv3eju0'
       });
-      map.addLayer({
-        'id': 'district-data',
-        'type': 'line',
-        'source': 'districts',
-        'source-layer': 'schooldistrict_sy1819_tl19-1lm5et',
-        'layout': {
-          'line-join': 'round',
-          'line-cap': 'round'
-        },
-        'paint': {
-          'line-color': '#ff69b4',
-          'line-width': 1
-        }
+
+      var expression = [
+        'match',
+        ['get', 'GEOID']
+      ];
+
+      csv("datasets/joined_school_dist_scores_final.csv").then(dataset => {
+        dataset.map(function(row,i) {
+          let number = parseFloat(row['fiscal_cost_low_risk'])
+          expression.push(row["LEA_id"], (isNaN(number) ? 'gainsboro' : colorScale(number)))
+        })
+
+        expression.push('gainsboro')
+
+        map.addLayer({
+          'id': 'district-data',
+          'type': 'fill',
+          'source': 'districts',
+          'source-layer': 'schooldistrict_sy1819_tl19-1lm5et',
+          // 'paint': {
+          //   'fill-color': '#ff69b4',
+          //   'fill-opacity': 0.5
+          // }
+          'paint': {
+            'fill-color': expression,
+            'fill-opacity': 0.7
+          }
+
+        });
       });
+
     });
 
     map.on('move', () => {
@@ -63,8 +85,12 @@ class Post4Map extends Component {
   render() {
     return (
       <div className="App">
-        <ChartHeader title="Title I funding per low-income child in 2016 by state" />
+        <ChartHeader
+          title="Title I funds by school district in 2016 plus potential funding lost under 2020 census undercount scenarios"
+          subhed="Estimating the amount of Title I funding school districts could lose under 2020 low-, medium- and high-risk miscount scenarios projected by the Urban Institute"
+        />
         <div ref={el => this.mapContainer = el}  className="mapContainer" />
+        <ChartFooter credit="Urban Institute" />
       </div>
     )
   }

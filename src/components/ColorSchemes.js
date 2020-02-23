@@ -1,4 +1,4 @@
-import { scaleOrdinal, scaleSequential, scaleQuantile } from 'd3-scale'
+import { scaleOrdinal, scaleSequential, scaleQuantile, scaleQuantize } from 'd3-scale'
 import { interpolateRdYlGn, schemeRdYlGn } from "d3-scale-chromatic"
 
 const categoricalColors = scaleOrdinal(["#a71930","#574241","#bfa5a4","#00689d","#009dd4","#cf6576","#8b8680"])
@@ -14,6 +14,6 @@ const fullAgencyName = scaleOrdinal()
 
 const divergingColors = scaleSequential(interpolateRdYlGn)
 
-const bucketScale = scaleQuantile().range(schemeRdYlGn[5]);
+const bucketScale = scaleQuantize().range(schemeRdYlGn[5]);
 
 export { categoricalColors, divergingColors, bucketScale, fullAgencyName }
