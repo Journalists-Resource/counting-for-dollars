@@ -14,7 +14,7 @@ class Post1Tree extends Component {
     this.onResize = this.onResize.bind(this)
     this.state = {
       screenWidth: window.innerWidth,
-      screenHeight: 700,
+      screenHeight: 500,
       hover: "none",
       data: [],
       slice: "total",
