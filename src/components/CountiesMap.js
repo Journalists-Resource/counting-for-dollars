@@ -4,7 +4,7 @@ import { bucketScale } from './ColorSchemes'
 import formatMoney from './FormatMoney'
 import { csv } from 'd3-fetch'
 import uscounties from '../geo/counties-10m'
-import { min, max, extent } from 'd3-array'
+import { min, max } from 'd3-array'
 import { geoPath, geoAlbersUsa } from 'd3-geo'
 import { feature } from "topojson-client"
 
