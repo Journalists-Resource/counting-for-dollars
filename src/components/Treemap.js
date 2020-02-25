@@ -8,7 +8,7 @@ import * as d3 from 'd3-hierarchy'
 function wrap(text, width) {
   text.each(function() {
     let text = select(this),
-      leafwidth = this.getAttribute("width") - 10,
+      leafwidth = this.getAttribute("width") - 20,
       words = text.text().split(/\s+/).reverse(),
       word,
       line = [],
@@ -21,10 +21,10 @@ function wrap(text, width) {
     while (word = words.pop()) {
       line.push(word + " ");
       tspan.text(line.join(" "));
-      if (tspan.node().getComputedTextLength() > (leafwidth - 10)) {
+      if (tspan.node().getComputedTextLength() > leafwidth) {
         line.pop();
         tspan.text(line.join(" "));
-        line = [word];
+        line = [word + " "];
         tspan = text.append("tspan").attr("x", x).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
       }
     }
@@ -100,7 +100,7 @@ class TreeMap extends Component {
          )
 
          textlabels = root.leaves().filter(function (d) {
-           return !isNaN(d.data[value]) && ((d.x1 - d.x0) > 60) && ((d.y1 - d.y0) > 60)
+           return !isNaN(d.data[value]) && ((d.x1 - d.x0) > 60) && ((d.y1 - d.y0) > 60) && (d.data.Program.length < (d.data[value] / 400000000))
          })
           .map((d,i) =>
               <text
