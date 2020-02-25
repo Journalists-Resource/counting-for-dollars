@@ -21,7 +21,7 @@ class Post5Map extends Component {
       hover: "none",
       data: [],
       slice: "pop_change",
-      program: "Title I Grants to LEAs"
+      program: "Title I Grants to Local Education Agencies"
     }
 
   }

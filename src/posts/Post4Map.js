@@ -22,7 +22,7 @@ class Post4Map extends Component {
       hover: "none",
       data: [],
       slice: "Funding Per Child",
-      program: "Title I Grants to LEAs"
+      program: "Title I Grants to Local Education Agencies"
     }
 
   }

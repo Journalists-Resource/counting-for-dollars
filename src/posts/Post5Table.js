@@ -17,7 +17,7 @@ class Post5Table extends Component {
       hover: "none",
       data: [],
       slice: "total",
-      program: "Title I Grants to LEAs"
+      program: "Title I Grants to Local Education Agencies"
     }
 
   }
