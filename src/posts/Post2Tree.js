@@ -36,7 +36,7 @@ class Post2Tree extends Component {
 
   componentWillMount() {
 
-     csv("datasets/treemap-and-table-bystate-2017.csv").then(csvdata => {
+     csv("datasets/fy2017expendituresbyprogram-state.csv").then(csvdata => {
        const nestedData = nest()
              .key(function(d) { return d.Department; })
              .entries(csvdata)

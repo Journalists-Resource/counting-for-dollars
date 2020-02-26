@@ -75,7 +75,7 @@ class Post2Map extends Component {
   componentWillMount() {
    Promise.all([
       csv("datasets/2017_income_and_pop.csv"),
-      csv("datasets/fy2016statefunding.csv")
+      csv("datasets/fy2017expendituresbyprogram-state.csv")
    ])
    .then(datasets => {
       let data_states = datasets[0]
