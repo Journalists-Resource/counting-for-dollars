@@ -15,25 +15,23 @@ let colorScale = bucketScale;
 
 class StateMap extends Component {
   render() {
+    const fill = this.props.fill;
     const slice = this.props.slice;
     const dataset = this.props.data;
-
-    console.log(slice)
-    console.log(dataset)
 
     const topojsonData = feature(usstates, usstates.objects.states).features
     const projection = geoAlbersUsa()
       .scale(this.props.size[0] * 1)
-      .translate([this.props.size[0]/2, 350])
+      .translate([this.props.size[0]/2, 250])
     const pathGenerator = geoPath().projection(projection)
     function tooltipGenerator(x,y,z) {
-      // if (x === "total") {
-      //   return y.properties.name + " received " + formatMoney(y.properties.total) + " in " + z + " funding in 2017."
-      // } else if (x === "pop") {
-      //   return y.properties.name + " received " + formatMoney(y.properties.total / y.properties.pop) + " in " + z + " funding per capita in 2017."
-      // } else if (x === "income") {
-      //   return y.properties.name + " received " + formatMoney(y.properties.total / y.properties.income) + " in " + z + " funding as a ratio of its personal income in 2017."
-      // }
+      if (x === "total") {
+        return y.properties.name + " received " + formatMoney(y.properties.total) + " in " + z + " funding in 2017."
+      } else if (x === "pop") {
+        return y.properties.name + " received " + formatMoney(y.properties.total / y.properties.pop) + " in " + z + " funding per capita in 2017."
+      } else if (x === "income") {
+        return y.properties.name + " received " + formatMoney(y.properties.total / y.properties.income) + " in " + z + " funding as a ratio of its personal income in 2017."
+      }
     }
 
     if (dataset.length > 0) {
@@ -46,12 +44,14 @@ class StateMap extends Component {
         }
       }
 
+      console.log(topojsonData)
+
       const datarange = [];
-      topojsonData.forEach(function(d){datarange.push(parseFloat(d.properties[slice]))})
-      colorScale.domain(datarange)
-      console.log(colorScale.domain())
+      topojsonData.forEach(function(d){
+         if (!isNaN((d.properties[fill]))) { datarange.push((d.properties[fill])) }
 
-
+      })
+      colorScale.domain([min(datarange), max(datarange)])
 
       const states = topojsonData
         .map((d,i) =>
@@ -60,7 +60,7 @@ class StateMap extends Component {
             d={pathGenerator(d)}
             data-tip={d.name}
             style={{
-              fill: colorScale(d.properties[slice]),
+              fill: colorScale((d.properties[fill])),
               stroke: "white",
               strokeOpacity: 0.5
             }}

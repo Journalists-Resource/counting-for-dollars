@@ -3,7 +3,7 @@ import '../App.css'
 import { transpose } from 'd3-array'
 import { csv } from 'd3-fetch'
 import DataTable from '../components/Table'
-import StateMapWithDemographics from '../components/StateMapWithDemographics'
+import StateMap from '../components/StateMap'
 import ReactTooltip from 'react-tooltip'
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup'
@@ -22,31 +22,49 @@ class Post2Map extends Component {
     this.state = {
       screenWidth: window.innerWidth,
       screenHeight: 700,
-      hover: "none",
+      slice: "total",
       data: [],
       filtereddata: [],
-      slice: "total",
       program: "",
-      programlist: []
+      programlist: [],
+      accessor: ""
     }
   }
 
-  filterData(target) {
-    let newarray = []
-    let entries = Object.entries(this.state.data.filter((d) => d.Program == target)[0]);
-    console.log(entries)
-    for (let o in entries) {
-      let newobj = {}
-      if (!isNaN(parseFloat(entries[o][1]))) {
-        newobj["State"] = entries[o][0]
-        newobj["Total " + target + " Funding"] = parseFloat(entries[o][1])
-        newarray.push(newobj)
-      }
+  filterData(target, slice = "total") {
+   const allowed = ['State', target];
+   const newarray = [];
+
+   let accessor = ""
+   if (slice === "total") {
+      accessor = "Total " + target + " Funding"
+   } else if (slice === "pop") {
+      accessor = target + " Funding Per Capita"
+   } else if (slice === "income") {
+      accessor = target + " Funding Per Income"
+   }
+
+    for (let i=0; i<this.state.data.length; i++) {
+      const filtered = Object.keys(this.state.data[i])
+        .filter(key => allowed.includes(key))
+        .reduce((obj, key) => {
+          if (key === target) {
+            obj[accessor] = this.state.data[i][key] / this.state.data[i][slice];
+          } else {
+            obj[key] = this.state.data[i][key];
+          }
+          return obj;
+        }, {});
+      newarray.push(filtered);
     }
-    newarray.columns = ["State", "Total " + target + " Funding"];
+
+    newarray.columns = ['State', accessor];
+    console.log(newarray.columns)
+
     this.setState({
-      program: target,
-      filtereddata: newarray
+      accessor: accessor,
+      filtereddata: newarray,
+      slice: slice
     })
   }
 
@@ -54,23 +72,37 @@ class Post2Map extends Component {
     this.setState({ screenWidth: window.innerWidth  })
   }
 
-  // onHover(d) {
-  //   this.setState({ hover: d.id })
-  // }
-
   componentWillMount() {
-    let programarray = []
-    csv("datasets/fy2016statefunding.csv").then(data => {
-      data.map((d,i) => programarray.push(d.Program));
-      programarray = programarray.sort();
-      this.setState({
-        data: data,
-        programlist: programarray,
-        program: programarray[0]
-      });
-      this.filterData(this.state.program);
-    });
+   Promise.all([
+      csv("datasets/2017_income_and_pop.csv"),
+      csv("datasets/fy2016statefunding.csv")
+   ])
+   .then(datasets => {
+      let data_states = datasets[0]
+      let data_funding = datasets[1]
 
+      let programarray = []
+      data_funding.map((d,i) => programarray.push(d.Program));
+      programarray = programarray.sort();
+
+      data_states.map((d,i) => {
+         d["income"] = +d["income"]
+         d["pop"] = +d["pop"]
+         d["total"] = 1
+         data_funding.map((f,j) => {
+            let program = f["Program"];
+            d[program] = +f[d["State"]]
+         })
+      })
+
+      this.setState({
+         data: data_states,
+         programlist: programarray,
+         program: programarray[0]
+      })
+
+      this.filterData(this.state.program, "total")
+   })
   }
 
   componentDidMount() {
@@ -83,7 +115,6 @@ class Post2Map extends Component {
   }
 
   handleClick(e) {
-    this.setState({slice: e});
     var actives = document.getElementsByClassName("active");
     for(var i = 0; i < actives.length; i++)
     {
@@ -91,11 +122,14 @@ class Post2Map extends Component {
         actives[i].classList.remove("active");
     }
     document.getElementById("button_" + e).classList.add("active");
+    this.filterData(this.state.program, e)
   }
 
   handleChange(e) {
     let target = e.target.value;
-    this.setState({program: target});
+    this.setState({
+      program: target
+   });
     this.filterData(target);
   }
 
@@ -138,7 +172,7 @@ class Post2Map extends Component {
         </ButtonGroup>
         <div>
           <ReactTooltip />
-          <StateMapWithDemographics data={this.state.data} program={this.state.program} size={[this.state.screenWidth, this.state.screenHeight-175]} slice={this.state.slice}  />
+          <StateMap data={this.state.filtereddata} size={[this.state.screenWidth, this.state.screenHeight-175]} fill={this.state.accessor} slice={this.state.slice} />
         </div>
         <div>
           <DataTable data={this.state.filtereddata} sort="State" sortorder="asc" />
