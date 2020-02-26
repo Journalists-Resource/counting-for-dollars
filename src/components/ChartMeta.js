@@ -18,7 +18,39 @@ class ChartHeader extends Component {
 }
 
 class ChartFooter extends Component {
+    constructor(props){
+      super(props)
+      this.state = {
+        anchorEl: false,
+        setAnchorEl: null,
+        open: false,
+        id: open ? 'simple-popover' : undefined
+      }
+    }
+
+
+
+    handleClick(event) {
+      this.setState({
+        anchorEl:event.currentTarget,
+        setAnchorEl: event.currentTarget
+      })
+    };
+
+    handleClose() {
+      this.setState({
+        anchorEl: null,
+        setAnchorEl: null
+      })
+    };
+
+
+
    render() {
+
+     const open = Boolean(this.state.anchorEl);
+     const id = open ? 'simple-popover' : undefined;
+
       return (
          <div className="chart-footer">
             <div className="col1 credit">
@@ -28,10 +60,26 @@ class ChartFooter extends Component {
 
             </div>
             <div className="col3">
-               {/* <Button variant="outlined" color="primary">
+               <Button variant="outlined" color="primary" onClick={this.handleClick.bind(this)}>
                   <Code />
                   &nbsp; Embed
-               </Button> */}
+               </Button>
+               <Popover
+                  id={id}
+                  open={open}
+                  anchorEl={this.state.anchorEl}
+                  onClose={this.handleClose.bind(this)}
+                  anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'left',
+                  }}
+                  transformOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'center',
+                  }}
+                >
+                  <pre>test test test</pre>
+                </Popover>
             </div>
          </div>
       )

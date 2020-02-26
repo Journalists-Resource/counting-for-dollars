@@ -23,7 +23,6 @@ class Post2Tree extends Component {
       program: "Title I Grants to Local Education Agencies",
       state: "Alabama"
     }
-
   }
 
   onResize() {
@@ -63,6 +62,7 @@ class Post2Tree extends Component {
      const stateselectors = usStateNames
      .map((d,i) =>
        <MenuItem
+          key={i}
           value={d}
        >
          {d}
