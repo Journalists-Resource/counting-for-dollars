@@ -1,4 +1,4 @@
-state,population,medicaid_reimbursement_lost_per_capita,cost_low,cost_med,cost_high,risk_low,risk_med,risk_high,undercount_low,undercount_med,undercount_high
+State,population,medicaid_reimbursement_lost_per_capita,cost_low,cost_med,cost_high,risk_low,risk_med,risk_high,undercount_low,undercount_med,undercount_high
 Texas,26538614,1075,-222526278,-425082250,-559168597,-0.0078,-0.0149,-0.0196,-207001,-395425,-520157
 Florida,19645772,849,-73388746,-173464308,-246853054,-0.0044,-0.0104,-0.0148,-86441,-204316,-290757
 Illinois,12873761,840,-19465127,-84348882,-123279135,-0.0018,-0.0078,-0.0114,-23173,-100415,-146761
