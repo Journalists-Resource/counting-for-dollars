@@ -44,14 +44,15 @@ class StateMap extends Component {
         }
       }
 
-      console.log(topojsonData)
-
       const datarange = [];
       topojsonData.forEach(function(d){
          if (!isNaN((d.properties[fill]))) { datarange.push((d.properties[fill])) }
 
       })
       colorScale.domain(datarange)
+
+      console.log(topojsonData)
+      console.log(colorScale.range())
 
       const states = topojsonData
         .map((d,i) =>
@@ -79,10 +80,11 @@ class StateMap extends Component {
               y2="100%"
               spreadMethod="pad"
             >
-              <stop offset="0%" stopColor={colorScale(((colorScale.domain()[1]-colorScale.domain()[0])*0.00)+colorScale.domain()[0])} stopOpacity="1"></stop>
-              <stop offset="33%" stopColor={colorScale(((colorScale.domain()[1]-colorScale.domain()[0])*0.33)+colorScale.domain()[0])} stopOpacity="1"></stop>
-              <stop offset="66%" stopColor={colorScale(((colorScale.domain()[1]-colorScale.domain()[0])*0.66)+colorScale.domain()[0])} stopOpacity="1"></stop>
-              <stop offset="100%" stopColor={colorScale(((colorScale.domain()[1]-colorScale.domain()[0])*1.00)+colorScale.domain()[0])} stopOpacity="1"></stop>
+               <stop offset="0%" stopColor={colorScale.range()[0]} stopOpacity="1"></stop>
+               <stop offset="25%" stopColor={colorScale.range()[1]} stopOpacity="1"></stop>
+               <stop offset="50%" stopColor={colorScale.range()[2]} stopOpacity="1"></stop>
+               <stop offset="75%" stopColor={colorScale.range()[3]} stopOpacity="1"></stop>
+               <stop offset="100%" stopColor={colorScale.range()[4]} stopOpacity="1"></stop>
             </linearGradient>
           </defs>
           <rect
