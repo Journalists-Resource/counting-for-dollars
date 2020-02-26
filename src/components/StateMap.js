@@ -51,7 +51,7 @@ class StateMap extends Component {
          if (!isNaN((d.properties[fill]))) { datarange.push((d.properties[fill])) }
 
       })
-      colorScale.domain([min(datarange), max(datarange)])
+      colorScale.domain(datarange)
 
       const states = topojsonData
         .map((d,i) =>

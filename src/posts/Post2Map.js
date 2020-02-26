@@ -172,7 +172,12 @@ class Post2Map extends Component {
         </ButtonGroup>
         <div>
           <ReactTooltip />
-          <StateMap data={this.state.filtereddata} size={[this.state.screenWidth, this.state.screenHeight-175]} fill={this.state.accessor} slice={this.state.slice} />
+          <StateMap
+            data={this.state.filtereddata}
+            size={[this.state.screenWidth, this.state.screenHeight-175]}
+            fill={this.state.accessor}
+            slice={this.state.slice}
+         />
         </div>
         <div>
           <DataTable data={this.state.filtereddata} sort="State" sortorder="asc" />
