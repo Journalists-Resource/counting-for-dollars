@@ -34,6 +34,7 @@ class Post2Map extends Component {
   filterData(target) {
     let newarray = []
     let entries = Object.entries(this.state.data.filter((d) => d.Program == target)[0]);
+    console.log(entries)
     for (let o in entries) {
       let newobj = {}
       if (!isNaN(parseFloat(entries[o][1]))) {
@@ -140,7 +141,7 @@ class Post2Map extends Component {
           <StateMapWithDemographics data={this.state.data} program={this.state.program} size={[this.state.screenWidth, this.state.screenHeight-175]} slice={this.state.slice}  />
         </div>
         <div>
-          <DataTable data={this.state.filtereddata}  />
+          <DataTable data={this.state.filtereddata} sort="State" sortorder="asc" />
         </div>
       </div>
     )
