@@ -65,6 +65,7 @@ class ChartFooter extends Component {
                   &nbsp; Embed
                </Button>
                <Popover
+                  className="embed-panel"
                   id={id}
                   open={open}
                   anchorEl={this.state.anchorEl}

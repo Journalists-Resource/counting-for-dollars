@@ -60,7 +60,7 @@ class Post5Map extends Component {
         <h2>County Map Demo</h2>
         <div>
           <CountiesMap data={this.state.data} program={this.state.program} size={[this.state.screenWidth, this.state.screenHeight]} slice={this.state.slice}  />
-          <ReactTooltip />
+          <ReactTooltip className='tooltip-width' />
         </div>
         <div>
           <DataTable data={this.state.data}  />

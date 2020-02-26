@@ -98,7 +98,7 @@ class Post4Map extends Component {
       <div className="App">
         <ChartHeader title="Title I funding per low-income child in 2016 by state" subhed="Wyoming, Vermont and North Dakota received substantially more Title I grant money per eligible child in FY2016 than other states. Each received more than $3,000 per low-income child compared with the national average of $1,489." />
         <div>
-          <ReactTooltip />
+          <ReactTooltip className='tooltip-width' />
           <StateMap
              data={this.state.filtereddata}
              size={[this.state.screenWidth, this.state.screenHeight-175]}

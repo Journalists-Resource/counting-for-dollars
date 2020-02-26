@@ -48,7 +48,7 @@ class TreeMap extends Component {
   }
 
    render() {
-    const width = this.props.size[0];
+    const width = this.props.size[0] - 60;
     const height = this.props.size[1];
     const data = this.props.data;
     const value = this.props.value;
@@ -152,7 +152,7 @@ class TreeMap extends Component {
 
   return (
      <div>
-        <svg ref={node => this.node = node} value={value} width={this.props.size[0]} height={this.props.size[1]}>
+        <svg ref={node => this.node = node} value={value} width={width} height={this.props.size[1]}>
          {rects}
          {textlabels}
          {legend}

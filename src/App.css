@@ -13,14 +13,14 @@ a {
   padding-top:2rem;
 }
 
-.MuiPopover-paper {
+.embed-panel .MuiPopover-paper {
   font-family: "Droid Sans",sans-serif;
   padding:1rem;
   color:white !important;
   background-color:#222 !important;
 }
 
-.MuiPopover-paper pre {
+.embed-panel .MuiPopover-paper pre {
   padding: 0.5rem;
   border: 1px solid black;
   background-color: #444;
@@ -99,6 +99,11 @@ button.active span.MuiButton-label {
 
 .MuiTableCell-root, .MuiMenuItem-root, .MuiButton-root {
   font-family: "Droid Sans",sans-serif !important
+}
+
+.tooltip-width {
+  max-width: 125px;
+  text-align:left;
 }
 
 /* Mapbox */

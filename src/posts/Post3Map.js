@@ -121,7 +121,7 @@ class Post3Map extends Component {
           <Button id={"button_" + "cost_high"} className="inactive" onClick={this.handleClick.bind(this, "cost_high")}>High Undercount</Button>
         </ButtonGroup>
         <div>
-          <ReactTooltip />
+          <ReactTooltip className='tooltip-width' />
           <StateMap
             data={this.state.filtereddata}
             size={[this.state.screenWidth, this.state.screenHeight-175]}

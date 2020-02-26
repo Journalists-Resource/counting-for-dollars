@@ -93,7 +93,7 @@ class Post2Tree extends Component {
             organizer="Department"
             size={[this.state.screenWidth, this.state.screenHeight]}
           />
-          <ReactTooltip />
+          <ReactTooltip className='tooltip-width' />
           <ChartFooter credit="Andrew Reamer, research professor at the George Washington Institute of Public Policy; “Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds”" />
         </div>
       </div>

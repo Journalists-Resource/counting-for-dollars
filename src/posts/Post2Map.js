@@ -170,7 +170,7 @@ class Post2Map extends Component {
           <Button id={"button_" + "income"} className="inactive" onClick={this.handleClick.bind(this, "income")}>Per Income</Button>
         </ButtonGroup>
         <div>
-          <ReactTooltip />
+          <ReactTooltip className='tooltip-width' />
           <StateMap
             data={this.state.filtereddata}
             size={[this.state.screenWidth, this.state.screenHeight-175]}
