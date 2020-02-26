@@ -13,6 +13,19 @@ a {
   padding-top:2rem;
 }
 
+.MuiPopover-paper {
+  font-family: "Droid Sans",sans-serif;
+  padding:1rem;
+  color:white !important;
+  background-color:#222 !important;
+}
+
+.MuiPopover-paper pre {
+  padding: 0.5rem;
+  border: 1px solid black;
+  background-color: #444;
+}
+
 .header-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;

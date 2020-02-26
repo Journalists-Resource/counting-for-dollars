@@ -78,7 +78,8 @@ class ChartFooter extends Component {
                     horizontal: 'center',
                   }}
                 >
-                  <pre>test test test</pre>
+                  Use this code to embed this graphic on your own site:
+                  <pre>{'<iframe src="' + window.location.href + '" />'}</pre>
                 </Popover>
             </div>
          </div>
