@@ -35,7 +35,7 @@ class Post2Table extends Component {
         .filter(key => allowed.includes(key))
         .reduce((obj, key) => {
           if (key === state) {
-            obj["FY2017 Funding"] = this.state.data[i][key];
+            obj["FY2017 Funding"] = parseFloat(this.state.data[i][key]);
           } else {
             obj[key] = this.state.data[i][key];
           }
@@ -109,7 +109,7 @@ class Post2Table extends Component {
           </div>
         </div>
         <div>
-          <DataTable data={this.state.filtereddata} sort={"alpha"} />
+          <DataTable data={this.state.filtereddata} sort={"FY2017 Funding"} sortorder="desc" />
         </div>
       </div>
     )
