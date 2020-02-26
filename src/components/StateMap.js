@@ -50,10 +50,7 @@ class StateMap extends Component {
 
       })
       colorScale.domain(datarange)
-
-      console.log(topojsonData)
-      console.log(colorScale.range())
-
+      
       const states = topojsonData
         .map((d,i) =>
           <path
