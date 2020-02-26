@@ -129,7 +129,7 @@ class Post2Map extends Component {
     this.setState({
       program: target
    });
-    this.filterData(target);
+    this.filterData(target, this.state.slice);
   }
 
 
@@ -145,8 +145,6 @@ class Post2Map extends Component {
         {d}
      </MenuItem>
     )
-
-    console.log(this.state.filtereddata)
 
     return (
       <div className="App">

@@ -15,6 +15,8 @@ import formatMoney from './FormatMoney'
 function cellFormatter(row, column) {
    if ((column.indexOf("Total") > -1) || (column.indexOf("Per Capita") > -1)) {
       return formatMoney(row[column])
+   } else if (column.indexOf("Per Income") > -1) {
+     return formatMoney(row[column], "income")
    } else if ((column == "Program") && (row.URL !== "NA")) {
       return (
          <a href=
@@ -110,7 +112,7 @@ class DataTable extends Component {
                     <TableRow key={row[data.columns[0]]}>
                       {data.columns.map(column => (
                         <TableCell key={column}>
-                          { cellFormatter(row, column) }
+                          { cellFormatter(row, column, this.state.sort) }
                         </TableCell>
                       ))}
                     </TableRow>

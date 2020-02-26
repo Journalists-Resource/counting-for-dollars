@@ -51,12 +51,14 @@ class StateMap extends Component {
       })
       colorScale.domain(datarange)
 
+      console.log(slice)
+
       const states = topojsonData
         .map((d,i) =>
           <path
             key={"path" + i}
             d={pathGenerator(d)}
-            data-tip={d.properties.name + ": " + formatMoney(d.properties[fill]) + " in " + fill + " in 2017."}
+            data-tip={d.properties.name + ": " + formatMoney(d.properties[fill], slice) + " in " + fill + " in 2017."}
             style={{
               fill: colorScale((d.properties[fill])),
               stroke: "white",
@@ -96,14 +98,14 @@ class StateMap extends Component {
             y={this.props.size[1]-10}
             textAnchor="start"
           >
-            {formatMoney(min(colorScale.domain()))}
+            {formatMoney(min(colorScale.domain()), slice)}
           </text>
           <text
             x={this.props.size[0] * 0.75}
             y={this.props.size[1]-10}
             textAnchor="end"
           >
-            {formatMoney(max(colorScale.domain()))}
+            {formatMoney(max(colorScale.domain()), slice)}
           </text>
         </g>
       )

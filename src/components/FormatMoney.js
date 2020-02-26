@@ -1,5 +1,8 @@
-const formatMoney = (value) => {
-   if ((!isNaN(value)) && value > 0.002) {
+const formatMoney = (value, percentify) => {
+   if (percentify === "income") {
+     console.log(percentify)
+     return (Math.round(value * 10000)/100) + "%"
+   } else if (!isNaN(value)) {
      let newvalue = parseFloat(value);
      return "$" + newvalue.toLocaleString('en-US');
    } else {
