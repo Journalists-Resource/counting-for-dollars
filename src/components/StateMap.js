@@ -50,7 +50,7 @@ class StateMap extends Component {
 
       })
       colorScale.domain(datarange)
-      
+
       const states = topojsonData
         .map((d,i) =>
           <path
@@ -96,14 +96,14 @@ class StateMap extends Component {
             y={this.props.size[1]-10}
             textAnchor="start"
           >
-            {formatMoney(colorScale.domain()[0])}
+            {formatMoney(min(colorScale.domain()))}
           </text>
           <text
             x={this.props.size[0] * 0.75}
             y={this.props.size[1]-10}
             textAnchor="end"
           >
-            {formatMoney(colorScale.domain()[1])}
+            {formatMoney(max(colorScale.domain()))}
           </text>
         </g>
       )

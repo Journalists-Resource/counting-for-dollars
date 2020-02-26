@@ -13,33 +13,71 @@ import { ChartHeader, ChartFooter } from '../components/ChartMeta'
 
 class Post4Map extends Component {
   constructor(props){
-    super(props)
-    this.onResize = this.onResize.bind(this)
-    this.handleClick = this.handleClick.bind(this);
-    this.state = {
-      screenWidth: window.innerWidth,
-      screenHeight: 700,
-      hover: "none",
-      data: [],
-      slice: "Funding Per Child",
-      program: "Title I Grants to Local Education Agencies"
+     super(props)
+     this.filterData = this.filterData.bind(this)
+     this.onResize = this.onResize.bind(this)
+     this.handleClick = this.handleClick.bind(this);
+     this.state = {
+       screenWidth: window.innerWidth,
+       screenHeight: 700,
+       slice: "Funding Per Child",
+       data: [],
+       filtereddata: [],
+       program: "",
+       programlist: [],
+       accessor: ""
+     }
+  }
+
+  filterData(slice = "Funding Per Child") {
+   const allowed = ['State', slice];
+   const newarray = [];
+
+   let accessor = slice;
+
+    for (let i=0; i<this.state.data.length; i++) {
+      const filtered = Object.keys(this.state.data[i])
+        .filter(key => allowed.includes(key))
+        .reduce((obj, key) => {
+          if (key === slice) {
+            obj[accessor] = this.state.data[i][key];
+          } else {
+            obj[key] = this.state.data[i][key];
+          }
+          return obj;
+        }, {});
+      newarray.push(filtered);
     }
 
+    newarray.columns = ['State', accessor];
+    console.log(newarray.columns)
+
+    this.setState({
+      accessor: accessor,
+      filtereddata: newarray,
+      slice: slice
+    })
   }
 
   onResize() {
     this.setState({ screenWidth: window.innerWidth  })
   }
 
-  // onHover(d) {
-  //   this.setState({ hover: d.id })
-  // }
-
   componentWillMount() {
-    csv("datasets/map-and-table-title-i-grants-per-state-per-child.csv").then(data => {
-      this.setState({data: data});
-    });
+    csv("datasets/map-and-table-title-i-grants-per-state-per-child.csv")
+   .then(dataset => {
+      dataset.forEach(d => {
+         d["Child Population"] = +d["Child Population"]
+         d["Total Title I Funding"] = +d["Total Title I Funding"]
+         d["Funding Per Child"] = +d["Funding Per Child"]
+      })
 
+      this.setState({
+         data: dataset
+      })
+
+      this.filterData("Funding Per Child")
+   })
   }
 
   componentDidMount() {
@@ -61,10 +99,16 @@ class Post4Map extends Component {
         <ChartHeader title="Title I funding per low-income child in 2016 by state" subhed="Wyoming, Vermont and North Dakota received substantially more Title I grant money per eligible child in FY2016 than other states. Each received more than $3,000 per low-income child compared with the national average of $1,489." />
         <div>
           <ReactTooltip />
-          <StateMap data={this.state.data} program={this.state.program} size={[this.state.screenWidth, this.state.screenHeight]} slice={this.state.slice} reversescale={true} />
+          <StateMap
+             data={this.state.filtereddata}
+             size={[this.state.screenWidth, this.state.screenHeight-175]}
+             fill={this.state.accessor}
+             slice={this.state.slice}
+             reversescale={true}
+         />
         </div>
         <div>
-          <DataTable data={this.state.data}  />
+          <DataTable data={this.state.data} sort="Funding Per Child" sortorder="desc" />
         </div>
         <ChartFooter credit="U.S. Census Bureau’s SAIPE; Dept. of Education" />
       </div>
