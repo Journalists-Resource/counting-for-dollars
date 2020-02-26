@@ -7,6 +7,8 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import ArrowDropDownSharpIcon from '@material-ui/icons/ArrowDropDownSharp'
+import ArrowDropUpSharpIcon from '@material-ui/icons/ArrowDropUpSharp'
 import usStateNames from './USStateNames'
 import formatMoney from './FormatMoney'
 
@@ -70,6 +72,16 @@ class DataTable extends Component {
       })
     }
 
+    addArrow(c) {
+      if (c == this.state.sort && this.state.sortorder == "asc") {
+         return <ArrowDropUpSharpIcon style={{verticalAlign:"bottom"}} />
+      } else if (c == this.state.sort && this.state.sortorder == "desc") {
+         return <ArrowDropDownSharpIcon style={{verticalAlign:"bottom"}} />
+      } else {
+         return "";
+      }
+   }
+
     render() {
       let data = this.props.data;
 
@@ -88,6 +100,7 @@ class DataTable extends Component {
                       value={column}
                       data-sortstatus={this.state.sortorder}>
                         {column}
+                        {this.addArrow(column)}
                       </TableCell>
                     ))}
                   </TableRow>
