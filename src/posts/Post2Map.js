@@ -59,7 +59,6 @@ class Post2Map extends Component {
     }
 
     newarray.columns = ['State', accessor];
-    console.log(newarray.columns)
 
     this.setState({
       accessor: accessor,
@@ -146,6 +145,8 @@ class Post2Map extends Component {
         {d}
      </MenuItem>
     )
+
+    console.log(this.state.filtereddata)
 
     return (
       <div className="App">

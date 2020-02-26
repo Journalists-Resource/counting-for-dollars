@@ -13,7 +13,7 @@ import usStateNames from './USStateNames'
 import formatMoney from './FormatMoney'
 
 function cellFormatter(row, column) {
-   if ((usStateNames.indexOf(column) > -1) || column.indexOf("Funding") > -1) {
+   if ((column.indexOf("Total") > -1) || (column.indexOf("Per Capita") > -1)) {
       return formatMoney(row[column])
    } else if ((column == "Program") && (row.URL !== "NA")) {
       return (
