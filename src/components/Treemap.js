@@ -103,8 +103,11 @@ class TreeMap extends Component {
            return !isNaN(d.data[value]) && ((d.x1 - d.x0) > 60) && ((d.y1 - d.y0) > 60) && (d.data.Program.length < (d.data[value] / 400000000))
          })
           .map((d,i) =>
-              <text
+              <a
                 key={i}
+                href={d.data.URL}
+              >
+              <text
                 ref={this.labelRef}
                 className="datalabel"
                 x={d.x0 + 5}
@@ -117,7 +120,7 @@ class TreeMap extends Component {
               >
                  {d.data.Program + ": " + percent(d.data[value]/totalSpend)}
               </text>
-
+              </a>
           )
 
 
@@ -126,17 +129,17 @@ class TreeMap extends Component {
             .map((d,i) =>
               <g
               key={i}
-                transform={"translate(" + ((this.props.size[0]/25) * i) + "," + (this.props.size[1] - 45) + ")"}
+                transform={"translate(" + (((width/7) * i)+(width/28)) + "," + (this.props.size[1] - 45) + ")"}
               >
                 <rect
-                  width={25}
+                  width={(width/7) - (width/14)}
                   height={15}
                   style={{fill: colorScale(d) }}
                 >
                 </rect>
                 <text
-                  fontSize={(width/300) + 7 + "px"}
-                  transform={"translate(12,35)"}
+                  fontSize={(width/300) + 10 + "px"}
+                  transform={"translate("+ (width/28) +",30)"}
                   style={{textAnchor: "middle"}}
                 >
                   {d}
