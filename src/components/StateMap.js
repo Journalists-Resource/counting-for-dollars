@@ -15,26 +15,24 @@ let colorScale = bucketScale;
 
 class StateMap extends Component {
   render() {
+    const fill = this.props.fill;
     const slice = this.props.slice;
     const dataset = this.props.data;
-
-    console.log(slice)
-    console.log(dataset)
 
     const topojsonData = feature(usstates, usstates.objects.states).features
     const projection = geoAlbersUsa()
       .scale(this.props.size[0] * 1)
-      .translate([this.props.size[0]/2, 350])
+      .translate([this.props.size[0]/2, 250])
     const pathGenerator = geoPath().projection(projection)
-    function tooltipGenerator(x,y,z) {
-      // if (x === "total") {
-      //   return y.properties.name + " received " + formatMoney(y.properties.total) + " in " + z + " funding in 2017."
-      // } else if (x === "pop") {
-      //   return y.properties.name + " received " + formatMoney(y.properties.total / y.properties.pop) + " in " + z + " funding per capita in 2017."
-      // } else if (x === "income") {
-      //   return y.properties.name + " received " + formatMoney(y.properties.total / y.properties.income) + " in " + z + " funding as a ratio of its personal income in 2017."
-      // }
-    }
+    // function tooltipGenerator(x,y,z) {
+    //   if (x === "total") {
+    //     return y.properties.name + " received " + formatMoney(y.properties.total) + " in " + z + " funding in 2017."
+    //   } else if (x === "pop") {
+    //     return y.properties.name + " received " + formatMoney(y.properties.total / y.properties.pop) + " in " + z + " funding per capita in 2017."
+    //   } else if (x === "income") {
+    //     return y.properties.name + " received " + formatMoney(y.properties.total / y.properties.income) + " in " + z + " funding as a ratio of its personal income in 2017."
+    //   }
+    // }
 
     if (dataset.length > 0) {
       for (let s=0; s < topojsonData.length; s++) {
@@ -47,20 +45,20 @@ class StateMap extends Component {
       }
 
       const datarange = [];
-      topojsonData.forEach(function(d){datarange.push(parseFloat(d.properties[slice]))})
+      topojsonData.forEach(function(d){
+         if (!isNaN((d.properties[fill]))) { datarange.push((d.properties[fill])) }
+
+      })
       colorScale.domain(datarange)
-      console.log(colorScale.domain())
-
-
 
       const states = topojsonData
         .map((d,i) =>
           <path
             key={"path" + i}
             d={pathGenerator(d)}
-            data-tip={d.name}
+            data-tip={d.properties.name + ": " + formatMoney(d.properties[fill]) + " in " + fill + " in 2017."}
             style={{
-              fill: colorScale(d.properties[slice]),
+              fill: colorScale((d.properties[fill])),
               stroke: "white",
               strokeOpacity: 0.5
             }}
@@ -79,10 +77,11 @@ class StateMap extends Component {
               y2="100%"
               spreadMethod="pad"
             >
-              <stop offset="0%" stopColor={colorScale(((colorScale.domain()[1]-colorScale.domain()[0])*0.00)+colorScale.domain()[0])} stopOpacity="1"></stop>
-              <stop offset="33%" stopColor={colorScale(((colorScale.domain()[1]-colorScale.domain()[0])*0.33)+colorScale.domain()[0])} stopOpacity="1"></stop>
-              <stop offset="66%" stopColor={colorScale(((colorScale.domain()[1]-colorScale.domain()[0])*0.66)+colorScale.domain()[0])} stopOpacity="1"></stop>
-              <stop offset="100%" stopColor={colorScale(((colorScale.domain()[1]-colorScale.domain()[0])*1.00)+colorScale.domain()[0])} stopOpacity="1"></stop>
+               <stop offset="0%" stopColor={colorScale.range()[0]} stopOpacity="1"></stop>
+               <stop offset="25%" stopColor={colorScale.range()[1]} stopOpacity="1"></stop>
+               <stop offset="50%" stopColor={colorScale.range()[2]} stopOpacity="1"></stop>
+               <stop offset="75%" stopColor={colorScale.range()[3]} stopOpacity="1"></stop>
+               <stop offset="100%" stopColor={colorScale.range()[4]} stopOpacity="1"></stop>
             </linearGradient>
           </defs>
           <rect
@@ -97,14 +96,14 @@ class StateMap extends Component {
             y={this.props.size[1]-10}
             textAnchor="start"
           >
-            {formatMoney(colorScale.domain()[0])}
+            {formatMoney(min(colorScale.domain()))}
           </text>
           <text
             x={this.props.size[0] * 0.75}
             y={this.props.size[1]-10}
             textAnchor="end"
           >
-            {formatMoney(colorScale.domain()[1])}
+            {formatMoney(max(colorScale.domain()))}
           </text>
         </g>
       )

@@ -64,7 +64,7 @@ class Post2Table extends Component {
   }
 
   componentWillMount() {
-    csv("datasets/treemap-and-table-bystate-2017.csv").then(data => {
+    csv("datasets/fy2017expendituresbyprogram-state.csv").then(data => {
       this.setState({data: data});
       this.filterData("Alabama");
     });

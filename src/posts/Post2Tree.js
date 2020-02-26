@@ -36,7 +36,7 @@ class Post2Tree extends Component {
 
   componentWillMount() {
 
-     csv("datasets/treemap-and-table-bystate-2017.csv").then(csvdata => {
+     csv("datasets/fy2017expendituresbyprogram-state.csv").then(csvdata => {
        const nestedData = nest()
              .key(function(d) { return d.Department; })
              .entries(csvdata)
@@ -94,7 +94,7 @@ class Post2Tree extends Component {
             size={[this.state.screenWidth, this.state.screenHeight]}
           />
           <ReactTooltip />
-          <ChartFooter credit="Federal Funds Information for States" />
+          <ChartFooter credit="Andrew Reamer, research professor at the George Washington Institute of Public Policy; “Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds”" />
         </div>
       </div>
     )

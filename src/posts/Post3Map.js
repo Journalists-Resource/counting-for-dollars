@@ -13,17 +13,57 @@ import { ChartHeader, ChartFooter } from '../components/ChartMeta'
 
 class Post3Map extends Component {
   constructor(props){
-    super(props)
-    this.onResize = this.onResize.bind(this)
-    this.handleClick = this.handleClick.bind(this);
-    this.state = {
-      screenWidth: window.innerWidth,
-      screenHeight: 700,
-      hover: "none",
-      data: [],
-      slice: "cost_low"
+     super(props)
+     this.filterData = this.filterData.bind(this)
+     this.onResize = this.onResize.bind(this)
+     this.handleClick = this.handleClick.bind(this);
+     this.state = {
+       screenWidth: window.innerWidth,
+       screenHeight: 700,
+       slice: "cost_low",
+       data: [],
+       filtereddata: [],
+       program: "",
+       programlist: [],
+       accessor: ""
+     }
+  }
+
+  filterData(slice = "cost_low") {
+   const allowed = ['State', slice];
+   const newarray = [];
+
+   let accessor = ""
+   if (slice === "cost_low") {
+      accessor = "Low Undercount"
+   } else if (slice === "cost_med") {
+      accessor = "Medium Undercount"
+   } else if (slice === "cost_high") {
+      accessor = "High Undercount"
+   }
+
+    for (let i=0; i<this.state.data.length; i++) {
+      const filtered = Object.keys(this.state.data[i])
+        .filter(key => allowed.includes(key))
+        .reduce((obj, key) => {
+          if (key === slice) {
+            obj[accessor] = this.state.data[i][key];
+          } else {
+            obj[key] = this.state.data[i][key];
+          }
+          return obj;
+        }, {});
+      newarray.push(filtered);
     }
 
+    newarray.columns = ['State', accessor];
+    console.log(newarray.columns)
+
+    this.setState({
+      accessor: accessor,
+      filtereddata: newarray,
+      slice: slice
+    })
   }
 
   onResize() {
@@ -35,10 +75,20 @@ class Post3Map extends Component {
   // }
 
   componentWillMount() {
-    csv("datasets/losses_undercount.csv").then(data => {
-      this.setState({data: data});
-    });
+    csv("datasets/losses_undercount.csv")
+   .then(dataset => {
+      dataset.forEach(d => {
+         d["cost_low"] = +d["cost_low"]
+         d["cost_med"] = +d["cost_med"]
+         d["cost_high"] = +d["cost_high"]
+      })
 
+      this.setState({
+         data: dataset
+      })
+
+      this.filterData("cost_low")
+   })
   }
 
   componentDidMount() {
@@ -51,7 +101,6 @@ class Post3Map extends Component {
   }
 
   handleClick(e) {
-    this.setState({slice: e})
     var actives = document.getElementsByClassName("active");
     for(var i = 0; i < actives.length; i++)
     {
@@ -59,6 +108,7 @@ class Post3Map extends Component {
         actives[i].classList.remove("active");
     }
     document.getElementById("button_" + e).classList.add("active");
+    this.filterData(e)
   }
 
   render() {
@@ -72,7 +122,12 @@ class Post3Map extends Component {
         </ButtonGroup>
         <div>
           <ReactTooltip />
-          <StateMap data={this.state.data} program={this.state.program} size={[this.state.screenWidth, this.state.screenHeight]} slice={this.state.slice}  />
+          <StateMap
+            data={this.state.filtereddata}
+            size={[this.state.screenWidth, this.state.screenHeight-175]}
+            fill={this.state.accessor}
+            slice={this.state.slice}
+         />
         </div>
         <ChartFooter  credit="Andrew Reamer, research professor at the George Washington Institute of Public Policy; “Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds”, Urban Institute" />
       </div>
