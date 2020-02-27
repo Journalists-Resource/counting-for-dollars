@@ -87,12 +87,23 @@ path.countries {
   fill: #5EAFC6;
 }
 
+@media screen and (max-width:767px) {
+  button.MuiButtonBase-root {
+    font-size:0.75em;
+    letter-spacing:0.01em;
+  }
+}
+
 button.active {
   background:#e8e8e8;
 }
 
 button.active span.MuiButton-label {
   font-weight: bold;
+}
+
+thead {
+  cursor:pointer;
 }
 
 .chart-header {
