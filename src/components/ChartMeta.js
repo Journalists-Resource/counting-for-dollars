@@ -80,7 +80,7 @@ class ChartFooter extends Component {
                   }}
                 >
                   Use this code to embed this graphic on your own site:
-                  <pre>{'<iframe src="' + window.location.href + '" />'}</pre>
+                  <pre>{'<iframe height="700" width="100%" src="' + window.location.href + '" frameborder="0" allowfullscreen></iframe>'}</pre>
                 </Popover>
             </div>
          </div>

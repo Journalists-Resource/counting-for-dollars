@@ -69,13 +69,12 @@ class TreeMap extends Component {
 
     if(data.length > 0) {
 
+
       var newObj = new Object();
       newObj.values = data;
       newObj.name = "Programs";
 
       const root = d3.hierarchy(newObj, d => d.values).sum(function(d){ return d[value]})
-
-
 
       var totalSpend = root.value;
 

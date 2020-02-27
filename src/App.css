@@ -24,6 +24,13 @@ a {
   padding: 0.5rem;
   border: 1px solid black;
   background-color: #444;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  max-width:350px;
 }
 
 .header-grid {
