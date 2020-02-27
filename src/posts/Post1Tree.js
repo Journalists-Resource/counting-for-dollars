@@ -62,7 +62,7 @@ class Post1Tree extends Component {
             organizer="Agency"
             size={[this.state.screenWidth, this.state.screenHeight]}
          />
-         <ChartFooter credit="Andrew Reamer, research professor at the George Washington Institute of Public Policy; “Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds”" />
+         <ChartFooter credit="“Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds”" />
          </div>
          </div>
       )

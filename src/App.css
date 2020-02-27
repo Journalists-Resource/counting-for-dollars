@@ -104,6 +104,15 @@ button.active span.MuiButton-label {
   color: #999;
 }
 
+.chart-footer .credit a {
+  color: #999;
+  border-bottom:1px dotted #999;
+}
+
+.chart-footer .credit a:hover {
+  color: #369;
+}
+
 .MuiTableCell-root, .MuiMenuItem-root, .MuiButton-root {
   font-family: "Droid Sans",sans-serif !important
 }

@@ -54,7 +54,7 @@ class ChartFooter extends Component {
       return (
          <div className="chart-footer">
             <div className="col1 credit">
-               Data: {this.props.credit}.
+               Source: <a href="https://gwipp.gwu.edu/counting-dollars-2020-role-decennial-census-geographic-distribution-federal-funds">{this.props.credit}</a>.
             </div>
             <div className="col2">
 
