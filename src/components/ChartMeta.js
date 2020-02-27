@@ -54,7 +54,7 @@ class ChartFooter extends Component {
       return (
          <div className="chart-footer">
             <div className="col1 credit">
-               {this.props.credit}.
+               {this.props.credit}
             </div>
             <div className="col2">
 
