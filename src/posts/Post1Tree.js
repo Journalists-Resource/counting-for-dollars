@@ -18,10 +18,28 @@ class Post1Tree extends Component {
          hover: "none",
          data: [],
          slice: "total",
-         program: "Title I Grants to Local Education Agencies"
+         program: "Title I Grants to Local Education Agencies",
+         x: 0,
+         y: 0,
+         tooltipPos: "top"
       }
 
    }
+
+   _onMouseMove(e) {
+     let tooltipPos = "top"
+
+     if (e.screenX < 0 && e.screenX > -100) {
+       tooltipPos = "left"
+     } else if (e.screenX < -(window.innerWidth-100) && e.screenX > -(window.innerWidth)) {
+       tooltipPos = "right"
+     }
+    this.setState({
+      x: e.screenX,
+      y: e.screenY,
+      tooltipPos: tooltipPos
+    });
+  }
 
    onResize() {
       this.setState({ screenWidth: window.innerWidth })
@@ -52,9 +70,9 @@ class Post1Tree extends Component {
    render() {
       return (
          <div className="App">
-         <div>
+         <div onMouseMove={this._onMouseMove.bind(this)}>
          <ChartHeader title="Where $1.5 trillion in census-guided federal assistance goes" subhed="Decennial census data is used by over 300 federal programs in two broad ways – to determine eligibility and to apportion funding. Here’s where that money went in 2017." />
-         <ReactTooltip className='tooltip-width'
+         <ReactTooltip className='tooltip-width' place={this.state.tooltipPos}
          />
          <Treemap
             data={this.state.data}

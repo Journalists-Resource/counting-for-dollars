@@ -48,7 +48,7 @@ class TreeMap extends Component {
   }
 
    render() {
-    const width = this.props.size[0] - 60;
+    const width = this.props.size[0];
     const height = this.props.size[1];
     const data = this.props.data;
     const value = this.props.value;

@@ -21,17 +21,31 @@ class Post2Tree extends Component {
       data: [],
       slice: "total",
       program: "Title I Grants to Local Education Agencies",
-      state: "Alabama"
+      state: "Alabama",
+      x: 0,
+      y: 0,
+      tooltipPos: "top"
+   }
+  }
+
+  _onMouseMove(e) {
+    let tooltipPos = "top"
+
+    if (e.screenX < 0 && e.screenX > -100) {
+      tooltipPos = "left"
+    } else if (e.screenX < -(window.innerWidth-100) && e.screenX > -(window.innerWidth)) {
+      tooltipPos = "right"
     }
+   this.setState({
+     x: e.screenX,
+     y: e.screenY,
+     tooltipPos: tooltipPos
+   });
   }
 
   onResize() {
     this.setState({ screenWidth: window.innerWidth  })
   }
-
-  // onHover(d) {
-  //   this.setState({ hover: d.id })
-  // }
 
   componentWillMount() {
 
@@ -86,14 +100,14 @@ class Post2Tree extends Component {
              </Select>
           </div>
         </div>
-        <div>
+        <div  onMouseMove={this._onMouseMove.bind(this)}>
           <Treemap
             data={this.state.data}
             value={this.state.state}
             organizer="Department"
             size={[this.state.screenWidth, this.state.screenHeight]}
           />
-          <ReactTooltip className='tooltip-width' />
+          <ReactTooltip className='tooltip-width' place={this.state.tooltipPos} />
           <ChartFooter credit={<span>Sources: <a href="https://gwipp.gwu.edu/counting-dollars-2020-role-decennial-census-geographic-distribution-federal-funds">“Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds”</a>, Federal Funds Information for States</span>} />
         </div>
       </div>
