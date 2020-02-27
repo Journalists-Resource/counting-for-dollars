@@ -54,7 +54,7 @@ class ChartFooter extends Component {
       return (
          <div className="chart-footer">
             <div className="col1 credit">
-               Source: <a href="https://gwipp.gwu.edu/counting-dollars-2020-role-decennial-census-geographic-distribution-federal-funds">{this.props.credit}</a>.
+               {this.props.credit}.
             </div>
             <div className="col2">
 
@@ -80,7 +80,7 @@ class ChartFooter extends Component {
                   }}
                 >
                   Use this code to embed this graphic on your own site:
-                  <pre>{'<iframe height="700" width="100%" src="' + window.location.href + '" frameborder="0" allowfullscreen></iframe>'}</pre>
+                  <pre>{'<iframe height="' + document.body.clientHeight + '" width="100%" src="' + window.location.href + '" frameborder="0" allowfullscreen></iframe>'}</pre>
                 </Popover>
             </div>
          </div>

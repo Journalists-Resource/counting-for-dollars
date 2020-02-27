@@ -110,6 +110,7 @@ class Post2Table extends Component {
         </div>
         <div>
           <DataTable data={this.state.filtereddata} sort={"FY2017 Funding"} sortorder="desc" />
+          <ChartFooter credit={<span>Sources: <a href="https://gwipp.gwu.edu/counting-dollars-2020-role-decennial-census-geographic-distribution-federal-funds">“Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds”</a>, Federal Funds Information for States</span>} />
         </div>
       </div>
     )

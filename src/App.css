@@ -110,6 +110,10 @@ thead {
   text-align:left;
 }
 
+.chart-footer {
+  margin-top:1rem;
+}
+
 .chart-footer .credit {
   text-align:left;
   color: #999;
