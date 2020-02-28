@@ -90,7 +90,7 @@ class Post2Table extends Component {
         {d}
      </MenuItem>
     )
-
+    console.log(this.state.filtereddata)
     return (
       <div className="App">
         <div className="header-grid">

@@ -97,7 +97,7 @@ class Post2Map extends Component {
       this.setState({
          data: data_states,
          programlist: programarray,
-         program: programarray[0]
+         program: "Medicare"
       })
 
       this.filterData(this.state.program, "total")
