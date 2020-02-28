@@ -87,7 +87,7 @@ class Post2Tree extends Component {
       <div className="App">
         <div className="header-grid">
           <div className="grid-3">
-            <ChartHeader title={"Federal funding received by " + this.state.state} />
+            <ChartHeader title={"Funding received by " + this.state.state + " from 40 census guided federal programs in 2017"} />
           </div>
           <div className="grid-1">
             <Select

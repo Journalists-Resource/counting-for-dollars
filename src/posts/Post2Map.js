@@ -150,7 +150,7 @@ class Post2Map extends Component {
       <div className="App">
         <div className="header-grid">
           <div className="grid-3">
-            <ChartHeader title={this.state.program + " funding in FY2017"} />
+            <ChartHeader title={this.state.program + " funding received by states in 2017"} />
           </div>
           <div className="grid-1">
             <Select
