@@ -15,7 +15,7 @@ import formatMoney from './FormatMoney'
 function cellFormatter(row, column) {
    if ((column.indexOf("Total") > -1) || (column.indexOf("Per Capita") > -1) || (column.indexOf("FY2017 Funding") > -1)) {
       return formatMoney(row[column])
-   } else if (column.indexOf("Per Income") > -1) {
+   } else if (column.indexOf("Funding as % of State's Income") > -1) {
      return formatMoney(row[column], "income")
    } else if ((column == "Program") && (row.URL !== "NA")) {
       return (

@@ -41,7 +41,7 @@ class Post2Map extends Component {
    } else if (slice === "pop") {
       accessor = target + " Funding Per Capita"
    } else if (slice === "income") {
-      accessor = target + " Funding Per Income"
+      accessor = target + " Funding as % of State's Income"
    }
 
     for (let i=0; i<this.state.data.length; i++) {
@@ -167,7 +167,7 @@ class Post2Map extends Component {
         <ButtonGroup id="toggles" aria-label="outlined button group">
           <Button id={"button_" + "total"} className="active"   onClick={this.handleClick.bind(this, "total")}>Total Funding</Button>
           <Button id={"button_" + "pop"} className="inactive" onClick={this.handleClick.bind(this, "pop")}>Per Capita</Button>
-          <Button id={"button_" + "income"} className="inactive" onClick={this.handleClick.bind(this, "income")}>Per Income</Button>
+          <Button id={"button_" + "income"} className="inactive" onClick={this.handleClick.bind(this, "income")}>% of Income</Button>
         </ButtonGroup>
         <div>
           <ReactTooltip className='tooltip-width' />
