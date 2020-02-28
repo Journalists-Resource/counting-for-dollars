@@ -93,7 +93,7 @@ class TreeMap extends Component {
              y={d.y0}
              width={d.x1 - d.x0}
              height={d.y1 - d.y0}
-             data-tip={d.data.Program + ", " + fullAgencyName(d.data[organizer]) + ": " + formatMoney(d.data[value])}
+             data-tip={(d.data[organizer] !== "Others") ? d.data.Program + ", " + fullAgencyName(d.data[organizer]) + ": " + formatMoney(d.data[value]) : d.data.Program + ": " + formatMoney(d.data[value])}
              fill={colorScale(d.data[organizer])}
            />
          )
