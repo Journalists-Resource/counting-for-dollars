@@ -95,7 +95,7 @@ class Post2Table extends Component {
       <div className="App">
         <div className="header-grid">
           <div className="grid-3">
-            <ChartHeader title={this.state.state + " funding in FY2017"} />
+            <ChartHeader title={"Funding received by " + this.state.state + " from 40 of the largest census-guided federal programs in 2017"} />
           </div>
           <div className="grid-1">
             <Select
