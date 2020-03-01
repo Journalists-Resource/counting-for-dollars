@@ -13,7 +13,7 @@ import usStateNames from './USStateNames'
 import formatMoney from './FormatMoney'
 
 function cellFormatter(row, column) {
-   if ((column.indexOf("Total") > -1) || (column.indexOf("Per Capita") > -1) || (column.indexOf("FY2017 Funding") > -1)) {
+   if ((column.indexOf("Total") > -1) || (column.indexOf("Funding Per Child") > -1) || (column.indexOf("Per Capita") > -1) || (column.indexOf("FY2017 Funding") > -1)) {
       return formatMoney(row[column])
    } else if (column.indexOf("Funding as % of State's Income") > -1) {
      return formatMoney(row[column], "income")
