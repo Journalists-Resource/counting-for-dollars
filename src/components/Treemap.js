@@ -57,7 +57,6 @@ class TreeMap extends Component {
 
 
     function scalePicker(checker) {
-      console.log(checker);
       if (checker === true) {
         return categoricalColorsWithoutSBA;
       } else {
