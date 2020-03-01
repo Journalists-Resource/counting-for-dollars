@@ -31,9 +31,9 @@ class Post2Tree extends Component {
   _onMouseMove(e) {
     let tooltipPos = "top"
 
-    if (e.clientX < (this.state.screenWidth*0.2)) {
+    if (e.clientX < (this.state.screenWidth*0.33)) {
       tooltipPos = "right"
-    } else if (e.clientX > (this.state.screenWidth*0.8)) {
+    } else if (e.clientX > (this.state.screenWidth*0.66)) {
       tooltipPos = "left"
     }
    this.setState({
