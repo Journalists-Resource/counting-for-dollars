@@ -105,6 +105,7 @@ class Post2Tree extends Component {
             data={this.state.data}
             value={this.state.state}
             organizer="Department"
+            omitSBA={true}
             size={[this.state.screenWidth, this.state.screenHeight]}
           />
           <ReactTooltip className='tooltip-width' place={this.state.tooltipPos} />

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../App.css'
-import { categoricalColors, fullAgencyName } from './ColorSchemes'
+import { categoricalColors, categoricalColorsWithoutSBA, fullAgencyName } from './ColorSchemes'
 import formatMoney from './FormatMoney'
 import { select, selectAll } from 'd3-selection'
 import * as d3 from 'd3-hierarchy'
@@ -53,8 +53,17 @@ class TreeMap extends Component {
     const data = this.props.data;
     const value = this.props.value;
     const organizer = this.props.organizer;
+    const colorScale = scalePicker(this.props.omitSBA)
 
-    const colorScale = categoricalColors;
+
+    function scalePicker(checker) {
+      console.log(checker);
+      if (checker === true) {
+        return categoricalColorsWithoutSBA;
+      } else {
+        return categoricalColors;
+      }
+    }
 
 
 
