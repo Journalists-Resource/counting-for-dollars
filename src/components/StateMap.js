@@ -24,15 +24,13 @@ class StateMap extends Component {
       .scale(this.props.size[0] * 1)
       .translate([this.props.size[0]/2, 250])
     const pathGenerator = geoPath().projection(projection)
-    // function tooltipGenerator(x,y,z) {
-    //   if (x === "total") {
-    //     return y.properties.name + " received " + formatMoney(y.properties.total) + " in " + z + " funding in 2017."
-    //   } else if (x === "pop") {
-    //     return y.properties.name + " received " + formatMoney(y.properties.total / y.properties.pop) + " in " + z + " funding per capita in 2017."
-    //   } else if (x === "income") {
-    //     return y.properties.name + " received " + formatMoney(y.properties.total / y.properties.income) + " in " + z + " funding as a ratio of its personal income in 2017."
-    //   }
-    // }
+    function tooltipGenerator(slice,fill,d) {
+      if (slice === "total" || slice === "pop" || slice === "income") {
+        return d.properties.name + ": " + formatMoney(d.properties[fill], slice) + " in " + fill + " in 2017."
+      } else if (slice === "cost_low" || slice === "cost_med" || slice === "cost_high") {
+        return d.properties.name + ": " + formatMoney(d.properties[fill], slice) + " in " + fill + " scenario."
+      }
+    }
 
     if (dataset.length > 0) {
       for (let s=0; s < topojsonData.length; s++) {
@@ -56,7 +54,7 @@ class StateMap extends Component {
           <path
             key={"path" + i}
             d={pathGenerator(d)}
-            data-tip={d.properties.name + ": " + formatMoney(d.properties[fill], slice) + " in " + fill + " in 2017."}
+            data-tip={tooltipGenerator(slice,fill,d)}
             style={{
               fill: colorScale((d.properties[fill])),
               stroke: "white",
