@@ -31,17 +31,17 @@ class Post2Tree extends Component {
   _onMouseMove(e) {
     let tooltipPos = "top"
 
-    if (e.screenX < 0 && e.screenX > -100) {
-      tooltipPos = "left"
-    } else if (e.screenX < -(window.innerWidth-100) && e.screenX > -(window.innerWidth)) {
+    if (e.clientX < (this.state.screenWidth*0.2)) {
       tooltipPos = "right"
+    } else if (e.clientX > (this.state.screenWidth*0.8)) {
+      tooltipPos = "left"
     }
    this.setState({
-     x: e.screenX,
-     y: e.screenY,
+     x: e.clientX,
+     y: e.clientY,
      tooltipPos: tooltipPos
    });
-  }
+ }
 
   onResize() {
     this.setState({ screenWidth: window.innerWidth  })
