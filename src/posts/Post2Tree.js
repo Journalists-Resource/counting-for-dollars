@@ -19,6 +19,7 @@ class Post2Tree extends Component {
       screenHeight: 500,
       hover: "none",
       data: [],
+      originaldata: [],
       slice: "total",
       program: "Title I Grants to Local Education Agencies",
       state: "Alabama",
@@ -53,7 +54,7 @@ class Post2Tree extends Component {
        const nestedData = nest()
              .key(function(d) { return d.Department; })
              .entries(csvdata)
-       this.setState({data: nestedData});
+       this.setState({originaldata: csvdata, data: nestedData});
      });
 
 
@@ -109,7 +110,7 @@ class Post2Tree extends Component {
             size={[this.state.screenWidth, this.state.screenHeight]}
           />
           <ReactTooltip className='tooltip-width' place={this.state.tooltipPos} />
-          <ChartFooter credit={<span>Sources: <a href="https://gwipp.gwu.edu/counting-dollars-2020-role-decennial-census-geographic-distribution-federal-funds">“Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds,”</a> Federal Funds Information for States.</span>} />
+          <ChartFooter credit={<span>Sources: <a href="https://gwipp.gwu.edu/counting-dollars-2020-role-decennial-census-geographic-distribution-federal-funds">“Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds,”</a> Federal Funds Information for States.</span>} downloaddata={this.state.originaldata}  />
         </div>
       </div>
     )

@@ -5,6 +5,7 @@ import SvgIcon from '@material-ui/core/SvgIcon'
 import Code from '@material-ui/icons/Code';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Popover from '@material-ui/core/Popover';
+import { CSVLink } from "react-csv";
 
 class ChartHeader extends Component {
    render() {
@@ -21,6 +22,7 @@ class ChartFooter extends Component {
     constructor(props){
       super(props)
       this.state = {
+        downloaddata: props.downloaddata,
         anchorEl: false,
         setAnchorEl: null,
         open: false,
@@ -28,7 +30,9 @@ class ChartFooter extends Component {
       }
     }
 
+    handleDownloadData() {
 
+    };
 
     handleClick(event) {
       this.setState({
@@ -47,7 +51,6 @@ class ChartFooter extends Component {
 
 
    render() {
-
      const open = Boolean(this.state.anchorEl);
      const id = open ? 'simple-popover' : undefined;
 
@@ -57,7 +60,34 @@ class ChartFooter extends Component {
                {this.props.credit}
             </div>
             <div className="col2">
-
+            {( (this.props.downloaddata.length>0) ?
+              <CSVLink
+                data={this.props.downloaddata}
+                filename={this.props.downloadfilename + ".csv"}
+                className="btn btn-primary"
+                target="_blank"
+              >
+                <Button
+                variant="outlined"
+                size="small"
+                color="primary"
+                >
+                   <SaveAlt />
+                   &nbsp; Get Data
+                </Button>
+              </CSVLink>
+              :
+              <a href="https://gwipp.gwu.edu/counting-dollars-2020-role-decennial-census-geographic-distribution-federal-funds" target="_blank">
+                <Button
+                variant="outlined"
+                size="small"
+                color="primary"
+                >
+                   <SaveAlt />
+                   &nbsp; Get Data
+                </Button>
+              </a>
+            )}
             </div>
             <div className="col3">
                <Button

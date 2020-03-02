@@ -110,7 +110,7 @@ class Post4Map extends Component {
         <div>
           <DataTable data={this.state.data} sort="Funding Per Child" sortorder="desc" />
         </div>
-        <ChartFooter credit="U.S. Census Bureau’s SAIPE; Dept. of Education" />
+        <ChartFooter credit="U.S. Census Bureau’s SAIPE; Dept. of Education" downloaddata={this.state.filtereddata} downloadfilename={this.state.accessor}  />
       </div>
     )
   }

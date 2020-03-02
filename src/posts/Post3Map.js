@@ -129,7 +129,7 @@ class Post3Map extends Component {
             slice={this.state.slice}
          />
         </div>
-        <ChartFooter credit={<span>Sources: <a href="https://gwipp.gwu.edu/counting-dollars-2020-role-decennial-census-geographic-distribution-federal-funds">“Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds,”</a> Federal Funds Information for States, <a href="https://www.urban.org/research/publication/assessing-miscounts-2020-census">“Assessing Miscounts in the 2020 Census.”</a></span>} />
+        <ChartFooter credit={<span>Sources: <a href="https://gwipp.gwu.edu/counting-dollars-2020-role-decennial-census-geographic-distribution-federal-funds">“Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds,”</a> Federal Funds Information for States, <a href="https://www.urban.org/research/publication/assessing-miscounts-2020-census">“Assessing Miscounts in the 2020 Census.”</a></span>} downloaddata={this.state.filtereddata} downloadfilename={this.state.accessor}  />
       </div>
     )
   }
