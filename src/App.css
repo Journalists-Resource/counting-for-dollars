@@ -11,6 +11,8 @@ a {
   text-align: center;
   font-family: "Droid Sans",sans-serif;
   padding-top:2rem;
+  max-width:900px;
+  margin:0 auto;
 }
 
 .embed-panel .MuiPopover-paper {

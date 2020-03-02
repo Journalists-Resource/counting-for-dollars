@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import '../App.css'
 import { categoricalColors, categoricalColorsWithoutSBA, fullAgencyName } from './ColorSchemes'
 import formatMoney from './FormatMoney'
+import { min } from 'd3-array'
 import { select, selectAll } from 'd3-selection'
 import * as d3 from 'd3-hierarchy'
 
@@ -48,7 +49,7 @@ class TreeMap extends Component {
   }
 
    render() {
-    const width = this.props.size[0];
+    const width = min([900, this.props.size[0]]);
     const height = this.props.size[1];
     const data = this.props.data;
     const value = this.props.value;
