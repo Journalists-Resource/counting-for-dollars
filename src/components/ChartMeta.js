@@ -60,7 +60,12 @@ class ChartFooter extends Component {
 
             </div>
             <div className="col3">
-               <Button variant="outlined" color="primary" onClick={this.handleClick.bind(this)}>
+               <Button
+               variant="outlined"
+               size="small"
+               color="primary"
+               onClick={this.handleClick.bind(this)}
+               >
                   <Code />
                   &nbsp; Embed
                </Button>
