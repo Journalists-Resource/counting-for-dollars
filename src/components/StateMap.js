@@ -15,14 +15,15 @@ let colorScale = bucketScale;
 
 class StateMap extends Component {
   render() {
+    const width = min([900, this.props.size[0]]);
     const fill = this.props.fill;
     const slice = this.props.slice;
     const dataset = this.props.data;
 
     const topojsonData = feature(usstates, usstates.objects.states).features
     const projection = geoAlbersUsa()
-      .scale(this.props.size[0] * 1)
-      .translate([this.props.size[0]/2, 250])
+      .scale(width * 1)
+      .translate([width/2, 250])
     const pathGenerator = geoPath().projection(projection)
     function tooltipGenerator(slice,fill,d) {
       if (slice === "total" || slice === "pop" || slice === "income") {
@@ -83,21 +84,21 @@ class StateMap extends Component {
             </linearGradient>
           </defs>
           <rect
-            width={this.props.size[0]/2}
+            width={width/2}
             height={20}
-            x={this.props.size[0]/4}
+            x={width/4}
             y={this.props.size[1]-50}
             style={{fill: 'url("#gradient")'}}
           ></rect>
           <text
-            x={this.props.size[0] * 0.25}
+            x={width * 0.25}
             y={this.props.size[1]-10}
             textAnchor="start"
           >
             {formatMoney(min(colorScale.domain()), slice)}
           </text>
           <text
-            x={this.props.size[0] * 0.75}
+            x={width * 0.75}
             y={this.props.size[1]-10}
             textAnchor="end"
           >
@@ -107,7 +108,7 @@ class StateMap extends Component {
       )
 
       return (
-        <svg width={this.props.size[0]} height={this.props.size[1]}>
+        <svg width={width} height={this.props.size[1]}>
           {states}
           {legend}
         </svg>
@@ -123,7 +124,7 @@ class StateMap extends Component {
           />
         )
       return (
-          <svg width={this.props.size[0]} height={this.props.size[1]}>
+          <svg width={width} height={this.props.size[1]}>
             {states}
           </svg>
       )
