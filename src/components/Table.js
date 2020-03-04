@@ -17,7 +17,7 @@ function cellFormatter(row, column) {
       return formatMoney(row[column])
    } else if (column.indexOf("Funding as % of State's Income") > -1) {
      return formatMoney(row[column], "income")
-   } else if ((column == "Program") && (row.URL !== "NA")) {
+   } else if ((column == "Program") && (row.URL !== "NA") && (row.URL !== "")) {
       return (
          <a target="_blank" href=
             {row.URL}
