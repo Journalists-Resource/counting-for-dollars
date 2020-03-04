@@ -19,7 +19,7 @@ function cellFormatter(row, column) {
      return formatMoney(row[column], "income")
    } else if ((column == "Program") && (row.URL !== "NA")) {
       return (
-         <a href=
+         <a target="_blank" href=
             {row.URL}
          >
             {row[column]}
