@@ -11,6 +11,8 @@ a {
   text-align: center;
   font-family: "Droid Sans",sans-serif;
   padding-top:2rem;
+  max-width:900px;
+  margin:0 auto;
 }
 
 .embed-panel .MuiPopover-paper {
@@ -87,12 +89,7 @@ path.countries {
   fill: #5EAFC6;
 }
 
-@media screen and (max-width:767px) {
-  button.MuiButtonBase-root {
-    font-size:0.75em;
-    letter-spacing:0.01em;
-  }
-}
+
 
 button.active {
   background:#e8e8e8;
@@ -150,4 +147,17 @@ thead {
   bottom: 0;
   height: 650px;
   width:100%;
+}
+
+@media screen and (max-width:767px) {
+  button.MuiButtonBase-root {
+    font-size:0.75em;
+    letter-spacing:0.01em;
+  }
+}
+@media screen and (max-width:599px) {
+   .MuiButton-label {
+      display:block !important;
+      margin:0 auto;
+   }
 }
