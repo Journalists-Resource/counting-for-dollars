@@ -55,8 +55,10 @@ class Post3Table extends Component {
     console.log(this.state.data)
     return (
       <div className="App">
-        <div className="App-header">
-          <h2>How the census guides Medicaid and how an undercount can cost states millions in reimbursements</h2>
+        <div className="header-grid">
+          <div className="grid-3">
+            <ChartHeader title={"How the census guides Medicaid and how an undercount can cost states millions in reimbursements"} />
+          </div>
         </div>
         <div>
           <DataTable data={this.state.data}  />
