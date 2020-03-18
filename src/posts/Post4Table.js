@@ -57,7 +57,7 @@ class Post4Table extends Component {
       <div className="App">
         <div className="header-grid">
           <div className="grid-3">
-            <ChartHeader title={"How the census guides Title I grants to schools"} />
+            <ChartHeader title={"Title I funding per low-income child in 2016 by state"} />
           </div>
         </div>
         <div className="App-header">
@@ -66,7 +66,7 @@ class Post4Table extends Component {
         <div>
           <DataTable data={this.state.data}  />
         </div>
-        <ChartFooter credit={<span>Sources: <a href="https://gwipp.gwu.edu/counting-dollars-2020-role-decennial-census-geographic-distribution-federal-funds">“Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds,”</a> Federal Funds Information for States.</span>} downloaddata={this.state.data} downloadfilename={"How the census guides Title I grants to schools"} />
+        <ChartFooter credit={<span>Sources: <a href="https://gwipp.gwu.edu/counting-dollars-2020-role-decennial-census-geographic-distribution-federal-funds">“Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds,”</a> Federal Funds Information for States.</span>} downloaddata={this.state.data} downloadfilename={"Title I funding per low-income child in 2016 by state"} />
       </div>
     )
   }
