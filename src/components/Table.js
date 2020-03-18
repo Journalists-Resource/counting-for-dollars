@@ -11,9 +11,40 @@ import ArrowDropDownSharpIcon from '@material-ui/icons/ArrowDropDownSharp'
 import ArrowDropUpSharpIcon from '@material-ui/icons/ArrowDropUpSharp'
 import usStateNames from './USStateNames'
 import formatMoney from './FormatMoney'
+import { scaleOrdinal } from 'd3-scale'
+
+function colFormat(column) {
+  const scale = scaleOrdinal()
+    .domain([
+      "population",
+      "medicaid_reimbursement_lost_per_capita",
+      "cost_low",
+      "cost_med",
+      "cost_high",
+      "risk_low",
+      "risk_med",
+      "risk_high"
+    ])
+    .range([
+      "2015 Population",
+      "Medicaid reimbursement per capita lost",
+      "Cost of low undercount",
+      "Cost of medium undercount",
+      "Cost of high undercount",
+      "Low risk scenario",
+      "Medium risk scenario",
+      "High risk scenario"
+    ]);
+
+  if (scale.domain().indexOf(column) > -1) {
+    return scale(column);
+  } else {
+    return column;
+  }
+}
 
 function cellFormatter(row, column) {
-   if ((column.indexOf("Total") > -1) || (column.indexOf("Funding Per Child") > -1) || (column.indexOf("Per Capita") > -1) || (column.indexOf("FY2017 Funding") > -1)) {
+   if ((column.indexOf("Total") > -1) || (column.indexOf("Funding Per Child") > -1) || (column.indexOf("Per Capita") > -1) || (column.indexOf("FY2017 Funding") > -1) || (column.indexOf("medicaid_reimbursement_lost_per_capita") > -1) || (column.indexOf("cost_low") > -1) || (column.indexOf("cost_med") > -1) || (column.indexOf("cost_high") > -1)) {
       return formatMoney(row[column])
    } else if (column.indexOf("Funding as % of State's Income") > -1) {
      return formatMoney(row[column], "income")
@@ -101,7 +132,7 @@ class DataTable extends Component {
                       onClick={this.handleClick.bind(this)}
                       value={column}
                       data-sortstatus={this.state.sortorder}>
-                        {column}
+                        {colFormat(column)}
                         {this.addArrow(column)}
                       </TableCell>
                     ))}

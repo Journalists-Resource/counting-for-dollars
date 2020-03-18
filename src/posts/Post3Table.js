@@ -33,7 +33,15 @@ class Post3Table extends Component {
 
   componentWillMount() {
     csv("datasets/losses_undercount.csv").then(data => {
-      this.setState({data: data});
+      data.map(item => (
+        Object.keys(item).filter(d => (d !== "State")).map(key => (
+          item[key] = +item[key]
+        ))
+      ))
+
+      this.setState({
+        data: data
+      });
     });
 
   }
@@ -52,7 +60,6 @@ class Post3Table extends Component {
   }
 
   render() {
-    console.log(this.state.data)
     return (
       <div className="App">
         <div className="header-grid">
