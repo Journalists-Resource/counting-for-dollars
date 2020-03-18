@@ -35,11 +35,11 @@ class Post3Map extends Component {
 
    let accessor = ""
    if (slice === "cost_low") {
-      accessor = "Low Undercount"
+      accessor = "Low Risk"
    } else if (slice === "cost_med") {
-      accessor = "Medium Undercount"
+      accessor = "Medium Risk"
    } else if (slice === "cost_high") {
-      accessor = "High Undercount"
+      accessor = "High Risk"
    }
 
     for (let i=0; i<this.state.data.length; i++) {
@@ -116,9 +116,9 @@ class Post3Map extends Component {
       <div className="App">
         <ChartHeader title="Impacts to Medicaid of 2020 census undercounts" subhed="Medicaid reimbursements states might gain or lose under 2020 low-, medium- and high-risk miscount scenarios projected by the Urban Institute" />
         <ButtonGroup id="toggles" aria-label="outlined button group">
-          <Button id={"button_" + "cost_low"} className="active" onClick={this.handleClick.bind(this, "cost_low")}>Low Undercount</Button>
-          <Button id={"button_" + "cost_med"} className="inactive" onClick={this.handleClick.bind(this, "cost_med")}>Medium Undercount</Button>
-          <Button id={"button_" + "cost_high"} className="inactive" onClick={this.handleClick.bind(this, "cost_high")}>High Undercount</Button>
+          <Button id={"button_" + "cost_low"} className="active" onClick={this.handleClick.bind(this, "cost_low")}>Low Risk</Button>
+          <Button id={"button_" + "cost_med"} className="inactive" onClick={this.handleClick.bind(this, "cost_med")}>Medium Risk</Button>
+          <Button id={"button_" + "cost_high"} className="inactive" onClick={this.handleClick.bind(this, "cost_high")}>High Risk</Button>
         </ButtonGroup>
         <div>
           <ReactTooltip className='tooltip-width' />
@@ -129,7 +129,7 @@ class Post3Map extends Component {
             slice={this.state.slice}
          />
         </div>
-        <ChartFooter credit={<span>Sources: <a href="https://gwipp.gwu.edu/counting-dollars-2020-role-decennial-census-geographic-distribution-federal-funds">“Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds,”</a> Federal Funds Information for States, <a href="https://www.urban.org/research/publication/assessing-miscounts-2020-census">“Assessing Miscounts in the 2020 Census.”</a></span>} downloaddata={this.state.filtereddata} downloadfilename={this.state.accessor}  />
+        <ChartFooter credit={<span>Sources: <a href="https://gwipp.gwu.edu/counting-dollars-2020-role-decennial-census-geographic-distribution-federal-funds">“Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds,”</a> <a href="https://www.urban.org/research/publication/assessing-miscounts-2020-census">“Assessing Miscounts in the 2020 Census.”</a></span>} downloaddata={this.state.filtereddata} downloadfilename={this.state.accessor}  />
       </div>
     )
   }

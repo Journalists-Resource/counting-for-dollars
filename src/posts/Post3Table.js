@@ -70,7 +70,7 @@ class Post3Table extends Component {
         <div>
           <DataTable data={this.state.data}  />
         </div>
-        <ChartFooter credit={<span>Sources: <a href="https://gwipp.gwu.edu/counting-dollars-2020-role-decennial-census-geographic-distribution-federal-funds">“Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds,”</a> Federal Funds Information for States.</span>} downloaddata={this.state.data} downloadfilename={"How the census guides Medicaid and how an undercount can cost states millions in reimbursements"} />
+        <ChartFooter credit={<span>Sources: <a href="https://gwipp.gwu.edu/counting-dollars-2020-role-decennial-census-geographic-distribution-federal-funds">“Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds.”</a></span>} downloaddata={this.state.data} downloadfilename={"How the census guides Medicaid and how an undercount can cost states millions in reimbursements"} />
       </div>
     )
   }
