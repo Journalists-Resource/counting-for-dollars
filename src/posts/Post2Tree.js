@@ -50,13 +50,22 @@ class Post2Tree extends Component {
   }
 
   componentWillMount() {
+     let urlstate = null;
+
+     if (queryString.parse(this.props.location.search).state !== undefined) {
+       urlstate = queryString.parse(this.props.location.search).state
+     } else {
+       urlstate = this.state.state
+     }
+
      csv("datasets/fy2017expendituresbyprogram-state.csv").then(csvdata => {
        const nestedData = nest()
              .key(function(d) { return d.Department; })
              .entries(csvdata)
        this.setState({
          originaldata: csvdata,
-         data: nestedData
+         data: nestedData,
+         state: urlstate
        });
      });
 
