@@ -86,7 +86,6 @@ class Post2Tree extends Component {
     this.setState({
       state: e.target.value
     });
-    this.props.history.push(`${window.location.pathname}Post2Tree?state=${e.target.value}`)
 
   }
 

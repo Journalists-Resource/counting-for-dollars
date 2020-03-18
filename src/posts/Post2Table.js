@@ -61,7 +61,6 @@ class Post2Table extends Component {
   handleChange(e) {
     let newstate = e.target.value;
     this.filterData(newstate);
-    this.props.history.push(`${window.location.pathname}Post2Table?state=${newstate}`)
   }
 
   componentWillMount() {
