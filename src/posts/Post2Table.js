@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../App.css'
 import { csv, json } from 'd3-fetch'
+import queryString from 'query-string'
 import DataTable from '../components/Table'
 import { ChartHeader, ChartFooter } from '../components/ChartMeta'
 import { Select, MenuItem } from '@material-ui/core';
@@ -61,12 +62,21 @@ class Post2Table extends Component {
   handleChange(e) {
     let newstate = e.target.value;
     this.filterData(newstate);
+    this.props.history.push(`${window.location.pathname}Post2Table?state=${newstate}`)
   }
 
   componentWillMount() {
+    let urlstate = null;
+
+    if (queryString.parse(this.props.location.search).state !== undefined) {
+      urlstate = queryString.parse(this.props.location.search).state
+    } else {
+      urlstate = this.state.state
+    }
+
     csv("datasets/fy2017expendituresbyprogram-state.csv").then(data => {
-      this.setState({data: data});
-      this.filterData("Alabama");
+      this.setState({data: data, state: urlstate});
+      this.filterData(urlstate);
     });
 
   }
