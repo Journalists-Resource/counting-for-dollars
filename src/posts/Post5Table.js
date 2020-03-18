@@ -52,7 +52,6 @@ class Post5Table extends Component {
   }
 
   render() {
-    console.log(this.state.data)
     return (
       <div className="App">
         <div className="header-grid">

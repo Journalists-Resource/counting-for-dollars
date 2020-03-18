@@ -20,8 +20,8 @@ class CountiesMap extends Component {
 
     const topojsonData = feature(uscounties, uscounties.objects.counties).features
     const projection = geoAlbersUsa()
-      .scale(this.props.size[0] * 1)
-      .translate([this.props.size[0]/2, 350])
+      .scale(width * 1)
+      .translate([width/2, 250])
     const pathGenerator = geoPath().projection(projection)
     function tooltipGenerator(x,y,z) {
       // if (x === "total") {
@@ -51,7 +51,7 @@ class CountiesMap extends Component {
           datarange.push(parseFloat(d.properties[slice]))
         }
       })
-      console.log(datarange)
+
       colorScale.domain(datarange)
       const counties = topojsonData
         .map((d,i) =>
@@ -128,9 +128,9 @@ class CountiesMap extends Component {
           />
         )
       return (
-          <svg width={this.props.size[0]} height={this.props.size[1]}>
-            {counties}
-          </svg>
+         <svg width={width} height={this.props.size[1]}>
+           {counties}
+         </svg>
       )
     }
   }

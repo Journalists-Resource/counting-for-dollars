@@ -6,6 +6,7 @@ import CountiesMap from '../components/CountiesMap'
 import ReactTooltip from 'react-tooltip'
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
+import { ChartHeader, ChartFooter } from '../components/ChartMeta'
 
 
 
@@ -57,9 +58,14 @@ class Post5Map extends Component {
   render() {
     return (
       <div className="App">
-        <h2>County Map Demo</h2>
+        <ChartHeader title="How the census affects access to care in rural areas through programs like Medicare Advantage" />
         <div>
-          <CountiesMap data={this.state.data} program={this.state.program} size={[this.state.screenWidth, this.state.screenHeight]} slice={this.state.slice}  />
+          <CountiesMap
+             data={this.state.data}
+             program={this.state.program}
+             size={[this.state.screenWidth, this.state.screenHeight-175]}
+             slice={this.state.slice}
+          />
           <ReactTooltip className='tooltip-width' />
         </div>
         <div>
