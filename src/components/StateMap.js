@@ -84,22 +84,24 @@ class StateMap extends Component {
             </linearGradient>
           </defs>
           <rect
-            width={width/2}
+            width={300}
             height={20}
-            x={width/4}
+            x={(width/2) - 150}
             y={this.props.size[1]-50}
             style={{fill: 'url("#gradient")'}}
           ></rect>
           <text
-            x={width * 0.25}
+            x={(width/2) - 150}
             y={this.props.size[1]-10}
+            fontSize="0.75rem"
             textAnchor="start"
           >
             {formatMoney(min(colorScale.domain()), slice)}
           </text>
           <text
-            x={width * 0.75}
+            x={(width/2) + 150}
             y={this.props.size[1]-10}
+            fontSize="0.75rem"
             textAnchor="end"
           >
             {formatMoney(max(colorScale.domain()), slice)}
