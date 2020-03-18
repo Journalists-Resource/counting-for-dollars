@@ -4,6 +4,7 @@ import { csv } from 'd3-fetch'
 import Treemap from '../components/Treemap'
 import { nest } from 'd3-collection'
 import ReactTooltip from 'react-tooltip'
+import queryString from 'query-string'
 import { ChartHeader, ChartFooter } from '../components/ChartMeta'
 import { Select, MenuItem } from '@material-ui/core';
 
@@ -49,18 +50,22 @@ class Post2Tree extends Component {
   }
 
   componentWillMount() {
-
      csv("datasets/fy2017expendituresbyprogram-state.csv").then(csvdata => {
        const nestedData = nest()
              .key(function(d) { return d.Department; })
              .entries(csvdata)
-       this.setState({originaldata: csvdata, data: nestedData});
+       this.setState({
+         originaldata: csvdata,
+         data: nestedData,
+         state: queryString.parse(this.props.location.search).state
+       });
      });
 
 
   }
 
   componentDidMount() {
+
     window.addEventListener('resize', this.onResize, false)
     this.onResize()
   }
@@ -70,7 +75,11 @@ class Post2Tree extends Component {
   }
 
   handleChange(e) {
-    this.setState({state: e.target.value});
+    this.setState({
+      state: e.target.value
+    });
+    this.props.history.push(`${window.location.pathname}Post2Tree?state=${e.target.value}`)
+
   }
 
   render() {
