@@ -4,7 +4,6 @@ import { csv } from 'd3-fetch'
 import Treemap from '../components/Treemap'
 import { nest } from 'd3-collection'
 import ReactTooltip from 'react-tooltip'
-import queryString from 'query-string'
 import { ChartHeader, ChartFooter } from '../components/ChartMeta'
 import { Select, MenuItem } from '@material-ui/core';
 
@@ -50,11 +49,12 @@ class Post2Tree extends Component {
   }
 
   componentWillMount() {
-     let urlstate = null;
 
-     if (queryString.parse(this.props.location.search).state !== undefined) {
-       urlstate = queryString.parse(this.props.location.search).state
-     } else {
+     const search = this.props.location.search;
+     const params = new URLSearchParams(search);
+     let urlstate = params.get('state');
+
+     if (urlstate === null) {
        urlstate = this.state.state
      }
 

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import '../App.css'
 import { csv, json } from 'd3-fetch'
-import queryString from 'query-string'
 import DataTable from '../components/Table'
 import { ChartHeader, ChartFooter } from '../components/ChartMeta'
 import { Select, MenuItem } from '@material-ui/core';
@@ -66,11 +65,11 @@ class Post2Table extends Component {
   }
 
   componentWillMount() {
-    let urlstate = null;
+    const search = this.props.location.search;
+    const params = new URLSearchParams(search);
+    let urlstate = params.get('state');
 
-    if (queryString.parse(this.props.location.search).state !== undefined) {
-      urlstate = queryString.parse(this.props.location.search).state
-    } else {
+    if (urlstate === null) {
       urlstate = this.state.state
     }
 
