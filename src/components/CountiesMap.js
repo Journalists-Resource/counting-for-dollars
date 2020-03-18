@@ -14,6 +14,7 @@ let colorScale = bucketScale;
 
 class CountiesMap extends Component {
   render() {
+    const width = min([900, this.props.size[0]]);
     const slice = this.props.slice;
     const dataset = this.props.data;
 
@@ -85,25 +86,27 @@ class CountiesMap extends Component {
             </linearGradient>
           </defs>
           <rect
-            width={this.props.size[0]/2}
+            width={300}
             height={20}
-            x={this.props.size[0]/4}
+            x={(width/2) - 150}
             y={this.props.size[1]-50}
             style={{fill: 'url("#gradient")'}}
           ></rect>
           <text
-            x={this.props.size[0] * 0.25}
+            x={(width/2) - 150}
             y={this.props.size[1]-10}
+            fontSize="0.75rem"
             textAnchor="start"
           >
-            {min(colorScale.domain())}
+            {formatMoney(min(colorScale.domain()))}
           </text>
           <text
-            x={this.props.size[0] * 0.75}
+            x={(width/2) + 150}
             y={this.props.size[1]-10}
+            fontSize="0.75rem"
             textAnchor="end"
           >
-            {max(colorScale.domain())}
+            {formatMoney(max(colorScale.domain()))}
           </text>
         </g>
       )
