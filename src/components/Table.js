@@ -23,7 +23,10 @@ function colFormat(column) {
       "cost_high",
       "risk_low",
       "risk_med",
-      "risk_high"
+      "risk_high",
+      "undercount_low",
+      "undercount_med",
+      "undercount_high"
     ])
     .range([
       "2015 Population",
@@ -33,7 +36,10 @@ function colFormat(column) {
       "Cost of high undercount",
       "Low risk scenario",
       "Medium risk scenario",
-      "High risk scenario"
+      "High risk scenario",
+      "Low population miscount",
+      "Medium population miscount",
+      "High population miscount"
     ]);
 
   if (scale.domain().indexOf(column) > -1) {
@@ -46,6 +52,8 @@ function colFormat(column) {
 function cellFormatter(row, column) {
    if ((column.indexOf("Total") > -1) || (column.indexOf("Funding Per Child") > -1) || (column.indexOf("Per Capita") > -1) || (column.indexOf("FY2017 Funding") > -1) || (column.indexOf("medicaid_reimbursement_lost_per_capita") > -1) || (column.indexOf("cost_low") > -1) || (column.indexOf("cost_med") > -1) || (column.indexOf("cost_high") > -1)) {
       return formatMoney(row[column])
+   } else if ((column.indexOf("population") > -1) || (column.indexOf("undercount") > -1) ) {
+      return row[column].toLocaleString('en-US')
    } else if (column.indexOf("Funding as % of State's Income") > -1) {
      return formatMoney(row[column], "income")
    } else if ((column == "Program") && (row.URL !== "NA") && (row.URL !== "")) {
