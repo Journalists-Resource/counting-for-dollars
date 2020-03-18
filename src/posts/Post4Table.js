@@ -33,6 +33,12 @@ class Post4Table extends Component {
 
   componentWillMount() {
     csv("datasets/map-and-table-title-i-grants-per-state-per-child.csv").then(data => {
+      data.map(item => (
+        Object.keys(item).filter(d => (d !== "State")).map(key => (
+          item[key] = +item[key]
+        ))
+      ))
+      
       this.setState({data: data});
     });
 
