@@ -52,10 +52,13 @@ function colFormat(column) {
 function cellFormatter(row, column) {
    if ((column.indexOf("Total") > -1) || (column.indexOf("Funding Per Child") > -1) || (column.indexOf("Per Capita") > -1) || (column.indexOf("FY2017 Funding") > -1) || (column.indexOf("medicaid_reimbursement_lost_per_capita") > -1) || (column.indexOf("cost_low") > -1) || (column.indexOf("cost_med") > -1) || (column.indexOf("cost_high") > -1)) {
       return formatMoney(row[column])
-   } else if ((column.indexOf("population") > -1) || (column.indexOf("undercount") > -1) ) {
+
+   } else if ((column.indexOf("population") > -1) || (column.indexOf("Child Population") > -1) || (column.indexOf("undercount") > -1) ) {
       return row[column].toLocaleString('en-US')
+
    } else if (column.indexOf("Funding as % of State's Income") > -1) {
      return formatMoney(row[column], "income")
+
    } else if ((column == "Program") && (row.URL !== "NA") && (row.URL !== "")) {
       return (
          <a target="_blank" href=
@@ -63,6 +66,7 @@ function cellFormatter(row, column) {
          >
             {row[column]}
          </a>
+
       )
    } else {
       return row[column]
