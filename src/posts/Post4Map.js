@@ -106,7 +106,7 @@ class Post4Map extends Component {
              reversescale={true}
          />
         </div>
-        <ChartFooter credit="U.S. Census Bureau’s SAIPE; Dept. of Education" downloaddata={this.state.filtereddata} downloadfilename={"Title I Funding Per Child in 2016 by State"}  />
+        <ChartFooter credit="Sources: U.S. Census Bureau’s SAIPE; Dept. of Education" downloaddata={this.state.filtereddata} downloadfilename={"Title I Funding Per Child in 2016 by State"}  />
       </div>
     )
   }

@@ -38,7 +38,7 @@ class Post4Table extends Component {
           item[key] = +item[key]
         ))
       ))
-      
+
       this.setState({data: data});
     });
 
@@ -72,7 +72,7 @@ class Post4Table extends Component {
         <div>
           <DataTable data={this.state.data}  />
         </div>
-        <ChartFooter credit={<span>Sources: <a href="https://gwipp.gwu.edu/counting-dollars-2020-role-decennial-census-geographic-distribution-federal-funds">“Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds,”</a> Federal Funds Information for States.</span>} downloaddata={this.state.data} downloadfilename={"Title I funding per low-income child in 2016 by state"} />
+        <ChartFooter credit={"Sources: U.S. Census Bureau’s SAIPE; Dept. of Education"} downloaddata={this.state.data} downloadfilename={"Title I funding per low-income child in 2016 by state"} />
       </div>
     )
   }
