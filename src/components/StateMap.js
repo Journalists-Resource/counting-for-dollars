@@ -30,6 +30,8 @@ class StateMap extends Component {
         return d.properties.name + ": " + formatMoney(d.properties[fill], slice) + " in " + fill + " in 2017."
       } else if (slice === "cost_low" || slice === "cost_med" || slice === "cost_high") {
         return d.properties.name + ": " + formatMoney(d.properties[fill], slice) + " in " + fill + " scenario."
+      } else if (slice === "Funding Per Child") {
+        return d.properties.name + " received " + formatMoney(d.properties[fill]) + " in Title I grant money per eligible child in FY2016."
       }
     }
 

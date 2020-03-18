@@ -50,7 +50,6 @@ class Post4Map extends Component {
     }
 
     newarray.columns = ['State', accessor];
-    console.log(newarray.columns)
 
     this.setState({
       accessor: accessor,
