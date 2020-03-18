@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../App.css'
 import { csv, json } from 'd3-fetch'
+import { ChartHeader, ChartFooter } from '../components/ChartMeta'
 import DataTable from '../components/Table'
 
 
@@ -54,12 +55,15 @@ class Post5Table extends Component {
     console.log(this.state.data)
     return (
       <div className="App">
-        <div className="App-header">
-          <h2>How the census affects access to care in rural areas through programs like Medicare Advantage</h2>
+        <div className="header-grid">
+          <div className="grid-3">
+            <ChartHeader title={"How the census affects access to care in rural areas through programs like Medicare Advantage"} />
+          </div>
         </div>
         <div>
           <DataTable data={this.state.data}  />
         </div>
+        <ChartFooter credit={<span>Sources: <a href="https://gwipp.gwu.edu/counting-dollars-2020-role-decennial-census-geographic-distribution-federal-funds">“Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds,”</a> Federal Funds Information for States.</span>} downloaddata={this.state.data} downloadfilename={"How the census affects access to care in rural areas through programs like Medicare Advantage"} />
       </div>
     )
   }
