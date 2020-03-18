@@ -56,8 +56,7 @@ class Post2Tree extends Component {
              .entries(csvdata)
        this.setState({
          originaldata: csvdata,
-         data: nestedData,
-         state: queryString.parse(this.props.location.search).state
+         data: nestedData
        });
      });
 
