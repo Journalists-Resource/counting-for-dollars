@@ -63,7 +63,7 @@ class Post4Map extends Component {
   }
 
   componentWillMount() {
-    csv("datasets/map-and-table-title-i-grants-per-state-per-child-2017.csv")
+    csv("datasets/map-and-table-title-i-grants-per-state-per-child.csv")
    .then(dataset => {
      dataset.map(item => (
        Object.keys(item).filter(d => (d !== "State")).map(key => (
