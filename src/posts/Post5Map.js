@@ -36,10 +36,20 @@ class Post5Map extends Component {
   // }
 
   componentWillMount() {
-    csv("datasets/pop2017_2018_and_change_bycounty.csv").then(data => {
-      console.log(data);
-      this.setState({data: data});
-    });
+
+      csv("datasets/pop2017_2018_and_change_bycounty.csv").then(data => {
+         let newdata = [];
+         data.map(item => {
+            Object.keys(item).map(key => (
+                item["name"] = item["NAME.x"],
+                item["pop_2017"] = +item["pop_2017"],
+                item["pop_2018"] = +item["pop_2018"],
+                item["pop_change"] = +item["pop_change"]
+            ))
+         })
+         data.columns = ["name", "pop_2017", "pop_2018", "pop_change"]
+         this.setState({data: data});
+      });
   }
 
   componentDidMount() {
@@ -58,7 +68,7 @@ class Post5Map extends Component {
   render() {
     return (
       <div className="App">
-        <ChartHeader title="How the census affects access to care in rural areas through programs like Medicare Advantage" />
+        <ChartHeader title="Population change by county 2017-2018" />
         <div>
           <CountiesMap
              data={this.state.data}

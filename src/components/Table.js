@@ -26,7 +26,10 @@ function colFormat(column) {
       "risk_high",
       "undercount_low",
       "undercount_med",
-      "undercount_high"
+      "undercount_high",
+      "pop_2017",
+      "pop_2018",
+      "pop_change"
     ])
     .range([
       "2015 Population",
@@ -39,7 +42,10 @@ function colFormat(column) {
       "High risk scenario",
       "Low population miscount",
       "Medium population miscount",
-      "High population miscount"
+      "High population miscount",
+      "2017 Population",
+      "2018 Population",
+      "Population Change"
     ]);
 
   if (scale.domain().indexOf(column) > -1) {
@@ -53,7 +59,9 @@ function cellFormatter(row, column) {
    if ((column.indexOf("Total") > -1) || (column.indexOf("Funding Per Child") > -1) || (column.indexOf("Per Capita") > -1) || (column.indexOf("FY2017 Funding") > -1) || (column.indexOf("medicaid_reimbursement_lost_per_capita") > -1) || (column.indexOf("cost_low") > -1) || (column.indexOf("cost_med") > -1) || (column.indexOf("cost_high") > -1)) {
       return formatMoney(row[column])
 
-   } else if ((column.indexOf("population") > -1) || (column.indexOf("Child Population") > -1) || (column.indexOf("undercount") > -1) ) {
+   } else if (column.indexOf("pop_change") > -1) {
+      return formatMoney(row[column], "addpercent")
+   }else if ((column.indexOf("population") > -1) || (column.indexOf("pop_") > -1) || (column.indexOf("Child Population") > -1) || (column.indexOf("undercount") > -1) ) {
       return row[column].toLocaleString('en-US')
 
    } else if (column.indexOf("Funding as % of State's Income") > -1) {

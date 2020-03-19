@@ -45,20 +45,14 @@ class CountiesMap extends Component {
 
 
 
-      const datarange = [];
-      topojsonData.forEach(function(d){
-        if (!isNaN(d.properties[slice])) {
-          datarange.push(parseFloat(d.properties[slice]))
-        }
-      })
+      colorScale.domain([-1.3, 0, 0.5, 1.3])
 
-      colorScale.domain(datarange)
       const counties = topojsonData
         .map((d,i) =>
           <path
             key={"path" + i}
             d={pathGenerator(d)}
-            data-tip={d.properties["NAME.x"] + ": " + Math.round(d.properties.pop_change * 100)/100 + "%"}
+            data-tip={d.properties["name"] + ": " + Math.round(d.properties.pop_change * 1000)/1000 + "%"}
             style={{
               fill: colorScale(d.properties[slice]),
               stroke: "white",
@@ -70,44 +64,51 @@ class CountiesMap extends Component {
 
       const legend = (
         <g>
-          <defs>
-            <linearGradient
-              id={"gradient"}
-              x1="0%"
-              y1="100%"
-              x2="100%"
-              y2="100%"
-              spreadMethod="pad"
-            >
-              <stop offset="0%" stopColor={colorScale(((colorScale.domain()[1]-colorScale.domain()[0])*0.00)+colorScale.domain()[0])} stopOpacity="1"></stop>
-              <stop offset="33%" stopColor={colorScale(((colorScale.domain()[1]-colorScale.domain()[0])*0.33)+colorScale.domain()[0])} stopOpacity="1"></stop>
-              <stop offset="66%" stopColor={colorScale(((colorScale.domain()[1]-colorScale.domain()[0])*0.66)+colorScale.domain()[0])} stopOpacity="1"></stop>
-              <stop offset="100%" stopColor={colorScale(((colorScale.domain()[1]-colorScale.domain()[0])*1.00)+colorScale.domain()[0])} stopOpacity="1"></stop>
-            </linearGradient>
-          </defs>
           <rect
-            width={300}
-            height={20}
-            x={(width/2) - 150}
-            y={this.props.size[1]-50}
-            style={{fill: 'url("#gradient")'}}
+            width={60} height={20} x={(width/2) - 150} y={this.props.size[1]-50}
+            style={{fill: colorScale(-2)}}
           ></rect>
           <text
-            x={(width/2) - 150}
-            y={this.props.size[1]-10}
-            fontSize="0.75rem"
-            textAnchor="start"
+            x={(width/2) - 90}
+            y={this.props.size[1]-10} fontSize="0.75rem" textAnchor="middle"
           >
-            {formatMoney(min(colorScale.domain()))}
+            {colorScale.domain()[0] + "%"}
           </text>
+          <rect
+            width={60} height={20} x={(width/2) - 90} y={this.props.size[1]-50}
+            style={{fill: colorScale(-0.5)}}
+          ></rect>
           <text
-            x={(width/2) + 150}
-            y={this.props.size[1]-10}
-            fontSize="0.75rem"
-            textAnchor="end"
+            x={(width/2) - 30}
+            y={this.props.size[1]-10} fontSize="0.75rem" textAnchor="middle"
           >
-            {formatMoney(max(colorScale.domain()))}
+            {colorScale.domain()[1] + "%"}
           </text>
+          <rect
+            width={60} height={20} x={(width/2) - 30} y={this.props.size[1]-50}
+            style={{fill: colorScale(0.25)}}
+          ></rect>
+          <text
+            x={(width/2) + 30}
+            y={this.props.size[1]-10} fontSize="0.75rem" textAnchor="middle"
+          >
+            {colorScale.domain()[2] + "%"}
+          </text>
+          <rect
+            width={60} height={20} x={(width/2) + 30} y={this.props.size[1]-50}
+            style={{fill: colorScale(0.5)}}
+          ></rect>
+          <text
+            x={(width/2) + 90}
+            y={this.props.size[1]-10} fontSize="0.75rem" textAnchor="middle"
+          >
+            {colorScale.domain()[3] + "%"}
+          </text>
+          <rect
+            width={60} height={20} x={(width/2) + 90} y={this.props.size[1]-50}
+            style={{fill: colorScale(2)}}
+          ></rect>
+
         </g>
       )
 
