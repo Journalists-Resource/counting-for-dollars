@@ -32,7 +32,7 @@ class Post5Table extends Component {
   // }
 
   componentWillMount() {
-    csv("datasets/map-and-table-title-i-grants-per-state-per-child.csv").then(data => {
+    csv("datasets/possible_redesig_CEAC.csv").then(data => {
       this.setState({data: data});
     });
 
