@@ -57,7 +57,6 @@ class Post3Map extends Component {
     }
 
     newarray.columns = ['State', accessor];
-    console.log(newarray.columns)
 
     this.setState({
       accessor: accessor,
@@ -114,7 +113,7 @@ class Post3Map extends Component {
   render() {
     return (
       <div className="App">
-        <ChartHeader title="Impacts to Medicaid of 2020 census undercounts" subhed="Medicaid reimbursements states might gain or lose under 2020 low-, medium- and high-risk miscount scenarios projected by the Urban Institute" />
+        <ChartHeader title="How a miscount in the 2020 census would skew federal funding for Medicaid" subhed="Medicaid reimbursements states might gain or lose under 2020 low-, medium- and high-risk miscount scenarios projected by the Urban Institute" />
         <ButtonGroup id="toggles" aria-label="outlined button group">
           <Button id={"button_" + "cost_low"} className="active" onClick={this.handleClick.bind(this, "cost_low")}>Low Risk</Button>
           <Button id={"button_" + "cost_med"} className="inactive" onClick={this.handleClick.bind(this, "cost_med")}>Medium Risk</Button>

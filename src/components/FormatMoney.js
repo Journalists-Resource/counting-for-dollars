@@ -11,7 +11,11 @@ const formatMoney = (value, percentify) => {
       });
    } else if (!isNaN(value)) {
      let newvalue = parseFloat(value);
-     return "$" + newvalue.toLocaleString('en-US');
+     if (newvalue > 0) {
+        return "+$" + newvalue.toLocaleString('en-US');
+     } else {
+        return "-$" + Math.abs(newvalue).toLocaleString('en-US');
+     }
    } else {
      return value;
    }
