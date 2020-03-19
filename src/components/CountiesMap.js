@@ -62,52 +62,67 @@ class CountiesMap extends Component {
           />
       )
 
+      const legmargin = {
+         vertical: 20,
+         textoffset: 25
+      }
+
       const legend = (
-        <g>
+        <g transform={"translate(" + (width-150) + ", " + (this.props.size[1]-(legmargin.vertical*8)) + ")"}>
           <rect
-            width={60} height={20} x={(width/2) - 150} y={this.props.size[1]-50}
+            width={20} height={20} x={0} y={0}
             style={{fill: colorScale(-2)}}
           ></rect>
           <text
-            x={(width/2) - 90}
-            y={this.props.size[1]-10} fontSize="0.75rem" textAnchor="middle"
+            x={legmargin.textoffset}
+            y={legmargin.vertical * 1 - 5} fontSize="0.75rem" textAnchor="start"
           >
-            {colorScale.domain()[0] + "%"}
+            {"Less than " + colorScale.domain()[0] + "%"}
           </text>
+
           <rect
-            width={60} height={20} x={(width/2) - 90} y={this.props.size[1]-50}
+            width={20} height={20} x={0} y={legmargin.vertical * 1}
             style={{fill: colorScale(-0.5)}}
           ></rect>
           <text
-            x={(width/2) - 30}
-            y={this.props.size[1]-10} fontSize="0.75rem" textAnchor="middle"
+            x={legmargin.textoffset}
+            y={legmargin.vertical * 2 - 5} fontSize="0.75rem" textAnchor="start"
           >
-            {colorScale.domain()[1] + "%"}
+            {colorScale.domain()[0] + "% - " + colorScale.domain()[1] + "%"}
           </text>
+
           <rect
-            width={60} height={20} x={(width/2) - 30} y={this.props.size[1]-50}
+            width={20} height={20} x={0} y={legmargin.vertical * 2}
             style={{fill: colorScale(0.25)}}
           ></rect>
           <text
-            x={(width/2) + 30}
-            y={this.props.size[1]-10} fontSize="0.75rem" textAnchor="middle"
+            x={legmargin.textoffset}
+            y={legmargin.vertical * 3 - 5} fontSize="0.75rem" textAnchor="start"
           >
-            {colorScale.domain()[2] + "%"}
+            {colorScale.domain()[1] + "% - " + colorScale.domain()[2] + "%"}
           </text>
+
           <rect
-            width={60} height={20} x={(width/2) + 30} y={this.props.size[1]-50}
+            width={20} height={20} x={0} y={legmargin.vertical * 3}
             style={{fill: colorScale(0.5)}}
           ></rect>
           <text
-            x={(width/2) + 90}
-            y={this.props.size[1]-10} fontSize="0.75rem" textAnchor="middle"
+            x={legmargin.textoffset}
+            y={legmargin.vertical * 4 - 5} fontSize="0.75rem" textAnchor="start"
           >
-            {colorScale.domain()[3] + "%"}
+            {colorScale.domain()[2] + "% - " + colorScale.domain()[3] + "%"}
           </text>
+
           <rect
-            width={60} height={20} x={(width/2) + 90} y={this.props.size[1]-50}
+            width={20} height={20} x={0} y={legmargin.vertical * 4}
             style={{fill: colorScale(2)}}
           ></rect>
+          <text
+            x={legmargin.textoffset}
+            y={legmargin.vertical * 5 - 5} fontSize="0.75rem" textAnchor="start"
+          >
+            {colorScale.domain()[3] + "% and up"}
+          </text>
 
         </g>
       )
