@@ -9,13 +9,16 @@ const formatMoney = (value, percentify) => {
         style: 'currency',
         currency: 'USD',
       });
-   } else if (!isNaN(value)) {
+   } else if (percentify === "posneg") {
      let newvalue = parseFloat(value);
      if (newvalue > 0) {
         return "+$" + newvalue.toLocaleString('en-US');
      } else {
         return "-$" + Math.abs(newvalue).toLocaleString('en-US');
      }
+   } else if (!isNaN(value)) {
+     let newvalue = parseFloat(value);
+     return "$" + newvalue.toLocaleString('en-US');
    } else {
      return value;
    }

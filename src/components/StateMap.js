@@ -29,7 +29,7 @@ class StateMap extends Component {
       if (slice === "total" || slice === "pop" || slice === "income") {
         return d.properties.name + ": " + formatMoney(d.properties[fill], slice) + " in " + fill + " in 2017."
       } else if (slice === "cost_low" || slice === "cost_med" || slice === "cost_high") {
-        return d.properties.name + ": " + formatMoney(d.properties[fill], slice) + " in " + fill + " scenario."
+        return d.properties.name + ": " + formatMoney(d.properties[fill], "posneg") + " in " + fill + " scenario."
       } else if (slice === "Funding Per Child") {
         return d.properties.name + " received " + formatMoney(d.properties[fill]) + " in Title I grant money per eligible child in FY2016."
       }
@@ -98,7 +98,7 @@ class StateMap extends Component {
             fontSize="0.75rem"
             textAnchor="start"
           >
-            {formatMoney(min(colorScale.domain()), slice)}
+            {formatMoney(min(colorScale.domain()), "posneg")}
           </text>
           <text
             x={(width/2) + 150}
@@ -106,7 +106,7 @@ class StateMap extends Component {
             fontSize="0.75rem"
             textAnchor="end"
           >
-            {formatMoney(max(colorScale.domain()), slice)}
+            {formatMoney(max(colorScale.domain()), "posneg")}
           </text>
         </g>
       )
