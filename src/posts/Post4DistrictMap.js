@@ -21,7 +21,7 @@ class Post4DistrictMap extends Component {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.state = {
-      slice: "fiscal_cost_low_risk",
+      slice: "Title I funds per low-income child",
       data: [],
       lng: -71.22,
       lat: 42.37,
@@ -71,58 +71,66 @@ class Post4DistrictMap extends Component {
            url: 'mapbox://tylermachado.789m0h8h'
          });
 
-         csv("datasets/joined_school_dist_scores_final.csv")
+         csv("datasets/joined_school_dist_scores_final2018.csv")
          .then(dataset => {
-
             this.setState({
                data: dataset
             })
 
-            for (var ll=0; ll<levels.length; ll++) {
-               var expression = [
-                 'match',
-                 ['get', 'GEOID']
-               ];
+            var expression = [
+              'match',
+              ['get', 'GEOID']
+            ];
 
-               colorScale.domain(dataset.map(function(row,i) {
-                return parseFloat(row[levels[ll]])
-               }, this))
+            colorScale.domain(dataset.map(function(row,i) {
+             return parseFloat(row["Title I funds per low-income child"])
+            }, this))
 
-               dataset.map(function(row,i) {
-                  let number = parseFloat(row[levels[ll]])
-                  expression.push(row["LEA_id"], (isNaN(number) ? 'gainsboro' : colorScale(number)))
-               }, this)
+            dataset.map(function(row,i) {
+               let id = ""
 
-               expression.push('gainsboro')
+               if (row["LEA_id"].length === 6) {
+                  id = "0".concat(row["LEA_id"])
+               } else {
+                  id = row["LEA_id"]
+               }
 
-               map.addLayer({
-                 'id': 'district-data-' + levels[ll],
-                 'type': 'fill',
-                 'source': 'districts',
-                 'source-layer': 'schooldistrict_sy1819_tl19_ma-219voa',
-                 'paint': {
-                    'fill-color': expression,
-                    'fill-opacity': 0.7
-                 },
-                 'layout': {
-                    'visibility': 'none'
-                 }
-               });
+               let number = parseFloat(row["Title I funds per low-income child"])
+               expression.push(id, (isNaN(number) ? 'gainsboro' : colorScale(number)))
+            }, this)
 
-               map.on('click', 'district-data-' + levels[ll], function(e) {
-                  let districtdata = dataset.filter(d => {return d.LEA_id === e.features[0].properties.GEOID})[0]
-                  new mapboxgl.Popup()
-                     .setLngLat(e.lngLat)
-                     .setHTML("<b>" + districtdata.name + "</b>" +
-                        "<br/>Funding change in low risk miscount: " + formatMoney(districtdata["fiscal_cost_low_risk"], "posneg") +
-                        "<br/>Funding change in medium risk miscount: " + formatMoney(districtdata["fiscal_cost_med_risk"], "posneg") +
-                        "<br/>Funding change in high risk miscount: " + formatMoney(districtdata["fiscal_cost_high_risk"], "posneg")
-                     )
-                     .addTo(map);
-               });
-            } // end for loop to load three levels of data
+            expression.push('gainsboro')
 
-            map.setLayoutProperty('district-data-fiscal_cost_low_risk', 'visibility', 'visible');
+            console.log(expression)
+
+            map.addLayer({
+              'id': 'district-data',
+              'type': 'fill',
+              'source': 'districts',
+              'source-layer': 'schooldistrict_sy1819_tl19_ma-219voa',
+              'paint': {
+                 'fill-color': expression,
+                 'fill-opacity': 0.7
+              },
+              'layout': {
+                 'visibility': 'none'
+              }
+            });
+
+            map.on('click', 'district-data', function(e) {
+               let districtdata = dataset.filter(d => {return d.LEA_id === e.features[0].properties.GEOID})[0]
+               console.log(e.features[0].properties)
+               new mapboxgl.Popup()
+                  .setLngLat(e.lngLat)
+                  .setHTML("<b>" + districtdata.name + "</b>" +
+                     "<br/>Funding change in low risk miscount: " + formatMoney(districtdata["fiscal_cost_low_risk"], "posneg") +
+                     "<br/>Funding change in medium risk miscount: " + formatMoney(districtdata["fiscal_cost_med_risk"], "posneg") +
+                     "<br/>Funding change in high risk miscount: " + formatMoney(districtdata["fiscal_cost_high_risk"], "posneg")
+                  )
+                  .addTo(map);
+            });
+
+            map.setLayoutProperty('district-data', 'visibility', 'visible');
 
 
          });
@@ -144,11 +152,6 @@ class Post4DistrictMap extends Component {
         <ChartHeader
           title="Title I funds by school district in 2016 plus potential funding lost under 2020 census undercount scenarios"
         />
-        <ButtonGroup id="toggles" aria-label="outlined button group">
-          <Button id={"button_" + "fiscal_cost_low_risk"} className="active" onClick={this.handleClick.bind(this, "fiscal_cost_low_risk")}>Low Risk</Button>
-          <Button id={"button_" + "fiscal_cost_med_risk"} className="inactive" onClick={this.handleClick.bind(this, "fiscal_cost_med_risk")}>Medium Risk</Button>
-          <Button id={"button_" + "fiscal_cost_high_risk"} className="inactive" onClick={this.handleClick.bind(this, "fiscal_cost_high_risk")}>High Risk</Button>
-        </ButtonGroup>
         <div ref={el => this.mapContainer = el}  className="mapContainer" />
         <ChartFooter credit="Sources: U.S. Census Bureau’s SAIPE; Dept. of Education; Mapbox" downloaddata={this.state.data} downloadfilename={"Title I funds by school district in 2016 plus potential funding lost under 2020 census undercount scenarios"}  />
       </div>
