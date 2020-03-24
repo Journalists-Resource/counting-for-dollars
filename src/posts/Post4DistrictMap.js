@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import '../App.css'
 import mapboxgl from 'mapbox-gl'
 import { csv, json } from 'd3-fetch'
+import { min } from 'd3-array'
 import formatMoney from '../components/FormatMoney'
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
@@ -10,10 +11,9 @@ import { bucketScale } from '../components/ColorSchemes'
 
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
-
 const colorScale = bucketScale
-
 const levels = ["fiscal_cost_low_risk", "fiscal_cost_med_risk", "fiscal_cost_high_risk"]
+const avg = 1546.48
 
 
 class Post4DistrictMap extends Component {
@@ -27,7 +27,8 @@ class Post4DistrictMap extends Component {
       lat: 42.37,
       zoom: 5,
       minZoom: 5,
-      maxZoom: 5
+      maxZoom: 5,
+      scale: colorScale
     };
   }
 
@@ -73,10 +74,6 @@ class Post4DistrictMap extends Component {
 
          csv("datasets/joined_school_dist_scores_final2018.csv")
          .then(dataset => {
-            this.setState({
-               data: dataset
-            })
-
             var expression = [
               'match',
               ['get', 'GEOID']
@@ -95,13 +92,11 @@ class Post4DistrictMap extends Component {
                   id = row["LEA_id"]
                }
 
-               let number = parseFloat(row["Title I funds per low-income child"])
+               let number = parseFloat(row["Title I funds per low-income child"]);
                expression.push(id, (isNaN(number) ? 'gainsboro' : colorScale(number)))
             }, this)
 
             expression.push('gainsboro')
-
-            console.log(expression)
 
             map.addLayer({
               'id': 'district-data',
@@ -119,20 +114,22 @@ class Post4DistrictMap extends Component {
 
             map.on('click', 'district-data', function(e) {
                let districtdata = dataset.filter(d => {return d.LEA_id === e.features[0].properties.GEOID})[0]
-               console.log(e.features[0].properties)
                new mapboxgl.Popup()
                   .setLngLat(e.lngLat)
-                  .setHTML("<b>" + districtdata.name + "</b>" +
-                     "<br/>Funding change in low risk miscount: " + formatMoney(districtdata["fiscal_cost_low_risk"], "posneg") +
-                     "<br/>Funding change in medium risk miscount: " + formatMoney(districtdata["fiscal_cost_med_risk"], "posneg") +
-                     "<br/>Funding change in high risk miscount: " + formatMoney(districtdata["fiscal_cost_high_risk"], "posneg")
+                  .setHTML("<b>" + districtdata["School district"] + ", " + districtdata["State"] + "</b>" +
+                     "<br/>Funding change in low risk miscount: " + formatMoney(districtdata["Fiscal cost to district's Title I due to low risk scenario"], "posneg") +
+                     "<br/>Funding change in medium risk miscount: " + formatMoney(districtdata["Fiscal cost to district's Title I due to med risk scenario"], "posneg") +
+                     "<br/>Funding change in high risk miscount: " + formatMoney(districtdata["Fiscal cost to district's Title I due to high risk scenario"], "posneg")
                   )
                   .addTo(map);
             });
 
             map.setLayoutProperty('district-data', 'visibility', 'visible');
 
-
+            this.setState({
+               data: dataset,
+               scale: colorScale
+            })
          });
 
       });
@@ -147,15 +144,91 @@ class Post4DistrictMap extends Component {
   }
 
   render() {
-    return (
-      <div className="App">
-        <ChartHeader
-          title="Title I funds by school district in 2016 plus potential funding lost under 2020 census undercount scenarios"
-        />
-        <div ref={el => this.mapContainer = el}  className="mapContainer" />
-        <ChartFooter credit="Sources: U.S. Census Bureau’s SAIPE; Dept. of Education; Mapbox" downloaddata={this.state.data} downloadfilename={"Title I funds by school district in 2016 plus potential funding lost under 2020 census undercount scenarios"}  />
-      </div>
-    )
+     const width = min([900, window.innerWidth]);
+
+     const legmargin = {
+       vertical: 20,
+       textoffset: 25
+     }
+
+     let domain = []
+
+     if (this.state.scale.domain()) {
+        domain = this.state.scale.domain()
+     }
+
+     const legend = (
+      <svg className="districtlegend" width={150} height={120} transform={"translate(" + ((width/2) - 80) + ", -150)"}>
+         <g>
+            <rect
+              width={20} height={20} x={0} y={0}
+              style={{fill: this.state.scale.range()[0]}}
+            ></rect>
+            <text
+              x={legmargin.textoffset}
+              y={legmargin.vertical * 1 - 5} fontSize="0.75rem" textAnchor="start"
+            >
+              {formatMoney(domain[0]) + " to " + formatMoney(domain[(Math.round(domain.length * 0.2)-1)])}
+            </text>
+
+            <rect
+              width={20} height={20} x={0} y={legmargin.vertical * 1}
+              style={{fill: this.state.scale.range()[1]}}
+            ></rect>
+            <text
+              x={legmargin.textoffset}
+              y={legmargin.vertical * 2 - 5} fontSize="0.75rem" textAnchor="start"
+            >
+              {formatMoney(domain[(Math.round(domain.length * 0.2)-0)]) + " to " + formatMoney(domain[(Math.round(domain.length * 0.4)-1)])}
+            </text>
+
+            <rect
+              width={20} height={20} x={0} y={legmargin.vertical * 2}
+              style={{fill: this.state.scale.range()[2]}}
+            ></rect>
+            <text
+              x={legmargin.textoffset}
+              y={legmargin.vertical * 3 - 5} fontSize="0.75rem" textAnchor="start"
+            >
+              {formatMoney(domain[(Math.round(domain.length * 0.4)-0)]) + " to " + formatMoney(domain[(Math.round(domain.length * 0.6)-1)])}
+            </text>
+
+            <rect
+              width={20} height={20} x={0} y={legmargin.vertical * 3}
+              style={{fill: this.state.scale.range()[3]}}
+            ></rect>
+            <text
+              x={legmargin.textoffset}
+              y={legmargin.vertical * 4 - 5} fontSize="0.75rem" textAnchor="start"
+            >
+              {formatMoney(domain[(Math.round(domain.length * 0.6)-0)]) + " to " + formatMoney(domain[(Math.round(domain.length * 0.8)-1)])}
+            </text>
+
+            <rect
+              width={20} height={20} x={0} y={legmargin.vertical * 4}
+              style={{fill: this.state.scale.range()[4]}}
+            ></rect>
+            <text
+              x={legmargin.textoffset}
+              y={legmargin.vertical * 5 - 5} fontSize="0.75rem" textAnchor="start"
+            >
+              {formatMoney(domain[(Math.round(domain.length * 0.8)-0)]) + " to " + formatMoney(domain[(domain.length-1)])}
+            </text>
+
+         </g>
+      </svg>
+     )
+
+      return (
+         <div className="App">
+           <ChartHeader
+             title="Title I funds by school district in 2016 plus potential funding lost under 2020 census undercount scenarios"
+           />
+           <div ref={el => this.mapContainer = el}  className="mapContainer" />
+           {legend}
+           <ChartFooter credit="Sources: U.S. Census Bureau’s SAIPE; Dept. of Education; Mapbox" downloaddata={this.state.data} downloadfilename={"Title I funds by school district in 2016 plus potential funding lost under 2020 census undercount scenarios"}  />
+         </div>
+      )
   }
 }
 

@@ -149,6 +149,11 @@ thead {
   width:100%;
 }
 
+.districtlegend {
+   background-color: white;
+   padding: 10px 0 0 10px;
+}
+
 @media screen and (max-width:767px) {
   button.MuiButtonBase-root {
     font-size:0.75em;
