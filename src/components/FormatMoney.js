@@ -10,7 +10,7 @@ const formatMoney = (value, percentify) => {
         currency: 'USD',
       });
    } else if (percentify === "posneg") {
-     let newvalue = Math.round(parseFloat(value)*1000)/1000;
+     let newvalue = Math.round(parseFloat(value)*100)/100;
      if (newvalue > 0) {
         return "+$" + newvalue.toLocaleString('en-US');
      } else {
