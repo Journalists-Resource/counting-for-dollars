@@ -72,6 +72,11 @@ class Post4DistrictMap extends Component {
            url: 'mapbox://tylermachado.789m0h8h'
          });
 
+         map.addSource('statelines', {
+           type: 'vector',
+           url: 'mapbox://tylermachado.d9wh29pp'
+         });
+
          csv("datasets/joined_school_dist_scores_final2018.csv")
          .then(dataset => {
             var expression = [
@@ -109,6 +114,17 @@ class Post4DistrictMap extends Component {
               },
               'layout': {
                  'visibility': 'none'
+              }
+            });
+
+            map.addLayer({
+              'id': 'statelines-data',
+              'type': 'line',
+              'source': 'statelines',
+              'source-layer': 'states_21basic-bmxanm',
+              'paint': {
+                 'line-width': 1,
+                 'line-color': '#222222'
               }
             });
 
@@ -227,11 +243,11 @@ class Post4DistrictMap extends Component {
       return (
          <div className="App">
            <ChartHeader
-             title="Title I funds by school district in 2016 plus potential funding lost under 2020 census undercount scenarios"
+             title="Title I funds per low-income child by school district in 2018 plus potential funding lost under 2020 census miscount scenarios"
            />
            <div ref={el => this.mapContainer = el}  className="mapContainer" />
            {legend}
-           <ChartFooter credit="Sources: U.S. Census Bureau’s SAIPE; Dept. of Education; Mapbox" downloaddata={this.state.data} downloadfilename={"Title I funds by school district in 2016 plus potential funding lost under 2020 census undercount scenarios"}  />
+           <ChartFooter credit="Sources: U.S. Census Bureau’s SAIPE; Dept. of Education; Mapbox" downloaddata={this.state.data} downloadfilename={"Title I funds per low-income child by school district in 2018 plus potential funding lost under 2020 census miscount scenarios"}  />
          </div>
       )
   }
