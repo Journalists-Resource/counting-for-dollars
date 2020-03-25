@@ -92,7 +92,7 @@ class Post4DistrictMap extends Component {
                   id = row["LEA_id"]
                }
 
-               let number = parseFloat(row["Title I funds per low-income child"]);
+               let number = parseFloat(row["Title I funds per low-income child"]) ;
                expression.push(id, (isNaN(number) ? 'gainsboro' : colorScale(number)))
             }, this)
 
@@ -125,6 +125,11 @@ class Post4DistrictMap extends Component {
             });
 
             map.setLayoutProperty('district-data', 'visibility', 'visible');
+
+            map.addControl(new mapboxgl.NavigationControl({
+              showCompass: false,
+              showZoom: true
+            }));
 
             this.setState({
                data: dataset,

@@ -15,6 +15,7 @@ const fullAgencyName = scaleOrdinal()
 
 const divergingColors = scaleSequential(interpolateRdYlGn)
 
-const bucketScale = scaleQuantile().range(schemeRdYlGn[5]);
+const bucketScale = scaleQuantile().range(schemeRdYlGn[5]); // equal size buckets
+const quantizeScale = scaleQuantize().range(schemeRdYlGn[5]); // equally spaced buckets
 
 export { categoricalColors, categoricalColorsWithoutSBA, divergingColors, bucketScale, fullAgencyName }
