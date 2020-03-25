@@ -4,6 +4,7 @@ import { bucketScale } from './ColorSchemes'
 import formatMoney from './FormatMoney'
 import { csv } from 'd3-fetch'
 import uscounties from '../geo/counties-10m'
+import usstates from '../geo/states-10m'
 import { min, max } from 'd3-array'
 import { geoPath, geoAlbersUsa } from 'd3-geo'
 import { feature } from "topojson-client"
@@ -18,20 +19,12 @@ class CountiesMap extends Component {
     const slice = this.props.slice;
     const dataset = this.props.data;
 
+    const stateTopojsonData = feature(usstates, usstates.objects.states).features
     const topojsonData = feature(uscounties, uscounties.objects.counties).features
     const projection = geoAlbersUsa()
       .scale(width * 1)
       .translate([width/2, 250])
     const pathGenerator = geoPath().projection(projection)
-    function tooltipGenerator(x,y,z) {
-      // if (x === "total") {
-      //   return y.properties.name + " received " + formatMoney(y.properties.total) + " in " + z + " funding in 2017."
-      // } else if (x === "pop") {
-      //   return y.properties.name + " received " + formatMoney(y.properties.total / y.properties.pop) + " in " + z + " funding per capita in 2017."
-      // } else if (x === "income") {
-      //   return y.properties.name + " received " + formatMoney(y.properties.total / y.properties.income) + " in " + z + " funding as a ratio of its personal income in 2017."
-      // }
-    }
 
     if (dataset.length > 0) {
       for (let s=0; s < topojsonData.length; s++) {
@@ -46,6 +39,21 @@ class CountiesMap extends Component {
 
 
       colorScale.domain([-1.3, 0, 0.5, 1.3])
+
+      const states = stateTopojsonData
+        .map((d,i) =>
+          <path
+            key={"path" + i}
+            d={pathGenerator(d)}
+            style={{
+               fill:"none",
+              stroke: "white",
+              strokeOpacity: 1,
+              strokeWidth: "1.5px"
+            }}
+            className={"states " + d.properties.name}
+          />
+      )
 
       const counties = topojsonData
         .map((d,i) =>
@@ -130,6 +138,7 @@ class CountiesMap extends Component {
       return (
         <svg width={this.props.size[0]} height={this.props.size[1]}>
           {counties}
+          {states}
           {legend}
         </svg>
       )
