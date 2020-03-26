@@ -134,7 +134,8 @@ class Post4DistrictMap extends Component {
                   .setMaxWidth("420px")
                   .setLngLat(e.lngLat)
                   .setHTML("<h3>" + districtdata["School district"] + ", " + districtdata["State"] + "</h3>" +
-                     "<br/><b>Title I funds per low-income child: " + formatMoney(districtdata["Title I funds per low-income child"], "posneg") +
+                     "<br/><b>Title I funding to district: " + formatMoney(districtdata["Title I funding in FY2018 "]) +
+                     "<br/>Title I funding per low-income child: " + formatMoney(districtdata["Title I funds per low-income child"]) +
                      "</b><hr/>Funding change in low risk miscount: " + formatMoney(districtdata["Fiscal cost to district's Title I due to low risk scenario"], "posneg") +
                      "<br/>Funding change in medium risk miscount: " + formatMoney(districtdata["Fiscal cost to district's Title I due to med risk scenario"], "posneg") +
                      "<br/>Funding change in high risk miscount: " + formatMoney(districtdata["Fiscal cost to district's Title I due to high risk scenario"], "posneg")
