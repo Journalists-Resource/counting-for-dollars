@@ -154,6 +154,10 @@ thead {
    padding: 10px 0 0 10px;
 }
 
+.districtlegend g {
+   background-color: white;
+}
+
 @media screen and (max-width:767px) {
   button.MuiButtonBase-root {
     font-size:0.75em;
