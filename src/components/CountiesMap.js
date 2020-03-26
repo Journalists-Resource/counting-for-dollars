@@ -60,7 +60,7 @@ class CountiesMap extends Component {
           <path
             key={"path" + i}
             d={pathGenerator(d)}
-            data-tip={d.properties["name"] + ": " + Math.round(d.properties.pop_change * 1000)/1000 + "%"}
+            data-tip={d.properties["name"] + ": " + Math.round(d.properties["pop_change"] * 1000)/1000 + "%"}
             style={{
               fill: colorScale(d.properties[slice]),
               stroke: "white",

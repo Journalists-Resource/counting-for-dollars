@@ -131,9 +131,11 @@ class Post4DistrictMap extends Component {
             map.on('click', 'district-data', function(e) {
                let districtdata = dataset.filter(d => {return d.LEA_id === e.features[0].properties.GEOID})[0]
                new mapboxgl.Popup()
+                  .setMaxWidth("420px")
                   .setLngLat(e.lngLat)
-                  .setHTML("<b>" + districtdata["School district"] + ", " + districtdata["State"] + "</b>" +
-                     "<br/>Funding change in low risk miscount: " + formatMoney(districtdata["Fiscal cost to district's Title I due to low risk scenario"], "posneg") +
+                  .setHTML("<h3>" + districtdata["School district"] + ", " + districtdata["State"] + "</h3>" +
+                     "<br/><b>Title I funds per low-income child: " + formatMoney(districtdata["Title I funds per low-income child"], "posneg") +
+                     "</b><hr/>Funding change in low risk miscount: " + formatMoney(districtdata["Fiscal cost to district's Title I due to low risk scenario"], "posneg") +
                      "<br/>Funding change in medium risk miscount: " + formatMoney(districtdata["Fiscal cost to district's Title I due to med risk scenario"], "posneg") +
                      "<br/>Funding change in high risk miscount: " + formatMoney(districtdata["Fiscal cost to district's Title I due to high risk scenario"], "posneg")
                   )
