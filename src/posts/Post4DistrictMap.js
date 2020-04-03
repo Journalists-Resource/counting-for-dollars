@@ -23,11 +23,9 @@ class Post4DistrictMap extends Component {
     this.state = {
       slice: "Title I funds per low-income child",
       data: [],
-      lng: -71.22,
-      lat: 42.37,
-      zoom: 5,
-      minZoom: 5,
-      maxZoom: 5,
+      lng: -98.58,
+      lat: 39.83,
+      zoom: 3,
       scale: colorScale
     };
   }
