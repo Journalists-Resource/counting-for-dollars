@@ -25,17 +25,17 @@ class App extends Component {
         <main>
             <Switch>
               <Route exact path="/" component={Post1Tree}  />
-              <Route path="/Post1Tree" component={Post1Tree}  />
-              <Route path="/Post2Tree" component={Post2Tree}  />
-              <Route path="/Post2Map" component={Post2Map}  />
-              <Route path="/Post2Table" component={Post2Table}  />
-              <Route path="/Post3Table" component={Post3Table}  />
-              <Route path="/Post3Map" component={Post3Map}  />
-              <Route path="/Post4Map" component={Post4Map}  />
-              <Route path="/Post4DistrictMap" component={Post4DistrictMap}  />
-              <Route path="/Post4Table" component={Post4Table}  />
-              <Route path="/Post5Table" component={Post5Table}  />
-              <Route path="/Post5Map" component={Post5Map}  />
+              <Route exact path="/Post1Tree" component={Post1Tree}  />
+              <Route exact path="/Post2Tree" component={Post2Tree}  />
+              <Route exact path="/Post2Map" component={Post2Map}  />
+              <Route exact path="/Post2Table" component={Post2Table}  />
+              <Route exact path="/Post3Table" component={Post3Table}  />
+              <Route exact path="/Post3Map" component={Post3Map}  />
+              <Route exact path="/Post4Map" component={Post4Map}  />
+              <Route exact path="/Post4DistrictMap" component={Post4DistrictMap}  />
+              <Route exact path="/Post4Table" component={Post4Table}  />
+              <Route exact path="/Post5Table" component={Post5Table}  />
+              <Route exact path="/Post5Map" component={Post5Map}  />
             </Switch>
         </main>
       </HashRouter>
