@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import '../App.css'
 import mapboxgl from 'mapbox-gl'
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder'
+import '../css/mapbox-gl-geocoder.css'
 import { csv, json } from 'd3-fetch'
 import { min } from 'd3-array'
 import formatMoney from '../components/FormatMoney'
@@ -65,9 +67,10 @@ class Post4DistrictMap extends Component {
       })
 
       map.on('load', () => {
+
          map.addSource('districts', {
            type: 'vector',
-           url: 'mapbox://tylermachado.789m0h8h'
+           url: 'mapbox://tylermachado.9ifw2bln'
          });
 
          map.addSource('statelines', {
@@ -105,7 +108,7 @@ class Post4DistrictMap extends Component {
               'id': 'district-data',
               'type': 'fill',
               'source': 'districts',
-              'source-layer': 'schooldistrict_sy1819_tl19_ma-219voa',
+              'source-layer': 'edge_04p-37il12',
               'paint': {
                  'fill-color': expression,
                  'fill-opacity': 0.7
@@ -143,10 +146,23 @@ class Post4DistrictMap extends Component {
 
             map.setLayoutProperty('district-data', 'visibility', 'visible');
 
+            map.addControl(
+              new MapboxGeocoder({
+          			accessToken: mapboxgl.accessToken,
+          			mapboxgl: mapboxgl,
+          			types: 'region',
+          			countries: 'us',
+          			marker: false,
+          			placeholder: 'Search your state'
+          		})
+            );
+
             map.addControl(new mapboxgl.NavigationControl({
               showCompass: false,
               showZoom: true
             }));
+
+
 
             this.setState({
                data: dataset,
