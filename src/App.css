@@ -145,8 +145,14 @@ thead {
   right: 0;
   left: 0;
   bottom: 0;
-  height: 650px;
+  height: 500px;
   width:100%;
+}
+
+@media screen and (max-width:767px) {
+  .mapContainer {
+    height: 350px;
+  }
 }
 
 .districtlegend {
