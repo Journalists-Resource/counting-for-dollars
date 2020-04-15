@@ -41,13 +41,13 @@ class Post5Map extends Component {
          let newdata = [];
          data.map(item => {
             Object.keys(item).map(key => (
-                item["name"] = item["NAME.x"],
+                item["County"] = item["NAME.x"],
                 item["pop_2017"] = +item["pop_2017"],
                 item["pop_2018"] = +item["pop_2018"],
                 item["pop_change"] = +item["pop_change"]
             ))
          })
-         data.columns = ["name", "pop_2017", "pop_2018", "pop_change"]
+         data.columns = ["County", "pop_2017", "pop_2018", "pop_change"]
          this.setState({data: data});
       });
   }
@@ -78,9 +78,7 @@ class Post5Map extends Component {
           />
           <ReactTooltip className='tooltip-width' />
         </div>
-        <div>
-          <DataTable data={this.state.data}  />
-        </div>
+        <ChartFooter credit="Source: U.S. Census Bureau" downloaddata={this.state.data} downloadfilename={"Population change by county 2017-2018"}  />
       </div>
     )
   }
