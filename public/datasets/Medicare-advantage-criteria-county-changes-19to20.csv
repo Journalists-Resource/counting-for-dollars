@@ -1,0 +1,1140 @@
+County,SSA Code,State,2020 County Designation,2019 County Designation,Specialty,2020 Distance (miles),2020 Time (minutes),2019 Distance (miles),2019 Time (minutes),Reason for Change,Time change,Distance change
+St. Louis,24680,MN,Micro,Metro,Critical Care Services – Intensive Care Units (ICU),160,120,45,30,County change,90,115
+Armstrong,39070,PA,Micro,Metro,Critical Care Services – Intensive Care Units (ICU),160,120,45,30,County change,90,115
+Fajardo,40260,PR,Micro,Metro,Critical Care Services – Intensive Care Units (ICU),160,120,45,30,County change,90,115
+Naranjito,40520,PR,Micro,Metro,Critical Care Services – Intensive Care Units (ICU),160,120,45,30,County change,90,115
+Rio Grande,40590,PR,Micro,Metro,Critical Care Services – Intensive Care Units (ICU),160,120,45,30,County change,90,115
+St. Louis,24680,MN,Micro,Metro,Cardiac Surgery Program,160,120,60,40,County change,80,100
+Armstrong,39070,PA,Micro,Metro,Cardiac Surgery Program,160,120,60,40,County change,80,100
+Fajardo,40260,PR,Micro,Metro,Cardiac Surgery Program,160,120,60,40,County change,80,100
+Naranjito,40520,PR,Micro,Metro,Cardiac Surgery Program,160,120,60,40,County change,80,100
+Rio Grande,40590,PR,Micro,Metro,Cardiac Surgery Program,160,120,60,40,County change,80,100
+St. Louis,24680,MN,Micro,Metro,Cardiac Catheterization Services,160,120,60,40,County change,80,100
+Armstrong,39070,PA,Micro,Metro,Cardiac Catheterization Services,160,120,60,40,County change,80,100
+Fajardo,40260,PR,Micro,Metro,Cardiac Catheterization Services,160,120,60,40,County change,80,100
+Naranjito,40520,PR,Micro,Metro,Cardiac Catheterization Services,160,120,60,40,County change,80,100
+Rio Grande,40590,PR,Micro,Metro,Cardiac Catheterization Services,160,120,60,40,County change,80,100
+Mahnomen,24430,MN,CEAC,Rural,Inpatient Psychiatric Facility Services,155,140,90,75,County change,65,65
+Big Stone,24050,MN,CEAC,Rural,Inpatient Psychiatric Facility Services,155,140,105,85,County change,55,50
+Mahnomen,24430,MN,CEAC,Rural,Allergy and Immunology,110,125,90,75,County change,50,20
+Armstrong,39070,PA,Micro,Metro,Allergy and Immunology,60,80,45,30,County change,50,15
+Fajardo,40260,PR,Micro,Metro,Allergy and Immunology,60,80,45,30,County change,50,15
+Naranjito,40520,PR,Micro,Metro,Allergy and Immunology,60,80,45,30,County change,50,15
+Rio Grande,40590,PR,Micro,Metro,Allergy and Immunology,60,80,45,30,County change,50,15
+Mahnomen,24430,MN,CEAC,Rural,Dermatology,110,100,75,60,County change,40,35
+Big Stone,24050,MN,CEAC,Rural,Endocrinology,145,130,110,90,County change,40,35
+Mahnomen,24430,MN,CEAC,Rural,Endocrinology,145,130,110,90,County change,40,35
+Big Stone,24050,MN,CEAC,Rural,Gastroenterology,110,100,75,60,County change,40,35
+Mahnomen,24430,MN,CEAC,Rural,Gastroenterology,110,100,75,60,County change,40,35
+Big Stone,24050,MN,CEAC,Rural,Infectious Diseases,145,130,110,90,County change,40,35
+Mahnomen,24430,MN,CEAC,Rural,Infectious Diseases,145,130,110,90,County change,40,35
+Mahnomen,24430,MN,CEAC,Rural,Neurology,110,100,75,60,County change,40,35
+Big Stone,24050,MN,CEAC,Rural,Neurosurgery,145,130,110,90,County change,40,35
+Mahnomen,24430,MN,CEAC,Rural,Neurosurgery,145,130,110,90,County change,40,35
+Big Stone,24050,MN,CEAC,Rural,"Oncology - Medical, Surgical",110,100,75,60,County change,40,35
+Mahnomen,24430,MN,CEAC,Rural,"Oncology - Medical, Surgical",110,100,75,60,County change,40,35
+Big Stone,24050,MN,CEAC,Rural,Oncology - Radiation/Radiation Oncology,145,130,110,90,County change,40,35
+Mahnomen,24430,MN,CEAC,Rural,Oncology - Radiation/Radiation Oncology,145,130,110,90,County change,40,35
+Mahnomen,24430,MN,CEAC,Rural,Plastic Surgery,145,130,110,90,County change,40,35
+Big Stone,24050,MN,CEAC,Rural,Podiatry,110,100,75,60,County change,40,35
+Mahnomen,24430,MN,CEAC,Rural,Podiatry,110,100,75,60,County change,40,35
+Big Stone,24050,MN,CEAC,Rural,Psychiatry,110,100,75,60,County change,40,35
+Mahnomen,24430,MN,CEAC,Rural,Psychiatry,110,100,75,60,County change,40,35
+Big Stone,24050,MN,CEAC,Rural,Pulmonology,110,100,75,60,County change,40,35
+Mahnomen,24430,MN,CEAC,Rural,Pulmonology,110,100,75,60,County change,40,35
+Mahnomen,24430,MN,CEAC,Rural,Rheumatology,145,130,110,90,County change,40,35
+Big Stone,24050,MN,CEAC,Rural,Urology,110,100,75,60,County change,40,35
+Mahnomen,24430,MN,CEAC,Rural,Urology,110,100,75,60,County change,40,35
+Big Stone,24050,MN,CEAC,Rural,Vascular Surgery,145,130,110,90,County change,40,35
+Mahnomen,24430,MN,CEAC,Rural,Vascular Surgery,145,130,110,90,County change,40,35
+Mahnomen,24430,MN,CEAC,Rural,Cardiothoracic Surgery,145,130,110,90,County change,40,35
+Big Stone,24050,MN,CEAC,Rural,Acute Inpatient Hospitals,110,100,75,60,County change,40,35
+Mahnomen,24430,MN,CEAC,Rural,Acute Inpatient Hospitals,110,100,75,60,County change,40,35
+Big Stone,24050,MN,CEAC,Rural,Outpatient Dialysis,100,90,55,50,County change,40,45
+Mahnomen,24430,MN,CEAC,Rural,Outpatient Dialysis,100,90,55,50,County change,40,45
+Big Stone,24050,MN,CEAC,Rural,Surgical Services (Outpatient or ASC),110,100,75,60,County change,40,35
+Mahnomen,24430,MN,CEAC,Rural,Surgical Services (Outpatient or ASC),110,100,75,60,County change,40,35
+Big Stone,24050,MN,CEAC,Rural,Diagnostic Radiology,110,100,75,60,County change,40,35
+Mahnomen,24430,MN,CEAC,Rural,Diagnostic Radiology,110,100,75,60,County change,40,35
+Big Stone,24050,MN,CEAC,Rural,Mammography,110,100,75,60,County change,40,35
+Mahnomen,24430,MN,CEAC,Rural,Mammography,110,100,75,60,County change,40,35
+Big Stone,24050,MN,CEAC,Rural,Physical Therapy,110,100,75,60,County change,40,35
+Mahnomen,24430,MN,CEAC,Rural,Physical Therapy,110,100,75,60,County change,40,35
+Big Stone,24050,MN,CEAC,Rural,Occupational Therapy,110,100,75,60,County change,40,35
+Mahnomen,24430,MN,CEAC,Rural,Occupational Therapy,110,100,75,60,County change,40,35
+Big Stone,24050,MN,CEAC,Rural,Speech Therapy,110,100,75,60,County change,40,35
+Mahnomen,24430,MN,CEAC,Rural,Speech Therapy,110,100,75,60,County change,40,35
+Big Stone,24050,MN,CEAC,Rural,Outpatient Infusion/Chemotherapy,110,100,75,60,County change,40,35
+Mahnomen,24430,MN,CEAC,Rural,Outpatient Infusion/Chemotherapy,110,100,75,60,County change,40,35
+Big Stone,24050,MN,CEAC,Rural,Chiropractor,125,110,90,75,County change,35,35
+Mahnomen,24430,MN,CEAC,Rural,Chiropractor,125,110,90,75,County change,35,35
+St. Louis,24680,MN,Micro,Metro,Endocrinology,100,75,60,40,County change,35,40
+Armstrong,39070,PA,Micro,Metro,Endocrinology,100,75,60,40,County change,35,40
+Fajardo,40260,PR,Micro,Metro,Endocrinology,100,75,60,40,County change,35,40
+Naranjito,40520,PR,Micro,Metro,Endocrinology,100,75,60,40,County change,35,40
+Rio Grande,40590,PR,Micro,Metro,Endocrinology,100,75,60,40,County change,35,40
+Big Stone,24050,MN,CEAC,Rural,ENT/Otolaryngology,125,110,90,75,County change,35,35
+Mahnomen,24430,MN,CEAC,Rural,ENT/Otolaryngology,125,110,90,75,County change,35,35
+Big Stone,24050,MN,CEAC,Rural,"Gynecology, OB/GYN",125,110,90,75,County change,35,35
+Mahnomen,24430,MN,CEAC,Rural,"Gynecology, OB/GYN",125,110,90,75,County change,35,35
+St. Louis,24680,MN,Micro,Metro,Infectious Diseases,100,75,60,40,County change,35,40
+Armstrong,39070,PA,Micro,Metro,Infectious Diseases,100,75,60,40,County change,35,40
+Fajardo,40260,PR,Micro,Metro,Infectious Diseases,100,75,60,40,County change,35,40
+Naranjito,40520,PR,Micro,Metro,Infectious Diseases,100,75,60,40,County change,35,40
+Rio Grande,40590,PR,Micro,Metro,Infectious Diseases,100,75,60,40,County change,35,40
+Big Stone,24050,MN,CEAC,Rural,Nephrology,125,110,90,75,County change,35,35
+Mahnomen,24430,MN,CEAC,Rural,Nephrology,125,110,90,75,County change,35,35
+St. Louis,24680,MN,Micro,Metro,Neurosurgery,100,75,60,40,County change,35,40
+Armstrong,39070,PA,Micro,Metro,Neurosurgery,100,75,60,40,County change,35,40
+Fajardo,40260,PR,Micro,Metro,Neurosurgery,100,75,60,40,County change,35,40
+Naranjito,40520,PR,Micro,Metro,Neurosurgery,100,75,60,40,County change,35,40
+Rio Grande,40590,PR,Micro,Metro,Neurosurgery,100,75,60,40,County change,35,40
+Armstrong,39070,PA,Micro,Metro,Oncology - Radiation/Radiation Oncology,100,75,60,40,County change,35,40
+Fajardo,40260,PR,Micro,Metro,Oncology - Radiation/Radiation Oncology,100,75,60,40,County change,35,40
+Naranjito,40520,PR,Micro,Metro,Oncology - Radiation/Radiation Oncology,100,75,60,40,County change,35,40
+Rio Grande,40590,PR,Micro,Metro,Oncology - Radiation/Radiation Oncology,100,75,60,40,County change,35,40
+Big Stone,24050,MN,CEAC,Rural,"Physiatry, Rehabilitative Medicine",125,110,90,75,County change,35,35
+Mahnomen,24430,MN,CEAC,Rural,"Physiatry, Rehabilitative Medicine",125,110,90,75,County change,35,35
+St. Louis,24680,MN,Micro,Metro,Plastic Surgery,100,75,60,40,County change,35,40
+Armstrong,39070,PA,Micro,Metro,Plastic Surgery,100,75,60,40,County change,35,40
+Fajardo,40260,PR,Micro,Metro,Plastic Surgery,100,75,60,40,County change,35,40
+Naranjito,40520,PR,Micro,Metro,Plastic Surgery,100,75,60,40,County change,35,40
+Rio Grande,40590,PR,Micro,Metro,Plastic Surgery,100,75,60,40,County change,35,40
+St. Louis,24680,MN,Micro,Metro,Rheumatology,100,75,60,40,County change,35,40
+Armstrong,39070,PA,Micro,Metro,Rheumatology,100,75,60,40,County change,35,40
+Fajardo,40260,PR,Micro,Metro,Rheumatology,100,75,60,40,County change,35,40
+Naranjito,40520,PR,Micro,Metro,Rheumatology,100,75,60,40,County change,35,40
+Rio Grande,40590,PR,Micro,Metro,Rheumatology,100,75,60,40,County change,35,40
+St. Louis,24680,MN,Micro,Metro,Vascular Surgery,100,75,60,40,County change,35,40
+Armstrong,39070,PA,Micro,Metro,Vascular Surgery,100,75,60,40,County change,35,40
+Fajardo,40260,PR,Micro,Metro,Vascular Surgery,100,75,60,40,County change,35,40
+Naranjito,40520,PR,Micro,Metro,Vascular Surgery,100,75,60,40,County change,35,40
+Rio Grande,40590,PR,Micro,Metro,Vascular Surgery,100,75,60,40,County change,35,40
+Armstrong,39070,PA,Micro,Metro,Cardiothoracic Surgery,100,75,60,40,County change,35,40
+Fajardo,40260,PR,Micro,Metro,Cardiothoracic Surgery,100,75,60,40,County change,35,40
+Naranjito,40520,PR,Micro,Metro,Cardiothoracic Surgery,100,75,60,40,County change,35,40
+Rio Grande,40590,PR,Micro,Metro,Cardiothoracic Surgery,100,75,60,40,County change,35,40
+Big Stone,24050,MN,CEAC,Rural,Primary Care,60,70,30,40,County change,30,30
+Mahnomen,24430,MN,CEAC,Rural,Primary Care,60,70,30,40,County change,30,30
+Vernon,19570,LA,Rural,Micro,Allergy and Immunology,75,90,80,60,County change,30,-5
+Big Stone,24050,MN,CEAC,Rural,Allergy and Immunology,110,125,115,95,County change,30,-5
+Catano,40160,PR,Metro,Large Metro,Allergy and Immunology,30,45,30,15,County change,30,0
+St. Louis,24680,MN,Micro,Metro,Chiropractor,80,60,45,30,County change,30,35
+Armstrong,39070,PA,Micro,Metro,Chiropractor,80,60,45,30,County change,30,35
+Fajardo,40260,PR,Micro,Metro,Chiropractor,80,60,45,30,County change,30,35
+Naranjito,40520,PR,Micro,Metro,Chiropractor,80,60,45,30,County change,30,35
+Rio Grande,40590,PR,Micro,Metro,Chiropractor,80,60,45,30,County change,30,35
+St. Louis,24680,MN,Micro,Metro,ENT/Otolaryngology,80,60,45,30,County change,30,35
+Armstrong,39070,PA,Micro,Metro,ENT/Otolaryngology,80,60,45,30,County change,30,35
+Fajardo,40260,PR,Micro,Metro,ENT/Otolaryngology,80,60,45,30,County change,30,35
+Naranjito,40520,PR,Micro,Metro,ENT/Otolaryngology,80,60,45,30,County change,30,35
+Rio Grande,40590,PR,Micro,Metro,ENT/Otolaryngology,80,60,45,30,County change,30,35
+Armstrong,39070,PA,Micro,Metro,"Gynecology, OB/GYN",80,60,45,30,County change,30,35
+Fajardo,40260,PR,Micro,Metro,"Gynecology, OB/GYN",80,60,45,30,County change,30,35
+Naranjito,40520,PR,Micro,Metro,"Gynecology, OB/GYN",80,60,45,30,County change,30,35
+Rio Grande,40590,PR,Micro,Metro,"Gynecology, OB/GYN",80,60,45,30,County change,30,35
+St. Louis,24680,MN,Micro,Metro,Nephrology,80,60,45,30,County change,30,35
+Armstrong,39070,PA,Micro,Metro,Nephrology,80,60,45,30,County change,30,35
+Fajardo,40260,PR,Micro,Metro,Nephrology,80,60,45,30,County change,30,35
+Naranjito,40520,PR,Micro,Metro,Nephrology,80,60,45,30,County change,30,35
+Rio Grande,40590,PR,Micro,Metro,Nephrology,80,60,45,30,County change,30,35
+St. Louis,24680,MN,Micro,Metro,"Physiatry, Rehabilitative Medicine",80,60,45,30,County change,30,35
+Armstrong,39070,PA,Micro,Metro,"Physiatry, Rehabilitative Medicine",80,60,45,30,County change,30,35
+Fajardo,40260,PR,Micro,Metro,"Physiatry, Rehabilitative Medicine",80,60,45,30,County change,30,35
+Naranjito,40520,PR,Micro,Metro,"Physiatry, Rehabilitative Medicine",80,60,45,30,County change,30,35
+Rio Grande,40590,PR,Micro,Metro,"Physiatry, Rehabilitative Medicine",80,60,45,30,County change,30,35
+St. Louis,24680,MN,Micro,Metro,Acute Inpatient Hospitals,80,60,45,30,County change,30,35
+Armstrong,39070,PA,Micro,Metro,Acute Inpatient Hospitals,80,60,45,30,County change,30,35
+Fajardo,40260,PR,Micro,Metro,Acute Inpatient Hospitals,80,60,45,30,County change,30,35
+Naranjito,40520,PR,Micro,Metro,Acute Inpatient Hospitals,80,60,45,30,County change,30,35
+Rio Grande,40590,PR,Micro,Metro,Acute Inpatient Hospitals,80,60,45,30,County change,30,35
+St. Louis,24680,MN,Micro,Metro,Surgical Services (Outpatient or ASC),80,60,45,30,County change,30,35
+Armstrong,39070,PA,Micro,Metro,Surgical Services (Outpatient or ASC),80,60,45,30,County change,30,35
+Fajardo,40260,PR,Micro,Metro,Surgical Services (Outpatient or ASC),80,60,45,30,County change,30,35
+Naranjito,40520,PR,Micro,Metro,Surgical Services (Outpatient or ASC),80,60,45,30,County change,30,35
+Rio Grande,40590,PR,Micro,Metro,Surgical Services (Outpatient or ASC),80,60,45,30,County change,30,35
+St. Louis,24680,MN,Micro,Metro,Skilled Nursing Facilities,80,60,45,30,County change,30,35
+Armstrong,39070,PA,Micro,Metro,Skilled Nursing Facilities,80,60,45,30,County change,30,35
+Fajardo,40260,PR,Micro,Metro,Skilled Nursing Facilities,80,60,45,30,County change,30,35
+Naranjito,40520,PR,Micro,Metro,Skilled Nursing Facilities,80,60,45,30,County change,30,35
+Rio Grande,40590,PR,Micro,Metro,Skilled Nursing Facilities,80,60,45,30,County change,30,35
+St. Louis,24680,MN,Micro,Metro,Diagnostic Radiology,80,60,45,30,County change,30,35
+Armstrong,39070,PA,Micro,Metro,Diagnostic Radiology,80,60,45,30,County change,30,35
+Fajardo,40260,PR,Micro,Metro,Diagnostic Radiology,80,60,45,30,County change,30,35
+Naranjito,40520,PR,Micro,Metro,Diagnostic Radiology,80,60,45,30,County change,30,35
+Rio Grande,40590,PR,Micro,Metro,Diagnostic Radiology,80,60,45,30,County change,30,35
+St. Louis,24680,MN,Micro,Metro,Mammography,80,60,45,30,County change,30,35
+Armstrong,39070,PA,Micro,Metro,Mammography,80,60,45,30,County change,30,35
+Naranjito,40520,PR,Micro,Metro,Mammography,80,60,45,30,County change,30,35
+Rio Grande,40590,PR,Micro,Metro,Mammography,80,60,45,30,County change,30,35
+St. Louis,24680,MN,Micro,Metro,Physical Therapy,80,60,45,30,County change,30,35
+Armstrong,39070,PA,Micro,Metro,Physical Therapy,80,60,45,30,County change,30,35
+Fajardo,40260,PR,Micro,Metro,Physical Therapy,80,60,45,30,County change,30,35
+Naranjito,40520,PR,Micro,Metro,Physical Therapy,80,60,45,30,County change,30,35
+Rio Grande,40590,PR,Micro,Metro,Physical Therapy,80,60,45,30,County change,30,35
+St. Louis,24680,MN,Micro,Metro,Occupational Therapy,80,60,45,30,County change,30,35
+Armstrong,39070,PA,Micro,Metro,Occupational Therapy,80,60,45,30,County change,30,35
+Fajardo,40260,PR,Micro,Metro,Occupational Therapy,80,60,45,30,County change,30,35
+Naranjito,40520,PR,Micro,Metro,Occupational Therapy,80,60,45,30,County change,30,35
+Rio Grande,40590,PR,Micro,Metro,Occupational Therapy,80,60,45,30,County change,30,35
+St. Louis,24680,MN,Micro,Metro,Speech Therapy,80,60,45,30,County change,30,35
+Fajardo,40260,PR,Micro,Metro,Speech Therapy,80,60,45,30,County change,30,35
+Naranjito,40520,PR,Micro,Metro,Speech Therapy,80,60,45,30,County change,30,35
+Rio Grande,40590,PR,Micro,Metro,Speech Therapy,80,60,45,30,County change,30,35
+Armstrong,39070,PA,Micro,Metro,Inpatient Psychiatric Facility Services,100,75,70,45,County change,30,30
+Catano,40160,PR,Metro,Large Metro,Inpatient Psychiatric Facility Services,70,45,30,15,County change,30,40
+Fajardo,40260,PR,Micro,Metro,Inpatient Psychiatric Facility Services,100,75,70,45,County change,30,30
+Naranjito,40520,PR,Micro,Metro,Inpatient Psychiatric Facility Services,100,75,70,45,County change,30,30
+Rio Grande,40590,PR,Micro,Metro,Inpatient Psychiatric Facility Services,100,75,70,45,County change,30,30
+St. Louis,24680,MN,Micro,Metro,Outpatient Infusion/Chemotherapy,80,60,45,30,County change,30,35
+Armstrong,39070,PA,Micro,Metro,Outpatient Infusion/Chemotherapy,80,60,45,30,County change,30,35
+Fajardo,40260,PR,Micro,Metro,Outpatient Infusion/Chemotherapy,80,60,45,30,County change,30,35
+Naranjito,40520,PR,Micro,Metro,Outpatient Infusion/Chemotherapy,80,60,45,30,County change,30,35
+Rio Grande,40590,PR,Micro,Metro,Outpatient Infusion/Chemotherapy,80,60,45,30,County change,30,35
+Montgomery,17620,KS,Rural,Micro,Cardiology,75,60,50,35,County change,25,25
+Vernon,19570,LA,Rural,Micro,Cardiology,75,60,50,35,County change,25,25
+Big Stone,24050,MN,CEAC,Rural,Cardiology,95,85,75,60,County change,25,20
+Mahnomen,24430,MN,CEAC,Rural,Cardiology,95,85,75,60,County change,25,20
+Catano,40160,PR,Metro,Large Metro,Endocrinology,60,40,30,15,County change,25,30
+Montgomery,17620,KS,Rural,Micro,General Surgery,75,60,50,35,County change,25,25
+Vernon,19570,LA,Rural,Micro,General Surgery,75,60,50,35,County change,25,25
+Big Stone,24050,MN,CEAC,Rural,General Surgery,95,85,75,60,County change,25,20
+Mahnomen,24430,MN,CEAC,Rural,General Surgery,95,85,75,60,County change,25,20
+Catano,40160,PR,Metro,Large Metro,Infectious Diseases,60,40,30,15,County change,25,30
+Catano,40160,PR,Metro,Large Metro,Neurosurgery,60,40,30,15,County change,25,30
+Catano,40160,PR,Metro,Large Metro,Oncology - Radiation/Radiation Oncology,60,40,30,15,County change,25,30
+Montgomery,17620,KS,Rural,Micro,Ophthalmology,75,60,50,35,County change,25,25
+Vernon,19570,LA,Rural,Micro,Ophthalmology,75,60,50,35,County change,25,25
+Big Stone,24050,MN,CEAC,Rural,Ophthalmology,95,85,75,60,County change,25,20
+Mahnomen,24430,MN,CEAC,Rural,Ophthalmology,95,85,75,60,County change,25,20
+Montgomery,17620,KS,Rural,Micro,Orthopedic Surgery,75,60,50,35,County change,25,25
+Vernon,19570,LA,Rural,Micro,Orthopedic Surgery,75,60,50,35,County change,25,25
+Big Stone,24050,MN,CEAC,Rural,Orthopedic Surgery,95,85,75,60,County change,25,20
+Mahnomen,24430,MN,CEAC,Rural,Orthopedic Surgery,95,85,75,60,County change,25,20
+Catano,40160,PR,Metro,Large Metro,Plastic Surgery,60,40,30,15,County change,25,30
+Catano,40160,PR,Metro,Large Metro,Rheumatology,60,40,30,15,County change,25,30
+Catano,40160,PR,Metro,Large Metro,Vascular Surgery,60,40,30,15,County change,25,30
+Catano,40160,PR,Metro,Large Metro,Cardiothoracic Surgery,60,40,30,15,County change,25,30
+Catano,40160,PR,Metro,Large Metro,Cardiac Surgery Program,60,40,30,15,County change,25,30
+Catano,40160,PR,Metro,Large Metro,Cardiac Catheterization Services,60,40,30,15,County change,25,30
+Big Stone,24050,MN,CEAC,Rural,Skilled Nursing Facilities,95,85,75,60,County change,25,20
+Mahnomen,24430,MN,CEAC,Rural,Skilled Nursing Facilities,95,85,75,60,County change,25,20
+Fajardo,40260,PR,Micro,Metro,Mammography,80,60,55,35,County change,25,25
+Catano,40160,PR,Metro,Large Metro,Dermatology,45,30,20,10,County change,20,25
+Catano,40160,PR,Metro,Large Metro,Gastroenterology,45,30,20,10,County change,20,25
+Catano,40160,PR,Metro,Large Metro,Neurology,45,30,20,10,County change,20,25
+Catano,40160,PR,Metro,Large Metro,"Oncology - Medical, Surgical",45,30,20,10,County change,20,25
+Catano,40160,PR,Metro,Large Metro,Podiatry,45,30,20,10,County change,20,25
+Catano,40160,PR,Metro,Large Metro,Psychiatry,45,30,20,10,County change,20,25
+Catano,40160,PR,Metro,Large Metro,Pulmonology,45,30,20,10,County change,20,25
+Catano,40160,PR,Metro,Large Metro,Urology,45,30,20,10,County change,20,25
+Catano,40160,PR,Metro,Large Metro,Acute Inpatient Hospitals,45,30,20,10,County change,20,25
+Big Stone,24050,MN,CEAC,Rural,Cardiac Surgery Program,155,140,145,120,County change,20,10
+Mahnomen,24430,MN,CEAC,Rural,Cardiac Surgery Program,155,140,145,120,County change,20,10
+Big Stone,24050,MN,CEAC,Rural,Cardiac Catheterization Services,155,140,145,120,County change,20,10
+Mahnomen,24430,MN,CEAC,Rural,Cardiac Catheterization Services,155,140,145,120,County change,20,10
+Big Stone,24050,MN,CEAC,Rural,Critical Care Services – Intensive Care Units (ICU),155,140,145,120,County change,20,10
+Mahnomen,24430,MN,CEAC,Rural,Critical Care Services – Intensive Care Units (ICU),155,140,145,120,County change,20,10
+Catano,40160,PR,Metro,Large Metro,Critical Care Services – Intensive Care Units (ICU),45,30,20,10,County change,20,25
+St. Louis,24680,MN,Micro,Metro,Outpatient Dialysis,65,50,45,30,County change,20,20
+Armstrong,39070,PA,Micro,Metro,Outpatient Dialysis,65,50,45,30,County change,20,20
+Catano,40160,PR,Metro,Large Metro,Outpatient Dialysis,45,30,20,10,County change,20,25
+Fajardo,40260,PR,Micro,Metro,Outpatient Dialysis,65,50,45,30,County change,20,20
+Naranjito,40520,PR,Micro,Metro,Outpatient Dialysis,65,50,45,30,County change,20,20
+Rio Grande,40590,PR,Micro,Metro,Outpatient Dialysis,65,50,45,30,County change,20,20
+Catano,40160,PR,Metro,Large Metro,Surgical Services (Outpatient or ASC),45,30,20,10,County change,20,25
+Catano,40160,PR,Metro,Large Metro,Skilled Nursing Facilities,45,30,20,10,County change,20,25
+Catano,40160,PR,Metro,Large Metro,Diagnostic Radiology,45,30,20,10,County change,20,25
+Catano,40160,PR,Metro,Large Metro,Mammography,45,30,20,10,County change,20,25
+Catano,40160,PR,Metro,Large Metro,Physical Therapy,45,30,20,10,County change,20,25
+Catano,40160,PR,Metro,Large Metro,Occupational Therapy,45,30,20,10,County change,20,25
+Armstrong,39070,PA,Micro,Metro,Speech Therapy,80,60,60,40,County change,20,20
+Catano,40160,PR,Metro,Large Metro,Speech Therapy,45,30,20,10,County change,20,25
+Catano,40160,PR,Metro,Large Metro,Outpatient Infusion/Chemotherapy,45,30,20,10,County change,20,25
+St. Louis,24680,MN,Micro,Metro,Primary Care,20,30,10,15,County change,15,10
+Fajardo,40260,PR,Micro,Metro,Primary Care,20,30,10,15,County change,15,10
+Naranjito,40520,PR,Micro,Metro,Primary Care,20,30,10,15,County change,15,10
+Rio Grande,40590,PR,Micro,Metro,Primary Care,20,30,10,15,County change,15,10
+St. Louis,24680,MN,Micro,Metro,Cardiology,50,35,30,20,County change,15,20
+Armstrong,39070,PA,Micro,Metro,Cardiology,50,35,30,20,County change,15,20
+Fajardo,40260,PR,Micro,Metro,Cardiology,50,35,30,20,County change,15,20
+Naranjito,40520,PR,Micro,Metro,Cardiology,50,35,30,20,County change,15,20
+Rio Grande,40590,PR,Micro,Metro,Cardiology,50,35,30,20,County change,15,20
+Montgomery,17620,KS,Rural,Micro,Chiropractor,90,75,80,60,County change,15,10
+Vernon,19570,LA,Rural,Micro,Chiropractor,90,75,80,60,County change,15,10
+Catano,40160,PR,Metro,Large Metro,Chiropractor,45,30,30,15,County change,15,15
+Fajardo,40260,PR,Micro,Metro,Dermatology,60,45,45,30,County change,15,15
+Naranjito,40520,PR,Micro,Metro,Dermatology,60,45,45,30,County change,15,15
+Rio Grande,40590,PR,Micro,Metro,Dermatology,60,45,45,30,County change,15,15
+Montgomery,17620,KS,Rural,Micro,Endocrinology,110,90,100,75,County change,15,10
+Montgomery,17620,KS,Rural,Micro,ENT/Otolaryngology,90,75,80,60,County change,15,10
+Vernon,19570,LA,Rural,Micro,ENT/Otolaryngology,90,75,80,60,County change,15,10
+Catano,40160,PR,Metro,Large Metro,ENT/Otolaryngology,45,30,30,15,County change,15,15
+Montgomery,17620,KS,Rural,Micro,Gastroenterology,75,60,60,45,County change,15,15
+St. Louis,24680,MN,Micro,Metro,Gastroenterology,60,45,45,30,County change,15,15
+Armstrong,39070,PA,Micro,Metro,Gastroenterology,60,45,45,30,County change,15,15
+Fajardo,40260,PR,Micro,Metro,Gastroenterology,60,45,45,30,County change,15,15
+Naranjito,40520,PR,Micro,Metro,Gastroenterology,60,45,45,30,County change,15,15
+Rio Grande,40590,PR,Micro,Metro,Gastroenterology,60,45,45,30,County change,15,15
+St. Louis,24680,MN,Micro,Metro,General Surgery,50,35,30,20,County change,15,20
+Armstrong,39070,PA,Micro,Metro,General Surgery,50,35,30,20,County change,15,20
+Fajardo,40260,PR,Micro,Metro,General Surgery,50,35,30,20,County change,15,20
+Naranjito,40520,PR,Micro,Metro,General Surgery,50,35,30,20,County change,15,20
+Rio Grande,40590,PR,Micro,Metro,General Surgery,50,35,30,20,County change,15,20
+Montgomery,17620,KS,Rural,Micro,"Gynecology, OB/GYN",90,75,80,60,County change,15,10
+Vernon,19570,LA,Rural,Micro,"Gynecology, OB/GYN",90,75,80,60,County change,15,10
+Catano,40160,PR,Metro,Large Metro,"Gynecology, OB/GYN",45,30,30,15,County change,15,15
+Montgomery,17620,KS,Rural,Micro,Infectious Diseases,110,90,100,75,County change,15,10
+Vernon,19570,LA,Rural,Micro,Infectious Diseases,110,90,100,75,County change,15,10
+Montgomery,17620,KS,Rural,Micro,Nephrology,90,75,80,60,County change,15,10
+Vernon,19570,LA,Rural,Micro,Nephrology,90,75,80,60,County change,15,10
+Catano,40160,PR,Metro,Large Metro,Nephrology,45,30,30,15,County change,15,15
+Montgomery,17620,KS,Rural,Micro,Neurology,75,60,60,45,County change,15,15
+St. Louis,24680,MN,Micro,Metro,Neurology,60,45,45,30,County change,15,15
+Armstrong,39070,PA,Micro,Metro,Neurology,60,45,45,30,County change,15,15
+Fajardo,40260,PR,Micro,Metro,Neurology,60,45,45,30,County change,15,15
+Naranjito,40520,PR,Micro,Metro,Neurology,60,45,45,30,County change,15,15
+Rio Grande,40590,PR,Micro,Metro,Neurology,60,45,45,30,County change,15,15
+Montgomery,17620,KS,Rural,Micro,Neurosurgery,110,90,100,75,County change,15,10
+Vernon,19570,LA,Rural,Micro,Neurosurgery,110,90,100,75,County change,15,10
+Montgomery,17620,KS,Rural,Micro,"Oncology - Medical, Surgical",75,60,60,45,County change,15,15
+Vernon,19570,LA,Rural,Micro,"Oncology - Medical, Surgical",75,60,60,45,County change,15,15
+St. Louis,24680,MN,Micro,Metro,"Oncology - Medical, Surgical",60,45,45,30,County change,15,15
+Armstrong,39070,PA,Micro,Metro,"Oncology - Medical, Surgical",60,45,45,30,County change,15,15
+Fajardo,40260,PR,Micro,Metro,"Oncology - Medical, Surgical",60,45,45,30,County change,15,15
+Naranjito,40520,PR,Micro,Metro,"Oncology - Medical, Surgical",60,45,45,30,County change,15,15
+Rio Grande,40590,PR,Micro,Metro,"Oncology - Medical, Surgical",60,45,45,30,County change,15,15
+Montgomery,17620,KS,Rural,Micro,Oncology - Radiation/Radiation Oncology,110,90,100,75,County change,15,10
+Vernon,19570,LA,Rural,Micro,Oncology - Radiation/Radiation Oncology,110,90,100,75,County change,15,10
+St. Louis,24680,MN,Micro,Metro,Ophthalmology,50,35,30,20,County change,15,20
+Armstrong,39070,PA,Micro,Metro,Ophthalmology,50,35,30,20,County change,15,20
+Fajardo,40260,PR,Micro,Metro,Ophthalmology,50,35,30,20,County change,15,20
+Naranjito,40520,PR,Micro,Metro,Ophthalmology,50,35,30,20,County change,15,20
+Rio Grande,40590,PR,Micro,Metro,Ophthalmology,50,35,30,20,County change,15,20
+St. Louis,24680,MN,Micro,Metro,Orthopedic Surgery,50,35,30,20,County change,15,20
+Armstrong,39070,PA,Micro,Metro,Orthopedic Surgery,50,35,30,20,County change,15,20
+Fajardo,40260,PR,Micro,Metro,Orthopedic Surgery,50,35,30,20,County change,15,20
+Naranjito,40520,PR,Micro,Metro,Orthopedic Surgery,50,35,30,20,County change,15,20
+Rio Grande,40590,PR,Micro,Metro,Orthopedic Surgery,50,35,30,20,County change,15,20
+Montgomery,17620,KS,Rural,Micro,"Physiatry, Rehabilitative Medicine",90,75,80,60,County change,15,10
+Vernon,19570,LA,Rural,Micro,"Physiatry, Rehabilitative Medicine",90,75,80,60,County change,15,10
+Catano,40160,PR,Metro,Large Metro,"Physiatry, Rehabilitative Medicine",45,30,30,15,County change,15,15
+Montgomery,17620,KS,Rural,Micro,Plastic Surgery,110,90,100,75,County change,15,10
+Vernon,19570,LA,Rural,Micro,Plastic Surgery,110,90,100,75,County change,15,10
+Big Stone,24050,MN,CEAC,Rural,Plastic Surgery,145,130,140,115,County change,15,5
+Montgomery,17620,KS,Rural,Micro,Podiatry,75,60,60,45,County change,15,15
+Vernon,19570,LA,Rural,Micro,Podiatry,75,60,60,45,County change,15,15
+St. Louis,24680,MN,Micro,Metro,Podiatry,60,45,45,30,County change,15,15
+Armstrong,39070,PA,Micro,Metro,Podiatry,60,45,45,30,County change,15,15
+Fajardo,40260,PR,Micro,Metro,Podiatry,60,45,45,30,County change,15,15
+Naranjito,40520,PR,Micro,Metro,Podiatry,60,45,45,30,County change,15,15
+Rio Grande,40590,PR,Micro,Metro,Podiatry,60,45,45,30,County change,15,15
+Montgomery,17620,KS,Rural,Micro,Psychiatry,75,60,60,45,County change,15,15
+St. Louis,24680,MN,Micro,Metro,Psychiatry,60,45,45,30,County change,15,15
+Armstrong,39070,PA,Micro,Metro,Psychiatry,60,45,45,30,County change,15,15
+Fajardo,40260,PR,Micro,Metro,Psychiatry,60,45,45,30,County change,15,15
+Naranjito,40520,PR,Micro,Metro,Psychiatry,60,45,45,30,County change,15,15
+Rio Grande,40590,PR,Micro,Metro,Psychiatry,60,45,45,30,County change,15,15
+Vernon,19570,LA,Rural,Micro,Pulmonology,75,60,60,45,County change,15,15
+St. Louis,24680,MN,Micro,Metro,Pulmonology,60,45,45,30,County change,15,15
+Fajardo,40260,PR,Micro,Metro,Pulmonology,60,45,45,30,County change,15,15
+Naranjito,40520,PR,Micro,Metro,Pulmonology,60,45,45,30,County change,15,15
+Rio Grande,40590,PR,Micro,Metro,Pulmonology,60,45,45,30,County change,15,15
+Montgomery,17620,KS,Rural,Micro,Rheumatology,110,90,100,75,County change,15,10
+Vernon,19570,LA,Rural,Micro,Rheumatology,110,90,100,75,County change,15,10
+Big Stone,24050,MN,CEAC,Rural,Rheumatology,145,130,140,115,County change,15,5
+Montgomery,17620,KS,Rural,Micro,Urology,75,60,60,45,County change,15,15
+Vernon,19570,LA,Rural,Micro,Urology,75,60,60,45,County change,15,15
+St. Louis,24680,MN,Micro,Metro,Urology,60,45,45,30,County change,15,15
+Armstrong,39070,PA,Micro,Metro,Urology,60,45,45,30,County change,15,15
+Fajardo,40260,PR,Micro,Metro,Urology,60,45,45,30,County change,15,15
+Naranjito,40520,PR,Micro,Metro,Urology,60,45,45,30,County change,15,15
+Rio Grande,40590,PR,Micro,Metro,Urology,60,45,45,30,County change,15,15
+Montgomery,17620,KS,Rural,Micro,Vascular Surgery,110,90,100,75,County change,15,10
+Montgomery,17620,KS,Rural,Micro,Cardiothoracic Surgery,110,90,100,75,County change,15,10
+Vernon,19570,LA,Rural,Micro,Cardiothoracic Surgery,110,90,100,75,County change,15,10
+Perry,15610,IN,Micro,Rural,Cardiac Surgery Program,120,160,120,145,County change,15,0
+Lincoln,38200,OR,Micro,Rural,Cardiac Surgery Program,120,160,120,145,County change,15,0
+Atascosa,45060,TX,Micro,Rural,Cardiac Surgery Program,120,160,120,145,County change,15,0
+Polk,45850,TX,Micro,Rural,Cardiac Surgery Program,120,160,120,145,County change,15,0
+San Jacinto,45884,TX,Micro,Rural,Cardiac Surgery Program,120,160,120,145,County change,15,0
+Perry,15610,IN,Micro,Rural,Cardiac Catheterization Services,120,160,120,145,County change,15,0
+Lincoln,38200,OR,Micro,Rural,Cardiac Catheterization Services,120,160,120,145,County change,15,0
+Atascosa,45060,TX,Micro,Rural,Cardiac Catheterization Services,120,160,120,145,County change,15,0
+Polk,45850,TX,Micro,Rural,Cardiac Catheterization Services,120,160,120,145,County change,15,0
+San Jacinto,45884,TX,Micro,Rural,Cardiac Catheterization Services,120,160,120,145,County change,15,0
+Perry,15610,IN,Micro,Rural,Critical Care Services – Intensive Care Units (ICU),120,160,120,145,County change,15,0
+Lincoln,38200,OR,Micro,Rural,Critical Care Services – Intensive Care Units (ICU),120,160,120,145,County change,15,0
+Atascosa,45060,TX,Micro,Rural,Critical Care Services – Intensive Care Units (ICU),120,160,120,145,County change,15,0
+Polk,45850,TX,Micro,Rural,Critical Care Services – Intensive Care Units (ICU),120,160,120,145,County change,15,0
+San Jacinto,45884,TX,Micro,Rural,Critical Care Services – Intensive Care Units (ICU),120,160,120,145,County change,15,0
+Montgomery,17620,KS,Rural,Micro,Primary Care,30,40,20,30,County change,10,10
+Vernon,19570,LA,Rural,Micro,Primary Care,30,40,20,30,County change,10,10
+Catano,40160,PR,Metro,Large Metro,Cardiology,30,20,20,10,County change,10,10
+Montgomery,17620,KS,Rural,Micro,Dermatology,75,60,65,50,County change,10,10
+Big Stone,24050,MN,CEAC,Rural,Dermatology,110,100,110,90,County change,10,0
+Armstrong,39070,PA,Micro,Metro,Dermatology,60,45,55,35,County change,10,5
+Catano,40160,PR,Metro,Large Metro,General Surgery,30,20,20,10,County change,10,10
+Big Stone,24050,MN,CEAC,Rural,Neurology,110,100,110,90,County change,10,0
+Catano,40160,PR,Metro,Large Metro,Ophthalmology,30,20,20,10,County change,10,10
+Catano,40160,PR,Metro,Large Metro,Orthopedic Surgery,30,20,20,10,County change,10,10
+Perry,15610,IN,Micro,Rural,Outpatient Dialysis,50,65,50,55,County change,10,0
+Lincoln,38200,OR,Micro,Rural,Outpatient Dialysis,50,65,50,55,County change,10,0
+Atascosa,45060,TX,Micro,Rural,Outpatient Dialysis,50,65,50,55,County change,10,0
+Polk,45850,TX,Micro,Rural,Outpatient Dialysis,50,65,50,55,County change,10,0
+San Jacinto,45884,TX,Micro,Rural,Outpatient Dialysis,50,65,50,55,County change,10,0
+Perry,15610,IN,Micro,Rural,Inpatient Psychiatric Facility Services,75,100,75,90,County change,10,0
+Lincoln,38200,OR,Micro,Rural,Inpatient Psychiatric Facility Services,75,100,75,90,County change,10,0
+Atascosa,45060,TX,Micro,Rural,Inpatient Psychiatric Facility Services,75,100,75,90,County change,10,0
+Polk,45850,TX,Micro,Rural,Inpatient Psychiatric Facility Services,75,100,75,90,County change,10,0
+San Jacinto,45884,TX,Micro,Rural,Inpatient Psychiatric Facility Services,75,100,75,90,County change,10,0
+Armstrong,39070,PA,Micro,Metro,Primary Care,20,30,15,25,County change,5,5
+Catano,40160,PR,Metro,Large Metro,Primary Care,10,15,5,10,County change,5,5
+Perry,15610,IN,Micro,Rural,Allergy and Immunology,60,80,90,75,County change,5,-30
+Lincoln,38200,OR,Micro,Rural,Allergy and Immunology,60,80,90,75,County change,5,-30
+Atascosa,45060,TX,Micro,Rural,Allergy and Immunology,60,80,90,75,County change,5,-30
+Polk,45850,TX,Micro,Rural,Allergy and Immunology,60,80,90,75,County change,5,-30
+San Jacinto,45884,TX,Micro,Rural,Allergy and Immunology,60,80,90,75,County change,5,-30
+Vernon,19570,LA,Rural,Micro,Endocrinology,110,90,115,85,County change,5,-5
+Vernon,19570,LA,Rural,Micro,Vascular Surgery,110,90,115,85,County change,5,-5
+Big Stone,24050,MN,CEAC,Rural,Cardiothoracic Surgery,145,130,150,125,County change,5,-5
+Perry,15610,IN,Micro,Rural,Acute Inpatient Hospitals,60,80,60,75,County change,5,0
+Lincoln,38200,OR,Micro,Rural,Acute Inpatient Hospitals,60,80,60,75,County change,5,0
+Atascosa,45060,TX,Micro,Rural,Acute Inpatient Hospitals,60,80,60,75,County change,5,0
+Polk,45850,TX,Micro,Rural,Acute Inpatient Hospitals,60,80,60,75,County change,5,0
+San Jacinto,45884,TX,Micro,Rural,Acute Inpatient Hospitals,60,80,60,75,County change,5,0
+Perry,15610,IN,Micro,Rural,Surgical Services (Outpatient or ASC),60,80,60,75,County change,5,0
+Lincoln,38200,OR,Micro,Rural,Surgical Services (Outpatient or ASC),60,80,60,75,County change,5,0
+Atascosa,45060,TX,Micro,Rural,Surgical Services (Outpatient or ASC),60,80,60,75,County change,5,0
+Polk,45850,TX,Micro,Rural,Surgical Services (Outpatient or ASC),60,80,60,75,County change,5,0
+San Jacinto,45884,TX,Micro,Rural,Surgical Services (Outpatient or ASC),60,80,60,75,County change,5,0
+Perry,15610,IN,Micro,Rural,Skilled Nursing Facilities,60,80,60,75,County change,5,0
+Lincoln,38200,OR,Micro,Rural,Skilled Nursing Facilities,60,80,60,75,County change,5,0
+Atascosa,45060,TX,Micro,Rural,Skilled Nursing Facilities,60,80,60,75,County change,5,0
+Polk,45850,TX,Micro,Rural,Skilled Nursing Facilities,60,80,60,75,County change,5,0
+San Jacinto,45884,TX,Micro,Rural,Skilled Nursing Facilities,60,80,60,75,County change,5,0
+Perry,15610,IN,Micro,Rural,Diagnostic Radiology,60,80,60,75,County change,5,0
+Lincoln,38200,OR,Micro,Rural,Diagnostic Radiology,60,80,60,75,County change,5,0
+Atascosa,45060,TX,Micro,Rural,Diagnostic Radiology,60,80,60,75,County change,5,0
+Polk,45850,TX,Micro,Rural,Diagnostic Radiology,60,80,60,75,County change,5,0
+San Jacinto,45884,TX,Micro,Rural,Diagnostic Radiology,60,80,60,75,County change,5,0
+Perry,15610,IN,Micro,Rural,Mammography,60,80,60,75,County change,5,0
+Lincoln,38200,OR,Micro,Rural,Mammography,60,80,60,75,County change,5,0
+Atascosa,45060,TX,Micro,Rural,Mammography,60,80,60,75,County change,5,0
+Polk,45850,TX,Micro,Rural,Mammography,60,80,60,75,County change,5,0
+San Jacinto,45884,TX,Micro,Rural,Mammography,60,80,60,75,County change,5,0
+Perry,15610,IN,Micro,Rural,Physical Therapy,60,80,60,75,County change,5,0
+Lincoln,38200,OR,Micro,Rural,Physical Therapy,60,80,60,75,County change,5,0
+Atascosa,45060,TX,Micro,Rural,Physical Therapy,60,80,60,75,County change,5,0
+Polk,45850,TX,Micro,Rural,Physical Therapy,60,80,60,75,County change,5,0
+San Jacinto,45884,TX,Micro,Rural,Physical Therapy,60,80,60,75,County change,5,0
+Perry,15610,IN,Micro,Rural,Occupational Therapy,60,80,60,75,County change,5,0
+Lincoln,38200,OR,Micro,Rural,Occupational Therapy,60,80,60,75,County change,5,0
+Atascosa,45060,TX,Micro,Rural,Occupational Therapy,60,80,60,75,County change,5,0
+Polk,45850,TX,Micro,Rural,Occupational Therapy,60,80,60,75,County change,5,0
+San Jacinto,45884,TX,Micro,Rural,Occupational Therapy,60,80,60,75,County change,5,0
+Perry,15610,IN,Micro,Rural,Speech Therapy,60,80,60,75,County change,5,0
+Atascosa,45060,TX,Micro,Rural,Speech Therapy,60,80,60,75,County change,5,0
+Polk,45850,TX,Micro,Rural,Speech Therapy,60,80,60,75,County change,5,0
+San Jacinto,45884,TX,Micro,Rural,Speech Therapy,60,80,60,75,County change,5,0
+Perry,15610,IN,Micro,Rural,Outpatient Infusion/Chemotherapy,60,80,60,75,County change,5,0
+Lincoln,38200,OR,Micro,Rural,Outpatient Infusion/Chemotherapy,60,80,60,75,County change,5,0
+Atascosa,45060,TX,Micro,Rural,Outpatient Infusion/Chemotherapy,60,80,60,75,County change,5,0
+Polk,45850,TX,Micro,Rural,Outpatient Infusion/Chemotherapy,60,80,60,75,County change,5,0
+San Jacinto,45884,TX,Micro,Rural,Oncology - Radiation/Radiation Oncology,60,80,60,75,County change,5,0
+Baltimore City,21030,MD,Large Metro,Metro,Allergy and Immunology,15,30,45,30,County change,0,-30
+Collin,45310,TX,Large Metro,Metro,Allergy and Immunology,15,30,45,30,County change,0,-30
+Manassas Park City,49565,VA,Large Metro,Metro,Allergy and Immunology,15,30,45,30,County change,0,-30
+Montgomery,17620,KS,Rural,Micro,Allergy and Immunology,90,75,100,75,County change,0,-10
+Armstrong,39070,PA,Micro,Metro,Pulmonology,60,45,70,45,County change,0,-10
+Baltimore City,21030,MD,Large Metro,Metro,Primary Care,5,10,10,15,County change,-5,-5
+Collin,45310,TX,Large Metro,Metro,Primary Care,5,10,10,15,County change,-5,-5
+Manassas Park City,49565,VA,Large Metro,Metro,Primary Care,5,10,10,15,County change,-5,-5
+Montgomery,17620,KS,Rural,Micro,Acute Inpatient Hospitals,60,75,60,80,County change,-5,0
+Vernon,19570,LA,Rural,Micro,Acute Inpatient Hospitals,60,75,60,80,County change,-5,0
+Montgomery,17620,KS,Rural,Micro,Surgical Services (Outpatient or ASC),60,75,60,80,County change,-5,0
+Vernon,19570,LA,Rural,Micro,Surgical Services (Outpatient or ASC),60,75,60,80,County change,-5,0
+Montgomery,17620,KS,Rural,Micro,Skilled Nursing Facilities,60,75,60,80,County change,-5,0
+Vernon,19570,LA,Rural,Micro,Skilled Nursing Facilities,60,75,60,80,County change,-5,0
+Montgomery,17620,KS,Rural,Micro,Diagnostic Radiology,60,75,60,80,County change,-5,0
+Vernon,19570,LA,Rural,Micro,Diagnostic Radiology,60,75,60,80,County change,-5,0
+Montgomery,17620,KS,Rural,Micro,Mammography,60,75,60,80,County change,-5,0
+Vernon,19570,LA,Rural,Micro,Mammography,60,75,60,80,County change,-5,0
+Montgomery,17620,KS,Rural,Micro,Physical Therapy,60,75,60,80,County change,-5,0
+Vernon,19570,LA,Rural,Micro,Physical Therapy,60,75,60,80,County change,-5,0
+Montgomery,17620,KS,Rural,Micro,Occupational Therapy,60,75,60,80,County change,-5,0
+Vernon,19570,LA,Rural,Micro,Occupational Therapy,60,75,60,80,County change,-5,0
+Montgomery,17620,KS,Rural,Micro,Speech Therapy,60,75,60,80,County change,-5,0
+Vernon,19570,LA,Rural,Micro,Speech Therapy,60,75,60,80,County change,-5,0
+Montgomery,17620,KS,Rural,Micro,Outpatient Infusion/Chemotherapy,60,75,60,80,County change,-5,0
+Vernon,19570,LA,Rural,Micro,Outpatient Infusion/Chemotherapy,60,75,60,80,County change,-5,0
+Lincoln,38200,OR,Micro,Rural,Primary Care,20,30,30,40,County change,-10,-10
+Atascosa,45060,TX,Micro,Rural,Primary Care,20,30,30,40,County change,-10,-10
+Polk,45850,TX,Micro,Rural,Primary Care,20,30,30,40,County change,-10,-10
+San Jacinto,45884,TX,Micro,Rural,Primary Care,20,30,30,40,County change,-10,-10
+Archuleta,6030,CO,Rural,CEAC,Cardiology,60,75,95,85,County change,-10,-35
+Liberty,10380,FL,Rural,CEAC,Cardiology,60,75,95,85,County change,-10,-35
+Baltimore City,21030,MD,Large Metro,Metro,Cardiology,20,10,30,20,County change,-10,-10
+Collin,45310,TX,Large Metro,Metro,Cardiology,20,10,30,20,County change,-10,-10
+Manassas Park City,49565,VA,Large Metro,Metro,Cardiology,20,10,30,20,County change,-10,-10
+Vernon,19570,LA,Rural,Micro,Dermatology,75,60,95,70,County change,-10,-20
+Baltimore City,21030,MD,Large Metro,Metro,General Surgery,20,10,30,20,County change,-10,-10
+Collin,45310,TX,Large Metro,Metro,General Surgery,20,10,30,20,County change,-10,-10
+Manassas Park City,49565,VA,Large Metro,Metro,General Surgery,20,10,30,20,County change,-10,-10
+Archuleta,6030,CO,Rural,CEAC,Infectious Diseases,165,135,160,145,County change,-10,5
+Vernon,19570,LA,Rural,Micro,Neurology,75,60,95,70,County change,-10,-20
+Baltimore City,21030,MD,Large Metro,Metro,Ophthalmology,20,10,30,20,County change,-10,-10
+Collin,45310,TX,Large Metro,Metro,Ophthalmology,20,10,30,20,County change,-10,-10
+Manassas Park City,49565,VA,Large Metro,Metro,Ophthalmology,20,10,30,20,County change,-10,-10
+Baltimore City,21030,MD,Large Metro,Metro,Orthopedic Surgery,20,10,30,20,County change,-10,-10
+Collin,45310,TX,Large Metro,Metro,Orthopedic Surgery,20,10,30,20,County change,-10,-10
+Manassas Park City,49565,VA,Large Metro,Metro,Orthopedic Surgery,20,10,30,20,County change,-10,-10
+Vernon,19570,LA,Rural,Micro,Psychiatry,75,60,95,70,County change,-10,-20
+Montgomery,17620,KS,Rural,Micro,Pulmonology,75,60,95,70,County change,-10,-20
+Montgomery,17620,KS,Rural,Micro,Outpatient Dialysis,50,55,50,65,County change,-10,0
+Vernon,19570,LA,Rural,Micro,Outpatient Dialysis,50,55,50,65,County change,-10,0
+Montgomery,17620,KS,Rural,Micro,Inpatient Psychiatric Facility Services,75,90,75,100,County change,-10,0
+Vernon,19570,LA,Rural,Micro,Inpatient Psychiatric Facility Services,75,90,75,100,County change,-10,0
+Queen Anne's,21170,MD,Metro,Micro,Primary Care,10,15,20,30,County change,-15,-10
+Lincoln,43410,SD,Metro,Micro,Primary Care,10,15,20,30,County change,-15,-10
+Waller,45950,TX,Metro,Micro,Primary Care,10,15,20,30,County change,-15,-10
+Harrisonburg City,49421,VA,Metro,Micro,Primary Care,10,15,20,30,County change,-15,-10
+Staunton City,49891,VA,Metro,Micro,Primary Care,10,15,20,30,County change,-15,-10
+Waynesboro City,49951,VA,Metro,Micro,Primary Care,10,15,20,30,County change,-15,-10
+Queen Anne's,21170,MD,Metro,Micro,Allergy and Immunology,30,45,80,60,County change,-15,-50
+Lincoln,43410,SD,Metro,Micro,Allergy and Immunology,30,45,80,60,County change,-15,-50
+Waller,45950,TX,Metro,Micro,Allergy and Immunology,30,45,80,60,County change,-15,-50
+Harrisonburg City,49421,VA,Metro,Micro,Allergy and Immunology,30,45,80,60,County change,-15,-50
+Staunton City,49891,VA,Metro,Micro,Allergy and Immunology,30,45,80,60,County change,-15,-50
+Waynesboro City,49951,VA,Metro,Micro,Allergy and Immunology,30,45,80,60,County change,-15,-50
+Queen Anne's,21170,MD,Metro,Micro,Cardiology,30,20,50,35,County change,-15,-20
+Lincoln,43410,SD,Metro,Micro,Cardiology,30,20,50,35,County change,-15,-20
+Waller,45950,TX,Metro,Micro,Cardiology,30,20,50,35,County change,-15,-20
+Harrisonburg City,49421,VA,Metro,Micro,Cardiology,30,20,50,35,County change,-15,-20
+Staunton City,49891,VA,Metro,Micro,Cardiology,30,20,50,35,County change,-15,-20
+Waynesboro City,49951,VA,Metro,Micro,Cardiology,30,20,50,35,County change,-15,-20
+Perry,15610,IN,Micro,Rural,Chiropractor,80,60,90,75,County change,-15,-10
+Baltimore City,21030,MD,Large Metro,Metro,Chiropractor,30,15,45,30,County change,-15,-15
+Lincoln,38200,OR,Micro,Rural,Chiropractor,80,60,90,75,County change,-15,-10
+Atascosa,45060,TX,Micro,Rural,Chiropractor,80,60,90,75,County change,-15,-10
+Collin,45310,TX,Large Metro,Metro,Chiropractor,30,15,45,30,County change,-15,-15
+Polk,45850,TX,Micro,Rural,Chiropractor,80,60,90,75,County change,-15,-10
+San Jacinto,45884,TX,Micro,Rural,Chiropractor,80,60,90,75,County change,-15,-10
+Manassas Park City,49565,VA,Large Metro,Metro,Chiropractor,30,15,45,30,County change,-15,-15
+Perry,15610,IN,Micro,Rural,Dermatology,60,45,75,60,County change,-15,-15
+Queen Anne's,21170,MD,Metro,Micro,Dermatology,45,30,60,45,County change,-15,-15
+Lincoln,38200,OR,Micro,Rural,Dermatology,60,45,75,60,County change,-15,-15
+Lincoln,43410,SD,Metro,Micro,Dermatology,45,30,60,45,County change,-15,-15
+Atascosa,45060,TX,Micro,Rural,Dermatology,60,45,75,60,County change,-15,-15
+Polk,45850,TX,Micro,Rural,Dermatology,60,45,75,60,County change,-15,-15
+San Jacinto,45884,TX,Micro,Rural,Dermatology,60,45,75,60,County change,-15,-15
+Waller,45950,TX,Metro,Micro,Dermatology,45,30,60,45,County change,-15,-15
+Harrisonburg City,49421,VA,Metro,Micro,Dermatology,45,30,60,45,County change,-15,-15
+Staunton City,49891,VA,Metro,Micro,Dermatology,45,30,60,45,County change,-15,-15
+Waynesboro City,49951,VA,Metro,Micro,Dermatology,45,30,60,45,County change,-15,-15
+Perry,15610,IN,Micro,Rural,Endocrinology,100,75,110,90,County change,-15,-10
+Lincoln,38200,OR,Micro,Rural,Endocrinology,100,75,110,90,County change,-15,-10
+Atascosa,45060,TX,Micro,Rural,Endocrinology,100,75,110,90,County change,-15,-10
+Polk,45850,TX,Micro,Rural,Endocrinology,100,75,110,90,County change,-15,-10
+San Jacinto,45884,TX,Micro,Rural,Endocrinology,100,75,110,90,County change,-15,-10
+Perry,15610,IN,Micro,Rural,ENT/Otolaryngology,80,60,90,75,County change,-15,-10
+Baltimore City,21030,MD,Large Metro,Metro,ENT/Otolaryngology,30,15,45,30,County change,-15,-15
+Lincoln,38200,OR,Micro,Rural,ENT/Otolaryngology,80,60,90,75,County change,-15,-10
+Atascosa,45060,TX,Micro,Rural,ENT/Otolaryngology,80,60,90,75,County change,-15,-10
+Collin,45310,TX,Large Metro,Metro,ENT/Otolaryngology,30,15,45,30,County change,-15,-15
+Polk,45850,TX,Micro,Rural,ENT/Otolaryngology,80,60,90,75,County change,-15,-10
+San Jacinto,45884,TX,Micro,Rural,ENT/Otolaryngology,80,60,90,75,County change,-15,-10
+Manassas Park City,49565,VA,Large Metro,Metro,ENT/Otolaryngology,30,15,45,30,County change,-15,-15
+Perry,15610,IN,Micro,Rural,Gastroenterology,60,45,75,60,County change,-15,-15
+Queen Anne's,21170,MD,Metro,Micro,Gastroenterology,45,30,60,45,County change,-15,-15
+Lincoln,38200,OR,Micro,Rural,Gastroenterology,60,45,75,60,County change,-15,-15
+Lincoln,43410,SD,Metro,Micro,Gastroenterology,45,30,60,45,County change,-15,-15
+Atascosa,45060,TX,Micro,Rural,Gastroenterology,60,45,75,60,County change,-15,-15
+Polk,45850,TX,Micro,Rural,Gastroenterology,60,45,75,60,County change,-15,-15
+San Jacinto,45884,TX,Micro,Rural,Gastroenterology,60,45,75,60,County change,-15,-15
+Waller,45950,TX,Metro,Micro,Gastroenterology,45,30,60,45,County change,-15,-15
+Harrisonburg City,49421,VA,Metro,Micro,Gastroenterology,45,30,60,45,County change,-15,-15
+Staunton City,49891,VA,Metro,Micro,Gastroenterology,45,30,60,45,County change,-15,-15
+Waynesboro City,49951,VA,Metro,Micro,Gastroenterology,45,30,60,45,County change,-15,-15
+Queen Anne's,21170,MD,Metro,Micro,General Surgery,30,20,50,35,County change,-15,-20
+Lincoln,43410,SD,Metro,Micro,General Surgery,30,20,50,35,County change,-15,-20
+Waller,45950,TX,Metro,Micro,General Surgery,30,20,50,35,County change,-15,-20
+Harrisonburg City,49421,VA,Metro,Micro,General Surgery,30,20,50,35,County change,-15,-20
+Staunton City,49891,VA,Metro,Micro,General Surgery,30,20,50,35,County change,-15,-20
+Waynesboro City,49951,VA,Metro,Micro,General Surgery,30,20,50,35,County change,-15,-20
+Perry,15610,IN,Micro,Rural,"Gynecology, OB/GYN",80,60,90,75,County change,-15,-10
+Baltimore City,21030,MD,Large Metro,Metro,"Gynecology, OB/GYN",30,15,45,30,County change,-15,-15
+Lincoln,38200,OR,Micro,Rural,"Gynecology, OB/GYN",80,60,90,75,County change,-15,-10
+Atascosa,45060,TX,Micro,Rural,"Gynecology, OB/GYN",80,60,90,75,County change,-15,-10
+Collin,45310,TX,Large Metro,Metro,"Gynecology, OB/GYN",30,15,45,30,County change,-15,-15
+Polk,45850,TX,Micro,Rural,"Gynecology, OB/GYN",80,60,90,75,County change,-15,-10
+San Jacinto,45884,TX,Micro,Rural,"Gynecology, OB/GYN",80,60,90,75,County change,-15,-10
+Manassas Park City,49565,VA,Large Metro,Metro,"Gynecology, OB/GYN",30,15,45,30,County change,-15,-15
+Perry,15610,IN,Micro,Rural,Infectious Diseases,100,75,110,90,County change,-15,-10
+Lincoln,38200,OR,Micro,Rural,Infectious Diseases,100,75,110,90,County change,-15,-10
+Atascosa,45060,TX,Micro,Rural,Infectious Diseases,100,75,110,90,County change,-15,-10
+Polk,45850,TX,Micro,Rural,Infectious Diseases,100,75,110,90,County change,-15,-10
+San Jacinto,45884,TX,Micro,Rural,Infectious Diseases,100,75,110,90,County change,-15,-10
+Perry,15610,IN,Micro,Rural,Nephrology,80,60,90,75,County change,-15,-10
+Baltimore City,21030,MD,Large Metro,Metro,Nephrology,30,15,45,30,County change,-15,-15
+Lincoln,38200,OR,Micro,Rural,Nephrology,80,60,90,75,County change,-15,-10
+Atascosa,45060,TX,Micro,Rural,Nephrology,80,60,90,75,County change,-15,-10
+Collin,45310,TX,Large Metro,Metro,Nephrology,30,15,45,30,County change,-15,-15
+Polk,45850,TX,Micro,Rural,Nephrology,80,60,90,75,County change,-15,-10
+San Jacinto,45884,TX,Micro,Rural,Nephrology,80,60,90,75,County change,-15,-10
+Manassas Park City,49565,VA,Large Metro,Metro,Nephrology,30,15,45,30,County change,-15,-15
+Perry,15610,IN,Micro,Rural,Neurology,60,45,75,60,County change,-15,-15
+Queen Anne's,21170,MD,Metro,Micro,Neurology,45,30,60,45,County change,-15,-15
+Lincoln,38200,OR,Micro,Rural,Neurology,60,45,75,60,County change,-15,-15
+Lincoln,43410,SD,Metro,Micro,Neurology,45,30,60,45,County change,-15,-15
+Atascosa,45060,TX,Micro,Rural,Neurology,60,45,75,60,County change,-15,-15
+Polk,45850,TX,Micro,Rural,Neurology,60,45,75,60,County change,-15,-15
+San Jacinto,45884,TX,Micro,Rural,Neurology,60,45,75,60,County change,-15,-15
+Waller,45950,TX,Metro,Micro,Neurology,45,30,60,45,County change,-15,-15
+Harrisonburg City,49421,VA,Metro,Micro,Neurology,45,30,60,45,County change,-15,-15
+Staunton City,49891,VA,Metro,Micro,Neurology,45,30,60,45,County change,-15,-15
+Waynesboro City,49951,VA,Metro,Micro,Neurology,45,30,60,45,County change,-15,-15
+Perry,15610,IN,Micro,Rural,Neurosurgery,100,75,110,90,County change,-15,-10
+Lincoln,38200,OR,Micro,Rural,Neurosurgery,100,75,110,90,County change,-15,-10
+Atascosa,45060,TX,Micro,Rural,Neurosurgery,100,75,110,90,County change,-15,-10
+Polk,45850,TX,Micro,Rural,Neurosurgery,100,75,110,90,County change,-15,-10
+San Jacinto,45884,TX,Micro,Rural,Neurosurgery,100,75,110,90,County change,-15,-10
+Perry,15610,IN,Micro,Rural,"Oncology - Medical, Surgical",60,45,75,60,County change,-15,-15
+Queen Anne's,21170,MD,Metro,Micro,"Oncology - Medical, Surgical",45,30,60,45,County change,-15,-15
+Lincoln,38200,OR,Micro,Rural,"Oncology - Medical, Surgical",60,45,75,60,County change,-15,-15
+Lincoln,43410,SD,Metro,Micro,"Oncology - Medical, Surgical",45,30,60,45,County change,-15,-15
+Atascosa,45060,TX,Micro,Rural,"Oncology - Medical, Surgical",60,45,75,60,County change,-15,-15
+Polk,45850,TX,Micro,Rural,"Oncology - Medical, Surgical",60,45,75,60,County change,-15,-15
+San Jacinto,45884,TX,Micro,Rural,"Oncology - Medical, Surgical",60,45,75,60,County change,-15,-15
+Waller,45950,TX,Metro,Micro,"Oncology - Medical, Surgical",45,30,60,45,County change,-15,-15
+Harrisonburg City,49421,VA,Metro,Micro,"Oncology - Medical, Surgical",45,30,60,45,County change,-15,-15
+Staunton City,49891,VA,Metro,Micro,"Oncology - Medical, Surgical",45,30,60,45,County change,-15,-15
+Waynesboro City,49951,VA,Metro,Micro,"Oncology - Medical, Surgical",45,30,60,45,County change,-15,-15
+Perry,15610,IN,Micro,Rural,Oncology - Radiation/Radiation Oncology,100,75,110,90,County change,-15,-10
+Lincoln,38200,OR,Micro,Rural,Oncology - Radiation/Radiation Oncology,100,75,110,90,County change,-15,-10
+Atascosa,45060,TX,Micro,Rural,Oncology - Radiation/Radiation Oncology,100,75,110,90,County change,-15,-10
+Polk,45850,TX,Micro,Rural,Oncology - Radiation/Radiation Oncology,100,75,110,90,County change,-15,-10
+San Jacinto,45884,TX,Micro,Rural,Oncology - Radiation/Radiation Oncology,100,75,110,90,County change,-15,-10
+Queen Anne's,21170,MD,Metro,Micro,Ophthalmology,30,20,50,35,County change,-15,-20
+Lincoln,43410,SD,Metro,Micro,Ophthalmology,30,20,50,35,County change,-15,-20
+Waller,45950,TX,Metro,Micro,Ophthalmology,30,20,50,35,County change,-15,-20
+Harrisonburg City,49421,VA,Metro,Micro,Ophthalmology,30,20,50,35,County change,-15,-20
+Staunton City,49891,VA,Metro,Micro,Ophthalmology,30,20,50,35,County change,-15,-20
+Waynesboro City,49951,VA,Metro,Micro,Ophthalmology,30,20,50,35,County change,-15,-20
+Queen Anne's,21170,MD,Metro,Micro,Orthopedic Surgery,30,20,50,35,County change,-15,-20
+Lincoln,43410,SD,Metro,Micro,Orthopedic Surgery,30,20,50,35,County change,-15,-20
+Waller,45950,TX,Metro,Micro,Orthopedic Surgery,30,20,50,35,County change,-15,-20
+Harrisonburg City,49421,VA,Metro,Micro,Orthopedic Surgery,30,20,50,35,County change,-15,-20
+Staunton City,49891,VA,Metro,Micro,Orthopedic Surgery,30,20,50,35,County change,-15,-20
+Waynesboro City,49951,VA,Metro,Micro,Orthopedic Surgery,30,20,50,35,County change,-15,-20
+Perry,15610,IN,Micro,Rural,"Physiatry, Rehabilitative Medicine",80,60,90,75,County change,-15,-10
+Baltimore City,21030,MD,Large Metro,Metro,"Physiatry, Rehabilitative Medicine",30,15,45,30,County change,-15,-15
+Lincoln,38200,OR,Micro,Rural,"Physiatry, Rehabilitative Medicine",80,60,90,75,County change,-15,-10
+Atascosa,45060,TX,Micro,Rural,"Physiatry, Rehabilitative Medicine",80,60,90,75,County change,-15,-10
+Collin,45310,TX,Large Metro,Metro,"Physiatry, Rehabilitative Medicine",30,15,45,30,County change,-15,-15
+Polk,45850,TX,Micro,Rural,"Physiatry, Rehabilitative Medicine",80,60,90,75,County change,-15,-10
+San Jacinto,45884,TX,Micro,Rural,"Physiatry, Rehabilitative Medicine",80,60,90,75,County change,-15,-10
+Manassas Park City,49565,VA,Large Metro,Metro,"Physiatry, Rehabilitative Medicine",30,15,45,30,County change,-15,-15
+Perry,15610,IN,Micro,Rural,Plastic Surgery,100,75,110,90,County change,-15,-10
+Lincoln,38200,OR,Micro,Rural,Plastic Surgery,100,75,110,90,County change,-15,-10
+Atascosa,45060,TX,Micro,Rural,Plastic Surgery,100,75,110,90,County change,-15,-10
+Polk,45850,TX,Micro,Rural,Plastic Surgery,100,75,110,90,County change,-15,-10
+San Jacinto,45884,TX,Micro,Rural,Plastic Surgery,100,75,110,90,County change,-15,-10
+Perry,15610,IN,Micro,Rural,Podiatry,60,45,75,60,County change,-15,-15
+Queen Anne's,21170,MD,Metro,Micro,Podiatry,45,30,60,45,County change,-15,-15
+Lincoln,38200,OR,Micro,Rural,Podiatry,60,45,75,60,County change,-15,-15
+Lincoln,43410,SD,Metro,Micro,Podiatry,45,30,60,45,County change,-15,-15
+Atascosa,45060,TX,Micro,Rural,Podiatry,60,45,75,60,County change,-15,-15
+Polk,45850,TX,Micro,Rural,Podiatry,60,45,75,60,County change,-15,-15
+San Jacinto,45884,TX,Micro,Rural,Podiatry,60,45,75,60,County change,-15,-15
+Waller,45950,TX,Metro,Micro,Podiatry,45,30,60,45,County change,-15,-15
+Harrisonburg City,49421,VA,Metro,Micro,Podiatry,45,30,60,45,County change,-15,-15
+Staunton City,49891,VA,Metro,Micro,Podiatry,45,30,60,45,County change,-15,-15
+Waynesboro City,49951,VA,Metro,Micro,Podiatry,45,30,60,45,County change,-15,-15
+Perry,15610,IN,Micro,Rural,Psychiatry,60,45,75,60,County change,-15,-15
+Queen Anne's,21170,MD,Metro,Micro,Psychiatry,45,30,60,45,County change,-15,-15
+Lincoln,38200,OR,Micro,Rural,Psychiatry,60,45,75,60,County change,-15,-15
+Lincoln,43410,SD,Metro,Micro,Psychiatry,45,30,60,45,County change,-15,-15
+Atascosa,45060,TX,Micro,Rural,Psychiatry,60,45,75,60,County change,-15,-15
+Polk,45850,TX,Micro,Rural,Psychiatry,60,45,75,60,County change,-15,-15
+San Jacinto,45884,TX,Micro,Rural,Psychiatry,60,45,75,60,County change,-15,-15
+Waller,45950,TX,Metro,Micro,Psychiatry,45,30,60,45,County change,-15,-15
+Harrisonburg City,49421,VA,Metro,Micro,Psychiatry,45,30,60,45,County change,-15,-15
+Staunton City,49891,VA,Metro,Micro,Psychiatry,45,30,60,45,County change,-15,-15
+Waynesboro City,49951,VA,Metro,Micro,Psychiatry,45,30,60,45,County change,-15,-15
+Perry,15610,IN,Micro,Rural,Pulmonology,60,45,75,60,County change,-15,-15
+Queen Anne's,21170,MD,Metro,Micro,Pulmonology,45,30,60,45,County change,-15,-15
+Lincoln,38200,OR,Micro,Rural,Pulmonology,60,45,75,60,County change,-15,-15
+Lincoln,43410,SD,Metro,Micro,Pulmonology,45,30,60,45,County change,-15,-15
+Atascosa,45060,TX,Micro,Rural,Pulmonology,60,45,75,60,County change,-15,-15
+Polk,45850,TX,Micro,Rural,Pulmonology,60,45,75,60,County change,-15,-15
+San Jacinto,45884,TX,Micro,Rural,Pulmonology,60,45,75,60,County change,-15,-15
+Waller,45950,TX,Metro,Micro,Pulmonology,45,30,60,45,County change,-15,-15
+Harrisonburg City,49421,VA,Metro,Micro,Pulmonology,45,30,60,45,County change,-15,-15
+Staunton City,49891,VA,Metro,Micro,Pulmonology,45,30,60,45,County change,-15,-15
+Waynesboro City,49951,VA,Metro,Micro,Pulmonology,45,30,60,45,County change,-15,-15
+Perry,15610,IN,Micro,Rural,Rheumatology,100,75,110,90,County change,-15,-10
+Lincoln,38200,OR,Micro,Rural,Rheumatology,100,75,110,90,County change,-15,-10
+Atascosa,45060,TX,Micro,Rural,Rheumatology,100,75,110,90,County change,-15,-10
+Polk,45850,TX,Micro,Rural,Rheumatology,100,75,110,90,County change,-15,-10
+San Jacinto,45884,TX,Micro,Rural,Rheumatology,100,75,110,90,County change,-15,-10
+Perry,15610,IN,Micro,Rural,Urology,60,45,75,60,County change,-15,-15
+Queen Anne's,21170,MD,Metro,Micro,Urology,45,30,60,45,County change,-15,-15
+Lincoln,38200,OR,Micro,Rural,Urology,60,45,75,60,County change,-15,-15
+Lincoln,43410,SD,Metro,Micro,Urology,45,30,60,45,County change,-15,-15
+Atascosa,45060,TX,Micro,Rural,Urology,60,45,75,60,County change,-15,-15
+Polk,45850,TX,Micro,Rural,Urology,60,45,75,60,County change,-15,-15
+San Jacinto,45884,TX,Micro,Rural,Urology,60,45,75,60,County change,-15,-15
+Waller,45950,TX,Metro,Micro,Urology,45,30,60,45,County change,-15,-15
+Harrisonburg City,49421,VA,Metro,Micro,Urology,45,30,60,45,County change,-15,-15
+Staunton City,49891,VA,Metro,Micro,Urology,45,30,60,45,County change,-15,-15
+Waynesboro City,49951,VA,Metro,Micro,Urology,45,30,60,45,County change,-15,-15
+Perry,15610,IN,Micro,Rural,Vascular Surgery,100,75,110,90,County change,-15,-10
+Lincoln,38200,OR,Micro,Rural,Vascular Surgery,100,75,110,90,County change,-15,-10
+Atascosa,45060,TX,Micro,Rural,Vascular Surgery,100,75,110,90,County change,-15,-10
+Polk,45850,TX,Micro,Rural,Vascular Surgery,100,75,110,90,County change,-15,-10
+San Jacinto,45884,TX,Micro,Rural,Vascular Surgery,100,75,110,90,County change,-15,-10
+Perry,15610,IN,Micro,Rural,Cardiothoracic Surgery,100,75,110,90,County change,-15,-10
+Lincoln,38200,OR,Micro,Rural,Cardiothoracic Surgery,100,75,110,90,County change,-15,-10
+Atascosa,45060,TX,Micro,Rural,Cardiothoracic Surgery,100,75,110,90,County change,-15,-10
+Polk,45850,TX,Micro,Rural,Cardiothoracic Surgery,100,75,110,90,County change,-15,-10
+San Jacinto,45884,TX,Micro,Rural,Cardiothoracic Surgery,100,75,110,90,County change,-15,-10
+Lincoln,38200,OR,Micro,Rural,Speech Therapy,80,60,90,75,County change,-15,-10
+Montgomery,17620,KS,Rural,Micro,Cardiac Surgery Program,120,145,120,160,County change,-15,0
+Vernon,19570,LA,Rural,Micro,Cardiac Surgery Program,120,145,120,160,County change,-15,0
+Montgomery,17620,KS,Rural,Micro,Cardiac Catheterization Services,120,145,120,160,County change,-15,0
+Vernon,19570,LA,Rural,Micro,Cardiac Catheterization Services,120,145,120,160,County change,-15,0
+Montgomery,17620,KS,Rural,Micro,Critical Care Services – Intensive Care Units (ICU),120,145,120,160,County change,-15,0
+Vernon,19570,LA,Rural,Micro,Critical Care Services – Intensive Care Units (ICU),120,145,120,160,County change,-15,0
+Baltimore City,21030,MD,Large Metro,Metro,Dermatology,20,10,45,30,County change,-20,-25
+Collin,45310,TX,Large Metro,Metro,Dermatology,20,10,45,30,County change,-20,-25
+Manassas Park City,49565,VA,Large Metro,Metro,Dermatology,20,10,45,30,County change,-20,-25
+Baltimore City,21030,MD,Large Metro,Metro,Gastroenterology,20,10,45,30,County change,-20,-25
+Collin,45310,TX,Large Metro,Metro,Gastroenterology,20,10,45,30,County change,-20,-25
+Manassas Park City,49565,VA,Large Metro,Metro,Gastroenterology,20,10,45,30,County change,-20,-25
+Baltimore City,21030,MD,Large Metro,Metro,Neurology,20,10,45,30,County change,-20,-25
+Collin,45310,TX,Large Metro,Metro,Neurology,20,10,45,30,County change,-20,-25
+Manassas Park City,49565,VA,Large Metro,Metro,Neurology,20,10,45,30,County change,-20,-25
+Baltimore City,21030,MD,Large Metro,Metro,"Oncology - Medical, Surgical",20,10,45,30,County change,-20,-25
+Collin,45310,TX,Large Metro,Metro,"Oncology - Medical, Surgical",20,10,45,30,County change,-20,-25
+Manassas Park City,49565,VA,Large Metro,Metro,"Oncology - Medical, Surgical",20,10,45,30,County change,-20,-25
+Baltimore City,21030,MD,Large Metro,Metro,Podiatry,20,10,45,30,County change,-20,-25
+Collin,45310,TX,Large Metro,Metro,Podiatry,20,10,45,30,County change,-20,-25
+Manassas Park City,49565,VA,Large Metro,Metro,Podiatry,20,10,45,30,County change,-20,-25
+Baltimore City,21030,MD,Large Metro,Metro,Psychiatry,20,10,45,30,County change,-20,-25
+Collin,45310,TX,Large Metro,Metro,Psychiatry,20,10,45,30,County change,-20,-25
+Manassas Park City,49565,VA,Large Metro,Metro,Psychiatry,20,10,45,30,County change,-20,-25
+Baltimore City,21030,MD,Large Metro,Metro,Pulmonology,20,10,45,30,County change,-20,-25
+Collin,45310,TX,Large Metro,Metro,Pulmonology,20,10,45,30,County change,-20,-25
+Manassas Park City,49565,VA,Large Metro,Metro,Pulmonology,20,10,45,30,County change,-20,-25
+Baltimore City,21030,MD,Large Metro,Metro,Urology,20,10,45,30,County change,-20,-25
+Collin,45310,TX,Large Metro,Metro,Urology,20,10,45,30,County change,-20,-25
+Manassas Park City,49565,VA,Large Metro,Metro,Urology,20,10,45,30,County change,-20,-25
+Baltimore City,21030,MD,Large Metro,Metro,Acute Inpatient Hospitals,20,10,45,30,County change,-20,-25
+Collin,45310,TX,Large Metro,Metro,Acute Inpatient Hospitals,20,10,45,30,County change,-20,-25
+Manassas Park City,49565,VA,Large Metro,Metro,Acute Inpatient Hospitals,20,10,45,30,County change,-20,-25
+Archuleta,6030,CO,Rural,CEAC,Cardiac Surgery Program,145,120,155,140,County change,-20,-10
+Liberty,10380,FL,Rural,CEAC,Cardiac Surgery Program,145,120,155,140,County change,-20,-10
+Otero,32170,NM,Micro,CEAC,Cardiac Surgery Program,160,120,155,140,County change,-20,5
+Tooele,46220,UT,Micro,CEAC,Cardiac Surgery Program,160,120,155,140,County change,-20,5
+Archuleta,6030,CO,Rural,CEAC,Cardiac Catheterization Services,145,120,155,140,County change,-20,-10
+Liberty,10380,FL,Rural,CEAC,Cardiac Catheterization Services,145,120,155,140,County change,-20,-10
+Otero,32170,NM,Micro,CEAC,Cardiac Catheterization Services,160,120,155,140,County change,-20,5
+Tooele,46220,UT,Micro,CEAC,Cardiac Catheterization Services,160,120,155,140,County change,-20,5
+Archuleta,6030,CO,Rural,CEAC,Critical Care Services – Intensive Care Units (ICU),145,120,155,140,County change,-20,-10
+Liberty,10380,FL,Rural,CEAC,Critical Care Services – Intensive Care Units (ICU),145,120,155,140,County change,-20,-10
+Baltimore City,21030,MD,Large Metro,Metro,Critical Care Services – Intensive Care Units (ICU),20,10,45,30,County change,-20,-25
+Otero,32170,NM,Micro,CEAC,Critical Care Services – Intensive Care Units (ICU),160,120,155,140,County change,-20,5
+Collin,45310,TX,Large Metro,Metro,Critical Care Services – Intensive Care Units (ICU),20,10,45,30,County change,-20,-25
+Tooele,46220,UT,Micro,CEAC,Critical Care Services – Intensive Care Units (ICU),160,120,155,140,County change,-20,5
+Manassas Park City,49565,VA,Large Metro,Metro,Critical Care Services – Intensive Care Units (ICU),20,10,45,30,County change,-20,-25
+Baltimore City,21030,MD,Large Metro,Metro,Outpatient Dialysis,20,10,45,30,County change,-20,-25
+Queen Anne's,21170,MD,Metro,Micro,Outpatient Dialysis,45,30,65,50,County change,-20,-20
+Lincoln,43410,SD,Metro,Micro,Outpatient Dialysis,45,30,65,50,County change,-20,-20
+Collin,45310,TX,Large Metro,Metro,Outpatient Dialysis,20,10,45,30,County change,-20,-25
+Waller,45950,TX,Metro,Micro,Outpatient Dialysis,45,30,65,50,County change,-20,-20
+Harrisonburg City,49421,VA,Metro,Micro,Outpatient Dialysis,45,30,65,50,County change,-20,-20
+Manassas Park City,49565,VA,Large Metro,Metro,Outpatient Dialysis,20,10,45,30,County change,-20,-25
+Staunton City,49891,VA,Metro,Micro,Outpatient Dialysis,45,30,65,50,County change,-20,-20
+Waynesboro City,49951,VA,Metro,Micro,Outpatient Dialysis,45,30,65,50,County change,-20,-20
+Baltimore City,21030,MD,Large Metro,Metro,Surgical Services (Outpatient or ASC),20,10,45,30,County change,-20,-25
+Collin,45310,TX,Large Metro,Metro,Surgical Services (Outpatient or ASC),20,10,45,30,County change,-20,-25
+Manassas Park City,49565,VA,Large Metro,Metro,Surgical Services (Outpatient or ASC),20,10,45,30,County change,-20,-25
+Baltimore City,21030,MD,Large Metro,Metro,Skilled Nursing Facilities,20,10,45,30,County change,-20,-25
+Collin,45310,TX,Large Metro,Metro,Skilled Nursing Facilities,20,10,45,30,County change,-20,-25
+Manassas Park City,49565,VA,Large Metro,Metro,Skilled Nursing Facilities,20,10,45,30,County change,-20,-25
+Baltimore City,21030,MD,Large Metro,Metro,Diagnostic Radiology,20,10,45,30,County change,-20,-25
+Collin,45310,TX,Large Metro,Metro,Diagnostic Radiology,20,10,45,30,County change,-20,-25
+Manassas Park City,49565,VA,Large Metro,Metro,Diagnostic Radiology,20,10,45,30,County change,-20,-25
+Baltimore City,21030,MD,Large Metro,Metro,Mammography,20,10,45,30,County change,-20,-25
+Collin,45310,TX,Large Metro,Metro,Mammography,20,10,45,30,County change,-20,-25
+Manassas Park City,49565,VA,Large Metro,Metro,Mammography,20,10,45,30,County change,-20,-25
+Baltimore City,21030,MD,Large Metro,Metro,Physical Therapy,20,10,45,30,County change,-20,-25
+Collin,45310,TX,Large Metro,Metro,Physical Therapy,20,10,45,30,County change,-20,-25
+Manassas Park City,49565,VA,Large Metro,Metro,Physical Therapy,20,10,45,30,County change,-20,-25
+Baltimore City,21030,MD,Large Metro,Metro,Occupational Therapy,20,10,45,30,County change,-20,-25
+Collin,45310,TX,Large Metro,Metro,Occupational Therapy,20,10,45,30,County change,-20,-25
+Manassas Park City,49565,VA,Large Metro,Metro,Occupational Therapy,20,10,45,30,County change,-20,-25
+Baltimore City,21030,MD,Large Metro,Metro,Speech Therapy,20,10,45,30,County change,-20,-25
+Collin,45310,TX,Large Metro,Metro,Speech Therapy,20,10,45,30,County change,-20,-25
+Manassas Park City,49565,VA,Large Metro,Metro,Speech Therapy,20,10,45,30,County change,-20,-25
+Baltimore City,21030,MD,Large Metro,Metro,Outpatient Infusion/Chemotherapy,20,10,45,30,County change,-20,-25
+Collin,45310,TX,Large Metro,Metro,Outpatient Infusion/Chemotherapy,20,10,45,30,County change,-20,-25
+Manassas Park City,49565,VA,Large Metro,Metro,Outpatient Infusion/Chemotherapy,20,10,45,30,County change,-20,-25
+Perry,15610,IN,Micro,Rural,Cardiology,50,35,75,60,County change,-25,-25
+Lincoln,38200,OR,Micro,Rural,Cardiology,50,35,75,60,County change,-25,-25
+Atascosa,45060,TX,Micro,Rural,Cardiology,50,35,75,60,County change,-25,-25
+Polk,45850,TX,Micro,Rural,Cardiology,50,35,75,60,County change,-25,-25
+San Jacinto,45884,TX,Micro,Rural,Cardiology,50,35,75,60,County change,-25,-25
+Baltimore City,21030,MD,Large Metro,Metro,Endocrinology,30,15,60,40,County change,-25,-30
+Collin,45310,TX,Large Metro,Metro,Endocrinology,30,15,60,40,County change,-25,-30
+Manassas Park City,49565,VA,Large Metro,Metro,Endocrinology,30,15,60,40,County change,-25,-30
+Archuleta,6030,CO,Rural,CEAC,General Surgery,75,60,95,85,County change,-25,-20
+Liberty,10380,FL,Rural,CEAC,General Surgery,75,60,95,85,County change,-25,-20
+Perry,15610,IN,Micro,Rural,General Surgery,50,35,75,60,County change,-25,-25
+Lincoln,38200,OR,Micro,Rural,General Surgery,50,35,75,60,County change,-25,-25
+Atascosa,45060,TX,Micro,Rural,General Surgery,50,35,75,60,County change,-25,-25
+Polk,45850,TX,Micro,Rural,General Surgery,50,35,75,60,County change,-25,-25
+San Jacinto,45884,TX,Micro,Rural,General Surgery,50,35,75,60,County change,-25,-25
+Baltimore City,21030,MD,Large Metro,Metro,Infectious Diseases,30,15,60,40,County change,-25,-30
+Collin,45310,TX,Large Metro,Metro,Infectious Diseases,30,15,60,40,County change,-25,-30
+Manassas Park City,49565,VA,Large Metro,Metro,Infectious Diseases,30,15,60,40,County change,-25,-30
+Baltimore City,21030,MD,Large Metro,Metro,Neurosurgery,30,15,60,40,County change,-25,-30
+Collin,45310,TX,Large Metro,Metro,Neurosurgery,30,15,60,40,County change,-25,-30
+Manassas Park City,49565,VA,Large Metro,Metro,Neurosurgery,30,15,60,40,County change,-25,-30
+Baltimore City,21030,MD,Large Metro,Metro,Oncology - Radiation/Radiation Oncology,30,15,60,40,County change,-25,-30
+Collin,45310,TX,Large Metro,Metro,Oncology - Radiation/Radiation Oncology,30,15,60,40,County change,-25,-30
+Manassas Park City,49565,VA,Large Metro,Metro,Oncology - Radiation/Radiation Oncology,30,15,60,40,County change,-25,-30
+Archuleta,6030,CO,Rural,CEAC,Ophthalmology,75,60,95,85,County change,-25,-20
+Liberty,10380,FL,Rural,CEAC,Ophthalmology,75,60,95,85,County change,-25,-20
+Perry,15610,IN,Micro,Rural,Ophthalmology,50,35,75,60,County change,-25,-25
+Lincoln,38200,OR,Micro,Rural,Ophthalmology,50,35,75,60,County change,-25,-25
+Atascosa,45060,TX,Micro,Rural,Ophthalmology,50,35,75,60,County change,-25,-25
+Polk,45850,TX,Micro,Rural,Ophthalmology,50,35,75,60,County change,-25,-25
+San Jacinto,45884,TX,Micro,Rural,Ophthalmology,50,35,75,60,County change,-25,-25
+Archuleta,6030,CO,Rural,CEAC,Orthopedic Surgery,75,60,95,85,County change,-25,-20
+Liberty,10380,FL,Rural,CEAC,Orthopedic Surgery,75,60,95,85,County change,-25,-20
+Perry,15610,IN,Micro,Rural,Orthopedic Surgery,50,35,75,60,County change,-25,-25
+Lincoln,38200,OR,Micro,Rural,Orthopedic Surgery,50,35,75,60,County change,-25,-25
+Atascosa,45060,TX,Micro,Rural,Orthopedic Surgery,50,35,75,60,County change,-25,-25
+Polk,45850,TX,Micro,Rural,Orthopedic Surgery,50,35,75,60,County change,-25,-25
+San Jacinto,45884,TX,Micro,Rural,Orthopedic Surgery,50,35,75,60,County change,-25,-25
+Baltimore City,21030,MD,Large Metro,Metro,Plastic Surgery,30,15,60,40,County change,-25,-30
+Collin,45310,TX,Large Metro,Metro,Plastic Surgery,30,15,60,40,County change,-25,-30
+Manassas Park City,49565,VA,Large Metro,Metro,Plastic Surgery,30,15,60,40,County change,-25,-30
+Baltimore City,21030,MD,Large Metro,Metro,Rheumatology,30,15,60,40,County change,-25,-30
+Collin,45310,TX,Large Metro,Metro,Rheumatology,30,15,60,40,County change,-25,-30
+Manassas Park City,49565,VA,Large Metro,Metro,Rheumatology,30,15,60,40,County change,-25,-30
+Baltimore City,21030,MD,Large Metro,Metro,Vascular Surgery,30,15,60,40,County change,-25,-30
+Collin,45310,TX,Large Metro,Metro,Vascular Surgery,30,15,60,40,County change,-25,-30
+Manassas Park City,49565,VA,Large Metro,Metro,Vascular Surgery,30,15,60,40,County change,-25,-30
+Baltimore City,21030,MD,Large Metro,Metro,Cardiothoracic Surgery,30,15,60,40,County change,-25,-30
+Collin,45310,TX,Large Metro,Metro,Cardiothoracic Surgery,30,15,60,40,County change,-25,-30
+Manassas Park City,49565,VA,Large Metro,Metro,Cardiothoracic Surgery,30,15,60,40,County change,-25,-30
+Baltimore City,21030,MD,Large Metro,Metro,Cardiac Surgery Program,30,15,60,40,County change,-25,-30
+Collin,45310,TX,Large Metro,Metro,Cardiac Surgery Program,30,15,60,40,County change,-25,-30
+Manassas Park City,49565,VA,Large Metro,Metro,Cardiac Surgery Program,30,15,60,40,County change,-25,-30
+Baltimore City,21030,MD,Large Metro,Metro,Cardiac Catheterization Services,30,15,60,40,County change,-25,-30
+Collin,45310,TX,Large Metro,Metro,Cardiac Catheterization Services,30,15,60,40,County change,-25,-30
+Manassas Park City,49565,VA,Large Metro,Metro,Cardiac Catheterization Services,30,15,60,40,County change,-25,-30
+Archuleta,6030,CO,Rural,CEAC,Skilled Nursing Facilities,75,60,95,85,County change,-25,-20
+Liberty,10380,FL,Rural,CEAC,Skilled Nursing Facilities,75,60,95,85,County change,-25,-20
+Otero,32170,NM,Micro,CEAC,Skilled Nursing Facilities,80,60,95,85,County change,-25,-15
+Tooele,46220,UT,Micro,CEAC,Skilled Nursing Facilities,80,60,95,85,County change,-25,-15
+Archuleta,6030,CO,Rural,CEAC,Primary Care,30,40,60,70,County change,-30,-30
+Liberty,10380,FL,Rural,CEAC,Primary Care,30,40,60,70,County change,-30,-30
+Otero,32170,NM,Micro,CEAC,Allergy and Immunology,60,80,125,110,County change,-30,-65
+Tooele,46220,UT,Micro,CEAC,Allergy and Immunology,60,80,125,110,County change,-30,-65
+Queen Anne's,21170,MD,Metro,Micro,Chiropractor,45,30,80,60,County change,-30,-35
+Lincoln,43410,SD,Metro,Micro,Chiropractor,45,30,80,60,County change,-30,-35
+Waller,45950,TX,Metro,Micro,Chiropractor,45,30,80,60,County change,-30,-35
+Harrisonburg City,49421,VA,Metro,Micro,Chiropractor,45,30,80,60,County change,-30,-35
+Staunton City,49891,VA,Metro,Micro,Chiropractor,45,30,80,60,County change,-30,-35
+Waynesboro City,49951,VA,Metro,Micro,Chiropractor,45,30,80,60,County change,-30,-35
+Queen Anne's,21170,MD,Metro,Micro,ENT/Otolaryngology,45,30,80,60,County change,-30,-35
+Lincoln,43410,SD,Metro,Micro,ENT/Otolaryngology,45,30,80,60,County change,-30,-35
+Waller,45950,TX,Metro,Micro,ENT/Otolaryngology,45,30,80,60,County change,-30,-35
+Harrisonburg City,49421,VA,Metro,Micro,ENT/Otolaryngology,45,30,80,60,County change,-30,-35
+Staunton City,49891,VA,Metro,Micro,ENT/Otolaryngology,45,30,80,60,County change,-30,-35
+Waynesboro City,49951,VA,Metro,Micro,ENT/Otolaryngology,45,30,80,60,County change,-30,-35
+Vernon,19570,LA,Rural,Micro,Gastroenterology,75,60,120,90,County change,-30,-45
+Queen Anne's,21170,MD,Metro,Micro,"Gynecology, OB/GYN",45,30,80,60,County change,-30,-35
+Lincoln,43410,SD,Metro,Micro,"Gynecology, OB/GYN",45,30,80,60,County change,-30,-35
+Waller,45950,TX,Metro,Micro,"Gynecology, OB/GYN",45,30,80,60,County change,-30,-35
+Harrisonburg City,49421,VA,Metro,Micro,"Gynecology, OB/GYN",45,30,80,60,County change,-30,-35
+Staunton City,49891,VA,Metro,Micro,"Gynecology, OB/GYN",45,30,80,60,County change,-30,-35
+Waynesboro City,49951,VA,Metro,Micro,"Gynecology, OB/GYN",45,30,80,60,County change,-30,-35
+Queen Anne's,21170,MD,Metro,Micro,Nephrology,45,30,80,60,County change,-30,-35
+Lincoln,43410,SD,Metro,Micro,Nephrology,45,30,80,60,County change,-30,-35
+Waller,45950,TX,Metro,Micro,Nephrology,45,30,80,60,County change,-30,-35
+Harrisonburg City,49421,VA,Metro,Micro,Nephrology,45,30,80,60,County change,-30,-35
+Staunton City,49891,VA,Metro,Micro,Nephrology,45,30,80,60,County change,-30,-35
+Waynesboro City,49951,VA,Metro,Micro,Nephrology,45,30,80,60,County change,-30,-35
+Queen Anne's,21170,MD,Metro,Micro,"Physiatry, Rehabilitative Medicine",45,30,80,60,County change,-30,-35
+Lincoln,43410,SD,Metro,Micro,"Physiatry, Rehabilitative Medicine",45,30,80,60,County change,-30,-35
+Waller,45950,TX,Metro,Micro,"Physiatry, Rehabilitative Medicine",45,30,80,60,County change,-30,-35
+Harrisonburg City,49421,VA,Metro,Micro,"Physiatry, Rehabilitative Medicine",45,30,80,60,County change,-30,-35
+Staunton City,49891,VA,Metro,Micro,"Physiatry, Rehabilitative Medicine",45,30,80,60,County change,-30,-35
+Waynesboro City,49951,VA,Metro,Micro,"Physiatry, Rehabilitative Medicine",45,30,80,60,County change,-30,-35
+Queen Anne's,21170,MD,Metro,Micro,Acute Inpatient Hospitals,45,30,80,60,County change,-30,-35
+Lincoln,43410,SD,Metro,Micro,Acute Inpatient Hospitals,45,30,80,60,County change,-30,-35
+Waller,45950,TX,Metro,Micro,Acute Inpatient Hospitals,45,30,80,60,County change,-30,-35
+Harrisonburg City,49421,VA,Metro,Micro,Acute Inpatient Hospitals,45,30,80,60,County change,-30,-35
+Staunton City,49891,VA,Metro,Micro,Acute Inpatient Hospitals,45,30,80,60,County change,-30,-35
+Waynesboro City,49951,VA,Metro,Micro,Acute Inpatient Hospitals,45,30,80,60,County change,-30,-35
+Queen Anne's,21170,MD,Metro,Micro,Surgical Services (Outpatient or ASC),45,30,80,60,County change,-30,-35
+Lincoln,43410,SD,Metro,Micro,Surgical Services (Outpatient or ASC),45,30,80,60,County change,-30,-35
+Waller,45950,TX,Metro,Micro,Surgical Services (Outpatient or ASC),45,30,80,60,County change,-30,-35
+Harrisonburg City,49421,VA,Metro,Micro,Surgical Services (Outpatient or ASC),45,30,80,60,County change,-30,-35
+Staunton City,49891,VA,Metro,Micro,Surgical Services (Outpatient or ASC),45,30,80,60,County change,-30,-35
+Waynesboro City,49951,VA,Metro,Micro,Surgical Services (Outpatient or ASC),45,30,80,60,County change,-30,-35
+Queen Anne's,21170,MD,Metro,Micro,Skilled Nursing Facilities,45,30,80,60,County change,-30,-35
+Lincoln,43410,SD,Metro,Micro,Skilled Nursing Facilities,45,30,80,60,County change,-30,-35
+Waller,45950,TX,Metro,Micro,Skilled Nursing Facilities,45,30,80,60,County change,-30,-35
+Harrisonburg City,49421,VA,Metro,Micro,Skilled Nursing Facilities,45,30,80,60,County change,-30,-35
+Staunton City,49891,VA,Metro,Micro,Skilled Nursing Facilities,45,30,80,60,County change,-30,-35
+Waynesboro City,49951,VA,Metro,Micro,Skilled Nursing Facilities,45,30,80,60,County change,-30,-35
+Queen Anne's,21170,MD,Metro,Micro,Diagnostic Radiology,45,30,80,60,County change,-30,-35
+Lincoln,43410,SD,Metro,Micro,Diagnostic Radiology,45,30,80,60,County change,-30,-35
+Waller,45950,TX,Metro,Micro,Diagnostic Radiology,45,30,80,60,County change,-30,-35
+Harrisonburg City,49421,VA,Metro,Micro,Diagnostic Radiology,45,30,80,60,County change,-30,-35
+Staunton City,49891,VA,Metro,Micro,Diagnostic Radiology,45,30,80,60,County change,-30,-35
+Waynesboro City,49951,VA,Metro,Micro,Diagnostic Radiology,45,30,80,60,County change,-30,-35
+Queen Anne's,21170,MD,Metro,Micro,Mammography,45,30,80,60,County change,-30,-35
+Lincoln,43410,SD,Metro,Micro,Mammography,45,30,80,60,County change,-30,-35
+Waller,45950,TX,Metro,Micro,Mammography,45,30,80,60,County change,-30,-35
+Harrisonburg City,49421,VA,Metro,Micro,Mammography,45,30,80,60,County change,-30,-35
+Staunton City,49891,VA,Metro,Micro,Mammography,45,30,80,60,County change,-30,-35
+Waynesboro City,49951,VA,Metro,Micro,Mammography,45,30,80,60,County change,-30,-35
+Queen Anne's,21170,MD,Metro,Micro,Physical Therapy,45,30,80,60,County change,-30,-35
+Lincoln,43410,SD,Metro,Micro,Physical Therapy,45,30,80,60,County change,-30,-35
+Waller,45950,TX,Metro,Micro,Physical Therapy,45,30,80,60,County change,-30,-35
+Harrisonburg City,49421,VA,Metro,Micro,Physical Therapy,45,30,80,60,County change,-30,-35
+Staunton City,49891,VA,Metro,Micro,Physical Therapy,45,30,80,60,County change,-30,-35
+Waynesboro City,49951,VA,Metro,Micro,Physical Therapy,45,30,80,60,County change,-30,-35
+Queen Anne's,21170,MD,Metro,Micro,Occupational Therapy,45,30,80,60,County change,-30,-35
+Lincoln,43410,SD,Metro,Micro,Occupational Therapy,45,30,80,60,County change,-30,-35
+Waller,45950,TX,Metro,Micro,Occupational Therapy,45,30,80,60,County change,-30,-35
+Harrisonburg City,49421,VA,Metro,Micro,Occupational Therapy,45,30,80,60,County change,-30,-35
+Staunton City,49891,VA,Metro,Micro,Occupational Therapy,45,30,80,60,County change,-30,-35
+Waynesboro City,49951,VA,Metro,Micro,Occupational Therapy,45,30,80,60,County change,-30,-35
+Queen Anne's,21170,MD,Metro,Micro,Speech Therapy,45,30,80,60,County change,-30,-35
+Lincoln,43410,SD,Metro,Micro,Speech Therapy,45,30,80,60,County change,-30,-35
+Waller,45950,TX,Metro,Micro,Speech Therapy,45,30,80,60,County change,-30,-35
+Staunton City,49891,VA,Metro,Micro,Speech Therapy,45,30,80,60,County change,-30,-35
+Waynesboro City,49951,VA,Metro,Micro,Speech Therapy,45,30,80,60,County change,-30,-35
+Baltimore City,21030,MD,Large Metro,Metro,Inpatient Psychiatric Facility Services,30,15,70,45,County change,-30,-40
+Queen Anne's,21170,MD,Metro,Micro,Inpatient Psychiatric Facility Services,70,45,100,75,County change,-30,-30
+Lincoln,43410,SD,Metro,Micro,Inpatient Psychiatric Facility Services,70,45,100,75,County change,-30,-30
+Collin,45310,TX,Large Metro,Metro,Inpatient Psychiatric Facility Services,30,15,70,45,County change,-30,-40
+Waller,45950,TX,Metro,Micro,Inpatient Psychiatric Facility Services,70,45,100,75,County change,-30,-30
+Harrisonburg City,49421,VA,Metro,Micro,Inpatient Psychiatric Facility Services,70,45,100,75,County change,-30,-30
+Manassas Park City,49565,VA,Large Metro,Metro,Inpatient Psychiatric Facility Services,30,15,70,45,County change,-30,-40
+Staunton City,49891,VA,Metro,Micro,Inpatient Psychiatric Facility Services,70,45,100,75,County change,-30,-30
+Waynesboro City,49951,VA,Metro,Micro,Inpatient Psychiatric Facility Services,70,45,100,75,County change,-30,-30
+Queen Anne's,21170,MD,Metro,Micro,Outpatient Infusion/Chemotherapy,45,30,80,60,County change,-30,-35
+Lincoln,43410,SD,Metro,Micro,Outpatient Infusion/Chemotherapy,45,30,80,60,County change,-30,-35
+Waller,45950,TX,Metro,Micro,Outpatient Infusion/Chemotherapy,45,30,80,60,County change,-30,-35
+Harrisonburg City,49421,VA,Metro,Micro,Outpatient Infusion/Chemotherapy,45,30,80,60,County change,-30,-35
+Staunton City,49891,VA,Metro,Micro,Outpatient Infusion/Chemotherapy,45,30,80,60,County change,-30,-35
+Waynesboro City,49951,VA,Metro,Micro,Outpatient Infusion/Chemotherapy,45,30,80,60,County change,-30,-35
+Archuleta,6030,CO,Rural,CEAC,Allergy and Immunology,75,90,110,125,County change,-35,-35
+Liberty,10380,FL,Rural,CEAC,Allergy and Immunology,75,90,110,125,County change,-35,-35
+Archuleta,6030,CO,Rural,CEAC,Chiropractor,90,75,125,110,County change,-35,-35
+Liberty,10380,FL,Rural,CEAC,Chiropractor,90,75,125,110,County change,-35,-35
+St. Louis,24680,MN,Micro,Metro,Dermatology,60,45,120,80,County change,-35,-60
+Queen Anne's,21170,MD,Metro,Micro,Endocrinology,60,40,100,75,County change,-35,-40
+Lincoln,43410,SD,Metro,Micro,Endocrinology,60,40,100,75,County change,-35,-40
+Waller,45950,TX,Metro,Micro,Endocrinology,60,40,100,75,County change,-35,-40
+Harrisonburg City,49421,VA,Metro,Micro,Endocrinology,60,40,100,75,County change,-35,-40
+Staunton City,49891,VA,Metro,Micro,Endocrinology,60,40,100,75,County change,-35,-40
+Waynesboro City,49951,VA,Metro,Micro,Endocrinology,60,40,100,75,County change,-35,-40
+Archuleta,6030,CO,Rural,CEAC,ENT/Otolaryngology,90,75,125,110,County change,-35,-35
+Liberty,10380,FL,Rural,CEAC,ENT/Otolaryngology,90,75,125,110,County change,-35,-35
+Archuleta,6030,CO,Rural,CEAC,"Gynecology, OB/GYN",90,75,125,110,County change,-35,-35
+Liberty,10380,FL,Rural,CEAC,"Gynecology, OB/GYN",90,75,125,110,County change,-35,-35
+Queen Anne's,21170,MD,Metro,Micro,Infectious Diseases,60,40,100,75,County change,-35,-40
+Lincoln,43410,SD,Metro,Micro,Infectious Diseases,60,40,100,75,County change,-35,-40
+Waller,45950,TX,Metro,Micro,Infectious Diseases,60,40,100,75,County change,-35,-40
+Harrisonburg City,49421,VA,Metro,Micro,Infectious Diseases,60,40,100,75,County change,-35,-40
+Staunton City,49891,VA,Metro,Micro,Infectious Diseases,60,40,100,75,County change,-35,-40
+Waynesboro City,49951,VA,Metro,Micro,Infectious Diseases,60,40,100,75,County change,-35,-40
+Archuleta,6030,CO,Rural,CEAC,Nephrology,90,75,125,110,County change,-35,-35
+Liberty,10380,FL,Rural,CEAC,Nephrology,90,75,125,110,County change,-35,-35
+Queen Anne's,21170,MD,Metro,Micro,Neurosurgery,60,40,100,75,County change,-35,-40
+Lincoln,43410,SD,Metro,Micro,Neurosurgery,60,40,100,75,County change,-35,-40
+Waller,45950,TX,Metro,Micro,Neurosurgery,60,40,100,75,County change,-35,-40
+Harrisonburg City,49421,VA,Metro,Micro,Neurosurgery,60,40,100,75,County change,-35,-40
+Staunton City,49891,VA,Metro,Micro,Neurosurgery,60,40,100,75,County change,-35,-40
+Waynesboro City,49951,VA,Metro,Micro,Neurosurgery,60,40,100,75,County change,-35,-40
+Queen Anne's,21170,MD,Metro,Micro,Oncology - Radiation/Radiation Oncology,60,40,100,75,County change,-35,-40
+Lincoln,43410,SD,Metro,Micro,Oncology - Radiation/Radiation Oncology,60,40,100,75,County change,-35,-40
+Waller,45950,TX,Metro,Micro,Oncology - Radiation/Radiation Oncology,60,40,100,75,County change,-35,-40
+Waynesboro City,49951,VA,Metro,Micro,Oncology - Radiation/Radiation Oncology,60,40,100,75,County change,-35,-40
+Archuleta,6030,CO,Rural,CEAC,"Physiatry, Rehabilitative Medicine",90,75,125,110,County change,-35,-35
+Liberty,10380,FL,Rural,CEAC,"Physiatry, Rehabilitative Medicine",90,75,125,110,County change,-35,-35
+Queen Anne's,21170,MD,Metro,Micro,Plastic Surgery,60,40,100,75,County change,-35,-40
+Lincoln,43410,SD,Metro,Micro,Plastic Surgery,60,40,100,75,County change,-35,-40
+Waller,45950,TX,Metro,Micro,Plastic Surgery,60,40,100,75,County change,-35,-40
+Harrisonburg City,49421,VA,Metro,Micro,Plastic Surgery,60,40,100,75,County change,-35,-40
+Staunton City,49891,VA,Metro,Micro,Plastic Surgery,60,40,100,75,County change,-35,-40
+Waynesboro City,49951,VA,Metro,Micro,Plastic Surgery,60,40,100,75,County change,-35,-40
+Queen Anne's,21170,MD,Metro,Micro,Rheumatology,60,40,100,75,County change,-35,-40
+Lincoln,43410,SD,Metro,Micro,Rheumatology,60,40,100,75,County change,-35,-40
+Waller,45950,TX,Metro,Micro,Rheumatology,60,40,100,75,County change,-35,-40
+Harrisonburg City,49421,VA,Metro,Micro,Rheumatology,60,40,100,75,County change,-35,-40
+Staunton City,49891,VA,Metro,Micro,Rheumatology,60,40,100,75,County change,-35,-40
+Waynesboro City,49951,VA,Metro,Micro,Rheumatology,60,40,100,75,County change,-35,-40
+Queen Anne's,21170,MD,Metro,Micro,Vascular Surgery,60,40,100,75,County change,-35,-40
+Lincoln,43410,SD,Metro,Micro,Vascular Surgery,60,40,100,75,County change,-35,-40
+Waller,45950,TX,Metro,Micro,Vascular Surgery,60,40,100,75,County change,-35,-40
+Harrisonburg City,49421,VA,Metro,Micro,Vascular Surgery,60,40,100,75,County change,-35,-40
+Staunton City,49891,VA,Metro,Micro,Vascular Surgery,60,40,100,75,County change,-35,-40
+Waynesboro City,49951,VA,Metro,Micro,Vascular Surgery,60,40,100,75,County change,-35,-40
+Queen Anne's,21170,MD,Metro,Micro,Cardiothoracic Surgery,60,40,100,75,County change,-35,-40
+Lincoln,43410,SD,Metro,Micro,Cardiothoracic Surgery,60,40,100,75,County change,-35,-40
+Waller,45950,TX,Metro,Micro,Cardiothoracic Surgery,60,40,100,75,County change,-35,-40
+Harrisonburg City,49421,VA,Metro,Micro,Cardiothoracic Surgery,60,40,100,75,County change,-35,-40
+Staunton City,49891,VA,Metro,Micro,Cardiothoracic Surgery,60,40,100,75,County change,-35,-40
+Waynesboro City,49951,VA,Metro,Micro,Cardiothoracic Surgery,60,40,100,75,County change,-35,-40
+Otero,32170,NM,Micro,CEAC,Primary Care,20,30,60,70,County change,-40,-40
+Tooele,46220,UT,Micro,CEAC,Primary Care,20,30,60,70,County change,-40,-40
+Archuleta,6030,CO,Rural,CEAC,Dermatology,75,60,110,100,County change,-40,-35
+Liberty,10380,FL,Rural,CEAC,Dermatology,75,60,110,100,County change,-40,-35
+Archuleta,6030,CO,Rural,CEAC,Endocrinology,110,90,145,130,County change,-40,-35
+Liberty,10380,FL,Rural,CEAC,Endocrinology,110,90,145,130,County change,-40,-35
+Archuleta,6030,CO,Rural,CEAC,Gastroenterology,75,60,110,100,County change,-40,-35
+Liberty,10380,FL,Rural,CEAC,Gastroenterology,75,60,110,100,County change,-40,-35
+Liberty,10380,FL,Rural,CEAC,Infectious Diseases,110,90,145,130,County change,-40,-35
+Archuleta,6030,CO,Rural,CEAC,Neurology,75,60,110,100,County change,-40,-35
+Liberty,10380,FL,Rural,CEAC,Neurology,75,60,110,100,County change,-40,-35
+Archuleta,6030,CO,Rural,CEAC,Neurosurgery,110,90,145,130,County change,-40,-35
+Liberty,10380,FL,Rural,CEAC,Neurosurgery,110,90,145,130,County change,-40,-35
+Archuleta,6030,CO,Rural,CEAC,"Oncology - Medical, Surgical",75,60,110,100,County change,-40,-35
+Liberty,10380,FL,Rural,CEAC,"Oncology - Medical, Surgical",75,60,110,100,County change,-40,-35
+Archuleta,6030,CO,Rural,CEAC,Oncology - Radiation/Radiation Oncology,110,90,145,130,County change,-40,-35
+Liberty,10380,FL,Rural,CEAC,Oncology - Radiation/Radiation Oncology,110,90,145,130,County change,-40,-35
+Archuleta,6030,CO,Rural,CEAC,Plastic Surgery,110,90,145,130,County change,-40,-35
+Liberty,10380,FL,Rural,CEAC,Plastic Surgery,110,90,145,130,County change,-40,-35
+Archuleta,6030,CO,Rural,CEAC,Podiatry,75,60,110,100,County change,-40,-35
+Liberty,10380,FL,Rural,CEAC,Podiatry,75,60,110,100,County change,-40,-35
+Archuleta,6030,CO,Rural,CEAC,Psychiatry,75,60,110,100,County change,-40,-35
+Liberty,10380,FL,Rural,CEAC,Psychiatry,75,60,110,100,County change,-40,-35
+Archuleta,6030,CO,Rural,CEAC,Pulmonology,75,60,110,100,County change,-40,-35
+Liberty,10380,FL,Rural,CEAC,Pulmonology,75,60,110,100,County change,-40,-35
+Archuleta,6030,CO,Rural,CEAC,Rheumatology,110,90,145,130,County change,-40,-35
+Liberty,10380,FL,Rural,CEAC,Rheumatology,110,90,145,130,County change,-40,-35
+Archuleta,6030,CO,Rural,CEAC,Urology,75,60,110,100,County change,-40,-35
+Liberty,10380,FL,Rural,CEAC,Urology,75,60,110,100,County change,-40,-35
+Archuleta,6030,CO,Rural,CEAC,Vascular Surgery,110,90,145,130,County change,-40,-35
+Liberty,10380,FL,Rural,CEAC,Vascular Surgery,110,90,145,130,County change,-40,-35
+Archuleta,6030,CO,Rural,CEAC,Cardiothoracic Surgery,110,90,145,130,County change,-40,-35
+Liberty,10380,FL,Rural,CEAC,Cardiothoracic Surgery,110,90,145,130,County change,-40,-35
+Archuleta,6030,CO,Rural,CEAC,Acute Inpatient Hospitals,75,60,110,100,County change,-40,-35
+Liberty,10380,FL,Rural,CEAC,Acute Inpatient Hospitals,75,60,110,100,County change,-40,-35
+Otero,32170,NM,Micro,CEAC,Acute Inpatient Hospitals,80,60,110,100,County change,-40,-30
+Tooele,46220,UT,Micro,CEAC,Acute Inpatient Hospitals,80,60,110,100,County change,-40,-30
+Archuleta,6030,CO,Rural,CEAC,Outpatient Dialysis,55,50,100,90,County change,-40,-45
+Liberty,10380,FL,Rural,CEAC,Outpatient Dialysis,55,50,100,90,County change,-40,-45
+Otero,32170,NM,Micro,CEAC,Outpatient Dialysis,65,50,100,90,County change,-40,-35
+Tooele,46220,UT,Micro,CEAC,Outpatient Dialysis,65,50,100,90,County change,-40,-35
+Archuleta,6030,CO,Rural,CEAC,Surgical Services (Outpatient or ASC),75,60,110,100,County change,-40,-35
+Liberty,10380,FL,Rural,CEAC,Surgical Services (Outpatient or ASC),75,60,110,100,County change,-40,-35
+Otero,32170,NM,Micro,CEAC,Surgical Services (Outpatient or ASC),80,60,110,100,County change,-40,-30
+Tooele,46220,UT,Micro,CEAC,Surgical Services (Outpatient or ASC),80,60,110,100,County change,-40,-30
+Archuleta,6030,CO,Rural,CEAC,Diagnostic Radiology,75,60,110,100,County change,-40,-35
+Liberty,10380,FL,Rural,CEAC,Diagnostic Radiology,75,60,110,100,County change,-40,-35
+Otero,32170,NM,Micro,CEAC,Diagnostic Radiology,80,60,110,100,County change,-40,-30
+Tooele,46220,UT,Micro,CEAC,Diagnostic Radiology,80,60,110,100,County change,-40,-30
+Archuleta,6030,CO,Rural,CEAC,Mammography,75,60,110,100,County change,-40,-35
+Liberty,10380,FL,Rural,CEAC,Mammography,75,60,110,100,County change,-40,-35
+Otero,32170,NM,Micro,CEAC,Mammography,80,60,110,100,County change,-40,-30
+Tooele,46220,UT,Micro,CEAC,Mammography,80,60,110,100,County change,-40,-30
+Archuleta,6030,CO,Rural,CEAC,Physical Therapy,75,60,110,100,County change,-40,-35
+Liberty,10380,FL,Rural,CEAC,Physical Therapy,75,60,110,100,County change,-40,-35
+Otero,32170,NM,Micro,CEAC,Physical Therapy,80,60,110,100,County change,-40,-30
+Tooele,46220,UT,Micro,CEAC,Physical Therapy,80,60,110,100,County change,-40,-30
+Archuleta,6030,CO,Rural,CEAC,Occupational Therapy,75,60,110,100,County change,-40,-35
+Liberty,10380,FL,Rural,CEAC,Occupational Therapy,75,60,110,100,County change,-40,-35
+Otero,32170,NM,Micro,CEAC,Occupational Therapy,80,60,110,100,County change,-40,-30
+Tooele,46220,UT,Micro,CEAC,Occupational Therapy,80,60,110,100,County change,-40,-30
+Liberty,10380,FL,Rural,CEAC,Speech Therapy,75,60,110,100,County change,-40,-35
+Otero,32170,NM,Micro,CEAC,Speech Therapy,80,60,110,100,County change,-40,-30
+Tooele,46220,UT,Micro,CEAC,Speech Therapy,80,60,110,100,County change,-40,-30
+Archuleta,6030,CO,Rural,CEAC,Outpatient Infusion/Chemotherapy,75,60,110,100,County change,-40,-35
+Liberty,10380,FL,Rural,CEAC,Outpatient Infusion/Chemotherapy,75,60,110,100,County change,-40,-35
+Otero,32170,NM,Micro,CEAC,Outpatient Infusion/Chemotherapy,80,60,110,100,County change,-40,-30
+Tooele,46220,UT,Micro,CEAC,Outpatient Infusion/Chemotherapy,80,60,110,100,County change,-40,-30
+Harrisonburg City,49421,VA,Metro,Micro,Speech Therapy,45,30,100,75,County change,-45,-55
+Otero,32170,NM,Micro,CEAC,Cardiology,50,35,95,85,County change,-50,-45
+Tooele,46220,UT,Micro,CEAC,Cardiology,50,35,95,85,County change,-50,-45
+Otero,32170,NM,Micro,CEAC,Chiropractor,80,60,125,110,County change,-50,-45
+Tooele,46220,UT,Micro,CEAC,Chiropractor,80,60,125,110,County change,-50,-45
+Otero,32170,NM,Micro,CEAC,ENT/Otolaryngology,80,60,125,110,County change,-50,-45
+Tooele,46220,UT,Micro,CEAC,ENT/Otolaryngology,80,60,125,110,County change,-50,-45
+Otero,32170,NM,Micro,CEAC,General Surgery,50,35,95,85,County change,-50,-45
+Tooele,46220,UT,Micro,CEAC,General Surgery,50,35,95,85,County change,-50,-45
+Otero,32170,NM,Micro,CEAC,"Gynecology, OB/GYN",80,60,125,110,County change,-50,-45
+Tooele,46220,UT,Micro,CEAC,"Gynecology, OB/GYN",80,60,125,110,County change,-50,-45
+Otero,32170,NM,Micro,CEAC,Nephrology,80,60,125,110,County change,-50,-45
+Tooele,46220,UT,Micro,CEAC,Nephrology,80,60,125,110,County change,-50,-45
+Otero,32170,NM,Micro,CEAC,Ophthalmology,50,35,95,85,County change,-50,-45
+Tooele,46220,UT,Micro,CEAC,Ophthalmology,50,35,95,85,County change,-50,-45
+Otero,32170,NM,Micro,CEAC,Orthopedic Surgery,50,35,95,85,County change,-50,-45
+Tooele,46220,UT,Micro,CEAC,Orthopedic Surgery,50,35,95,85,County change,-50,-45
+Otero,32170,NM,Micro,CEAC,"Physiatry, Rehabilitative Medicine",80,60,125,110,County change,-50,-45
+Tooele,46220,UT,Micro,CEAC,"Physiatry, Rehabilitative Medicine",80,60,125,110,County change,-50,-45
+Otero,32170,NM,Micro,CEAC,Dermatology,60,45,110,100,County change,-55,-50
+Tooele,46220,UT,Micro,CEAC,Dermatology,60,45,110,100,County change,-55,-50
+Otero,32170,NM,Micro,CEAC,Endocrinology,100,75,145,130,County change,-55,-45
+Tooele,46220,UT,Micro,CEAC,Endocrinology,100,75,145,130,County change,-55,-45
+Otero,32170,NM,Micro,CEAC,Gastroenterology,60,45,110,100,County change,-55,-50
+Tooele,46220,UT,Micro,CEAC,Gastroenterology,60,45,110,100,County change,-55,-50
+Otero,32170,NM,Micro,CEAC,Infectious Diseases,100,75,145,130,County change,-55,-45
+Tooele,46220,UT,Micro,CEAC,Infectious Diseases,100,75,145,130,County change,-55,-45
+Otero,32170,NM,Micro,CEAC,Neurology,60,45,110,100,County change,-55,-50
+Tooele,46220,UT,Micro,CEAC,Neurology,60,45,110,100,County change,-55,-50
+Otero,32170,NM,Micro,CEAC,Neurosurgery,100,75,145,130,County change,-55,-45
+Tooele,46220,UT,Micro,CEAC,Neurosurgery,100,75,145,130,County change,-55,-45
+Otero,32170,NM,Micro,CEAC,"Oncology - Medical, Surgical",60,45,110,100,County change,-55,-50
+Tooele,46220,UT,Micro,CEAC,"Oncology - Medical, Surgical",60,45,110,100,County change,-55,-50
+Otero,32170,NM,Micro,CEAC,Oncology - Radiation/Radiation Oncology,100,75,145,130,County change,-55,-45
+Tooele,46220,UT,Micro,CEAC,Oncology - Radiation/Radiation Oncology,100,75,145,130,County change,-55,-45
+Otero,32170,NM,Micro,CEAC,Plastic Surgery,100,75,145,130,County change,-55,-45
+Tooele,46220,UT,Micro,CEAC,Plastic Surgery,100,75,145,130,County change,-55,-45
+Otero,32170,NM,Micro,CEAC,Podiatry,60,45,110,100,County change,-55,-50
+Tooele,46220,UT,Micro,CEAC,Podiatry,60,45,110,100,County change,-55,-50
+Otero,32170,NM,Micro,CEAC,Psychiatry,60,45,110,100,County change,-55,-50
+Tooele,46220,UT,Micro,CEAC,Psychiatry,60,45,110,100,County change,-55,-50
+Otero,32170,NM,Micro,CEAC,Pulmonology,60,45,110,100,County change,-55,-50
+Tooele,46220,UT,Micro,CEAC,Pulmonology,60,45,110,100,County change,-55,-50
+Otero,32170,NM,Micro,CEAC,Rheumatology,100,75,145,130,County change,-55,-45
+Tooele,46220,UT,Micro,CEAC,Rheumatology,100,75,145,130,County change,-55,-45
+Otero,32170,NM,Micro,CEAC,Urology,60,45,110,100,County change,-55,-50
+Tooele,46220,UT,Micro,CEAC,Urology,60,45,110,100,County change,-55,-50
+Otero,32170,NM,Micro,CEAC,Vascular Surgery,100,75,145,130,County change,-55,-45
+Tooele,46220,UT,Micro,CEAC,Vascular Surgery,100,75,145,130,County change,-55,-45
+Otero,32170,NM,Micro,CEAC,Cardiothoracic Surgery,100,75,145,130,County change,-55,-45
+Tooele,46220,UT,Micro,CEAC,Cardiothoracic Surgery,100,75,145,130,County change,-55,-45
+Archuleta,6030,CO,Rural,CEAC,Speech Therapy,75,60,140,125,County change,-65,-65
+Liberty,10380,FL,Rural,CEAC,Inpatient Psychiatric Facility Services,90,75,155,140,County change,-65,-65
+Otero,32170,NM,Micro,CEAC,Inpatient Psychiatric Facility Services,100,75,155,140,County change,-65,-55
+Tooele,46220,UT,Micro,CEAC,Inpatient Psychiatric Facility Services,100,75,155,140,County change,-65,-55
+Queen Anne's,21170,MD,Metro,Micro,Cardiac Surgery Program,60,40,160,120,County change,-80,-100
+Lincoln,43410,SD,Metro,Micro,Cardiac Surgery Program,60,40,160,120,County change,-80,-100
+Waller,45950,TX,Metro,Micro,Cardiac Surgery Program,60,40,160,120,County change,-80,-100
+Harrisonburg City,49421,VA,Metro,Micro,Cardiac Surgery Program,60,40,160,120,County change,-80,-100
+Staunton City,49891,VA,Metro,Micro,Cardiac Surgery Program,60,40,160,120,County change,-80,-100
+Waynesboro City,49951,VA,Metro,Micro,Cardiac Surgery Program,60,40,160,120,County change,-80,-100
+Queen Anne's,21170,MD,Metro,Micro,Cardiac Catheterization Services,60,40,160,120,County change,-80,-100
+Lincoln,43410,SD,Metro,Micro,Cardiac Catheterization Services,60,40,160,120,County change,-80,-100
+Waller,45950,TX,Metro,Micro,Cardiac Catheterization Services,60,40,160,120,County change,-80,-100
+Harrisonburg City,49421,VA,Metro,Micro,Cardiac Catheterization Services,60,40,160,120,County change,-80,-100
+Staunton City,49891,VA,Metro,Micro,Cardiac Catheterization Services,60,40,160,120,County change,-80,-100
+Waynesboro City,49951,VA,Metro,Micro,Cardiac Catheterization Services,60,40,160,120,County change,-80,-100
+Queen Anne's,21170,MD,Metro,Micro,Critical Care Services – Intensive Care Units (ICU),45,30,160,120,County change,-90,-115
+Lincoln,43410,SD,Metro,Micro,Critical Care Services – Intensive Care Units (ICU),45,30,160,120,County change,-90,-115
+Waller,45950,TX,Metro,Micro,Critical Care Services – Intensive Care Units (ICU),45,30,160,120,County change,-90,-115
+Harrisonburg City,49421,VA,Metro,Micro,Critical Care Services – Intensive Care Units (ICU),45,30,160,120,County change,-90,-115
+Staunton City,49891,VA,Metro,Micro,Critical Care Services – Intensive Care Units (ICU),45,30,160,120,County change,-90,-115
+Waynesboro City,49951,VA,Metro,Micro,Critical Care Services – Intensive Care Units (ICU),45,30,160,120,County change,-90,-115
