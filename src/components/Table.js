@@ -161,8 +161,8 @@ class DataTable extends Component {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {data.map(row => (
-                    <TableRow key={row[data.columns[0]]}>
+                  {data.map((row,i) => (
+                    <TableRow key={i}>
                       {data.columns.map(column => (
                         <TableCell key={column}>
                           { cellFormatter(row, column, this.state.sort) }
