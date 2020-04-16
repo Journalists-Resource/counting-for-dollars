@@ -85,7 +85,7 @@ class Post5Table extends Component {
   render() {
     return (
       <div className="App">
-        <ChartHeader title={"How the census affects access to care in rural areas through programs like Medicare Advantage"} />
+        <ChartHeader title={"How the census affects access to medical care through programs like Medicare Advantage"} />
         <div>
           <Autocomplete
             id="area-select"
@@ -114,7 +114,7 @@ class Post5Table extends Component {
           />
           <DataTable data={this.state.data}  />
         </div>
-        <ChartFooter credit={<span>Sources: <a href="https://gwipp.gwu.edu/counting-dollars-2020-role-decennial-census-geographic-distribution-federal-funds">“Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds,”</a> Federal Funds Information for States.</span>} downloaddata={this.state.origdata} downloadfilename={"How the census affects access to care in rural areas through programs like Medicare Advantage"} />
+        <ChartFooter credit={<span>Source: <a href="https://cms.gov">CMS.gov</a>.</span>} downloaddata={this.state.origdata} downloadfilename={"How the census affects access to medical care through programs like Medicare Advantage"} />
       </div>
     )
   }
