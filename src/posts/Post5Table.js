@@ -28,6 +28,11 @@ class Post5Table extends Component {
   filterData(slice = "") {
    let newarray = []
    newarray = this.state.origdata.filter(d => d["State"] === slice)
+   newarray.sort(function(a, b) {
+       var textA = a["County"].toUpperCase();
+       var textB = b["County"].toUpperCase();
+       return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+   });
    newarray.columns = this.state.origdata.columns;
 
     this.setState({
@@ -46,6 +51,11 @@ class Post5Table extends Component {
 
   componentWillMount() {
     csv("datasets/Medicare-advantage-criteria-county-changes-19to20.csv").then(data => {
+      data.sort(function(a, b) {
+          var textA = a["State"].toUpperCase();
+          var textB = b["State"].toUpperCase();
+          return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+      });
       let places = []
       data.forEach(d =>
         places.indexOf(d["State"]) === -1 ? places.push(d["State"]) : null
@@ -54,7 +64,7 @@ class Post5Table extends Component {
         origdata: data,
         places: places
       });
-      this.filterData("")
+      this.filterData("CO")
     });
 
   }
@@ -75,11 +85,7 @@ class Post5Table extends Component {
   render() {
     return (
       <div className="App">
-        <div className="header-grid">
-          <div className="grid-3">
-            <ChartHeader title={"How the census affects access to care in rural areas through programs like Medicare Advantage"} />
-          </div>
-        </div>
+        <ChartHeader title={"How the census affects access to care in rural areas through programs like Medicare Advantage"} />
         <div>
           <Autocomplete
             id="area-select"
@@ -97,7 +103,7 @@ class Post5Table extends Component {
             renderInput={(params) => (
               <TextField
                 {...params}
-                label="Find a county or state"
+                label="Find a state"
                 variant="outlined"
                 inputProps={{
                   ...params.inputProps,
