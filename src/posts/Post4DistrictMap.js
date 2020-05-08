@@ -16,6 +16,7 @@ mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
 const colorScale = bucketScale
 const levels = ["fiscal_cost_low_risk", "fiscal_cost_med_risk", "fiscal_cost_high_risk"]
 const avg = 1546.48
+const width = min([900, window.innerWidth]);
 
 
 class Post4DistrictMap extends Component {
@@ -101,7 +102,7 @@ class Post4DistrictMap extends Component {
                let number = parseFloat(row["Title I funds per low-income child"]) ;
                expression.push(id, (isNaN(number) ? 'gainsboro' : colorScale(number)))
             }, this)
-
+            
             expression.push('gainsboro')
 
             map.addLayer({
@@ -130,8 +131,20 @@ class Post4DistrictMap extends Component {
             });
 
             map.on('click', 'district-data', function(e) {
-               let districtdata = dataset.filter(d => {return d.LEA_id === e.features[0].properties.GEOID})[0]
-               new mapboxgl.Popup()
+               let districtdata = dataset.filter(d => {
+                   if (e.features[0].properties.GEOID.substr(0,1) == 0) {
+                       return d.LEA_id == e.features[0].properties.GEOID.substr(1,7)
+                   } else {
+                       return d.LEA_id == e.features[0].properties.GEOID
+                   }
+               })[0]
+
+               let anchor = null;
+               if (e.point.x > (width/2)) {
+                   anchor = "right"
+               }
+
+               new mapboxgl.Popup({anchor: anchor})
                   .setMaxWidth("420px")
                   .setLngLat(e.lngLat)
                   .setHTML("<h3>" + districtdata["School district"] + ", " + districtdata["State"] + "</h3>" +
@@ -182,9 +195,7 @@ class Post4DistrictMap extends Component {
   }
 
   render() {
-     const width = min([900, window.innerWidth]);
-
-     const legmargin = {
+      const legmargin = {
        vertical: 20,
        textoffset: 25
      }
