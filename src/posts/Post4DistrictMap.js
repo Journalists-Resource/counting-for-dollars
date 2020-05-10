@@ -277,11 +277,11 @@ class Post4DistrictMap extends Component {
       return (
          <div className="App">
            <ChartHeader
-             title="Title I funds per low-income child by school district in 2018 plus potential funding lost under 2020 census miscount scenarios"
+             title="Title I funds per low-income child by school district in 2018"
            />
            <div ref={el => this.mapContainer = el}  className="mapContainer" />
            {legend}
-           <ChartFooter credit="Sources: U.S. Census Bureau’s SAIPE; Dept. of Education; Mapbox" downloaddata={this.state.data} downloadfilename={"Title I funds per low-income child by school district in 2018 plus potential funding lost under 2020 census miscount scenarios"}  />
+           <ChartFooter credit="Sources: U.S. Census Bureau’s SAIPE; Dept. of Education; Mapbox" downloaddata={this.state.data} downloadfilename={"Title I funds per low-income child by school district in 2018"}  />
          </div>
       )
   }
