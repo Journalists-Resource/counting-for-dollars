@@ -145,7 +145,7 @@ class Post4DistrictMap extends Component {
                }
 
                new mapboxgl.Popup({anchor: anchor})
-                  .setMaxWidth("420px")
+                  .setMaxWidth("400px")
                   .setLngLat(e.lngLat)
                   .setHTML("<h3>" + districtdata["School district"] + ", " + districtdata["State"] + "</h3>" +
                      "<br/>Title I funding to district: <b>" + formatMoney(districtdata["Title I funding in FY2018 "]) +
@@ -205,7 +205,7 @@ class Post4DistrictMap extends Component {
      }
 
      const legend = (
-      <svg className="districtlegend" width={170} height={180} transform={"translate(" + ((width/2) - 90) + ", -200)"}>
+      <svg className="districtlegend" width={170} height={180} transform={"translate(" + ((width/2) - 170) + ", -200)"}>
          <g>
          <text
            x={0}

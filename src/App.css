@@ -163,6 +163,7 @@ thead {
 .districtlegend {
    background-color: white;
    padding: 10px 0 0 10px;
+   position: absolute;
 }
 
 .districtlegend g {
