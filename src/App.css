@@ -154,6 +154,10 @@ thead {
   width:100%;
 }
 
+.mapboxgl-canvas-container.mapboxgl-interactive {
+    cursor:auto;
+}
+
 @media screen and (max-width:767px) {
   .mapContainer {
     height: 350px;
