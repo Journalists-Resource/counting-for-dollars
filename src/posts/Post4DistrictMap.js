@@ -204,7 +204,7 @@ class Post4DistrictMap extends Component {
         }
 
         const legend = (
-            <svg className="districtlegend" width={170} height={180} transform={"translate(" + ((width/2) - 170) + ", -200)"}>
+            <svg className="districtlegend" width={170} height={180} transform={"translate(" + ((width/2) - 170) + ", -190)"}>
             <g>
             <text
             x={0}
