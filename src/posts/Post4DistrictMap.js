@@ -100,7 +100,7 @@ class Post4DistrictMap extends Component {
                     }
 
                     let number = parseFloat(row["Title I funds per low-income child"]) ;
-                    expression.push(id, (isNaN(number) ? 'gainsboro' : colorScale(number)))
+                    expression.push(id, ((isNaN(number) || number == 0) ? 'gainsboro' : colorScale(number)))
                 }, this)
 
                 expression.push('gainsboro')
@@ -149,7 +149,7 @@ class Post4DistrictMap extends Component {
                     .setLngLat(e.lngLat)
                     .setHTML(
                         "<h3>" + districtdata["School district"] + ", " + districtdata["State"] + "</h3>" +
-                        "<br/>Title I funding to district: <b>" + formatMoney(districtdata["Title I funding in FY2018 "]) +
+                        "<br/>Title I funding to district: <b>" + formatMoney(districtdata["Title I funding in FY2018"]) +
                         "<br/></b>Title I funding per low-income child: <b>" + formatMoney(districtdata["Title I funds per low-income child"]) +
                         "</b>"
                     )
