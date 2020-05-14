@@ -79,7 +79,7 @@ class Post4DistrictMap extends Component {
                 url: 'mapbox://tylermachado.d9wh29pp'
             });
 
-            csv("datasets/joined_school_dist_scores_final2018.csv")
+            csv("datasets/joined_school_dist_2018_update.csv")
             .then(dataset => {
                 var expression = [
                     'match',
