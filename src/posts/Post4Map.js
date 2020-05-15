@@ -106,7 +106,7 @@ class Post4Map extends Component {
              reversescale={true}
          />
         </div>
-        <ChartFooter credit="Sources: U.S. Census Bureau’s SAIPE; Dept. of Education" downloaddata={this.state.filtereddata} downloadfilename={"Title I Funding Per Child in 2016 by State"}  />
+        <ChartFooter credit={<span>Sources: <a href="https://gwipp.gwu.edu/counting-dollars-2020-role-decennial-census-geographic-distribution-federal-funds">“Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds,”</a> U.S. Census Bureau’s SAIPE; Dept. of Education</span>} downloaddata={this.state.filtereddata} downloadfilename={"Title I Funding Per Child in 2016 by State"}  />
       </div>
     )
   }

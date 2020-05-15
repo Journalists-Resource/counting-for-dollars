@@ -280,7 +280,7 @@ class Post4DistrictMap extends Component {
             />
             <div ref={el => this.mapContainer = el}  className="mapContainer" />
             {legend}
-            <ChartFooter credit="Sources: U.S. Census Bureau’s SAIPE; Dept. of Education; Mapbox" downloaddata={this.state.data} downloadfilename={"Title I funds per low-income child by school district in 2018"}  />
+            <ChartFooter credit={<span>Sources: <a href="https://gwipp.gwu.edu/counting-dollars-2020-role-decennial-census-geographic-distribution-federal-funds">“Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds,”</a> U.S. Census Bureau’s SAIPE; Dept. of Education; Mapbox</span>} downloaddata={this.state.data} downloadfilename={"Title I funds per low-income child by school district in 2018"}  />
             </div>
         )
     }
