@@ -63,7 +63,7 @@ class Post4Map extends Component {
   }
 
   componentWillMount() {
-    csv("datasets/map-and-table-title-i-grants-per-state-per-child.csv")
+    csv("datasets/map-and-table-title-i-grants-per-state-per-child-2017.csv")
    .then(dataset => {
      dataset.map(item => (
        Object.keys(item).filter(d => (d !== "State")).map(key => (
@@ -95,7 +95,7 @@ class Post4Map extends Component {
   render() {
     return (
       <div className="App">
-        <ChartHeader title="Title I funding per low-income child in 2016 by state" subhed="Wyoming, Vermont and North Dakota received substantially more Title I grant money per eligible child in FY2016 than other states. Each received more than $3,000 per low-income child compared with the national average of $1,489." />
+        <ChartHeader title="Title I funding per low-income child in 2017 by state" subhed="Wyoming, Vermont and North Dakota received substantially more Title I grant money per eligible child in FY2017 than other states. Each received more than $3,000 per low-income child compared with the national average of $1,489." />
         <div>
           <ReactTooltip className='tooltip-width' />
           <StateMap
@@ -106,7 +106,7 @@ class Post4Map extends Component {
              reversescale={true}
          />
         </div>
-        <ChartFooter credit={<span>Sources: <a href="https://gwipp.gwu.edu/counting-dollars-2020-role-decennial-census-geographic-distribution-federal-funds">“Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds,”</a> U.S. Census Bureau’s SAIPE; Dept. of Education</span>} downloaddata={this.state.filtereddata} downloadfilename={"Title I Funding Per Child in 2016 by State"}  />
+        <ChartFooter credit={<span>Sources: <a href="https://gwipp.gwu.edu/counting-dollars-2020-role-decennial-census-geographic-distribution-federal-funds">“Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds,”</a> U.S. Census Bureau’s SAIPE; Dept. of Education</span>} downloaddata={this.state.filtereddata} downloadfilename={"Title I Funding Per Child in 2017 by State"}  />
       </div>
     )
   }
