@@ -95,7 +95,7 @@ class Post4Map extends Component {
   render() {
     return (
       <div className="App">
-        <ChartHeader title="Title I funding per low-income child in 2017 by state" subhed="Wyoming, Vermont and North Dakota received substantially more Title I grant money per eligible child in FY2017 than other states. Each received more than $3,000 per low-income child compared with the national average of $1,489." />
+        <ChartHeader title="Title I funding per low-income child in 2017 by state" subhed="Vermont, Wyoming and North Dakota received substantially more Title I grant money per eligible child in FY2017 than other states. Each received more than $3,000 per low-income child compared with the national average of $1,489." />
         <div>
           <ReactTooltip className='tooltip-width' />
           <StateMap
