@@ -112,7 +112,8 @@ class Post4DistrictMap extends Component {
                     'source-layer': 'edge_04p-37il12',
                     'paint': {
                         'fill-color': expression,
-                        'fill-opacity': 0.9
+                        'fill-opacity': 0.9,
+                        'fill-outline-color': 'black'
                     },
                     'layout': {
                         'visibility': 'none'
