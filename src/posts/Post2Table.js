@@ -51,7 +51,6 @@ class Post2Table extends Component {
       filtereddata: newarray
     })
 
-    console.log(this.state.filtereddata)
   }
 
   onResize() {
@@ -98,7 +97,7 @@ class Post2Table extends Component {
         {d}
      </MenuItem>
     )
-    console.log(this.state.filtereddata)
+
     return (
       <div className="App">
         <div className="header-grid">
@@ -118,7 +117,7 @@ class Post2Table extends Component {
         </div>
         <div>
           <DataTable data={this.state.filtereddata} sort={"FY2017 Funding"} sortorder="desc" />
-          <ChartFooter credit={<span>Sources: <a href="https://gwipp.gwu.edu/counting-dollars-2020-role-decennial-census-geographic-distribution-federal-funds">“Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds,”</a> Federal Funds Information for States.</span>}  downloaddata={this.state.filtereddata} downloadfilename={"Funding received by " + this.state.state + " from 40 of the largest census-guided federal programs in 2017"} />
+          <ChartFooter key={this.state.state} credit={<span>Sources: <a href="https://gwipp.gwu.edu/counting-dollars-2020-role-decennial-census-geographic-distribution-federal-funds">“Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds,”</a> Federal Funds Information for States.</span>}  downloaddata={this.state.filtereddata} downloadfilename={"Funding received by " + this.state.state + " from 40 of the largest census-guided federal programs in 2017"} />
         </div>
       </div>
     )
