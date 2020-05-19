@@ -264,7 +264,7 @@ class Post4DistrictMap extends Component {
             y={legmargin.textoffset}
             x={280} fontSize="0.65rem" textAnchor="middle"
             >
-            {formatMoney(domain[(Math.round(domain.length * 0.8))])}
+            {formatMoney(domain[(Math.round(domain.length * 0.8))]) + "+"}
             </text>
             <rect
             width={70} height={legmargin.height} x={280} y={legmargin.height}
