@@ -160,18 +160,12 @@ thead {
 
 .districtlegend {
    background-color: white;
-   padding: 10px 0 0 10px;
-   position: absolute;
+   padding: 1.5rem;
 }
 
 @media screen and (max-width:767px) {
   .mapContainer {
     height: 350px;
-  }
-
-  .districtlegend {
-      position: relative;
-      top: 200px;
   }
 }
 

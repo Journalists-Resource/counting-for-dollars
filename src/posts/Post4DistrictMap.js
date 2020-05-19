@@ -113,7 +113,7 @@ class Post4DistrictMap extends Component {
                     'paint': {
                         'fill-color': expression,
                         'fill-opacity': 0.9,
-                        'fill-outline-color': 'black'
+                        'fill-outline-color': '#aaa'
                     },
                     'layout': {
                         'visibility': 'none'
@@ -194,8 +194,9 @@ class Post4DistrictMap extends Component {
 
     render() {
         const legmargin = {
-            vertical: 20,
-            textoffset: 25
+            vertical: 0,
+            textoffset: 48,
+            height: 18
         }
 
         let domain = []
@@ -205,70 +206,70 @@ class Post4DistrictMap extends Component {
         }
 
         const legend = (
-            <svg className="districtlegend" width={170} height={180} transform={"translate(" + ((width/2) - 170) + ", -190)"}>
+            <svg className="districtlegend" width={350} height={100} transform={"translate(0,0)"}>
             <g>
             <text
-            x={0}
-            y={20} fontSize="0.9rem" textAnchor="start" fontWeight="700"
+            x={(350/2)}
+            y={12} fontSize="0.9rem" textAnchor="middle" fontWeight="700"
             >
-            <tspan>{"Title I funding"}</tspan>
-            <tspan x={0} y={40}>{"per low-income child"}</tspan>
+            <tspan>{"Title I funding per low-income child"}</tspan>
             </text>
 
+            <text
+            y={legmargin.textoffset}
+            x={12} fontSize="0.65rem" textAnchor="middle"
+            >
+            {formatMoney(domain[0])}
+            </text>
             <rect
-            width={20} height={20} x={0} y={legmargin.vertical * 3}
+            width={70} height={legmargin.height} x={0} y={legmargin.height}
             style={{fill: this.state.scale.range()[0]}}
             ></rect>
-            <text
-            x={legmargin.textoffset}
-            y={legmargin.vertical * 3 + 15} fontSize="0.75rem" textAnchor="start"
-            >
-            {formatMoney(domain[0]) + " to " + formatMoney(domain[(Math.round(domain.length * 0.2)-1)])}
-            </text>
 
+
+            <text
+            y={legmargin.textoffset}
+            x={70} fontSize="0.65rem" textAnchor="middle"
+            >
+            {formatMoney(domain[(Math.round(domain.length * 0.2))])}
+            </text>
             <rect
-            width={20} height={20} x={0} y={legmargin.vertical * 4}
+            width={70} height={legmargin.height} x={70} y={legmargin.height}
             style={{fill: this.state.scale.range()[1]}}
             ></rect>
-            <text
-            x={legmargin.textoffset}
-            y={legmargin.vertical * 4 + 15} fontSize="0.75rem" textAnchor="start"
-            >
-            {formatMoney(domain[(Math.round(domain.length * 0.2)-0)]) + " to " + formatMoney(domain[(Math.round(domain.length * 0.4)-1)])}
-            </text>
 
+            <text
+            y={legmargin.textoffset}
+            x={140} fontSize="0.65rem" textAnchor="middle"
+            >
+            {formatMoney(domain[(Math.round(domain.length * 0.4))])}
+            </text>
             <rect
-            width={20} height={20} x={0} y={legmargin.vertical * 5}
+            width={70} height={legmargin.height} x={140} y={legmargin.height}
             style={{fill: this.state.scale.range()[2]}}
             ></rect>
-            <text
-            x={legmargin.textoffset}
-            y={legmargin.vertical * 5 + 15} fontSize="0.75rem" textAnchor="start"
-            >
-            {formatMoney(domain[(Math.round(domain.length * 0.4)-0)]) + " to " + formatMoney(domain[(Math.round(domain.length * 0.6)-1)])}
-            </text>
 
+            <text
+            y={legmargin.textoffset}
+            x={210} fontSize="0.65rem" textAnchor="middle"
+            >
+            {formatMoney(domain[(Math.round(domain.length * 0.6))])}
+            </text>
             <rect
-            width={20} height={20} x={0} y={legmargin.vertical * 6}
+            width={70} height={legmargin.height} x={210} y={legmargin.height}
             style={{fill: this.state.scale.range()[3]}}
             ></rect>
-            <text
-            x={legmargin.textoffset}
-            y={legmargin.vertical * 6 + 15} fontSize="0.75rem" textAnchor="start"
-            >
-            {formatMoney(domain[(Math.round(domain.length * 0.6)-0)]) + " to " + formatMoney(domain[(Math.round(domain.length * 0.8)-1)])}
-            </text>
 
+            <text
+            y={legmargin.textoffset}
+            x={280} fontSize="0.65rem" textAnchor="middle"
+            >
+            {formatMoney(domain[(Math.round(domain.length * 0.8))])}
+            </text>
             <rect
-            width={20} height={20} x={0} y={legmargin.vertical * 7}
+            width={70} height={legmargin.height} x={280} y={legmargin.height}
             style={{fill: this.state.scale.range()[4]}}
             ></rect>
-            <text
-            x={legmargin.textoffset}
-            y={legmargin.vertical * 7 + 15} fontSize="0.75rem" textAnchor="start"
-            >
-            {formatMoney(domain[(Math.round(domain.length * 0.8)-0)]) + " to " + formatMoney(Math.ceil(domain[(domain.length-1)]))}
-            </text>
 
             </g>
             </svg>
