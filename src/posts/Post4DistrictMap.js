@@ -217,46 +217,46 @@ class Post4DistrictMap extends Component {
 
             <text
             y={legmargin.textoffset}
-            x={12} fontSize="0.65rem" textAnchor="middle"
+            x={5} fontSize="0.65rem" textAnchor="middle"
             >
-            {formatMoney(domain[0])}
+            {formatMoney(domain[0], "rounded")}
             </text>
             <rect
-            width={70} height={legmargin.height} x={0} y={legmargin.height}
+            width={65} height={legmargin.height} x={0} y={legmargin.height}
             style={{fill: this.state.scale.range()[0]}}
             ></rect>
 
 
             <text
             y={legmargin.textoffset}
-            x={70} fontSize="0.65rem" textAnchor="middle"
+            x={65} fontSize="0.65rem" textAnchor="middle"
             >
-            {formatMoney(domain[(Math.round(domain.length * 0.2))])}
+            {formatMoney(domain[(Math.round(domain.length * 0.2))], "rounded")}
             </text>
             <rect
-            width={70} height={legmargin.height} x={70} y={legmargin.height}
+            width={65} height={legmargin.height} x={70} y={legmargin.height}
             style={{fill: this.state.scale.range()[1]}}
             ></rect>
 
             <text
             y={legmargin.textoffset}
-            x={140} fontSize="0.65rem" textAnchor="middle"
+            x={135} fontSize="0.65rem" textAnchor="middle"
             >
-            {formatMoney(domain[(Math.round(domain.length * 0.4))])}
+            {formatMoney(domain[(Math.round(domain.length * 0.4))], "rounded")}
             </text>
             <rect
-            width={70} height={legmargin.height} x={140} y={legmargin.height}
+            width={65} height={legmargin.height} x={140} y={legmargin.height}
             style={{fill: this.state.scale.range()[2]}}
             ></rect>
 
             <text
             y={legmargin.textoffset}
-            x={210} fontSize="0.65rem" textAnchor="middle"
+            x={205} fontSize="0.65rem" textAnchor="middle"
             >
-            {formatMoney(domain[(Math.round(domain.length * 0.6))])}
+            {formatMoney(domain[(Math.round(domain.length * 0.6))], "rounded")}
             </text>
             <rect
-            width={70} height={legmargin.height} x={210} y={legmargin.height}
+            width={65} height={legmargin.height} x={210} y={legmargin.height}
             style={{fill: this.state.scale.range()[3]}}
             ></rect>
 
@@ -264,10 +264,10 @@ class Post4DistrictMap extends Component {
             y={legmargin.textoffset}
             x={280} fontSize="0.65rem" textAnchor="middle"
             >
-            {formatMoney(domain[(Math.round(domain.length * 0.8))]) + "+"}
+            {formatMoney(domain[(Math.round(domain.length * 0.8))], "rounded") + "+"}
             </text>
             <rect
-            width={70} height={legmargin.height} x={280} y={legmargin.height}
+            width={65} height={legmargin.height} x={280} y={legmargin.height}
             style={{fill: this.state.scale.range()[4]}}
             ></rect>
 
@@ -281,7 +281,7 @@ class Post4DistrictMap extends Component {
             title="Title I funds per low-income child by school district in 2018"
             />
             <div ref={el => this.mapContainer = el}  className="mapContainer" />
-            {legend}
+            {(domain.length > 0) ? legend : ''}
             <ChartFooter credit={<span>Sources: <a href="https://gwipp.gwu.edu/counting-dollars-2020-role-decennial-census-geographic-distribution-federal-funds">“Counting for Dollars 2020: The Role of the Decennial Census in the Geographic Distribution of Federal Funds,”</a> U.S. Census Bureau’s SAIPE; Dept. of Education; Mapbox</span>} downloaddata={this.state.data} downloadfilename={"Title I funds per low-income child by school district in 2018"}  />
             </div>
         )
