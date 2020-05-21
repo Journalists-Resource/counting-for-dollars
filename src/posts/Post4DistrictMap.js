@@ -208,12 +208,6 @@ class Post4DistrictMap extends Component {
         const legend = (
             <svg className="districtlegend" width={350} height={50} transform={"translate(0,0)"}>
             <g>
-            <text
-            x={(350/2)}
-            y={12} fontSize="0.9rem" textAnchor="middle" fontWeight="700"
-            >
-            <tspan>{"Title I funding per low-income child"}</tspan>
-            </text>
 
             <text
             y={legmargin.textoffset}
