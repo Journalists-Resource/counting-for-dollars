@@ -225,7 +225,7 @@ class Post4DistrictMap extends Component {
             y={legmargin.textoffset}
             x={65} fontSize="0.65rem" textAnchor="middle"
             >
-            {"-" + formatMoney(domain[(Math.round(domain.length * 0.2))], "rounded")}
+            {formatMoney(domain[(Math.round(domain.length * 0.2))], "rounded")}
             </text>
             <rect
             width={65} height={legmargin.height} x={70} y={legmargin.height}
@@ -258,7 +258,7 @@ class Post4DistrictMap extends Component {
             y={legmargin.textoffset}
             x={280} fontSize="0.65rem" textAnchor="middle"
             >
-            {formatMoney(domain[(Math.round(domain.length * 0.8))], "rounded") + "+"}
+            {formatMoney(domain[(Math.round(domain.length * 0.8))], "rounded")}
             </text>
             <rect
             width={65} height={legmargin.height} x={280} y={legmargin.height}
