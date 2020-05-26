@@ -22,6 +22,7 @@ class ChartFooter extends Component {
     constructor(props){
       super(props)
       this.state = {
+        search: props.search ? props.search : "",
         downloaddata: props.downloaddata,
         anchorEl: false,
         setAnchorEl: null,
@@ -115,7 +116,7 @@ class ChartFooter extends Component {
                   }}
                 >
                   Use this code to embed this graphic on your own site:
-                  <pre>{'<iframe height="' + (document.body.clientHeight+100) + '" width="100%" src="' + window.location.href + '" frameborder="0" allowfullscreen scrolling="no"></iframe>'}</pre>
+                  <pre>{'<iframe height="' + (document.body.clientHeight+100) + '" width="100%" src="' + window.location.href.split(/[?]/)[0] + this.state.search + '" frameborder="0" allowfullscreen scrolling="no"></iframe>'}</pre>
                 </Popover>
             </div>
          </div>

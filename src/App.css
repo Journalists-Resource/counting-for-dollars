@@ -158,6 +158,10 @@ thead {
     cursor:auto;
 }
 
+.mapbox-gl-geocoder--error {
+   display: none !important
+}
+
 .districtlegend {
    background-color: white;
    padding: 0.5rem 0 0 0;

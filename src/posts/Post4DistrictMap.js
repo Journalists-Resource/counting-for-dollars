@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import { ChartHeader, ChartFooter } from '../components/ChartMeta'
 import { bucketScale } from '../components/ColorSchemes'
+import queryString from 'query-string'
 
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
@@ -24,7 +25,8 @@ class Post4DistrictMap extends Component {
         super(props);
         this.handleClick = this.handleClick.bind(this);
         this.state = {
-            slice: "Title I funds per low-income child",
+            slice: "United States of America",
+            statequery: "United States of America",
             data: [],
             lng: -98.58,
             lat: 39.83,
@@ -56,6 +58,10 @@ class Post4DistrictMap extends Component {
     }
 
     componentDidMount() {
+        const statequery = queryString.parse(this.props.location.search).statequery ? queryString.parse(this.props.location.search).statequery : this.state.statequery
+
+        console.log(statequery)
+
         const map = new mapboxgl.Map({
             container: this.mapContainer,
             style: 'mapbox://styles/mapbox/light-v10',
@@ -159,16 +165,25 @@ class Post4DistrictMap extends Component {
 
                 map.setLayoutProperty('district-data', 'visibility', 'visible');
 
-                map.addControl(
-                    new MapboxGeocoder({
-                        accessToken: mapboxgl.accessToken,
-                        mapboxgl: mapboxgl,
-                        types: 'region',
-                        countries: 'us',
-                        marker: false,
-                        placeholder: 'Search your state'
-                    })
-                );
+                var geocoder = new MapboxGeocoder({
+                    accessToken: mapboxgl.accessToken,
+                    mapboxgl: mapboxgl,
+                    types: 'region',
+                    countries: 'us',
+                    marker: false,
+                    placeholder: 'Search your state'
+                })
+
+                map.addControl(geocoder);
+
+                geocoder.query(statequery)
+
+                geocoder.on('result',  (result) => {
+                   this.setState({
+                      statequery: result.result.place_name
+                   })
+                   console.log(this.state)
+                })
 
                 map.addControl(new mapboxgl.NavigationControl({
                     showCompass: false,
@@ -193,6 +208,7 @@ class Post4DistrictMap extends Component {
     }
 
     render() {
+      // console.log(this.state.statequery)
         const legmargin = {
             vertical: 0,
             textoffset: 48,
@@ -276,7 +292,7 @@ class Post4DistrictMap extends Component {
             />
             <div ref={el => this.mapContainer = el}  className="mapContainer" />
             {(domain.length > 0) ? legend : ''}
-            <ChartFooter credit={<span>Sources: U.S. Census Bureau’s SAIPE; Dept. of Education; Mapbox</span>} downloaddata={this.state.data} downloadfilename={"Title I funds per low-income child by school district in 2018"}  />
+            <ChartFooter key={this.state.statequery} credit={<span>Sources: U.S. Census Bureau’s SAIPE; Dept. of Education; Mapbox</span>} downloaddata={this.state.data} search={("?statequery=" + this.state.statequery)} downloadfilename={"Title I funds per low-income child by school district in 2018"}  />
             </div>
         )
     }
